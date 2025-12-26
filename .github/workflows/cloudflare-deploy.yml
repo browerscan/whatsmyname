@@ -58,10 +58,24 @@ jobs:
           NODE_ENV: production
         run: npm run build
 
+      - name: Create wrangler.toml before build
+        run: |
+          cat > wrangler.toml << 'EOF'
+          name = "whatsmyname-app"
+          compatibility_date = "2024-01-01"
+          compatibility_flags = ["nodejs_compat"]
+          account_id = "${{ secrets.CLOUDFLARE_ACCOUNT_ID }}"
+          main = ".open-next/index.js"
+
+          [assets]
+          directory = ".open-next/assets"
+          binding = "ASSETS"
+          EOF
+
       - name: Build OpenNext for Cloudflare
         run: npx opennextjs-cloudflare build
 
-      - name: Create wrangler.toml
+      - name: Re-create wrangler.toml after build
         run: |
           cat > wrangler.toml << 'EOF'
           name = "whatsmyname-app"
