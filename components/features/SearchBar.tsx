@@ -29,6 +29,7 @@ export function SearchBar({
 }: SearchBarProps) {
   const [username, setUsername] = useState("");
   const [error, setError] = useState<string | null>(null);
+  const [isFocused, setIsFocused] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
   const tInput = useTranslations("search.input");
   const tButton = useTranslations("search.button");
@@ -87,29 +88,68 @@ export function SearchBar({
 
   return (
     <div className="w-full max-w-2xl mx-auto">
-      <form onSubmit={handleSubmit} className="space-y-3">
-        <div className="flex gap-3">
-          <div className="relative flex-1">
+      <form onSubmit={handleSubmit} className="space-y-4">
+        <div
+          className={cn(
+            "flex gap-3 transition-all duration-300",
+            isFocused && "scale-[1.02]",
+          )}
+        >
+          <div className="relative flex-1 group">
+            {/* Glow effect on focus */}
+            <div
+              className={cn(
+                "absolute -inset-1 bg-gradient-to-r from-primary/30 via-accent/30 to-primary/30 rounded-2xl blur-xl opacity-0 transition-opacity duration-300",
+                isFocused && "opacity-100",
+              )}
+            />
+
             <Input
               ref={inputRef}
               type="text"
               placeholder={tInput("placeholder")}
               value={username}
               onChange={handleChange}
+              onFocus={() => setIsFocused(true)}
+              onBlur={() => setIsFocused(false)}
               disabled={isLoading || disabled}
               className={cn(
-                "pr-24 h-14 text-base rounded-2xl border-2 shadow-custom-sm transition-all",
-                error && "border-destructive focus-visible:ring-destructive",
+                "relative h-14 text-base rounded-2xl border-2 transition-all duration-200",
+                "bg-background/70 backdrop-blur-md",
+                error
+                  ? "border-destructive focus-visible:ring-destructive/50"
+                  : "border-border/60 focus:border-primary/50",
+                "focus-visible:ring-4 focus-visible:ring-primary/20",
+                "shadow-md hover:shadow-lg",
+                "placeholder:text-muted-foreground/60",
               )}
               aria-label={tInput("aria_label")}
               aria-invalid={!!error}
               aria-describedby={error ? "username-error" : undefined}
               autoFocus
             />
-            <Search className="absolute right-4 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+
+            {/* Search icon with subtle animation */}
+            <div className="absolute right-12 top-1/2 -translate-y-1/2">
+              <Search
+                className={cn(
+                  "h-4 w-4 text-muted-foreground transition-colors",
+                  isFocused && "text-primary",
+                )}
+              />
+            </div>
 
             {/* Keyboard shortcut hint */}
-            <kbd className="pointer-events-none absolute right-12 top-1/2 -translate-y-1/2 hidden h-6 select-none items-center gap-1 rounded border border-border bg-muted px-2 font-mono text-[10px] font-medium text-muted-foreground opacity-100 sm:flex">
+            <kbd
+              className={cn(
+                "pointer-events-none absolute right-3 top-1/2 -translate-y-1/2",
+                "hidden h-7 select-none items-center gap-1.5",
+                "rounded-lg border border-border/50 bg-muted/80 backdrop-blur-sm",
+                "px-2 font-mono text-[10px] font-medium text-muted-foreground",
+                "transition-opacity duration-200",
+                username || isFocused ? "opacity-0 sm:flex" : "sm:flex",
+              )}
+            >
               <Keyboard className="h-3 w-3" />
               <span>K</span>
             </kbd>
@@ -118,36 +158,46 @@ export function SearchBar({
           <Button
             type="submit"
             disabled={isLoading || disabled || !username.trim()}
-            className="h-14 px-8 rounded-2xl font-semibold shadow-custom-md hover:shadow-custom-lg transition-all"
+            className="h-14 px-8 rounded-2xl text-base shadow-lg hover:shadow-glow transition-all duration-200"
             aria-label={tButton("aria_label")}
           >
             {isLoading ? (
               <>
-                <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                <Loader2 className="mr-2 h-5 w-5 animate-spin" />
                 {tButton("searching")}
               </>
             ) : (
-              tButton("submit")
+              <span className="flex items-center gap-2">
+                <Search className="h-5 w-5" />
+                {tButton("submit")}
+              </span>
             )}
           </Button>
         </div>
 
         {error && (
-          <p
+          <div
             id="username-error"
-            className="text-sm text-destructive font-medium"
+            className="flex items-center gap-2 text-sm text-destructive font-medium animate-fade-in"
             role="alert"
           >
+            <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
+              <path
+                fillRule="evenodd"
+                d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"
+                clipRule="evenodd"
+              />
+            </svg>
             {error}
-          </p>
+          </div>
         )}
 
-        <p className="text-sm text-muted-foreground text-center">
+        <p className="text-sm text-muted-foreground/80 text-center">
           {tSearch("hint")}
           {tShortcut && (
             <span className="ml-2">
               Press{" "}
-              <kbd className="px-1.5 py-0.5 rounded bg-muted border border-border font-mono text-xs">
+              <kbd className="mx-1 px-2 py-0.5 rounded-lg bg-muted/60 border border-border/50 font-mono text-xs">
                 {KEYBOARD_SHORTCUT}
               </kbd>{" "}
               {tShortcut("to_focus")}

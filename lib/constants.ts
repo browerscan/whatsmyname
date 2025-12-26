@@ -95,6 +95,6 @@ export const DEBOUNCE_DELAYS = {
 } as const;
 
 // Contact / External Links
-export const CONTACT_EMAIL = "contact@whatismyname.org";
+export const CONTACT_EMAIL = "findme@whatismyname.org";
 export const CONTACT_EMAIL_HREF = `mailto:${CONTACT_EMAIL}`;
 export const CONTACT_GITHUB_URL = "https://github.com";

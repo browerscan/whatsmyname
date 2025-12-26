@@ -10,130 +10,152 @@
 
 @layer base {
   :root {
-    /* Modern hex-based color system */
-    --color-background: #ffffff;
-    --color-foreground: #0f172a;
-    --color-muted: #64748b;
-    --color-muted-foreground: #475569;
-    --color-border: #e2e8f0;
-    --color-input: #e2e8f0;
-    --color-card: #ffffff;
-    --color-card-foreground: #0f172a;
+    /* Modern HSL-based color system for tech aesthetic */
+    --color-background: 0 0% 100%;
+    --color-foreground: 222 47% 11%;
+    --color-muted: 215 16% 47%;
+    --color-muted-foreground: 217 10% 35%;
+    --color-border: 214 32% 91%;
+    --color-input: 214 32% 91%;
+    --color-card: 0 0% 100%;
+    --color-card-foreground: 222 47% 11%;
 
-    /* Primary blue palette */
-    --color-primary: #3b82f6;
-    --color-primary-foreground: #ffffff;
-    --color-primary-light: #60a5fa;
-    --color-primary-dark: #2563eb;
+    /* Primary electric blue palette - modern tech feel */
+    --color-primary: 217 91% 60%;
+    --color-primary-foreground: 0 0% 100%;
+    --color-primary-light: 217 91% 70%;
+    --color-primary-dark: 217 91% 50%;
 
-    /* Accent colors */
-    --color-accent: #f8fafc;
-    --color-accent-foreground: #0f172a;
-    --color-secondary: #f1f5f9;
-    --color-secondary-foreground: #0f172a;
+    /* Accent cyan for tech vibes */
+    --color-accent: 189 94% 43%;
+    --color-accent-foreground: 0 0% 100%;
+    --color-secondary: 210 40% 96%;
+    --color-secondary-foreground: 222 47% 11%;
 
     /* Status colors */
-    --color-destructive: #ef4444;
-    --color-destructive-foreground: #ffffff;
-    --color-success: #22c55e;
-    --color-warning: #f59e0b;
+    --color-destructive: 0 84% 60%;
+    --color-destructive-foreground: 0 0% 100%;
+    --color-success: 142 76% 36%;
+    --color-warning: 38 92% 50%;
 
     /* Ring for focus states */
-    --color-ring: #3b82f6;
+    --color-ring: 217 91% 60%;
 
-    /* Gradient backgrounds */
+    /* Modern gradient backgrounds */
     --gradient-hero: linear-gradient(
       135deg,
-      #eff6ff 0%,
-      #ffffff 50%,
-      #f8fafc 100%
+      hsl(217, 91%, 97%) 0%,
+      hsl(189, 94%, 98%) 50%,
+      hsl(0, 0%, 100%) 100%
     );
     --gradient-card: linear-gradient(
       135deg,
-      rgba(255, 255, 255, 0.9) 0%,
-      rgba(255, 255, 255, 0.7) 100%
+      hsla(0, 0%, 100%, 0.9) 0%,
+      hsla(217, 91%, 98%, 0.8) 100%
     );
-    --gradient-primary: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+    --gradient-primary: linear-gradient(
+      135deg,
+      hsl(217, 91%, 60%) 0%,
+      hsl(189, 94%, 50%) 100%
+    );
     --gradient-subtle: linear-gradient(
       135deg,
-      rgba(59, 130, 246, 0.05) 0%,
-      rgba(255, 255, 255, 0) 100%
+      hsla(217, 91%, 60%, 0.08) 0%,
+      hsla(189, 94%, 43%, 0.03) 100%
+    );
+    --gradient-glow: radial-gradient(
+      ellipse 80% 50% at 50% -20%,
+      hsla(217, 91%, 60%, 0.15),
+      transparent
     );
 
-    /* Shadows */
-    --shadow-sm: 0 2px 8px rgba(15, 23, 42, 0.04);
-    --shadow-md: 0 8px 24px rgba(15, 23, 42, 0.06);
-    --shadow-lg: 0 20px 50px rgba(15, 23, 42, 0.08);
-    --shadow-xl: 0 30px 80px rgba(15, 23, 42, 0.12);
+    /* Enhanced shadows with colored glow for tech feel */
+    --shadow-sm: 0 2px 8px hsla(217, 91%, 60%, 0.08);
+    --shadow-md: 0 8px 24px hsla(217, 91%, 60%, 0.12);
+    --shadow-lg: 0 20px 50px hsla(217, 91%, 60%, 0.15);
+    --shadow-xl: 0 30px 80px hsla(217, 91%, 60%, 0.2);
+    --shadow-glow: 0 0 40px hsla(217, 91%, 60%, 0.3);
+    --shadow-glow-cyan: 0 0 40px hsla(189, 94%, 43%, 0.3);
 
     /* Border radius */
-    --radius: 0.5rem;
+    --radius: 0.75rem;
     --radius-lg: 1rem;
-    --radius-xl: 1.5rem;
-    --radius-2xl: 2rem;
-    --radius-3xl: 3rem;
+    --radius-xl: 1.25rem;
+    --radius-2xl: 1.5rem;
+    --radius-3xl: 2rem;
 
     /* Spacing rhythm */
-    --spacing-section: 2.5rem;
+    --spacing-section: 3rem;
     --spacing-component: 1.5rem;
   }
 
   .dark {
-    /* Dark mode hex-based colors */
-    --color-background: #0f172a;
-    --color-foreground: #f8fafc;
-    --color-muted: #475569;
-    --color-muted-foreground: #94a3b8;
-    --color-border: #1e293b;
-    --color-input: #1e293b;
-    --color-card: #1e293b;
-    --color-card-foreground: #f8fafc;
+    /* Dark mode - modern tech dark theme */
+    --color-background: 222 47% 11%;
+    --color-foreground: 210 40% 98%;
+    --color-muted: 215 20% 25%;
+    --color-muted-foreground: 217 10% 60%;
+    --color-border: 217 33% 17%;
+    --color-input: 217 33% 17%;
+    --color-card: 222 47% 14%;
+    --color-card-foreground: 210 40% 98%;
 
-    /* Primary blue palette (adjusted for dark) */
-    --color-primary: #3b82f6;
-    --color-primary-foreground: #ffffff;
-    --color-primary-light: #60a5fa;
-    --color-primary-dark: #2563eb;
+    /* Primary blue (enhanced for dark mode) */
+    --color-primary: 217 91% 65%;
+    --color-primary-foreground: 222 47% 11%;
+    --color-primary-light: 217 91% 75%;
+    --color-primary-dark: 217 91% 55%;
 
-    /* Accent colors (dark) */
-    --color-accent: #1e293b;
-    --color-accent-foreground: #f8fafc;
-    --color-secondary: #334155;
-    --color-secondary-foreground: #f8fafc;
+    /* Accent cyan pops more in dark */
+    --color-accent: 189 94% 53%;
+    --color-accent-foreground: 222 47% 11%;
+    --color-secondary: 217 33% 17%;
+    --color-secondary-foreground: 210 40% 98%;
 
     /* Status colors (dark) */
-    --color-destructive: #ef4444;
-    --color-destructive-foreground: #ffffff;
-    --color-success: #22c55e;
-    --color-warning: #f59e0b;
+    --color-destructive: 0 84% 65%;
+    --color-destructive-foreground: 0 0% 100%;
+    --color-success: 142 76% 46%;
+    --color-warning: 38 92% 60%;
 
     /* Ring for focus states */
-    --color-ring: #3b82f6;
+    --color-ring: 217 91% 65%;
 
-    /* Gradient backgrounds (dark) */
+    /* Gradient backgrounds (dark) - deep tech feel */
     --gradient-hero: linear-gradient(
       135deg,
-      #0f172a 0%,
-      #1e293b 50%,
-      #0f172a 100%
+      hsl(222, 47%, 8%) 0%,
+      hsl(217, 33%, 14%) 50%,
+      hsl(222, 47%, 11%) 100%
     );
     --gradient-card: linear-gradient(
       135deg,
-      rgba(30, 41, 59, 0.9) 0%,
-      rgba(30, 41, 59, 0.7) 100%
+      hsla(217, 33%, 17%, 0.9) 0%,
+      hsla(222, 47%, 14%, 0.7) 100%
     );
-    --gradient-primary: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+    --gradient-primary: linear-gradient(
+      135deg,
+      hsl(217, 91%, 65%) 0%,
+      hsl(189, 94%, 55%) 100%
+    );
     --gradient-subtle: linear-gradient(
       135deg,
-      rgba(59, 130, 246, 0.1) 0%,
-      rgba(15, 23, 42, 0) 100%
+      hsla(217, 91%, 65%, 0.12) 0%,
+      hsla(189, 94%, 43%, 0.05) 100%
+    );
+    --gradient-glow: radial-gradient(
+      ellipse 80% 50% at 50% -20%,
+      hsla(217, 91%, 65%, 0.2),
+      transparent
     );
 
-    /* Shadows (dark) */
-    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.2);
-    --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.3);
-    --shadow-lg: 0 20px 50px rgba(0, 0, 0, 0.4);
-    --shadow-xl: 0 30px 80px rgba(0, 0, 0, 0.5);
+    /* Shadows (dark) - stronger colored glow */
+    --shadow-sm: 0 2px 8px hsla(0, 0%, 0%, 0.3);
+    --shadow-md: 0 8px 24px hsla(0, 0%, 0%, 0.4);
+    --shadow-lg: 0 20px 50px hsla(0, 0%, 0%, 0.5);
+    --shadow-xl: 0 30px 80px hsla(0, 0%, 0%, 0.6);
+    --shadow-glow: 0 0 40px hsla(217, 91%, 65%, 0.4);
+    --shadow-glow-cyan: 0 0 40px hsla(189, 94%, 53%, 0.4);
   }
 
   /* Map to Tailwind CSS variables for compatibility */
@@ -166,12 +188,46 @@
   }
 
   body {
-    @apply text-foreground;
-    background-image: var(--gradient-hero);
+    @apply text-foreground antialiased;
+    background: var(--gradient-hero);
     background-attachment: fixed;
     font-feature-settings:
       "rlig" 1,
       "calt" 1;
+    position: relative;
+  }
+
+  /* Animated gradient mesh background overlay */
+  body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--gradient-glow);
+    pointer-events: none;
+    z-index: 0;
+    animation: pulse-glow 8s ease-in-out infinite;
+  }
+
+  @keyframes pulse-glow {
+    0%,
+    100% {
+      opacity: 0.5;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1.05);
+    }
+  }
+
+  /* Ensure content sits above background */
+  #__next,
+  [data-reactroot] {
+    position: relative;
+    z-index: 1;
   }
 
   /* Smooth scrolling */
@@ -189,8 +245,8 @@
   /* Focus visible for accessibility */
   *:focus-visible {
     @apply outline-none ring-2 ring-offset-2;
-    --tw-ring-color: var(--color-ring);
-    --tw-ring-offset-color: var(--color-background);
+    --tw-ring-color: hsl(var(--color-ring));
+    --tw-ring-offset-color: hsl(var(--color-background));
   }
 
   /* Reduced motion support */
@@ -202,10 +258,14 @@
       animation-iteration-count: 1 !important;
       transition-duration: 0.01ms !important;
     }
+
+    body::before {
+      animation: none;
+    }
   }
 }
 
-/* Custom utility classes */
+/* Custom utility classes - Modern tech aesthetic */
 @layer utilities {
   .shadow-custom-sm {
     box-shadow: var(--shadow-sm);
@@ -221,6 +281,14 @@
 
   .shadow-custom-xl {
     box-shadow: var(--shadow-xl);
+  }
+
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .shadow-glow-cyan {
+    box-shadow: var(--shadow-glow-cyan);
   }
 
   .bg-gradient-hero {
@@ -246,7 +314,64 @@
     background-clip: text;
   }
 
-  /* Shimmer animation for progress bar */
+  /* Glassmorphism effect */
+  .glass {
+    background: hsla(var(--color-background), 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid hsla(var(--color-border), 0.5);
+  }
+
+  .glass-strong {
+    background: hsla(var(--color-background), 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid hsla(var(--color-border), 0.6);
+  }
+
+  /* Tech grid pattern */
+  .tech-grid {
+    background-image:
+      linear-gradient(hsla(var(--color-border), 0.3) 1px, transparent 1px),
+      linear-gradient(
+        90deg,
+        hsla(var(--color-border), 0.3) 1px,
+        transparent 1px
+      );
+    background-size: 40px 40px;
+  }
+
+  /* Animated border gradient */
+  .border-gradient {
+    position: relative;
+    background: hsl(var(--color-card));
+    border-radius: var(--radius-xl);
+  }
+
+  .border-gradient::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    padding: 2px;
+    background: var(--gradient-primary);
+    border-radius: inherit;
+    mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
+  }
+
+  .border-gradient:hover::before {
+    opacity: 1;
+  }
+
+  /* Shimmer animation for loading states */
   @keyframes shimmer {
     0% {
       transform: translateX(-100%);
@@ -258,5 +383,90 @@
 
   .animate-shimmer {
     animation: shimmer 2s infinite;
+  }
+
+  /* Fade in animation */
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in {
+    animation: fade-in 0.4s ease-out;
+  }
+
+  /* Scale in animation */
+  @keyframes scale-in {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  .animate-scale-in {
+    animation: scale-in 0.3s ease-out;
+  }
+
+  /* Float animation for decorative elements */
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  .animate-float {
+    animation: float 4s ease-in-out infinite;
+  }
+
+  /* Pulse ring for status indicators */
+  @keyframes pulse-ring {
+    0% {
+      transform: scale(0.8);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1.5);
+      opacity: 0;
+    }
+  }
+
+  .pulse-ring::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    border: 2px solid hsl(var(--primary));
+    animation: pulse-ring 1.5s ease-out infinite;
+  }
+
+  /* Stagger animation delay utility */
+  .delay-100 {
+    animation-delay: 100ms;
+  }
+  .delay-200 {
+    animation-delay: 200ms;
+  }
+  .delay-300 {
+    animation-delay: 300ms;
+  }
+  .delay-400 {
+    animation-delay: 400ms;
+  }
+  .delay-500 {
+    animation-delay: 500ms;
   }
 }

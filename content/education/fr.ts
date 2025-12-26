@@ -1,0 +1,527 @@
+// Auto-generated from fr.html for Edge Runtime compatibility
+export default `<div class="container mx-auto px-4 py-16 max-w-4xl">
+  <article class="prose prose-lg dark:prose-invert max-w-none">
+    <h1 class="text-4xl font-bold mb-8 text-center">
+      What Is My Name : Le guide complet de la recherche de noms d'utilisateur
+      et de la protection de l'identité numérique
+    </h1>
+    <p class="text-xl text-muted-foreground mb-12 text-center">
+      Écoutez, voici le problème. Votre nom d'utilisateur est essentiellement
+      votre empreinte digitale numérique. Et en ce moment, quelqu'un pourrait
+      utiliser VOTRE empreinte sans que vous le sachiez. Laissez-moi vous
+      montrer comment le découvrir.
+    </p>
+    <section class="mb-12">
+      <h2 class="text-2xl font-semibold mb-4">
+        Pourquoi votre nom d'utilisateur compte plus que vous ne le pensez
+      </h2>
+      <p>
+        D'accord, soyons honnêtes un instant. Vous savez que chaque personne
+        possède une empreinte digitale unique ? Votre nom d'utilisateur, c'est
+        la même chose, mais pour Internet. C'est ainsi que le monde numérique
+        VOUS identifie.
+      </p>
+      <p>
+        Pensez-y de cette façon : si je vous disais que
+        <strong
+          >1,4 milliard de comptes de médias sociaux sont piratés chaque
+          mois</strong
+        >, vous paniqueriez probablement, n'est-ce pas ? Eh bien, c'est
+        exactement ce qui se passe. En ce moment même. Pendant que vous lisez
+        ces lignes.
+      </p>
+      <p>
+        L'application <strong>whatsmyname</strong> existe parce que nous devons
+        résoudre un problème majeur. Les gens n'ont aucune idée de l'endroit où
+        leurs noms d'utilisateur circulent sur Internet. Et c'est dangereux.
+        Vraiment dangereux.
+      </p>
+      <div class="bg-card rounded-lg p-6 my-8 border">
+        <h3 class="text-lg font-semibold mb-4">Les chiffres ne mentent pas</h3>
+        <ul class="space-y-2">
+          <li>
+            <strong>12,7 milliards de dollars</strong> - Pertes totales dues au
+            vol d'identité en 2024 (Rapport FTC)
+          </li>
+          <li>
+            <strong>Plus de 1,1 million</strong> - Plaintes pour vol d'identité
+            déposées en 2024
+          </li>
+          <li>
+            <strong>6,04 milliards</strong> - Utilisateurs actifs d'Internet
+            dans le monde (soit 73,2 % de l'humanité)
+          </li>
+          <li>
+            <strong>300 000</strong> - Comptes Facebook piratés CHAQUE JOUR
+          </li>
+        </ul>
+      </div>
+    </section>
+    <section class="mb-12">
+      <h2 class="text-2xl font-semibold mb-4">
+        Qu'est-ce que WhatsMyName exactement ?
+      </h2>
+      <p>
+        Voici la version simple : <strong>whatsmyname</strong> est comme un
+        moteur de recherche, mais au lieu de trouver des sites Web, il vous
+        trouve VOUS. Ou plus précisément, il trouve chaque endroit sur Internet
+        où un nom d'utilisateur spécifique existe.
+      </p>
+      <p>
+        Le projet original WhatsMyName a été créé en 2015 par Micah «
+        WebBreacher » Hoffman, un expert en cybersécurité qui a réalisé quelque
+        chose de crucial : les gens n'ont absolument aucune idée du nombre de
+        comptes qu'ils possèdent sur Internet. La personne moyenne ? Elle est
+        présente sur plus de 200 sites Web. La plupart ne se souviennent même
+        pas avoir créé la moitié de ces comptes.
+      </p>
+      <p>
+        Notre application <strong>whatsmyname</strong> prend cette technologie
+        et la rend accessible à tous. Pas seulement aux professionnels de la
+        cybersécurité. Pas seulement aux hackers. À tout le monde. Parce que
+        vous avez le droit de savoir où vit votre identité numérique.
+      </p>
+      <h3 class="text-xl font-semibold mb-3">Comment ça marche ?</h3>
+      <p>
+        Imaginez que vous cherchez vos clés de voiture. Vous vérifiez la
+        cuisine, la chambre, vos poches. C'est essentiellement ce que fait notre
+        outil, mais au lieu de pièces dans votre maison, il vérifie plus de 1
+        400 sites Web et plateformes.
+      </p>
+      <ol class="list-decimal pl-6 space-y-2">
+        <li>
+          Vous entrez un nom d'utilisateur (le vôtre ou celui que vous enquêtez)
+        </li>
+        <li>
+          Notre système vérifie simultanément plus de 1 400 plateformes en temps
+          réel
+        </li>
+        <li>
+          Nous vérifions si ce nom d'utilisateur existe sur chaque plateforme
+        </li>
+        <li>Vous obtenez une carte complète de cette identité numérique</li>
+      </ol>
+      <p>
+        C'est aussi simple que ça. Pas besoin de doctorat. Aucune compétence
+        technique requise. Tapez simplement et recherchez.
+      </p>
+    </section>
+    <section class="mb-12">
+      <h2 class="text-2xl font-semibold mb-4">
+        La vérification de la réalité de l'empreinte numérique
+      </h2>
+      <p>
+        Laissez-moi vous présenter quelques faits qui pourraient vous mettre mal
+        à l'aise. Ce n'est pas grave. Être mal à l'aise signifie que vous faites
+        attention.
+      </p>
+      <div class="overflow-x-auto my-8">
+        <table class="w-full border-collapse">
+          <thead>
+            <tr class="bg-muted">
+              <th class="border p-3 text-left">Métrique</th>
+              <th class="border p-3 text-left">2023</th>
+              <th class="border p-3 text-left">2024</th>
+              <th class="border p-3 text-left">Changement</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="border p-3">
+                Plaintes pour vol d'identité (États-Unis)
+              </td>
+              <td class="border p-3">1 036 845</td>
+              <td class="border p-3">1 135 270</td>
+              <td class="border p-3 text-destructive font-semibold">+9,5%</td>
+            </tr>
+            <tr>
+              <td class="border p-3">Pertes totales dues à la fraude</td>
+              <td class="border p-3">10,4 milliards $</td>
+              <td class="border p-3">12,7 milliards $</td>
+              <td class="border p-3 text-destructive font-semibold">+22,1%</td>
+            </tr>
+            <tr>
+              <td class="border p-3">
+                Signalements de piratage de médias sociaux
+              </td>
+              <td class="border p-3">23 000</td>
+              <td class="border p-3">35 436</td>
+              <td class="border p-3 text-destructive font-semibold">+54,1%</td>
+            </tr>
+            <tr>
+              <td class="border p-3">Taux de fraude mondial</td>
+              <td class="border p-3">2,10%</td>
+              <td class="border p-3">2,50%</td>
+              <td class="border p-3 text-destructive font-semibold">+19,0%</td>
+            </tr>
+            <tr>
+              <td class="border p-3">Coût moyen d'une violation</td>
+              <td class="border p-3">4,45 millions $</td>
+              <td class="border p-3">4,88 millions $</td>
+              <td class="border p-3 text-destructive font-semibold">+9,7%</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="text-sm text-muted-foreground">
+        Sources : Federal Trade Commission (FTC) 2024 Report, IBM Security Cost
+        of Data Breach Report 2024, Cybersecurity Insiders 2024
+      </p>
+      <p>
+        Vous voyez cette tendance ? Tout AUGMENTE. Plus de piratages. Plus de
+        violations. Plus d'argent perdu. Et voici le pire :
+        <strong
+          >80 % des comptes piratés ont été accédés à l'aide d'identifiants de
+          connexion précédemment exposés</strong
+        >. Cela signifie que quelqu'un utilise d'anciens mots de passe dont vous
+        avez probablement oublié l'existence.
+      </p>
+    </section>
+    <section class="mb-12">
+      <h2 class="text-2xl font-semibold mb-4">
+        Pourquoi vous devez absolument rechercher votre nom d'utilisateur
+      </h2>
+      <p>
+        D'accord, laissez-moi décomposer les cinq principales raisons pour
+        lesquelles vous devriez utiliser cet outil. Et je n'exagère pas ici.
+        C'est juste de la logique.
+      </p>
+      <h3 class="text-xl font-semibold mb-3">1. Trouver les comptes oubliés</h3>
+      <p>
+        Vous vous souvenez de ce compte MySpace de 2007 ? Ce forum auquel vous
+        vous êtes inscrit à l'université ? Ce site de jeux que vous avez essayé
+        une fois ? Ils sont tous toujours là. Avec votre e-mail. Votre ancien
+        mot de passe. Peut-être même votre ancienne adresse. La personne moyenne
+        a des informations personnelles sur
+        <strong>plus de 200 sites Web</strong>. Pouvez-vous nommer 200 sites Web
+        auxquels vous vous êtes inscrit ? Je ne pense pas.
+      </p>
+      <h3 class="text-xl font-semibold mb-3">
+        2. Se protéger contre le vol d'identité
+      </h3>
+      <p>
+        En 2024, la violation de National Public Data a exposé
+        <strong>2,9 milliards d'enregistrements</strong>. Cela inclut
+        probablement chaque citoyen américain. Vos données sont déjà là-bas. La
+        question est : savez-vous OÙ elles se trouvent ? Parce que si vous ne
+        savez pas où se trouvent vos comptes, vous ne pouvez pas les protéger.
+      </p>
+      <h3 class="text-xl font-semibold mb-3">
+        3. Vérifier l'usurpation d'identité
+      </h3>
+      <p>
+        Quelqu'un pourrait utiliser votre nom d'utilisateur en ce moment même,
+        en se faisant passer pour vous. Cela arrive plus souvent qu'on ne le
+        pense.
+        <strong
+          >42 % des utilisateurs ont été victimes d'un vol d'identité sur les
+          médias sociaux</strong
+        >. Ce n'est pas un petit nombre. C'est presque la moitié de tous les
+        internautes.
+      </p>
+      <h3 class="text-xl font-semibold mb-3">4. Recherche en sécurité</h3>
+      <p>
+        Si vous travaillez dans la cybersécurité, le journalisme ou les
+        enquêtes, l'énumération des noms d'utilisateur est fondamentale. L'outil
+        <strong>whatsmyname</strong> est utilisé par des professionnels dans des
+        organisations comme Bellingcat pour des enquêtes de renseignement open
+        source (OSINT). C'est un outil légitime et légal pour comprendre les
+        empreintes numériques.
+      </p>
+      <h3 class="text-xl font-semibold mb-3">
+        5. Audit de confidentialité personnelle
+      </h3>
+      <p>
+        Voici une statistique qui m'a époustouflé :
+        <strong
+          >86 % des adultes américains essaient activement de réduire leurs
+          empreintes numériques</strong
+        >. Les gens se réveillent. Ils réalisent que chaque compte est une
+        vulnérabilité potentielle. Vous ne pouvez pas réduire ce que vous ne
+        pouvez pas mesurer. Cet outil le mesure.
+      </p>
+    </section>
+    <section class="mb-12">
+      <h2 class="text-2xl font-semibold mb-4">
+        Ce que nous recherchons : plus de 1 400 plateformes en constante
+        croissance
+      </h2>
+      <p>
+        Notre application <strong>whatsmyname</strong> ne vérifie pas seulement
+        les grands sites. Nous vérifions tout. Voici une répartition des
+        catégories que nous couvrons :
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-8">
+        <div class="bg-card rounded-lg p-4 border">
+          <h4 class="font-semibold mb-2">Médias sociaux</h4>
+          <p class="text-sm text-muted-foreground">
+            Facebook, Instagram, Twitter/X, TikTok, LinkedIn, Reddit, Pinterest,
+            Snapchat et plus de 50 autres
+          </p>
+        </div>
+        <div class="bg-card rounded-lg p-4 border">
+          <h4 class="font-semibold mb-2">Réseaux professionnels</h4>
+          <p class="text-sm text-muted-foreground">
+            GitHub, GitLab, Stack Overflow, Behance, Dribbble, AngelList et
+            communautés de développeurs
+          </p>
+        </div>
+        <div class="bg-card rounded-lg p-4 border">
+          <h4 class="font-semibold mb-2">Plateformes de jeux</h4>
+          <p class="text-sm text-muted-foreground">
+            Steam, Xbox Live, PlayStation Network, Epic Games, Discord, Twitch
+            et forums de jeux
+          </p>
+        </div>
+        <div class="bg-card rounded-lg p-4 border">
+          <h4 class="font-semibold mb-2">Forums et communautés</h4>
+          <p class="text-sm text-muted-foreground">
+            Des centaines de forums de niche, sites de loisirs, forums de
+            discussion et plateformes communautaires
+          </p>
+        </div>
+        <div class="bg-card rounded-lg p-4 border">
+          <h4 class="font-semibold mb-2">E-commerce et services</h4>
+          <p class="text-sm text-muted-foreground">
+            Sites de commerce, plateformes de services, sites de réservation et
+            comptes de marketplace
+          </p>
+        </div>
+        <div class="bg-card rounded-lg p-4 border">
+          <h4 class="font-semibold mb-2">Rencontres et social</h4>
+          <p class="text-sm text-muted-foreground">
+            Diverses plateformes de rencontres et applications de découverte
+            sociale où les noms d'utilisateur sont publics
+          </p>
+        </div>
+      </div>
+      <p>
+        La base de données originale WhatsMyName couvre plus de 600 plateformes,
+        mais nous avons étendu notre couverture à
+        <strong>plus de 1 400 plateformes</strong> en intégrant des sources de
+        données supplémentaires et des mises à jour régulières. De nouvelles
+        plateformes sont ajoutées en permanence. Internet ne cesse jamais de
+        croître, et notre base de données non plus.
+      </p>
+    </section>
+    <section class="mb-12">
+      <h2 class="text-2xl font-semibold mb-4">
+        L'industrie OSINT en pleine croissance
+      </h2>
+      <p>
+        Le renseignement open source (OSINT) a explosé au cours de la dernière
+        décennie. Les enquêteurs, les journalistes et les équipes de sécurité
+        utilisent régulièrement des données Web publiques pour comprendre les
+        identités numériques.
+      </p>
+      <p>
+        Les noms d'utilisateur sont l'un des connecteurs les plus précieux dans
+        l'OSINT. Un seul pseudo peut relier des profils, des publications, des
+        dépôts et des forums sur tout le Web.
+      </p>
+      <div class="bg-card rounded-lg p-6 my-8 border">
+        <h3 class="text-lg font-semibold mb-4">
+          Cas d'utilisation OSINT courants
+        </h3>
+        <ul class="space-y-2">
+          <li>Vérifier l'identité sur plusieurs plateformes</li>
+          <li>Détecter l'usurpation d'identité et l'abus de marque</li>
+          <li>
+            Soutenir la réponse aux incidents et le renseignement sur les
+            menaces
+          </li>
+          <li>Enquêter sur la fraude et les arnaques</li>
+        </ul>
+      </div>
+    </section>
+    <section class="mb-12">
+      <h2 class="text-2xl font-semibold mb-4">
+        Comment utiliser efficacement notre outil WhatIsMyName
+      </h2>
+      <p>D'accord, passons à la pratique. Voici votre plan d'action :</p>
+      <h3 class="text-xl font-semibold mb-3">
+        Étape 1 : Recherchez votre nom d'utilisateur principal
+      </h3>
+      <p>
+        Commencez par le nom d'utilisateur que vous utilisez le plus souvent.
+        Celui qui est probablement le préfixe de votre e-mail ou votre pseudo
+        habituel. Saisissez-le dans la zone de recherche ci-dessus et lancez la
+        recherche. Regardez les résultats affluer de plus de 1 400 plateformes.
+      </p>
+      <h3 class="text-xl font-semibold mb-3">
+        Étape 2 : Vérifiez les variantes
+      </h3>
+      <p>
+        La plupart des gens ont des modèles de noms d'utilisateur. Si votre nom
+        d'utilisateur principal est « johndoe », vous avez probablement aussi
+        des comptes comme « johndoe123 », « john_doe » ou « jdoe ».
+        Recherchez-les tous.
+      </p>
+      <h3 class="text-xl font-semibold mb-3">
+        Étape 3 : Documentez ce que vous trouvez
+      </h3>
+      <p>
+        Exportez vos résultats. Faites une liste. C'est la carte de votre
+        empreinte numérique. Elle est probablement plus grande que vous ne le
+        pensiez. Ce n'est pas grave. Maintenant vous savez.
+      </p>
+      <h3 class="text-xl font-semibold mb-3">Étape 4 : Passez à l'action</h3>
+      <p>Pour chaque compte que vous trouvez :</p>
+      <ul class="list-disc pl-6 space-y-2">
+        <li>L'utilisez-vous encore ? Si non, supprimez-le.</li>
+        <li>Le mot de passe est-il unique ? Si non, changez-le.</li>
+        <li>
+          L'authentification à deux facteurs est-elle activée ? Si non,
+          activez-la.
+        </li>
+        <li>
+          Contient-il des informations sensibles ? Si oui, vérifiez les
+          paramètres de confidentialité.
+        </li>
+      </ul>
+      <h3 class="text-xl font-semibold mb-3">
+        Étape 5 : Mettez en place une surveillance
+      </h3>
+      <p>
+        Revenez périodiquement. Internet change. De nouvelles plateformes
+        apparaissent. D'anciennes violations sont divulguées. Faites de la
+        recherche de noms d'utilisateur une partie de votre routine de sécurité
+        annuelle.
+      </p>
+    </section>
+    <section class="mb-12">
+      <h2 class="text-2xl font-semibold mb-4">
+        Construit sur une base d'experts
+      </h2>
+      <p>
+        Notre outil <strong>whatsmyname</strong> est construit sur une
+        technologie utilisée par des enquêteurs professionnels du monde entier.
+        La méthodologie de base provient du projet open source WhatsMyName, qui
+        a été :
+      </p>
+      <ul class="list-disc pl-6 space-y-2">
+        <li>Référencé par l'Online Investigation Toolkit de Bellingcat</li>
+        <li>
+          Intégré dans des outils OSINT professionnels comme Maltego et
+          SpiderFoot
+        </li>
+        <li>
+          Utilisé par des professionnels de la cybersécurité dans le monde
+          entier depuis 2015
+        </li>
+        <li>
+          Continuellement mis à jour par une communauté de chercheurs en
+          sécurité
+        </li>
+        <li>Approuvé pour des enquêtes numériques légitimes</li>
+      </ul>
+      <p>
+        Nous avons pris cette technologie de qualité professionnelle et l'avons
+        enveloppée dans une interface que tout le monde peut utiliser. Pas de
+        ligne de commande. Pas de connaissances techniques. Juste des résultats.
+      </p>
+    </section>
+    <section class="mb-12">
+      <h2 class="text-2xl font-semibold mb-4">
+        Votre identité numérique est votre responsabilité
+      </h2>
+      <p>
+        Écoutez, voici l'essentiel. Nous vivons dans un monde numérique. Votre
+        nom d'utilisateur est aussi important que votre signature. Peut-être
+        plus important, car votre signature ne peut pas être volée lors d'une
+        violation de base de données à 10 000 kilomètres de chez vous.
+      </p>
+      <p>
+        <strong
+          >La cybercriminalité devrait coûter au monde 23,8 billions de dollars
+          d'ici 2027</strong
+        >. C'est un billion avec un B. Cet argent vient de quelque part. Il
+        vient de personnes ordinaires qui ne se sont pas protégées. Ne soyez pas
+        l'une d'entre elles.
+      </p>
+      <p>
+        La bonne nouvelle ? Vous êtes ici. Vous lisez ceci. Vous avez l'outil
+        juste devant vous. L'application <strong>whatsmyname</strong> est
+        gratuite. Il faut littéralement quelques secondes pour effectuer une
+        recherche. Il n'y a aucune excuse pour ne pas connaître votre empreinte
+        numérique.
+      </p>
+      <div
+        class="bg-primary/10 rounded-lg p-6 my-8 border border-primary/20 text-center"
+      >
+        <h3 class="text-xl font-semibold mb-4">
+          Prêt à découvrir votre empreinte numérique ?
+        </h3>
+        <p class="mb-4">
+          Faites défiler vers le haut. Entrez votre nom d'utilisateur. Voyez où
+          vous existez en ligne. Prenez le contrôle de votre identité numérique
+          aujourd'hui.
+        </p>
+        <p class="text-sm text-muted-foreground">
+          Rappelez-vous : Vous ne pouvez pas protéger ce dont vous ignorez
+          l'existence.
+        </p>
+      </div>
+    </section>
+    <section class="mb-12">
+      <h2 class="text-2xl font-semibold mb-4">Questions fréquemment posées</h2>
+      <div class="space-y-6">
+        <div>
+          <h3 class="text-lg font-semibold mb-2">Est-ce légal ?</h3>
+          <p>
+            Absolument. Nous ne recherchons que des informations accessibles au
+            public. Pas de piratage. Pas d'accès à des données privées. Ce sont
+            les mêmes informations que n'importe qui pourrait trouver en
+            vérifiant manuellement chaque site Web.
+          </p>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold mb-2">
+            Stockez-vous mes recherches ?
+          </h3>
+          <p>
+            Non. Vos requêtes de recherche sont traitées et immédiatement
+            supprimées. Nous ne créons pas de profils sur les utilisateurs. Nous
+            ne vendons pas de données. L'outil est destiné à vous aider, pas à
+            vous suivre.
+          </p>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold mb-2">
+            Pourquoi quelqu'un rechercherait-il son propre nom d'utilisateur ?
+          </h3>
+          <p>
+            Pour trouver des comptes oubliés, vérifier l'usurpation d'identité,
+            auditer son empreinte numérique ou se préparer à un nettoyage de
+            sécurité. La plupart des gens sont choqués par le nombre de comptes
+            qu'ils ont créés au fil des ans.
+          </p>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold mb-2">
+            Puis-je rechercher le nom d'utilisateur de quelqu'un d'autre ?
+          </h3>
+          <p>
+            Vous pouvez rechercher n'importe quel nom d'utilisateur. Cependant,
+            l'utilisation éthique est importante. Cet outil est destiné à la
+            sécurité personnelle, aux enquêtes légitimes et à des fins de
+            recherche. Pas pour le harcèlement criminel ou le harcèlement.
+          </p>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold mb-2">
+            Pourquoi certaines plateformes n'apparaissent-elles pas ?
+          </h3>
+          <p>
+            Certaines plateformes ont de fortes protections anti-énumération,
+            nécessitent une authentification pour vérifier les noms
+            d'utilisateur ou modifient fréquemment leurs méthodes de détection.
+            Notre base de données est constamment mise à jour, mais certaines
+            plateformes restent difficiles à vérifier de manière programmatique.
+          </p>
+        </div>
+      </div>
+    </section>
+  </article>
+</div>
+`;

@@ -297,9 +297,9 @@ export default async function PlatformPage({ params }: PlatformPageProps) {
             Check Username on {platform.name}
           </h2>
           <p className="text-muted-foreground mb-6">
-            Enter a username to check if it's available on {platform.name}.
-            We'll search across our database of 1,400+ platforms to show you
-            where this username is taken or available.
+            Enter a username to check if it&apos;s available on {platform.name}.
+            We&apos;ll search across our database of 1,400+ platforms to show
+            you where this username is taken or available.
           </p>
 
           <form
@@ -334,9 +334,9 @@ export default async function PlatformPage({ params }: PlatformPageProps) {
               {categoryMeta.description} Checking username availability across
               multiple platforms is essential for maintaining a consistent
               online presence, brand protection, and personal branding. Whether
-              you're a content creator, business professional, or casual user,
-              securing your preferred username helps establish your digital
-              identity.
+              you&apos;re a content creator, business professional, or casual
+              user, securing your preferred username helps establish your
+              digital identity.
             </p>
           </div>
         </section>
@@ -399,7 +399,7 @@ export default async function PlatformPage({ params }: PlatformPageProps) {
             <p className="text-muted-foreground mb-6">
               Check username availability on {platform.name} and thousands of
               other platforms in one search. Find where your username is
-              available, where it's taken, and secure your digital identity
+              available, where it&apos;s taken, and secure your digital identity
               across the web.
             </p>
             <Link

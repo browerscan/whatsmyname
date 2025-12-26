@@ -57,7 +57,6 @@ export function HomeClient() {
   const tResults = useTranslations("results");
 
   // Store state - using useShallow to prevent unnecessary re-renders
-  // All selectors are now combined into a single subscription with shallow comparison
   const {
     username,
     isSearching,
@@ -146,31 +145,50 @@ export function HomeClient() {
     googleResults.length === 0;
 
   return (
-    <div className="container mx-auto px-4 py-12 max-w-7xl space-y-10">
-      {/* Hero Section with Gradient */}
-      <section className="space-y-6 rounded-3xl bg-gradient-subtle backdrop-blur-sm border border-border/50 p-8 md:p-12 shadow-custom-lg">
-        <div className="max-w-3xl mx-auto text-center space-y-6">
-          <div>
-            <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground font-medium mb-4">
-              {tHero("kicker")}
-            </p>
-            <h1 className="text-4xl md:text-5xl font-semibold leading-tight mb-4">
-              {tHero("title_prefix")}{" "}
-              <span className="text-gradient">{tHero("title_highlight")}</span>
-            </h1>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              {tHero("description")}
-            </p>
+    <div className="container mx-auto px-4 py-16 max-w-7xl space-y-16">
+      {/* Hero Section with Modern Tech Styling */}
+      <section className="space-y-8 animate-fade-in">
+        <div className="relative rounded-3xl overflow-hidden">
+          {/* Animated gradient background */}
+          <div className="absolute inset-0 bg-gradient-subtle" />
+          <div className="absolute inset-0 tech-grid opacity-30" />
+
+          {/* Glass effect overlay */}
+          <div className="relative glass-strong rounded-3xl border border-border/40 p-10 md:p-16 shadow-custom-lg">
+            <div className="max-w-3xl mx-auto text-center space-y-8">
+              {/* Badge */}
+              <div className="inline-flex animate-scale-in">
+                <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-semibold uppercase tracking-[0.3em]">
+                  <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
+                  {tHero("kicker")}
+                </span>
+              </div>
+
+              {/* Heading */}
+              <div className="space-y-4">
+                <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight tracking-tight">
+                  {tHero("title_prefix")}{" "}
+                  <span className="text-gradient inline-block hover:scale-105 transition-transform duration-300 cursor-default">
+                    {tHero("title_highlight")}
+                  </span>
+                </h1>
+                <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+                  {tHero("description")}
+                </p>
+              </div>
+
+              {/* Search Bar */}
+              <SearchBar onSearch={handleSearch} isLoading={isSearching} />
+            </div>
           </div>
-          <SearchBar onSearch={handleSearch} isLoading={isSearching} />
         </div>
       </section>
 
       {/* Results Section */}
       {showResultsSection && (
-        <section className="space-y-8">
+        <section className="space-y-8 animate-fade-in">
           {error && (
-            <Alert variant="destructive" className="rounded-2xl">
+            <Alert variant="destructive" className="rounded-2xl glass">
               <AlertDescription>{error}</AlertDescription>
             </Alert>
           )}
@@ -191,23 +209,32 @@ export function HomeClient() {
           />
 
           <Tabs defaultValue="platforms" className="w-full">
-            <TabsList className="mb-6 rounded-2xl">
-              <TabsTrigger value="platforms" className="rounded-xl">
+            <TabsList className="mb-8 rounded-2xl p-1.5 bg-muted/30 backdrop-blur-sm border border-border/40">
+              <TabsTrigger
+                value="platforms"
+                className="rounded-xl data-[state=active]:bg-background data-[state=active]:shadow-lg"
+              >
                 <span className="flex items-center gap-2">
                   {tTabs("platforms", { count: whatsMyNameResults.length })}
                   {isSearching && progress.total > 0 && (
-                    <span className="text-xs font-medium text-primary">
+                    <span className="inline-flex items-center px-2 py-0.5 rounded-full bg-primary/20 text-primary text-xs font-bold">
                       {progress.percentage}%
                     </span>
                   )}
                 </span>
               </TabsTrigger>
-              <TabsTrigger value="google" className="rounded-xl">
+              <TabsTrigger
+                value="google"
+                className="rounded-xl data-[state=active]:bg-background data-[state=active]:shadow-lg"
+              >
                 {tTabs("google", { count: googleResults.length })}
               </TabsTrigger>
             </TabsList>
 
-            <TabsContent value="platforms" className="space-y-6">
+            <TabsContent
+              value="platforms"
+              className="space-y-6 animate-fade-in"
+            >
               {whatsMyNameResults.length > 0 && (
                 <>
                   <FilterBar
@@ -227,9 +254,9 @@ export function HomeClient() {
               )}
             </TabsContent>
 
-            <TabsContent value="google" className="space-y-4">
+            <TabsContent value="google" className="space-y-4 animate-fade-in">
               {username && (
-                <div className="flex items-center justify-between gap-4 flex-wrap rounded-2xl bg-muted/20 border border-border/30 px-5 py-4">
+                <div className="flex items-center justify-between gap-4 flex-wrap rounded-2xl glass px-6 py-4 border border-border/40">
                   <div className="text-sm text-muted-foreground">
                     {googleSearchInformation ? (
                       <>
@@ -251,7 +278,7 @@ export function HomeClient() {
                     ) : (
                       <span>
                         {tGoogle("for_prefix")}{" "}
-                        <span className="font-mono text-foreground">
+                        <span className="font-mono text-primary">
                           @{username}
                         </span>
                       </span>
@@ -269,16 +296,29 @@ export function HomeClient() {
                     )}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-sm font-medium text-primary hover:text-primary/80 hover:underline transition-colors"
+                    className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:text-accent hover:underline transition-colors"
                     aria-label={tGoogle("open_in_google_aria")}
                   >
                     {tGoogle("open_in_google")}
+                    <svg
+                      className="w-4 h-4"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M14 5l7 7m0 0l-7 7m7-7H3"
+                      />
+                    </svg>
                   </a>
                 </div>
               )}
 
               {googleError && (
-                <Alert variant="destructive" className="rounded-2xl">
+                <Alert variant="destructive" className="rounded-2xl glass">
                   <AlertDescription>{googleError}</AlertDescription>
                 </Alert>
               )}
@@ -295,7 +335,7 @@ export function HomeClient() {
               ) : isSearching ? (
                 <GoogleResultsSkeleton />
               ) : (
-                <div className="text-center py-12 text-muted-foreground">
+                <div className="text-center py-16 text-muted-foreground">
                   <p>{tResults("empty_google")}</p>
                 </div>
               )}
@@ -306,7 +346,22 @@ export function HomeClient() {
 
       {/* Empty State */}
       {showEmptyState && (
-        <section className="text-center py-20 rounded-3xl bg-gradient-subtle border border-border/30 shadow-custom-md">
+        <section className="text-center py-24 rounded-3xl glass border border-border/30 shadow-custom-md animate-fade-in">
+          <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-muted/50 mb-6 animate-float">
+            <svg
+              className="w-8 h-8 text-muted-foreground"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={1.5}
+                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+              />
+            </svg>
+          </div>
           <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground font-medium mb-4">
             {tEmpty("kicker")}
           </p>
@@ -315,7 +370,7 @@ export function HomeClient() {
         </section>
       )}
 
-      {/* AI Button - Always visible for testing */}
+      {/* AI Button - Always visible */}
       <AIButton disabled={isSearching} />
 
       {/* AI Dialog */}
