@@ -5,7 +5,7 @@ import createMiddleware from "next-intl/middleware";
 import { defaultLocale, locales } from "./i18n/request";
 
 // Enable Edge Runtime for Cloudflare Workers compatibility
-// Note: In Next.js 16, middleware uses experimental-edge
+// Next.js 15 requires experimental-edge for middleware
 export const runtime = "experimental-edge";
 
 // Known malicious bots to block

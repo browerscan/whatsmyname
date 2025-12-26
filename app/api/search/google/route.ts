@@ -162,4 +162,3 @@ export async function GET(request: NextRequest) {
 }
 
 // Enable edge runtime for better performance
-export const runtime = "edge";

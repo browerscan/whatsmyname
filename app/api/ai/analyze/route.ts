@@ -155,4 +155,3 @@ export async function POST(request: NextRequest) {
 }
 
 // Enable edge runtime for better performance
-export const runtime = "edge";

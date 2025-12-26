@@ -62,7 +62,7 @@ jobs:
         run: |
           cat > wrangler.toml << 'EOF'
           name = "whatsmyname-app"
-          compatibility_date = "2024-01-01"
+          compatibility_date = "2024-09-23"
           compatibility_flags = ["nodejs_compat"]
           account_id = "${{ secrets.CLOUDFLARE_ACCOUNT_ID }}"
           main = ".open-next/worker.js"
@@ -85,7 +85,7 @@ jobs:
           npx wrangler deploy
 
           # Get the worker URL
-          WORKER_URL="https://whatsmyname-app.workers.dev"
+          WORKER_URL="https://whatsmyname-app.browserscan.workers.dev"
 
           echo "url=$WORKER_URL" >> $GITHUB_OUTPUT
           echo "### 🚀 Cloudflare Deployment Successful" >> $GITHUB_STEP_SUMMARY
@@ -100,7 +100,7 @@ jobs:
         with:
           script: |
             const prNumber = context.payload.pull_request.number;
-            const deploymentUrl = 'https://whatsmyname-app.workers.dev';
+            const deploymentUrl = 'https://whatsmyname-app.browserscan.workers.dev';
 
             github.rest.issues.createComment({
               owner: context.repo.owner,
