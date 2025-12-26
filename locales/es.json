@@ -1,0 +1,197 @@
+{
+  "common": {
+    "app": {
+      "name": "What is my Name"
+    },
+    "buttons": {
+      "search": "Buscar",
+      "clear": "Limpiar",
+      "cancel": "Cancelar",
+      "submit": "Enviar",
+      "close": "Cerrar"
+    },
+    "status": {
+      "loading": "Cargando...",
+      "searching": "Buscando...",
+      "error": "Error",
+      "success": "Éxito"
+    },
+    "theme": {
+      "toggle_aria": "Cambiar tema"
+    },
+    "language": {
+      "label": "Idioma",
+      "en": "Inglés",
+      "zh": "Chino",
+      "es": "Español",
+      "ja": "Japonés",
+      "fr": "Francés",
+      "ko": "Coreano"
+    }
+  },
+  "home": {
+    "hero": {
+      "kicker": "Plataforma de inteligencia de nombres de usuario",
+      "title_prefix": "What is my Name:",
+      "title_highlight": "Descubre tu huella digital",
+      "description": "Busca en más de 1.400 plataformas al instante y descubre dónde existe tu nombre de usuario"
+    },
+    "empty": {
+      "kicker": "Comenzar",
+      "title": "¿Listo para descubrir tu presencia digital?",
+      "description": "Ingresa un nombre de usuario arriba para buscar en más de 1.400 plataformas"
+    },
+    "google": {
+      "open_in_google": "Abrir en Google",
+      "open_in_google_aria": "Abrir resultados completos de Google en una pestaña nueva",
+      "about_results": "Aproximadamente {total_results} resultados",
+      "seconds": "({seconds}s)",
+      "for_prefix": "Resultados de Google para",
+      "for_username": "Resultados de Google para @{username}",
+      "query_prefix": "Consulta:"
+    }
+  },
+  "search": {
+    "input": {
+      "placeholder": "Ingresa un nombre de usuario para buscar...",
+      "aria_label": "Campo de búsqueda de nombre de usuario",
+      "error_required": "El nombre de usuario no puede estar vacío",
+      "error_too_short": "El nombre de usuario debe tener al menos {min} caracteres",
+      "error_too_long": "El nombre de usuario no debe superar {max} caracteres",
+      "error_invalid_chars": "El nombre de usuario solo puede contener letras, números, guiones bajos y guiones",
+      "error_invalid": "Nombre de usuario inválido"
+    },
+    "button": {
+      "submit": "Buscar",
+      "aria_label": "Buscar nombre de usuario",
+      "searching": "Buscando..."
+    },
+    "hint": "Busca un nombre de usuario en más de 1.400 plataformas, Google y obtén análisis con IA"
+  },
+  "results": {
+    "header": {
+      "kicker": "Resultados",
+      "title": "Resultados para \"{username}\"",
+      "title_default": "Resultados",
+      "platforms_checked": "{count} plataforma{plural} verificada"
+    },
+    "status": {
+      "found": "Encontrado",
+      "not_found": "No encontrado",
+      "searching": "Buscando...",
+      "complete": "Búsqueda completa",
+      "checking": "Comprobando {total} plataformas...",
+      "progress_aria": "Progreso de búsqueda: {percentage}%"
+    },
+    "tabs": {
+      "platforms": "Resultados What is my Name ({count})",
+      "google": "Resultados de Google ({count})"
+    },
+    "empty_google": "No se encontraron resultados de Google",
+    "empty_platforms_title": "No hay resultados",
+    "empty_platforms_description": "Prueba ajustando tus filtros"
+  },
+  "filters": {
+    "title": "Filtros",
+    "search_placeholder": "Filtrar por nombre de plataforma...",
+    "status_label": "Estado",
+    "category_label": "Categoría",
+    "all": "Todos",
+    "found": "Encontrado",
+    "not_found": "No encontrado",
+    "all_categories": "Todas las categorías",
+    "show_nsfw": "Mostrar contenido NSFW",
+    "clear": "Borrar filtros"
+  },
+  "platform": {
+    "badge_nsfw": "NSFW",
+    "badge_found": "Encontrado",
+    "badge_not_found": "No encontrado",
+    "visit_profile": "Visitar perfil de {source}",
+    "icon_alt": "Icono de {source}"
+  },
+  "google": {
+    "visit": "Visitar {title}",
+    "icon_alt": "Icono de {domain}"
+  },
+  "ai": {
+    "open_aria": "Abrir análisis de IA",
+    "title": "Análisis de IA",
+    "subtitle": "Asistente de investigación de nombres de usuario",
+    "close_aria": "Cerrar diálogo de IA",
+    "templates_hint": "Elige una plantilla de análisis o haz tu propia pregunta",
+    "assistant_label": "Asistente de IA",
+    "thinking": "La IA está pensando...",
+    "templates_title": "Elige una plantilla",
+    "input_placeholder": "Pregunta lo que quieras sobre este nombre de usuario...",
+    "send_aria": "Enviar mensaje",
+    "sending": "Enviando...",
+    "error_prefix": "Error:",
+    "templates": {
+      "value_assessment": {
+        "name": "Evaluación de valor",
+        "description": "Evalúa rareza y valor potencial del usuario",
+        "prompt": "Según los resultados de búsqueda del nombre de usuario \"{username}\", realiza una evaluación completa:\n\n1. Disponibilidad: ¿Qué tan raro o común es en distintas plataformas?\n2. Valor de marca: ¿Qué valor comercial podría tener?\n3. Recomendaciones: ¿Conviene reclamar este usuario? ¿Por qué?\n4. Patrones: ¿Hay patrones entre disponible vs. ocupado?\n\nOfrece conclusiones y recomendaciones accionables."
+      },
+      "pattern_analysis": {
+        "name": "Análisis de patrones",
+        "description": "Extrae patrones e insights de uso",
+        "prompt": "Analiza los patrones en los resultados para \"{username}\":\n\n1. Distribución: ¿En qué tipos de plataformas aparece más?\n2. Comportamiento: ¿Qué se puede inferir sobre el/los usuarios?\n3. Identidad cruzada: ¿Parece una misma persona o múltiples?\n4. Riesgos: señales de suplantación o privacidad.\n\nEntrega insights detallados basados en evidencia."
+      },
+      "platform_suggestions": {
+        "name": "Sugerencias de plataformas",
+        "description": "Dónde reclamar y asegurar el usuario",
+        "prompt": "Con base en los resultados para \"{username}\", sugiere una estrategia:\n\n1. Oportunidades: ¿Qué plataformas importantes siguen disponibles?\n2. Prioridad: ordénalas por impacto (marca personal, profesional, alcance social).\n3. Quick wins: ¿Cuáles tomar primero?\n4. Plan: pasos para asegurar el usuario (2FA, contraseñas, privacidad).\n\nEnfócate en acciones concretas."
+      },
+      "security_check": {
+        "name": "Chequeo de seguridad",
+        "description": "Detecta riesgos de seguridad y privacidad",
+        "prompt": "Realiza un análisis de seguridad y privacidad para \"{username}\":\n\n1. Suplantación: ¿se usa por varias personas?\n2. Protección: ¿patrones de typosquatting o cuentas imitadoras?\n3. Privacidad: ¿alertas según dónde aparece?\n4. Recomendaciones: pasos de seguridad a tomar.\n\nDa una evaluación orientada a seguridad con próximos pasos claros."
+      }
+    }
+  },
+  "footer": {
+    "about_title": "Acerca de",
+    "about_description": "Descubre tu nombre de usuario en más de 1400 plataformas al instante. Una potente herramienta para investigación de seguridad y análisis de huella digital.",
+    "features_title": "Funciones",
+    "features": {
+      "username_search": "Búsqueda de nombre de usuario",
+      "platform_support": "Soporte de 1400+ plataformas",
+      "realtime_results": "Resultados en tiempo real",
+      "ai_analysis": "Análisis con IA"
+    },
+    "connect_title": "Conectar",
+    "email_aria": "Correo",
+    "github_aria": "GitHub",
+    "copyright": "© {year} What is my Name. Todos los derechos reservados.",
+    "legal_title": "Legal",
+    "privacy": "Política de Privacidad",
+    "terms": "Términos de Servicio"
+  },
+  "errors": {
+    "search_failed": "La búsqueda falló",
+    "google_failed": "La búsqueda de Google falló",
+    "whatsmyname_failed": "La búsqueda de WhatsMyName falló",
+    "ai_failed": "No se pudo obtener la respuesta de la IA",
+    "timeout": "La solicitud agotó el tiempo",
+    "invalid_response": "Respuesta inválida del servidor"
+  },
+  "seo": {
+    "home": {
+      "title": "What is my Name - Busca un nombre de usuario en 1400+ plataformas",
+      "description": "Encuentra tu nombre de usuario en redes sociales y sitios web al instante"
+    }
+  },
+  "error": {
+    "title": "Algo salió mal",
+    "description": "Ocurrió un error inesperado. Por favor, inténtalo de nuevo o contacta con soporte si el problema persiste.",
+    "retry": "Intentar de nuevo",
+    "error_id": "ID de error: {id}",
+    "go_home": "Ir a la página principal"
+  },
+  "not_found": {
+    "title": "Página no encontrada",
+    "description": "La página que buscas no existe o ha sido movida.",
+    "go_home": "Ir a la página principal"
+  }
+}

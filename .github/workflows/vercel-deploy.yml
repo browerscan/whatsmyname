@@ -1,0 +1,77 @@
+name: Deploy to Vercel
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+# Required secrets to be configured in GitHub repository settings:
+# - VERCEL_TOKEN: Vercel authentication token
+# - VERCEL_ORG_ID: Vercel organization ID (will be auto-detected on first deploy)
+# - VERCEL_PROJECT_ID: Vercel project ID (will be auto-detected on first deploy)
+# - WHATSMYNAME_API_KEY: WhatsMyName API key
+# - GOOGLE_CUSTOM_SEARCH_API_KEYS: Google Custom Search API keys (comma-separated)
+# - GOOGLE_CUSTOM_SEARCH_CX: Google Custom Search engine ID
+# - OPENROUTER_API_KEY: OpenRouter API key for AI features
+# - OPENROUTER_MODEL: OpenRouter model name (optional)
+
+jobs:
+  deploy:
+    name: Deploy to Vercel
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      deployments: write
+      pull-requests: write
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: Install Vercel CLI
+        run: npm install --global vercel@latest
+
+      - name: Pull Vercel Environment Information
+        run: vercel pull --yes --environment=${{ github.ref == 'refs/heads/main' && 'production' || 'preview' }} --token=${{ secrets.VERCEL_TOKEN }}
+
+      - name: Build Project Artifacts
+        run: vercel build ${{ github.ref == 'refs/heads/main' && '--prod' || '' }} --token=${{ secrets.VERCEL_TOKEN }}
+        env:
+          WHATSMYNAME_API_KEY: ${{ secrets.WHATSMYNAME_API_KEY }}
+          GOOGLE_CUSTOM_SEARCH_API_KEYS: ${{ secrets.GOOGLE_CUSTOM_SEARCH_API_KEYS }}
+          GOOGLE_CUSTOM_SEARCH_CX: ${{ secrets.GOOGLE_CUSTOM_SEARCH_CX }}
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          OPENROUTER_MODEL: ${{ secrets.OPENROUTER_MODEL }}
+          NEXT_PUBLIC_BASE_URL: ${{ secrets.NEXT_PUBLIC_BASE_URL }}
+
+      - name: Deploy Project Artifacts to Vercel
+        id: deploy
+        run: |
+          URL=$(vercel deploy --prebuilt ${{ github.ref == 'refs/heads/main' && '--prod' || '' }} --token=${{ secrets.VERCEL_TOKEN }})
+          echo "url=$URL" >> $GITHUB_OUTPUT
+          echo "### 🚀 Deployment Successful" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**URL**: $URL" >> $GITHUB_STEP_SUMMARY
+          echo "**Environment**: ${{ github.ref == 'refs/heads/main' && 'Production' || 'Preview' }}" >> $GITHUB_STEP_SUMMARY
+          echo "**Commit**: ${{ github.sha }}" >> $GITHUB_STEP_SUMMARY
+
+      - name: Comment PR with deployment URL
+        if: github.event_name == 'pull_request'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const prNumber = context.payload.pull_request.number;
+            const deploymentUrl = '${{ steps.deploy.outputs.url }}';
+
+            github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: prNumber,
+              body: `### 🚀 Preview Deployment Ready\n\n**Preview URL**: ${deploymentUrl}\n\n✅ Deployment successful`
+            });

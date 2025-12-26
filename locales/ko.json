@@ -1,0 +1,197 @@
+{
+  "common": {
+    "app": {
+      "name": "What is my Name"
+    },
+    "buttons": {
+      "search": "검색",
+      "clear": "지우기",
+      "cancel": "취소",
+      "submit": "확인",
+      "close": "닫기"
+    },
+    "status": {
+      "loading": "로딩 중...",
+      "searching": "검색 중...",
+      "error": "오류",
+      "success": "성공"
+    },
+    "theme": {
+      "toggle_aria": "테마 전환"
+    },
+    "language": {
+      "label": "언어",
+      "en": "영어",
+      "zh": "중국어",
+      "es": "스페인어",
+      "ja": "일본어",
+      "fr": "프랑스어",
+      "ko": "한국어"
+    }
+  },
+  "home": {
+    "hero": {
+      "kicker": "사용자명 인텔리전스 플랫폼",
+      "title_prefix": "What is my Name:",
+      "title_highlight": "당신의 디지털 발자국",
+      "description": "1,400+ 플랫폼에서 즉시 검색하고 온라인에서 사용자명이 어디에 존재하는지 확인하세요"
+    },
+    "empty": {
+      "kicker": "시작하기",
+      "title": "디지털 존재감을 확인할 준비가 되었나요?",
+      "description": "위에 사용자명을 입력하여 1,400+ 플랫폼에서 검색하세요"
+    },
+    "google": {
+      "open_in_google": "Google에서 열기",
+      "open_in_google_aria": "새 탭에서 전체 Google 결과 열기",
+      "about_results": "약 {total_results}개 결과",
+      "seconds": "({seconds}s)",
+      "for_prefix": "다음에 대한 Google 결과",
+      "for_username": "@{username}에 대한 Google 결과",
+      "query_prefix": "쿼리:"
+    }
+  },
+  "search": {
+    "input": {
+      "placeholder": "검색할 사용자명을 입력하세요...",
+      "aria_label": "사용자명 검색 입력",
+      "error_required": "사용자명은 비울 수 없습니다",
+      "error_too_short": "사용자명은 최소 {min}자여야 합니다",
+      "error_too_long": "사용자명은 {max}자를 초과할 수 없습니다",
+      "error_invalid_chars": "사용자명은 영문/숫자/언더스코어/하이픈만 사용할 수 있습니다",
+      "error_invalid": "유효하지 않은 사용자명"
+    },
+    "button": {
+      "submit": "검색",
+      "aria_label": "사용자명 검색",
+      "searching": "검색 중..."
+    },
+    "hint": "1,400+ 플랫폼, Google, AI 분석으로 사용자명을 검색하세요"
+  },
+  "results": {
+    "header": {
+      "kicker": "검색 결과",
+      "title": "\"{username}\" 결과",
+      "title_default": "검색 결과",
+      "platforms_checked": "{count}개 플랫폼 확인"
+    },
+    "status": {
+      "found": "발견",
+      "not_found": "없음",
+      "searching": "검색 중...",
+      "complete": "검색 완료",
+      "checking": "{total}개 플랫폼 확인 중...",
+      "progress_aria": "검색 진행률: {percentage}%"
+    },
+    "tabs": {
+      "platforms": "What is my Name 결과 ({count})",
+      "google": "Google 결과 ({count})"
+    },
+    "empty_google": "Google 결과가 없습니다",
+    "empty_platforms_title": "결과가 없습니다",
+    "empty_platforms_description": "필터를 조정해 보세요"
+  },
+  "filters": {
+    "title": "필터",
+    "search_placeholder": "플랫폼 이름으로 필터...",
+    "status_label": "상태",
+    "category_label": "카테고리",
+    "all": "전체",
+    "found": "발견",
+    "not_found": "없음",
+    "all_categories": "모든 카테고리",
+    "show_nsfw": "NSFW 콘텐츠 표시",
+    "clear": "필터 초기화"
+  },
+  "platform": {
+    "badge_nsfw": "NSFW",
+    "badge_found": "발견",
+    "badge_not_found": "없음",
+    "visit_profile": "{source} 프로필 방문",
+    "icon_alt": "{source} 아이콘"
+  },
+  "google": {
+    "visit": "{title} 방문",
+    "icon_alt": "{domain} 아이콘"
+  },
+  "ai": {
+    "open_aria": "AI 분석 열기",
+    "title": "AI 분석",
+    "subtitle": "사용자명 리서치 도우미",
+    "close_aria": "AI 대화 닫기",
+    "templates_hint": "분석 템플릿을 선택하거나 직접 질문하세요",
+    "assistant_label": "AI 어시스턴트",
+    "thinking": "AI가 생각 중...",
+    "templates_title": "템플릿 선택",
+    "input_placeholder": "이 사용자명에 대해 무엇이든 물어보세요...",
+    "send_aria": "메시지 보내기",
+    "sending": "전송 중...",
+    "error_prefix": "오류:",
+    "templates": {
+      "value_assessment": {
+        "name": "가치 평가",
+        "description": "이 사용자명의 희소성과 잠재 가치를 평가",
+        "prompt": "사용자명 \"{username}\"의 검색 결과를 바탕으로 종합적인 가치 평가를 해주세요:\n\n1. 가용성: 여러 플랫폼에서 얼마나 희소/일반적인가?\n2. 브랜드 가치: 브랜드/상업적 잠재 가치는?\n3. 권장 사항: 확보(클레임)할 가치가 있는가? 이유는?\n4. 패턴: 사용/미사용 분포에 흥미로운 패턴이 있는가?\n\n실행 가능한 인사이트와 구체적인 권장안을 제시하세요."
+      },
+      "pattern_analysis": {
+        "name": "패턴 분석",
+        "description": "사용 패턴과 인사이트를 도출",
+        "prompt": "\"{username}\"의 검색 결과에서 패턴을 분석해주세요:\n\n1. 분포: 어떤 유형의 플랫폼에서 더 자주 나타나는가?\n2. 행동: 사용자(들)에 대해 추정할 수 있는 점은?\n3. 크로스플랫폼 일치: 한 사람이 여러 사이트에서 쓰는 것처럼 보이나, 동명이인이 많은가?\n4. 위험: 사칭/프라이버시 관련 신호가 있는가?\n\n근거 기반으로 정리해 주세요."
+      },
+      "platform_suggestions": {
+        "name": "플랫폼 추천",
+        "description": "어디에 확보/보강할지 추천",
+        "prompt": "\"{username}\"의 결과를 바탕으로 플랫폼 전략을 제안해주세요:\n\n1. 기회: 아직 사용 가능한 중요한 플랫폼은?\n2. 우선순위: 개인 브랜딩/전문성/확산 영향 기준으로 순위\n3. 빠른 실행: 먼저 확보해야 할 곳은?\n4. 실행 계획: 2FA, 비밀번호, 프라이버시 설정까지 단계별 계획\n\n실무적으로 바로 적용 가능한 제안을 해주세요."
+      },
+      "security_check": {
+        "name": "보안 점검",
+        "description": "보안/프라이버시 위험을 점검",
+        "prompt": "사용자명 \"{username}\"에 대해 보안 및 프라이버시 관점에서 분석해주세요:\n\n1. 사칭 위험: 여러 사람이 동일 핸들을 사용하는가?\n2. 보호: typosquatting/모방 계정 패턴이 있는가?\n3. 프라이버시: 등장 위치/내용 기반의 경고 신호는?\n4. 권장 사항: 취해야 할 보안 조치(2FA, 비밀번호 변경, 정리, 모니터링 등)\n\n명확한 다음 단계까지 제시해 주세요."
+      }
+    }
+  },
+  "footer": {
+    "about_title": "소개",
+    "about_description": "1,400+ 플랫폼에서 즉시 사용자명을 확인하세요. 보안 리서치와 디지털 발자국 분석을 위한 강력한 사용자명 검색 도구입니다.",
+    "features_title": "기능",
+    "features": {
+      "username_search": "사용자명 검색",
+      "platform_support": "1,400+ 플랫폼 지원",
+      "realtime_results": "실시간 결과",
+      "ai_analysis": "AI 분석"
+    },
+    "connect_title": "연결",
+    "email_aria": "이메일",
+    "github_aria": "GitHub",
+    "copyright": "© {year} What is my Name. 모든 권리 보유.",
+    "legal_title": "법률",
+    "privacy": "개인정보 보호정책",
+    "terms": "서비스 약관"
+  },
+  "errors": {
+    "search_failed": "검색 실패",
+    "google_failed": "Google 검색 실패",
+    "whatsmyname_failed": "WhatsMyName 검색 실패",
+    "ai_failed": "AI 응답을 가져오지 못했습니다",
+    "timeout": "요청 시간이 초과되었습니다",
+    "invalid_response": "서버에서 잘못된 응답을 받았습니다"
+  },
+  "seo": {
+    "home": {
+      "title": "What is my Name - 1,400+ 플랫폼 사용자명 검색",
+      "description": "소셜 미디어와 웹사이트에서 사용자명을 즉시 찾아보세요"
+    }
+  },
+  "error": {
+    "title": "문제가 발생했습니다",
+    "description": "예기치 않은 오류가 발생했습니다. 다시 시도하거나 문제가 지속되면 지원팀에 문의하세요.",
+    "retry": "다시 시도",
+    "error_id": "오류 ID: {id}",
+    "go_home": "홈으로 이동"
+  },
+  "not_found": {
+    "title": "페이지를 찾을 수 없습니다",
+    "description": "찾으시는 페이지가 존재하지 않거나 이동되었습니다.",
+    "go_home": "홈으로 이동"
+  }
+}

@@ -1,0 +1,197 @@
+{
+  "common": {
+    "app": {
+      "name": "What is my Name"
+    },
+    "buttons": {
+      "search": "搜索",
+      "clear": "清除",
+      "cancel": "取消",
+      "submit": "提交",
+      "close": "关闭"
+    },
+    "status": {
+      "loading": "加载中...",
+      "searching": "搜索中...",
+      "error": "错误",
+      "success": "成功"
+    },
+    "theme": {
+      "toggle_aria": "切换主题"
+    },
+    "language": {
+      "label": "语言",
+      "en": "英语",
+      "zh": "中文",
+      "es": "西班牙语",
+      "ja": "日语",
+      "fr": "法语",
+      "ko": "韩语"
+    }
+  },
+  "home": {
+    "hero": {
+      "kicker": "用户名情报平台",
+      "title_prefix": "What is my Name:",
+      "title_highlight": "发现你的数字足迹",
+      "description": "一键搜索 1,400+ 平台，快速发现你的用户名出现在哪里"
+    },
+    "empty": {
+      "kicker": "开始使用",
+      "title": "准备好发现你的数字存在了吗？",
+      "description": "在上方输入用户名，搜索 1,400+ 平台"
+    },
+    "google": {
+      "open_in_google": "在 Google 打开",
+      "open_in_google_aria": "在新标签页打开完整的 Google 结果",
+      "about_results": "约 {total_results} 条结果",
+      "seconds": "（{seconds}s）",
+      "for_prefix": "Google 结果：",
+      "for_username": "Google 搜索 @{username} 的结果",
+      "query_prefix": "查询："
+    }
+  },
+  "search": {
+    "input": {
+      "placeholder": "输入用户名开始搜索...",
+      "aria_label": "用户名搜索输入框",
+      "error_required": "用户名不能为空",
+      "error_too_short": "用户名至少需要 {min} 个字符",
+      "error_too_long": "用户名不能超过 {max} 个字符",
+      "error_invalid_chars": "用户名只能包含字母、数字、下划线和连字符",
+      "error_invalid": "用户名格式不正确"
+    },
+    "button": {
+      "submit": "搜索",
+      "aria_label": "搜索用户名",
+      "searching": "搜索中..."
+    },
+    "hint": "在 1,400+ 平台与 Google 中搜索用户名，并获得 AI 分析"
+  },
+  "results": {
+    "header": {
+      "kicker": "搜索结果",
+      "title": "“{username}” 的结果",
+      "title_default": "搜索结果",
+      "platforms_checked": "已检查 {count} 个平台"
+    },
+    "status": {
+      "found": "已发现",
+      "not_found": "未发现",
+      "searching": "搜索中...",
+      "complete": "搜索完成",
+      "checking": "正在检查 {total} 个平台...",
+      "progress_aria": "搜索进度：{percentage}%"
+    },
+    "tabs": {
+      "platforms": "What is my Name 结果（{count}）",
+      "google": "Google 结果（{count}）"
+    },
+    "empty_google": "未找到 Google 结果",
+    "empty_platforms_title": "没有结果",
+    "empty_platforms_description": "试试调整筛选条件"
+  },
+  "filters": {
+    "title": "筛选",
+    "search_placeholder": "按平台名称筛选...",
+    "status_label": "状态",
+    "category_label": "分类",
+    "all": "全部",
+    "found": "已发现",
+    "not_found": "未发现",
+    "all_categories": "所有分类",
+    "show_nsfw": "显示 NSFW 内容",
+    "clear": "清除筛选"
+  },
+  "platform": {
+    "badge_nsfw": "NSFW",
+    "badge_found": "已发现",
+    "badge_not_found": "未发现",
+    "visit_profile": "打开 {source} 主页",
+    "icon_alt": "{source} 图标"
+  },
+  "google": {
+    "visit": "访问 {title}",
+    "icon_alt": "{domain} 图标"
+  },
+  "ai": {
+    "open_aria": "打开 AI 分析",
+    "title": "AI 分析",
+    "subtitle": "用户名研究助手",
+    "close_aria": "关闭 AI 对话框",
+    "templates_hint": "选择一个分析模板，或提出你自己的问题",
+    "assistant_label": "AI 助手",
+    "thinking": "AI 正在思考...",
+    "templates_title": "选择模板",
+    "input_placeholder": "关于这个用户名，想问什么都可以...",
+    "send_aria": "发送消息",
+    "sending": "发送中...",
+    "error_prefix": "错误：",
+    "templates": {
+      "value_assessment": {
+        "name": "价值评估",
+        "description": "评估该用户名的稀缺度与潜在价值",
+        "prompt": "请基于用户名“{username}”的搜索结果，给出一份全面的价值评估：\n\n1. 可用性：该用户名在各平台的稀缺程度如何？\n2. 品牌价值：作为品牌/项目名的潜在商业价值如何？\n3. 建议：是否值得抢注/保留？给出明确理由。\n4. 模式：在哪些类型的平台更常出现？可用与被占用是否有规律？\n\n请给出可执行的结论与建议。"
+      },
+      "pattern_analysis": {
+        "name": "模式分析",
+        "description": "从平台分布与行为线索中提取规律",
+        "prompt": "请分析用户名“{username}”的搜索结果中体现的规律：\n\n1. 平台分布：更常见于哪些类型的平台（社交、开发、游戏等）？\n2. 行为画像：从公开信息可推断出哪些使用习惯或可能身份？\n3. 跨平台一致性：更像是同一个人在多平台使用，还是多人同名？\n4. 风险信号：是否存在冒充、碰瓷或隐私关联的迹象？\n\n请基于证据给出清晰结论。"
+      },
+      "platform_suggestions": {
+        "name": "平台建议",
+        "description": "建议优先在哪些平台抢注与加固",
+        "prompt": "请基于“{username}”的搜索结果，给出平台策略建议：\n\n1. 机会：哪些重要平台该用户名仍可注册？\n2. 优先级：按个人品牌、职业形象、社交影响力进行排序。\n3. 快速收益：哪些平台应优先立即占用？\n4. 行动计划：一步步说明如何在关键平台完成加固（2FA、密码、隐私设置）。\n\n请以可操作建议为主。"
+      },
+      "security_check": {
+        "name": "安全检查",
+        "description": "识别安全与隐私风险并给出对策",
+        "prompt": "请对用户名“{username}”做一次安全与隐私分析：\n\n1. 冒充风险：是否有多人使用同名，可能造成混淆或诈骗？\n2. 品牌保护：是否存在近似用户名、拼写变体或冒充模式？\n3. 隐私风险：基于出现的平台与内容，有哪些隐私红旗？\n4. 建议：应该采取哪些安全措施（改密、2FA、注销、监测等）？\n\n请给出明确的下一步行动清单。"
+      }
+    }
+  },
+  "footer": {
+    "about_title": "关于",
+    "about_description": "一键搜索你的用户名在 1400+ 平台的存在情况。面向安全研究与数字足迹分析的强大用户名搜索工具。",
+    "features_title": "功能",
+    "features": {
+      "username_search": "用户名搜索",
+      "platform_support": "1400+ 平台支持",
+      "realtime_results": "实时结果",
+      "ai_analysis": "AI 分析"
+    },
+    "connect_title": "联系",
+    "email_aria": "邮箱",
+    "github_aria": "GitHub",
+    "copyright": "© {year} What is my Name. 版权所有。",
+    "legal_title": "法律",
+    "privacy": "隐私政策",
+    "terms": "服务条款"
+  },
+  "errors": {
+    "search_failed": "搜索失败",
+    "google_failed": "Google 搜索失败",
+    "whatsmyname_failed": "WhatsMyName 搜索失败",
+    "ai_failed": "获取 AI 回复失败",
+    "timeout": "请求超时",
+    "invalid_response": "服务器返回无效数据"
+  },
+  "seo": {
+    "home": {
+      "title": "What is my Name - 全网用户名搜索（1400+ 平台）",
+      "description": "快速查询用户名在社交媒体与网站上的出现情况"
+    }
+  },
+  "error": {
+    "title": "出错了",
+    "description": "发生意外错误。请重试，如果问题持续存在，请联系支持。",
+    "retry": "重试",
+    "error_id": "错误 ID：{id}",
+    "go_home": "返回首页"
+  },
+  "not_found": {
+    "title": "找不到页面",
+    "description": "您访问的页面不存在或已被移动。",
+    "go_home": "返回首页"
+  }
+}

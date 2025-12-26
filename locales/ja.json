@@ -1,0 +1,197 @@
+{
+  "common": {
+    "app": {
+      "name": "What is my Name"
+    },
+    "buttons": {
+      "search": "検索",
+      "clear": "クリア",
+      "cancel": "キャンセル",
+      "submit": "送信",
+      "close": "閉じる"
+    },
+    "status": {
+      "loading": "読み込み中...",
+      "searching": "検索中...",
+      "error": "エラー",
+      "success": "成功"
+    },
+    "theme": {
+      "toggle_aria": "テーマを切り替え"
+    },
+    "language": {
+      "label": "言語",
+      "en": "英語",
+      "zh": "中国語",
+      "es": "スペイン語",
+      "ja": "日本語",
+      "fr": "フランス語",
+      "ko": "韓国語"
+    }
+  },
+  "home": {
+    "hero": {
+      "kicker": "ユーザー名インテリジェンス・プラットフォーム",
+      "title_prefix": "What is my Name:",
+      "title_highlight": "あなたのデジタルフットプリント",
+      "description": "1,400+ のプラットフォームを一括検索し、ユーザー名が存在する場所を見つけます"
+    },
+    "empty": {
+      "kicker": "はじめる",
+      "title": "デジタル上の存在を確認しますか？",
+      "description": "上にユーザー名を入力して 1,400+ プラットフォームを検索"
+    },
+    "google": {
+      "open_in_google": "Google で開く",
+      "open_in_google_aria": "新しいタブで Google の全結果を開く",
+      "about_results": "約 {total_results} 件",
+      "seconds": "（{seconds}s）",
+      "for_prefix": "Google の結果：",
+      "for_username": "@{username} の Google 検索結果",
+      "query_prefix": "クエリ："
+    }
+  },
+  "search": {
+    "input": {
+      "placeholder": "ユーザー名を入力して検索...",
+      "aria_label": "ユーザー名検索入力",
+      "error_required": "ユーザー名を入力してください",
+      "error_too_short": "ユーザー名は {min} 文字以上である必要があります",
+      "error_too_long": "ユーザー名は {max} 文字以下である必要があります",
+      "error_invalid_chars": "ユーザー名は英数字、アンダースコア、ハイフンのみ使用できます",
+      "error_invalid": "ユーザー名が無効です"
+    },
+    "button": {
+      "submit": "検索",
+      "aria_label": "ユーザー名を検索",
+      "searching": "検索中..."
+    },
+    "hint": "1,400+ プラットフォームと Google を検索し、AI 分析も取得できます"
+  },
+  "results": {
+    "header": {
+      "kicker": "検索結果",
+      "title": "「{username}」の結果",
+      "title_default": "検索結果",
+      "platforms_checked": "{count} 件のプラットフォームを確認"
+    },
+    "status": {
+      "found": "見つかった",
+      "not_found": "未検出",
+      "searching": "検索中...",
+      "complete": "検索完了",
+      "checking": "{total} 件のプラットフォームを確認中...",
+      "progress_aria": "検索進捗: {percentage}%"
+    },
+    "tabs": {
+      "platforms": "What is my Name 結果（{count}）",
+      "google": "Google 結果（{count}）"
+    },
+    "empty_google": "Google の結果が見つかりません",
+    "empty_platforms_title": "結果がありません",
+    "empty_platforms_description": "フィルターを調整してください"
+  },
+  "filters": {
+    "title": "フィルター",
+    "search_placeholder": "プラットフォーム名で絞り込み...",
+    "status_label": "ステータス",
+    "category_label": "カテゴリ",
+    "all": "すべて",
+    "found": "見つかった",
+    "not_found": "未検出",
+    "all_categories": "すべてのカテゴリ",
+    "show_nsfw": "NSFW を表示",
+    "clear": "フィルターをクリア"
+  },
+  "platform": {
+    "badge_nsfw": "NSFW",
+    "badge_found": "見つかった",
+    "badge_not_found": "未検出",
+    "visit_profile": "{source} のプロフィールへ",
+    "icon_alt": "{source} アイコン"
+  },
+  "google": {
+    "visit": "{title} を開く",
+    "icon_alt": "{domain} アイコン"
+  },
+  "ai": {
+    "open_aria": "AI 分析を開く",
+    "title": "AI 分析",
+    "subtitle": "ユーザー名リサーチアシスタント",
+    "close_aria": "AI ダイアログを閉じる",
+    "templates_hint": "分析テンプレートを選ぶか、自分の質問を入力してください",
+    "assistant_label": "AI アシスタント",
+    "thinking": "AI が考えています...",
+    "templates_title": "テンプレートを選択",
+    "input_placeholder": "このユーザー名について何でも聞いてください...",
+    "send_aria": "メッセージを送信",
+    "sending": "送信中...",
+    "error_prefix": "エラー：",
+    "templates": {
+      "value_assessment": {
+        "name": "価値評価",
+        "description": "希少性と価値の見立てを行う",
+        "prompt": "ユーザー名「{username}」の検索結果に基づいて、包括的な価値評価を行ってください。\n\n1. 可用性：各プラットフォームでどれくらい希少/一般的か\n2. ブランド価値：ブランド/商用的な潜在価値\n3. 推奨：確保すべきか、その理由\n4. パターン：利用/未利用の分布に特徴はあるか\n\n根拠に基づいた結論と実行可能な提案をください。"
+      },
+      "pattern_analysis": {
+        "name": "パターン分析",
+        "description": "分布や利用傾向から洞察を得る",
+        "prompt": "ユーザー名「{username}」の検索結果からパターンを分析してください。\n\n1. 分布：どの種類のプラットフォームに多いか\n2. 行動：利用者について推測できること\n3. 横断的一致性：同一人物っぽいか、同名が多いか\n4. リスク：なりすまし/プライバシーの兆候\n\n証拠ベースで整理してください。"
+      },
+      "platform_suggestions": {
+        "name": "プラットフォーム提案",
+        "description": "確保・強化すべき先を提案する",
+        "prompt": "「{username}」の結果に基づいて、戦略的なプラットフォーム提案をしてください。\n\n1. 機会：重要なサービスでまだ取れるもの\n2. 優先度：個人ブランド/職業/拡散力で順位付け\n3. すぐやる：まず確保すべき先\n4. 行動計画：2FA、パスワード、設定のステップ\n\n実行可能な提案にフォーカスしてください。"
+      },
+      "security_check": {
+        "name": "セキュリティチェック",
+        "description": "セキュリティ/プライバシーの懸念を洗い出す",
+        "prompt": "ユーザー名「{username}」についてセキュリティとプライバシーの観点で分析してください。\n\n1. なりすまし：複数人が同名で使っている可能性\n2. 保護：typosquatting や模倣のパターン\n3. プライバシー：出現先から見える注意点\n4. 推奨：取るべきセキュリティ対策\n\n次にやることが分かる形でまとめてください。"
+      }
+    }
+  },
+  "footer": {
+    "about_title": "概要",
+    "about_description": "1,400+ のプラットフォームでユーザー名を即時検索。セキュリティ調査とデジタルフットプリント分析のための強力なツールです。",
+    "features_title": "機能",
+    "features": {
+      "username_search": "ユーザー名検索",
+      "platform_support": "1,400+ 対応",
+      "realtime_results": "リアルタイム結果",
+      "ai_analysis": "AI 分析"
+    },
+    "connect_title": "リンク",
+    "email_aria": "メール",
+    "github_aria": "GitHub",
+    "copyright": "© {year} What is my Name. All rights reserved.",
+    "legal_title": "法的情報",
+    "privacy": "プライバシーポリシー",
+    "terms": "利用規約"
+  },
+  "errors": {
+    "search_failed": "検索に失敗しました",
+    "google_failed": "Google 検索に失敗しました",
+    "whatsmyname_failed": "WhatsMyName 検索に失敗しました",
+    "ai_failed": "AI の応答を取得できませんでした",
+    "timeout": "タイムアウトしました",
+    "invalid_response": "サーバーの応答が無効です"
+  },
+  "seo": {
+    "home": {
+      "title": "What is my Name - 1,400+ プラットフォームでユーザー名を検索",
+      "description": "SNS やウェブサイト上のユーザー名をすばやく見つけます"
+    }
+  },
+  "error": {
+    "title": "問題が発生しました",
+    "description": "予期しないエラーが発生しました。もう一度お試しいただくか、問題が解決しない場合はサポートまでご連絡ください。",
+    "retry": "もう一度試す",
+    "error_id": "エラー ID: {id}",
+    "go_home": "ホームに戻る"
+  },
+  "not_found": {
+    "title": "ページが見つかりません",
+    "description": "お探しのページは存在しないか、移動されました。",
+    "go_home": "ホームに戻る"
+  }
+}

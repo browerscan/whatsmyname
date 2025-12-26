@@ -1,0 +1,197 @@
+{
+  "common": {
+    "app": {
+      "name": "What is my Name"
+    },
+    "buttons": {
+      "search": "Rechercher",
+      "clear": "Effacer",
+      "cancel": "Annuler",
+      "submit": "Valider",
+      "close": "Fermer"
+    },
+    "status": {
+      "loading": "Chargement...",
+      "searching": "Recherche...",
+      "error": "Erreur",
+      "success": "Succès"
+    },
+    "theme": {
+      "toggle_aria": "Basculer le thème"
+    },
+    "language": {
+      "label": "Langue",
+      "en": "Anglais",
+      "zh": "Chinois",
+      "es": "Espagnol",
+      "ja": "Japonais",
+      "fr": "Français",
+      "ko": "Coréen"
+    }
+  },
+  "home": {
+    "hero": {
+      "kicker": "Plateforme d’intelligence de nom d’utilisateur",
+      "title_prefix": "What is my Name:",
+      "title_highlight": "Découvrez votre empreinte numérique",
+      "description": "Recherchez instantanément sur plus de 1 400 plateformes et découvrez où votre nom d’utilisateur existe en ligne"
+    },
+    "empty": {
+      "kicker": "Commencer",
+      "title": "Prêt à découvrir votre présence numérique ?",
+      "description": "Entrez un nom d’utilisateur ci-dessus pour rechercher sur plus de 1 400 plateformes"
+    },
+    "google": {
+      "open_in_google": "Ouvrir dans Google",
+      "open_in_google_aria": "Ouvrir tous les résultats Google dans un nouvel onglet",
+      "about_results": "Environ {total_results} résultats",
+      "seconds": "({seconds}s)",
+      "for_prefix": "Résultats Google pour",
+      "for_username": "Résultats Google pour @{username}",
+      "query_prefix": "Requête :"
+    }
+  },
+  "search": {
+    "input": {
+      "placeholder": "Saisissez un nom d’utilisateur à rechercher...",
+      "aria_label": "Champ de recherche de nom d’utilisateur",
+      "error_required": "Le nom d’utilisateur ne peut pas être vide",
+      "error_too_short": "Le nom d’utilisateur doit contenir au moins {min} caractères",
+      "error_too_long": "Le nom d’utilisateur ne doit pas dépasser {max} caractères",
+      "error_invalid_chars": "Le nom d’utilisateur ne peut contenir que des lettres, des chiffres, des underscores et des tirets",
+      "error_invalid": "Nom d’utilisateur invalide"
+    },
+    "button": {
+      "submit": "Rechercher",
+      "aria_label": "Rechercher un nom d’utilisateur",
+      "searching": "Recherche..."
+    },
+    "hint": "Recherchez un nom d’utilisateur sur 1 400+ plateformes, Google, et obtenez une analyse IA"
+  },
+  "results": {
+    "header": {
+      "kicker": "Résultats de recherche",
+      "title": "Résultats pour \"{username}\"",
+      "title_default": "Résultats de recherche",
+      "platforms_checked": "{count} plateforme{plural} vérifiée{plural}"
+    },
+    "status": {
+      "found": "Trouvé",
+      "not_found": "Introuvable",
+      "searching": "Recherche...",
+      "complete": "Recherche terminée",
+      "checking": "Vérification de {total} plateformes...",
+      "progress_aria": "Progression de la recherche : {percentage}%"
+    },
+    "tabs": {
+      "platforms": "Résultats What is my Name ({count})",
+      "google": "Résultats Google ({count})"
+    },
+    "empty_google": "Aucun résultat Google",
+    "empty_platforms_title": "Aucun résultat",
+    "empty_platforms_description": "Essayez d’ajuster vos filtres"
+  },
+  "filters": {
+    "title": "Filtres",
+    "search_placeholder": "Filtrer par nom de plateforme...",
+    "status_label": "Statut",
+    "category_label": "Catégorie",
+    "all": "Tous",
+    "found": "Trouvé",
+    "not_found": "Introuvable",
+    "all_categories": "Toutes les catégories",
+    "show_nsfw": "Afficher le contenu NSFW",
+    "clear": "Réinitialiser les filtres"
+  },
+  "platform": {
+    "badge_nsfw": "NSFW",
+    "badge_found": "Trouvé",
+    "badge_not_found": "Introuvable",
+    "visit_profile": "Voir le profil {source}",
+    "icon_alt": "Icône {source}"
+  },
+  "google": {
+    "visit": "Visiter {title}",
+    "icon_alt": "Icône {domain}"
+  },
+  "ai": {
+    "open_aria": "Ouvrir l’analyse IA",
+    "title": "Analyse IA",
+    "subtitle": "Assistant de recherche de noms d’utilisateur",
+    "close_aria": "Fermer le dialogue IA",
+    "templates_hint": "Choisissez un modèle d’analyse ou posez votre propre question",
+    "assistant_label": "Assistant IA",
+    "thinking": "L’IA réfléchit...",
+    "templates_title": "Choisir un modèle",
+    "input_placeholder": "Demandez n’importe quoi sur ce nom d’utilisateur...",
+    "send_aria": "Envoyer le message",
+    "sending": "Envoi...",
+    "error_prefix": "Erreur :",
+    "templates": {
+      "value_assessment": {
+        "name": "Évaluation de valeur",
+        "description": "Évaluer la valeur et la rareté de ce nom d’utilisateur",
+        "prompt": "À partir des résultats de recherche pour le nom d’utilisateur « {username} », fournissez une évaluation complète :\n\n1. Disponibilité : à quel point est-il rare ou commun selon les plateformes ?\n2. Valeur de marque : quel potentiel (marque/commercial) ?\n3. Recommandations : faut-il le réclamer/lever la main dessus ? Pourquoi ?\n4. Motifs : des tendances entre disponible vs. occupé ?\n\nDonnez des recommandations concrètes et actionnables."
+      },
+      "pattern_analysis": {
+        "name": "Analyse de motifs",
+        "description": "Identifier des tendances et des insights d’usage",
+        "prompt": "Analysez les motifs dans les résultats pour « {username} » :\n\n1. Distribution : sur quels types de plateformes apparaît-il le plus ?\n2. Comportement : que peut-on inférer sur le(s) utilisateur(s) ?\n3. Identité multi-plateforme : plutôt une même personne ou plusieurs homonymes ?\n4. Risques : signaux de fraude, usurpation ou confidentialité.\n\nFournissez une analyse détaillée basée sur des indices."
+      },
+      "platform_suggestions": {
+        "name": "Suggestions de plateformes",
+        "description": "Recommander où sécuriser ce nom d’utilisateur",
+        "prompt": "À partir des résultats pour « {username} », proposez une stratégie :\n\n1. Opportunités : quelles plateformes importantes sont encore disponibles ?\n2. Priorité : classez-les par impact (marque personnelle, professionnel, portée sociale).\n3. Actions rapides : lesquelles réclamer en premier ?\n4. Plan : étapes pour sécuriser ce nom (2FA, mots de passe, confidentialité).\n\nConcentrez-vous sur des recommandations pratiques."
+      },
+      "security_check": {
+        "name": "Vérification de sécurité",
+        "description": "Identifier les risques de sécurité et de confidentialité",
+        "prompt": "Réalisez une analyse sécurité/confidentialité pour « {username} » :\n\n1. Usurpation : le handle est-il utilisé par plusieurs personnes ?\n2. Protection : motifs de typosquatting ou de comptes imitateurs ?\n3. Confidentialité : signaux d’alerte selon les plateformes détectées ?\n4. Recommandations : quelles mesures (2FA, changement de mot de passe, nettoyage, monitoring) ?\n\nDonnez des étapes claires à suivre."
+      }
+    }
+  },
+  "footer": {
+    "about_title": "À propos",
+    "about_description": "Découvrez instantanément votre nom d’utilisateur sur 1 400+ plateformes. Un outil puissant pour la recherche sécurité et l’analyse d’empreinte numérique.",
+    "features_title": "Fonctionnalités",
+    "features": {
+      "username_search": "Recherche de nom d’utilisateur",
+      "platform_support": "Support 1 400+ plateformes",
+      "realtime_results": "Résultats en temps réel",
+      "ai_analysis": "Analyse IA"
+    },
+    "connect_title": "Contact",
+    "email_aria": "E-mail",
+    "github_aria": "GitHub",
+    "copyright": "© {year} What is my Name. Tous droits réservés.",
+    "legal_title": "Légal",
+    "privacy": "Politique de Confidentialité",
+    "terms": "Conditions d'Utilisation"
+  },
+  "errors": {
+    "search_failed": "Échec de la recherche",
+    "google_failed": "Échec de la recherche Google",
+    "whatsmyname_failed": "Échec de la recherche WhatsMyName",
+    "ai_failed": "Impossible d’obtenir une réponse de l’IA",
+    "timeout": "Délai d’attente dépassé",
+    "invalid_response": "Réponse invalide du serveur"
+  },
+  "seo": {
+    "home": {
+      "title": "What is my Name - Rechercher un nom d’utilisateur sur 1 400+ plateformes",
+      "description": "Trouvez instantanément votre nom d’utilisateur sur les réseaux sociaux et sites web"
+    }
+  },
+  "error": {
+    "title": "Une erreur s'est produite",
+    "description": "Une erreur inattendue s'est produite. Veuillez réessayer ou contacter le support si le problème persiste.",
+    "retry": "Réessayer",
+    "error_id": "ID d’erreur : {id}",
+    "go_home": "Retour à l'accueil"
+  },
+  "not_found": {
+    "title": "Page introuvable",
+    "description": "La page que vous recherchez n'existe pas ou a été déplacée.",
+    "go_home": "Retour à l'accueil"
+  }
+}

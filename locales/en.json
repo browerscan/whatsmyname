@@ -1,0 +1,262 @@
+{
+  "common": {
+    "app": {
+      "name": "What is my Name"
+    },
+    "buttons": {
+      "search": "Search",
+      "clear": "Clear",
+      "cancel": "Cancel",
+      "submit": "Submit",
+      "close": "Close"
+    },
+    "status": {
+      "loading": "Loading...",
+      "searching": "Searching...",
+      "error": "Error",
+      "success": "Success"
+    },
+    "theme": {
+      "toggle_aria": "Toggle theme"
+    },
+    "language": {
+      "label": "Language",
+      "en": "English",
+      "zh": "中文",
+      "es": "Español",
+      "ja": "日本語",
+      "fr": "Français",
+      "ko": "한국어"
+    }
+  },
+  "home": {
+    "hero": {
+      "kicker": "Username Intelligence Platform",
+      "title_prefix": "What is my Name:",
+      "title_highlight": "Discover Your Digital Footprint",
+      "description": "Search across 1,400+ platforms instantly and uncover where your username exists online"
+    },
+    "empty": {
+      "kicker": "Get Started",
+      "title": "Ready to discover your digital presence?",
+      "description": "Enter a username above to search across 1,400+ platforms"
+    },
+    "google": {
+      "open_in_google": "Open in Google",
+      "open_in_google_aria": "Open full Google results in a new tab",
+      "about_results": "About {total_results} results",
+      "seconds": "({seconds}s)",
+      "for_prefix": "Google results for",
+      "for_username": "Google results for @{username}",
+      "query_prefix": "Query:"
+    }
+  },
+  "search": {
+    "input": {
+      "placeholder": "Enter username to search...",
+      "aria_label": "Username search input",
+      "error_required": "Username cannot be empty",
+      "error_too_short": "Username must be at least {min} characters",
+      "error_too_long": "Username must be no more than {max} characters",
+      "error_invalid_chars": "Username can only contain letters, numbers, underscores, and hyphens",
+      "error_invalid": "Invalid username"
+    },
+    "button": {
+      "submit": "Search",
+      "aria_label": "Search for username",
+      "searching": "Searching..."
+    },
+    "hint": "Search for a username across 1,400+ platforms, Google, and get AI analysis"
+  },
+  "results": {
+    "header": {
+      "kicker": "Search Results",
+      "title": "Results for \"{username}\"",
+      "title_default": "Search Results",
+      "platforms_checked": "{count} platform{plural} checked"
+    },
+    "status": {
+      "found": "Found",
+      "not_found": "Not Found",
+      "searching": "Searching...",
+      "complete": "Search complete",
+      "checking": "Checking {total} platforms...",
+      "progress_aria": "Search progress: {percentage}%"
+    },
+    "tabs": {
+      "platforms": "What is my Name Results ({count})",
+      "google": "Google Results ({count})"
+    },
+    "empty_google": "No Google results found",
+    "empty_platforms_title": "No results found",
+    "empty_platforms_description": "Try adjusting your filters"
+  },
+  "filters": {
+    "title": "Filters",
+    "search_placeholder": "Filter by platform name...",
+    "search_categories_placeholder": "Search categories...",
+    "status_label": "Status",
+    "category_label": "Category",
+    "all": "All",
+    "found": "Found",
+    "not_found": "Not Found",
+    "all_categories": "All Categories",
+    "show_nsfw": "Show NSFW content",
+    "clear": "Clear Filters",
+    "show_more": "Show {count} more",
+    "show_less": "Show less",
+    "no_categories_found": "No categories found",
+    "close_aria": "Close filters",
+    "showing_results": "Showing {count} results",
+    "apply_filters": "Apply Filters",
+    "clear_category_search": "Clear category search"
+  },
+  "platform": {
+    "badge_nsfw": "NSFW",
+    "badge_found": "Found",
+    "badge_not_found": "Not Found",
+    "visit_profile": "Visit {source} profile",
+    "icon_alt": "{source} icon"
+  },
+  "google": {
+    "visit": "Visit {title}",
+    "icon_alt": "{domain} icon"
+  },
+  "ai": {
+    "open_aria": "Open AI Analysis",
+    "title": "AI Analysis",
+    "subtitle": "Username Research Assistant",
+    "close_aria": "Close AI dialog",
+    "templates_hint": "Choose an analysis template or ask your own question",
+    "assistant_label": "AI Assistant",
+    "thinking": "AI is thinking...",
+    "templates_title": "Choose a template",
+    "input_placeholder": "Ask anything about this username...",
+    "send_aria": "Send message",
+    "sending": "Sending...",
+    "error_prefix": "Error:",
+    "templates": {
+      "value_assessment": {
+        "name": "Value Assessment",
+        "description": "Assess the value and rarity of this username",
+        "prompt": "Based on the search results for the username \"{username}\", please provide a comprehensive value assessment:\n\n1. Availability: How rare or common is this username across platforms?\n2. Brand Value: What is the potential brand/commercial value?\n3. Recommendations: Should someone try to claim this username? Why?\n4. Patterns: Any interesting patterns in where it is available vs taken?\n\nProvide actionable insights and specific recommendations."
+      },
+      "pattern_analysis": {
+        "name": "Pattern Analysis",
+        "description": "Find patterns and insights about username usage",
+        "prompt": "Analyze the patterns in the search results for \"{username}\":\n\n1. Platform distribution: Which platform types is it most common on?\n2. Behavior: What can we infer about the user(s) using this handle?\n3. Cross-platform identity: Does it look like one person across sites or multiple?\n4. Risks: Any impersonation or privacy signals?\n\nProvide detailed, evidence-based insights."
+      },
+      "platform_suggestions": {
+        "name": "Platform Suggestions",
+        "description": "Recommend where to claim or secure this username",
+        "prompt": "Based on the search results for \"{username}\", provide strategic platform recommendations:\n\n1. Opportunities: Which important platforms are still available?\n2. Priority ranking: Rank them by impact (personal brand, professional, social reach).\n3. Quick wins: Which should be claimed immediately?\n4. Action plan: Step-by-step plan to secure this username across key platforms.\n\nFocus on practical, actionable recommendations."
+      },
+      "security_check": {
+        "name": "Security Check",
+        "description": "Identify security and privacy concerns",
+        "prompt": "Perform a security and privacy analysis for username \"{username}\":\n\n1. Impersonation risk: Is this handle used by multiple different people?\n2. Brand protection: Any typosquatting or impersonation patterns?\n3. Privacy concerns: Any red flags based on where it appears?\n4. Recommendations: What security steps should be taken?\n\nGive a security-focused assessment with clear next steps."
+      }
+    }
+  },
+  "search_history": {
+    "title": "Recent Searches",
+    "recent": "Recent",
+    "toggle_aria": "Toggle search history",
+    "clear_all": "Clear All",
+    "remove_aria": "Remove {username} from history",
+    "results": "results",
+    "just_now": "Just now",
+    "minutes_ago": "{count}m ago",
+    "hours_ago": "{count}h ago",
+    "days_ago": "{count}d ago",
+    "on_date": "{date}",
+    "empty": "No recent searches"
+  },
+  "export": {
+    "aria_label": "Export results",
+    "export": "Export",
+    "results_count": "{count} result(s) found",
+    "format_csv": "Export as CSV",
+    "format_json": "Export as JSON",
+    "format_clipboard": "Copy to clipboard",
+    "copied": "Copied!"
+  },
+  "share": {
+    "share": "Share",
+    "aria_label": "Share results",
+    "title": "Search results for {username}",
+    "text_basic": "Check where @{username} is registered online",
+    "text_with_results": "Found @{username} on {count} platforms! See the full search results:",
+    "via_email": "Email",
+    "copy_link": "Copy link",
+    "copied": "Copied!",
+    "email_subject": "Username search results for {username}",
+    "email_body": "I found some interesting results for the username {username}. Check them out here: {url}",
+    "twitter": "Twitter",
+    "facebook": "Facebook",
+    "linkedin": "LinkedIn"
+  },
+  "shortcuts": {
+    "to_focus": "to focus search"
+  },
+  "footer": {
+    "about_title": "About",
+    "about_description": "Discover your username across 1400+ platforms instantly. A powerful username search tool for security research and digital footprint analysis.",
+    "features_title": "Features",
+    "features": {
+      "username_search": "Username Search",
+      "platform_support": "1400+ Platform Support",
+      "realtime_results": "Real-time Results",
+      "ai_analysis": "AI Analysis"
+    },
+    "connect_title": "Connect",
+    "legal_title": "Legal",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "email_aria": "Email",
+    "github_aria": "GitHub",
+    "copyright": "© {year} What is my Name. All rights reserved."
+  },
+  "errors": {
+    "search_failed": "Search failed",
+    "google_failed": "Google search failed",
+    "whatsmyname_failed": "WhatsMyName search failed",
+    "ai_failed": "Failed to get AI response",
+    "timeout": "Request timed out",
+    "invalid_response": "Invalid response from server"
+  },
+  "seo": {
+    "home": {
+      "title": "What is my Name - Search Username Across 1400+ Platforms",
+      "description": "Find your username across social media and websites instantly"
+    },
+    "platform": {
+      "title": "{platform} Username Search - Check Availability",
+      "description": "Search and check username availability on {platform}. Find out if your desired username is available on {platform}."
+    },
+    "category": {
+      "title": "{category} Platforms - Username Search",
+      "description": "Search and check username availability across {category} platforms. Find where your username is available."
+    },
+    "tools": {
+      "title": "Username Tools - Generator, Availability Checker & More",
+      "description": "Free username tools including availability checker, username generator, and username ideas. Check and create perfect usernames for all platforms."
+    },
+    "blog": {
+      "title": "Blog - Username Tips, Guides & Digital Identity",
+      "description": "Learn about username best practices, digital identity protection, personal branding, and online security. Expert tips and guides for managing your online presence."
+    }
+  },
+  "error": {
+    "title": "Something went wrong",
+    "description": "An unexpected error occurred. Please try again or contact support if the problem persists.",
+    "retry": "Try again",
+    "error_id": "Error ID: {id}",
+    "go_home": "Go to homepage"
+  },
+  "not_found": {
+    "title": "Page not found",
+    "description": "The page you are looking for doesn't exist or has been moved.",
+    "go_home": "Go to homepage"
+  }
+}
