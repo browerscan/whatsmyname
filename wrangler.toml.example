@@ -10,7 +10,7 @@ compatibility_flags = ["nodejs_compat"]
 # account_id = "your-account-id-here"
 
 # Main entry point for OpenNext
-main = ".open-next/index.js"
+main = ".open-next/worker.js"
 
 # Workers configuration
 [assets]
