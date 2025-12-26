@@ -6,6 +6,7 @@ import {
   configurationErrorResponse,
   upstreamApiErrorResponse,
 } from "@/lib/api-error-handler";
+import { getEnvVar } from "@/lib/cloudflare";
 
 const OPENROUTER_API_URL = "https://openrouter.ai/api/v1/chat/completions";
 
@@ -33,9 +34,9 @@ export async function POST(request: NextRequest) {
     const { messages } = validation.data;
 
     // Validate API credentials
-    const apiKey = process.env.OPENROUTER_API_KEY;
+    const apiKey = getEnvVar("OPENROUTER_API_KEY");
     const model =
-      process.env.OPENROUTER_MODEL || "deepseek/deepseek-chat-v3.1:free";
+      getEnvVar("OPENROUTER_MODEL") || "deepseek/deepseek-chat-v3.1:free";
 
     if (!apiKey) {
       return configurationErrorResponse("OpenRouter API key not configured");

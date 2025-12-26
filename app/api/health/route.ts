@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { getEnvVar } from "@/lib/cloudflare";
 
 /**
  * Health check endpoint
@@ -38,7 +39,7 @@ export async function GET() {
 }
 
 function checkWhatsmynameConfig() {
-  const apiKey = process.env.WHATSMYNAME_API_KEY;
+  const apiKey = getEnvVar("WHATSMYNAME_API_KEY");
   return {
     name: "WhatsMyName API",
     status: apiKey ? "available" : "unavailable",
@@ -47,8 +48,8 @@ function checkWhatsmynameConfig() {
 }
 
 function checkGoogleConfig() {
-  const apiKeys = process.env.GOOGLE_CUSTOM_SEARCH_API_KEYS;
-  const cx = process.env.GOOGLE_CUSTOM_SEARCH_CX;
+  const apiKeys = getEnvVar("GOOGLE_CUSTOM_SEARCH_API_KEYS");
+  const cx = getEnvVar("GOOGLE_CUSTOM_SEARCH_CX");
   const isConfigured = !!apiKeys && !!cx;
 
   return {
@@ -59,8 +60,8 @@ function checkGoogleConfig() {
 }
 
 function checkOpenrouterConfig() {
-  const apiKey = process.env.OPENROUTER_API_KEY;
-  const model = process.env.OPENROUTER_MODEL;
+  const apiKey = getEnvVar("OPENROUTER_API_KEY");
+  const model = getEnvVar("OPENROUTER_MODEL");
 
   return {
     name: "OpenRouter AI",

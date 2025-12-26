@@ -35,7 +35,7 @@ export async function GET(request: NextRequest) {
 
   const validatedUsername = validation.data.username;
 
-  // Validate API key
+  // Validate API key - use process.env (injected by OpenNext from Cloudflare env)
   const apiKey = process.env.WHATSMYNAME_API_KEY;
   if (!apiKey) {
     return configurationErrorResponse("WhatsMyName API key not configured");

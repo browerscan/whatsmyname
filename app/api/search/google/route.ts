@@ -18,6 +18,7 @@ import {
   configurationErrorResponse,
   validationErrorResponse,
 } from "@/lib/api-error-handler";
+import { getEnvVar } from "@/lib/cloudflare";
 
 const GOOGLE_SEARCH_API_URL = "https://www.googleapis.com/customsearch/v1";
 
@@ -48,13 +49,13 @@ export async function GET(request: NextRequest) {
 
   // Validate API credentials
   const configuredKeys = parseGoogleApiKeys(
-    process.env.GOOGLE_CUSTOM_SEARCH_API_KEYS,
+    getEnvVar("GOOGLE_CUSTOM_SEARCH_API_KEYS"),
   );
   const fallbackKey = parseGoogleApiKeys(
-    process.env.GOOGLE_CUSTOM_SEARCH_API_KEY,
+    getEnvVar("GOOGLE_CUSTOM_SEARCH_API_KEY"),
   );
   const apiKeys = configuredKeys.length > 0 ? configuredKeys : fallbackKey;
-  const cx = process.env.GOOGLE_CUSTOM_SEARCH_CX;
+  const cx = getEnvVar("GOOGLE_CUSTOM_SEARCH_CX");
 
   if (apiKeys.length === 0 || !cx) {
     return configurationErrorResponse(
