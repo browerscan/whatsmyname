@@ -59,7 +59,7 @@ jobs:
         run: npm run build
 
       - name: Build OpenNext for Cloudflare
-        run: npm run build:cloudflare
+        run: npx opennextjs-cloudflare build
 
       - name: Create wrangler.toml
         run: |
