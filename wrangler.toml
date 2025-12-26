@@ -7,3 +7,12 @@ main = ".open-next/worker.js"
 [assets]
 directory = ".open-next/assets"
 binding = "ASSETS"
+
+# Environment variables (set via Cloudflare dashboard or wrangler secret)
+# Run: wrangler secret put WHATSMYNAME_API_KEY
+# Run: wrangler secret put GOOGLE_CUSTOM_SEARCH_API_KEYS
+# Run: wrangler secret put GOOGLE_CUSTOM_SEARCH_CX
+# Run: wrangler secret put OPENROUTER_API_KEY
+[vars]
+NEXT_PUBLIC_BASE_URL = "https://whatsmyname-app.browserscan.workers.dev"
+OPENROUTER_MODEL = "anthropic/claude-3.5-sonnet"

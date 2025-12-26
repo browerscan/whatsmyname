@@ -27,8 +27,7 @@ jobs:
       - name: Build application
         run: npm run build:cloudflare
         env:
-          # Production environment variables
-          NEXT_PUBLIC_BASE_URL: ${{ vars.NEXT_PUBLIC_BASE_URL || 'https://whatsmyname.pages.dev' }}
+          NEXT_PUBLIC_BASE_URL: https://whatsmyname-app.browserscan.workers.dev
           WHATSMYNAME_API_KEY: ${{ secrets.WHATSMYNAME_API_KEY }}
           GOOGLE_CUSTOM_SEARCH_API_KEYS: ${{ secrets.GOOGLE_CUSTOM_SEARCH_API_KEYS }}
           GOOGLE_CUSTOM_SEARCH_CX: ${{ secrets.GOOGLE_CUSTOM_SEARCH_CX }}
@@ -40,3 +39,9 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: deploy
+        env:
+          WHATSMYNAME_API_KEY: ${{ secrets.WHATSMYNAME_API_KEY }}
+          GOOGLE_CUSTOM_SEARCH_API_KEYS: ${{ secrets.GOOGLE_CUSTOM_SEARCH_API_KEYS }}
+          GOOGLE_CUSTOM_SEARCH_CX: ${{ secrets.GOOGLE_CUSTOM_SEARCH_CX }}
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
