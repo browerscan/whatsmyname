@@ -1,0 +1,45 @@
+# Cloudflare Workers configuration
+# Copy this file to wrangler.toml and fill in your values
+# DO NOT commit wrangler.toml to git
+
+name = "whatsmyname-app"
+compatibility_date = "2024-01-01"
+compatibility_flags = ["nodejs_compat"]
+
+# Account ID - Set via CLOUDFLARE_ACCOUNT_ID environment variable instead
+# account_id = "your-account-id-here"
+
+# Main entry point for OpenNext
+main = ".open-next/index.js"
+
+# Workers configuration
+[assets]
+directory = ".open-next/assets"
+binding = "ASSETS"
+
+# Environment variables (also set in Cloudflare dashboard)
+# [vars]
+# ENVIRONMENT = "production"
+
+# Preview/Development environment
+# [env.preview]
+# name = "whatsmyname-app-preview"
+
+# Production environment
+# [env.production]
+# name = "whatsmyname-app-production"
+
+# KV Namespaces (optional, for advanced rate limiting)
+# [[kv_namespaces]]
+# binding = "RATE_LIMIT_KV"
+# id = "your-kv-namespace-id"
+
+# D1 Databases (optional)
+# [[d1_databases]]
+# binding = "DB"
+# database_name = "whatsmyname-db"
+
+# R2 Buckets (optional, for file storage)
+# [[r2_buckets]]
+# binding = "BUCKET"
+# bucket_name = "whatsmyname-bucket"

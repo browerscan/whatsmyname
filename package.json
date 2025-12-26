@@ -6,6 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "build:analyze": "ANALYZE=true next build",
+    "build:cloudflare": "npx @opennextjs/cloudflare",
+    "preview:cloudflare": "wrangler dev",
+    "deploy:cloudflare": "npm run build && npm run build:cloudflare && wrangler deploy",
     "start": "next start",
     "lint": "eslint . --max-warnings=0",
     "test": "vitest run",
@@ -45,6 +48,7 @@
   },
   "devDependencies": {
     "@next/bundle-analyzer": "16.0.10",
+    "@opennextjs/cloudflare": "1.14.7",
     "@playwright/test": "1.56.1",
     "@testing-library/dom": "^10.0.0",
     "@testing-library/jest-dom": "6.9.1",
