@@ -39,7 +39,6 @@ docs/QUICK_SETUP.md
 
 # wrangler
 .wrangler/
-wrangler.toml
 wrangler.toml.local
 .dev.vars
 
