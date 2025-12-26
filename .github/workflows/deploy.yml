@@ -39,7 +39,7 @@ jobs:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
         secrets: |
-           WHATSMYNAME_API_KEY=${{ secrets.WHATSMYNAME_API_KEY }}
-           GOOGLE_CUSTOM_SEARCH_API_KEYS=${{ secrets.GOOGLE_CUSTOM_SEARCH_API_KEYS }}
-           GOOGLE_CUSTOM_SEARCH_CX=${{ secrets.GOOGLE_CUSTOM_SEARCH_CX }}
-           OPENROUTER_API_KEY=${{ secrets.OPENROUTER_API_KEY }}
+          WHATSMYNAME_API_KEY=${{ secrets.WHATSMYNAME_API_KEY }}
+          GOOGLE_CUSTOM_SEARCH_API_KEYS=${{ secrets.GOOGLE_CUSTOM_SEARCH_API_KEYS }}
+          GOOGLE_CUSTOM_SEARCH_CX=${{ secrets.GOOGLE_CUSTOM_SEARCH_CX }}
+          OPENROUTER_API_KEY=${{ secrets.OPENROUTER_API_KEY }}

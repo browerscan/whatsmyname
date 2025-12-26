@@ -69,7 +69,7 @@ const CONFIG: ScannerConfig = {
     /^[a-z][a-zA-Z]*$/, // camelCase variables (single word)
     /^\.[a-z]/, // File extensions
     /^[a-z]{2}$/, // Locale codes (en, zh)
-    /^[Mm][0-9][0-9.,\sA-Za-z-]*[Zz]$/, // SVG path data (e.g. "M12 9v2...z")
+    /^[Mm][0-9][A-Za-z0-9.,\s\-l]*$/, // SVG path data (e.g. "M12 9v2", "M14 5l7 7m0 0l-7 7m7-7H3")
     /^\[[^\]]+\]$/, // CSS attribute selectors like "[data-foo]"
     /^(translate|scale|rotate|skew)[A-Za-z0-9]*\([^)]*\)$/, // CSS transform-like strings
     /^[!@#$%^&*()_+=\[\]{};':"\\|,.<>?/-]+$/, // Pure symbols
@@ -78,7 +78,7 @@ const CONFIG: ScannerConfig = {
     /^[A-Z][a-zA-Z]+$/, // PascalCase component names
     /^width=\$\{.+\},height=\$\{.+\}$/, // Template literals for window.open features
     /^width=,height=$/, // Partial template literals for window features
-    /^mailto:\?subject=&body=$/, // Mailto URL scheme
+    /^mailto:/, // Mailto URL scheme (mailto:email or mailto:?subject=...)
     /^[A-Za-z\s()]+$/, // Column names and labels (e.g., "Response Time (ms)")
     /^whatsmyname-/, // Export filename prefix
     /^=== [A-Z ]+ ===\\n$/, // AI prompt section headers with newline
@@ -89,6 +89,8 @@ const CONFIG: ScannerConfig = {
     /^(No search results available|Profiles not found:|more found profiles)/, // AI prompt messages
     /^=== NOT FOUND \(Sample\) ===/, // AI prompt section
     /^\.\.\. and .* more found profiles/, // AI prompt summary
+    /^\.\.\/\.\.\/content\/education\/\.ts$/, // Dynamic import paths after variable removal
+    /^placeholder:[a-z][a-z0-9/-]*$/, // Single Tailwind placeholder class (starts with "placeholder:")
   ],
 
   // Technical prefixes to ignore
