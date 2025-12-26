@@ -4,6 +4,9 @@ import createMiddleware from "next-intl/middleware";
 
 import { defaultLocale, locales } from "./i18n/request";
 
+// Enable Edge Runtime for Cloudflare Workers compatibility
+export const runtime = "edge";
+
 // Known malicious bots to block
 const BLOCKED_BOTS = [
   "AhrefsBot",
