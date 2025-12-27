@@ -48,7 +48,9 @@
       "seconds": "({seconds}s)",
       "for_prefix": "Google results for",
       "for_username": "Google results for @{username}",
-      "query_prefix": "Query:"
+      "query_prefix": "Query:",
+      "load_more": "Load More",
+      "loading_more": "Loading..."
     }
   },
   "search": {

@@ -48,7 +48,9 @@
       "seconds": "（{seconds}s）",
       "for_prefix": "Google 结果：",
       "for_username": "Google 搜索 @{username} 的结果",
-      "query_prefix": "查询："
+      "query_prefix": "查询：",
+      "load_more": "加载更多",
+      "loading_more": "加载中..."
     }
   },
   "search": {

@@ -25,6 +25,7 @@ import {
 } from "@/lib/constants";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Alert, AlertDescription } from "@/components/ui/alert";
+import { Button } from "@/components/ui/button";
 import { formatNumberString } from "@/lib/formatters";
 import { useUsernameSearch } from "@/hooks/useUsernameSearch";
 
@@ -64,9 +65,13 @@ export function HomeClient() {
     googleResults,
     googleQuery,
     googleSearchInformation,
+    googleNextStartIndex,
+    googleIsLoadingMore,
     googleError,
     error,
     progress,
+    appendGoogleResults,
+    setGoogleLoadingMore,
   } = useSearchStore(
     useShallow((state) => ({
       username: state.username,
@@ -75,9 +80,13 @@ export function HomeClient() {
       googleResults: state.googleResults,
       googleQuery: state.googleQuery,
       googleSearchInformation: state.googleSearchInformation,
+      googleNextStartIndex: state.googleNextStartIndex,
+      googleIsLoadingMore: state.googleIsLoadingMore,
       googleError: state.googleError,
       error: state.error,
       progress: state.progress,
+      appendGoogleResults: state.appendGoogleResults,
+      setGoogleLoadingMore: state.setGoogleLoadingMore,
     })),
   );
 
@@ -113,6 +122,32 @@ export function HomeClient() {
     },
     [search],
   );
+
+  // Load more Google results handler
+  const handleLoadMoreGoogle = useCallback(async () => {
+    if (!username || !googleNextStartIndex || googleIsLoadingMore) return;
+
+    setGoogleLoadingMore(true);
+    try {
+      const response = await fetch(
+        `/api/search/google?username=${encodeURIComponent(username)}&start=${googleNextStartIndex}`,
+      );
+      if (response.ok) {
+        const data = await response.json();
+        appendGoogleResults(data);
+      }
+    } catch {
+      // Silently fail, user can try again
+    } finally {
+      setGoogleLoadingMore(false);
+    }
+  }, [
+    username,
+    googleNextStartIndex,
+    googleIsLoadingMore,
+    appendGoogleResults,
+    setGoogleLoadingMore,
+  ]);
 
   // Persist filter preferences
   const handleFilterChange = useCallback((newFilters: FilterOptions) => {
@@ -324,14 +359,61 @@ export function HomeClient() {
               )}
 
               {googleResults.length > 0 ? (
-                googleResults.map((result, index) => (
-                  <GoogleResultCard
-                    key={result.link || index}
-                    result={result}
-                    index={index}
-                    username={username}
-                  />
-                ))
+                <>
+                  {googleResults.map((result, index) => (
+                    <GoogleResultCard
+                      key={result.link || index}
+                      result={result}
+                      index={index}
+                      username={username}
+                    />
+                  ))}
+                  {/* Load More Button */}
+                  {googleNextStartIndex && (
+                    <div className="flex justify-center pt-4">
+                      <Button
+                        onClick={handleLoadMoreGoogle}
+                        disabled={googleIsLoadingMore}
+                        variant="outline"
+                        className="rounded-xl px-8"
+                      >
+                        {googleIsLoadingMore ? (
+                          <>
+                            <svg
+                              className="animate-spin -ml-1 mr-2 h-4 w-4"
+                              xmlns="http://www.w3.org/2000/svg"
+                              fill="none"
+                              viewBox="0 0 24 24"
+                            >
+                              <circle
+                                className="opacity-25"
+                                cx="12"
+                                cy="12"
+                                r="10"
+                                stroke="currentColor"
+                                strokeWidth="4"
+                              />
+                              <path
+                                className="opacity-75"
+                                fill="currentColor"
+                                d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                              />
+                            </svg>
+                            {tGoogle("loading_more")}
+                          </>
+                        ) : (
+                          <>
+                            {tGoogle("load_more")}
+                            <span className="ml-2 text-muted-foreground">
+                              ({googleResults.length} /{" "}
+                              {googleSearchInformation?.totalResults || "?"})
+                            </span>
+                          </>
+                        )}
+                      </Button>
+                    </div>
+                  )}
+                </>
               ) : isSearching ? (
                 <GoogleResultsSkeleton />
               ) : (

@@ -27,6 +27,8 @@ export const useSearchStore = create<SearchState>((set) => ({
   googleResults: [],
   googleQuery: null,
   googleSearchInformation: null,
+  googleNextStartIndex: null,
+  googleIsLoadingMore: false,
   googleError: null,
   progress: initialProgress,
   error: null,
@@ -40,6 +42,8 @@ export const useSearchStore = create<SearchState>((set) => ({
       googleResults: [],
       googleQuery: null,
       googleSearchInformation: null,
+      googleNextStartIndex: null,
+      googleIsLoadingMore: false,
       googleError: null,
       progress: initialProgress,
       error: null,
@@ -62,8 +66,19 @@ export const useSearchStore = create<SearchState>((set) => ({
       googleResults: response.items || [],
       googleQuery: response.query ?? null,
       googleSearchInformation: response.searchInformation ?? null,
+      googleNextStartIndex: response.nextStartIndex ?? null,
       googleError: null,
     }),
+
+  appendGoogleResults: (response: GoogleSearchResponse) =>
+    set((state) => ({
+      googleResults: [...state.googleResults, ...(response.items || [])],
+      googleNextStartIndex: response.nextStartIndex ?? null,
+      googleIsLoadingMore: false,
+    })),
+
+  setGoogleLoadingMore: (isLoading: boolean) =>
+    set({ googleIsLoadingMore: isLoading }),
 
   setGoogleError: (error: string | null) =>
     set({
@@ -71,6 +86,8 @@ export const useSearchStore = create<SearchState>((set) => ({
       googleResults: [],
       googleQuery: null,
       googleSearchInformation: null,
+      googleNextStartIndex: null,
+      googleIsLoadingMore: false,
     }),
 
   setProgressTotal: (total: number) =>
@@ -109,6 +126,8 @@ export const useSearchStore = create<SearchState>((set) => ({
       googleResults: [],
       googleQuery: null,
       googleSearchInformation: null,
+      googleNextStartIndex: null,
+      googleIsLoadingMore: false,
       googleError: null,
       progress: initialProgress,
       error: null,

@@ -48,6 +48,8 @@ export interface GoogleSearchResponse {
     searchTime: number;
   };
   query?: string;
+  startIndex?: number;
+  nextStartIndex?: number;
 }
 
 // AI Chat Types
@@ -78,6 +80,8 @@ export interface SearchState {
   googleResults: GoogleResult[];
   googleQuery: string | null;
   googleSearchInformation: GoogleSearchResponse["searchInformation"] | null;
+  googleNextStartIndex: number | null;
+  googleIsLoadingMore: boolean;
   googleError: string | null;
   progress: SearchProgress;
   error: string | null;
@@ -89,6 +93,8 @@ export interface SearchState {
   addWhatsMyNameResult: (result: SearchResult) => void;
   addWhatsMyNameResults: (results: SearchResult[]) => void;
   setGoogleResponse: (response: GoogleSearchResponse) => void;
+  appendGoogleResults: (response: GoogleSearchResponse) => void;
+  setGoogleLoadingMore: (isLoading: boolean) => void;
   setGoogleError: (error: string | null) => void;
   setProgressTotal: (total: number) => void;
   incrementProgressCompleted: () => void;

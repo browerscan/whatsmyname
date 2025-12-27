@@ -37,6 +37,7 @@ export async function GET(request: NextRequest) {
   const searchParams = request.nextUrl.searchParams;
   const username = searchParams.get("username");
   const numParam = searchParams.get("num");
+  const startParam = searchParams.get("start");
 
   // Validate username with Zod
   const validation = safeValidateRequest(usernameSearchSchema, { username });
@@ -46,6 +47,8 @@ export async function GET(request: NextRequest) {
 
   const validatedUsername = validation.data.username;
   const num = clampGoogleNum(Number(numParam ?? "10"), 10);
+  // Google allows start from 1 to 91 (max 100 results total)
+  const start = Math.max(1, Math.min(91, Number(startParam ?? "1") || 1));
 
   // Validate API credentials
   const configuredKeys = parseGoogleApiKeys(
@@ -83,13 +86,14 @@ export async function GET(request: NextRequest) {
       url.searchParams.set("cx", cx);
       url.searchParams.set("q", searchQuery);
       url.searchParams.set("num", String(num));
+      url.searchParams.set("start", String(start));
       url.searchParams.set("safe", "active");
       url.searchParams.set(
         "fields",
         [
           "items(title,link,displayLink,snippet,formattedUrl)",
           "searchInformation(searchTime,totalResults)",
-          "queries(request(searchTerms))",
+          "queries(request(searchTerms,startIndex),nextPage(startIndex))",
         ].join(","),
       );
 
@@ -101,13 +105,22 @@ export async function GET(request: NextRequest) {
         const data = (await response.json()) as {
           items?: unknown[];
           searchInformation?: GoogleSearchResponse["searchInformation"];
-          queries?: { request?: Array<{ searchTerms?: string }> };
+          queries?: {
+            request?: Array<{ searchTerms?: string; startIndex?: number }>;
+            nextPage?: Array<{ startIndex?: number }>;
+          };
         };
 
-        const result: GoogleSearchResponse & { query?: string } = {
+        const result: GoogleSearchResponse & {
+          query?: string;
+          startIndex?: number;
+          nextStartIndex?: number;
+        } = {
           items: (data.items as GoogleSearchResponse["items"]) || [],
           searchInformation: data.searchInformation,
           query: data.queries?.request?.[0]?.searchTerms,
+          startIndex: data.queries?.request?.[0]?.startIndex,
+          nextStartIndex: data.queries?.nextPage?.[0]?.startIndex,
         };
 
         // Cache the response to reduce quota usage
