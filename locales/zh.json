@@ -41,13 +41,13 @@
       "title": "准备好发现你的数字存在了吗？",
       "description": "在上方输入用户名，搜索 1,400+ 平台"
     },
-    "google": {
+    "web": {
       "open_in_google": "在 Google 打开",
-      "open_in_google_aria": "在新标签页打开完整的 Google 结果",
+      "open_in_google_aria": "在新标签页打开完整搜索结果",
       "about_results": "约 {total_results} 条结果",
       "seconds": "（{seconds}s）",
-      "for_prefix": "Google 结果：",
-      "for_username": "Google 搜索 @{username} 的结果",
+      "for_prefix": "网页结果：",
+      "for_username": "搜索 @{username} 的网页结果",
       "query_prefix": "查询：",
       "load_more": "加载更多",
       "loading_more": "加载中..."
@@ -68,7 +68,7 @@
       "aria_label": "搜索用户名",
       "searching": "搜索中..."
     },
-    "hint": "在 1,400+ 平台与 Google 中搜索用户名，并获得 AI 分析"
+    "hint": "在 1,400+ 平台与网页中搜索用户名，并获得 AI 分析"
   },
   "results": {
     "header": {
@@ -87,9 +87,9 @@
     },
     "tabs": {
       "platforms": "What is my Name 结果（{count}）",
-      "google": "Google 结果（{count}）"
+      "web": "网页结果（{count}）"
     },
-    "empty_google": "未找到 Google 结果",
+    "empty_web": "未找到网页结果",
     "empty_platforms_title": "没有结果",
     "empty_platforms_description": "试试调整筛选条件"
   },
@@ -172,7 +172,7 @@
   },
   "errors": {
     "search_failed": "搜索失败",
-    "google_failed": "Google 搜索失败",
+    "web_failed": "网页搜索失败",
     "whatsmyname_failed": "WhatsMyName 搜索失败",
     "ai_failed": "获取 AI 回复失败",
     "timeout": "请求超时",

@@ -53,7 +53,7 @@ export function HomeClient() {
   // Translations
   const tHero = useTranslations("home.hero");
   const tEmpty = useTranslations("home.empty");
-  const tGoogle = useTranslations("home.google");
+  const tWeb = useTranslations("home.web");
   const tTabs = useTranslations("results.tabs");
   const tResults = useTranslations("results");
 
@@ -262,7 +262,7 @@ export function HomeClient() {
                 value="google"
                 className="rounded-xl data-[state=active]:bg-background data-[state=active]:shadow-lg"
               >
-                {tTabs("google", { count: googleResults.length })}
+                {tTabs("web", { count: googleResults.length })}
               </TabsTrigger>
             </TabsList>
 
@@ -296,7 +296,7 @@ export function HomeClient() {
                     {googleSearchInformation ? (
                       <>
                         <span className="font-medium text-foreground">
-                          {tGoogle("about_results", {
+                          {tWeb("about_results", {
                             total_results: formatNumberString(
                               googleSearchInformation.totalResults,
                             ),
@@ -304,7 +304,7 @@ export function HomeClient() {
                         </span>
                         <span>
                           {" "}
-                          {tGoogle("seconds", {
+                          {tWeb("seconds", {
                             seconds:
                               googleSearchInformation.searchTime.toFixed(2),
                           })}
@@ -312,7 +312,7 @@ export function HomeClient() {
                       </>
                     ) : (
                       <span>
-                        {tGoogle("for_prefix")}{" "}
+                        {tWeb("for_prefix")}{" "}
                         <span className="font-mono text-primary">
                           @{username}
                         </span>
@@ -320,7 +320,7 @@ export function HomeClient() {
                     )}
                     {googleQuery && (
                       <span className="ml-2 text-xs text-muted-foreground/80 inline-block max-w-[28rem] truncate align-bottom">
-                        {tGoogle("query_prefix")} {googleQuery}
+                        {tWeb("query_prefix")} {googleQuery}
                       </span>
                     )}
                   </div>
@@ -332,9 +332,9 @@ export function HomeClient() {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:text-accent hover:underline transition-colors"
-                    aria-label={tGoogle("open_in_google_aria")}
+                    aria-label={tWeb("open_in_google_aria")}
                   >
-                    {tGoogle("open_in_google")}
+                    {tWeb("open_in_google")}
                     <svg
                       className="w-4 h-4"
                       fill="none"
@@ -399,11 +399,11 @@ export function HomeClient() {
                                 d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
                               />
                             </svg>
-                            {tGoogle("loading_more")}
+                            {tWeb("loading_more")}
                           </>
                         ) : (
                           <>
-                            {tGoogle("load_more")}
+                            {tWeb("load_more")}
                             <span className="ml-2 text-muted-foreground">
                               ({googleResults.length} /{" "}
                               {googleSearchInformation?.totalResults || "?"})
@@ -418,7 +418,7 @@ export function HomeClient() {
                 <GoogleResultsSkeleton />
               ) : (
                 <div className="text-center py-16 text-muted-foreground">
-                  <p>{tResults("empty_google")}</p>
+                  <p>{tResults("empty_web")}</p>
                 </div>
               )}
             </TabsContent>

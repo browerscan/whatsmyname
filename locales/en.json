@@ -41,13 +41,13 @@
       "title": "Ready to discover your digital presence?",
       "description": "Enter a username above to search across 1,400+ platforms"
     },
-    "google": {
+    "web": {
       "open_in_google": "Open in Google",
-      "open_in_google_aria": "Open full Google results in a new tab",
+      "open_in_google_aria": "Open full search results in a new tab",
       "about_results": "About {total_results} results",
       "seconds": "({seconds}s)",
-      "for_prefix": "Google results for",
-      "for_username": "Google results for @{username}",
+      "for_prefix": "Web results for",
+      "for_username": "Web results for @{username}",
       "query_prefix": "Query:",
       "load_more": "Load More",
       "loading_more": "Loading..."
@@ -68,7 +68,7 @@
       "aria_label": "Search for username",
       "searching": "Searching..."
     },
-    "hint": "Search for a username across 1,400+ platforms, Google, and get AI analysis"
+    "hint": "Search for a username across 1,400+ platforms, the web, and get AI analysis"
   },
   "results": {
     "header": {
@@ -87,9 +87,9 @@
     },
     "tabs": {
       "platforms": "What is my Name Results ({count})",
-      "google": "Google Results ({count})"
+      "web": "Web Results ({count})"
     },
-    "empty_google": "No Google results found",
+    "empty_web": "No web results found",
     "empty_platforms_title": "No results found",
     "empty_platforms_description": "Try adjusting your filters"
   },
@@ -221,7 +221,7 @@
   },
   "errors": {
     "search_failed": "Search failed",
-    "google_failed": "Google search failed",
+    "web_failed": "Web search failed",
     "whatsmyname_failed": "WhatsMyName search failed",
     "ai_failed": "Failed to get AI response",
     "timeout": "Request timed out",
