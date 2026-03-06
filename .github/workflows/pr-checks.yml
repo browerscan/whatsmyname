@@ -1,0 +1,59 @@
+name: PR Checks
+
+on:
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+concurrency:
+  group: pr-checks-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    name: Test and Build
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    env:
+      NEXT_PUBLIC_BASE_URL: https://whatismyname.org
+      OPENROUTER_MODEL: test-model
+      WHATSMYNAME_API_KEY: test-whatsmyname-key
+      GOOGLE_CUSTOM_SEARCH_API_KEYS: test-google-key
+      GOOGLE_CUSTOM_SEARCH_CX: test-google-cx
+      OPENROUTER_API_KEY: test-openrouter-key
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Run tests
+        run: pnpm test
+
+      - name: Build OpenNext for Cloudflare
+        run: pnpm build:cloudflare
+
+      - name: Validation summary
+        if: always()
+        run: |
+          echo "### PR Validation" >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Status: ${{ job.status }}" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Branch: ${{ github.head_ref || github.ref_name }}" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Commit: ${{ github.sha }}" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Checks: pnpm test, pnpm build:cloudflare" >> "$GITHUB_STEP_SUMMARY"
