@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { GoogleSearchResponse } from "@/types";
 import {
+  type UsernameSearchRequest,
   usernameSearchSchema,
   safeValidateRequest,
 } from "@/lib/api-validation";
@@ -39,8 +40,11 @@ export async function GET(request: NextRequest) {
   const numParam = searchParams.get("num");
   const startParam = searchParams.get("start");
 
-  // Validate username with Zod
-  const validation = safeValidateRequest(usernameSearchSchema, { username });
+  // Validate username
+  const validation = safeValidateRequest<UsernameSearchRequest>(
+    usernameSearchSchema,
+    { username },
+  );
   if (!validation.success) {
     return NextResponse.json({ error: validation.error }, { status: 400 });
   }
@@ -131,7 +135,9 @@ export async function GET(request: NextRequest) {
             "X-Google-Key-Index": String(index),
             "X-RateLimit-Limit": rateLimitResult.limit.toString(),
             "X-RateLimit-Remaining": rateLimitResult.remaining.toString(),
-            "X-RateLimit-Reset": new Date(rateLimitResult.reset).toISOString(),
+            "X-RateLimit-Reset": new Date(
+              rateLimitResult.reset,
+            ).toISOString(),
           },
         });
       }
@@ -141,7 +147,9 @@ export async function GET(request: NextRequest) {
       try {
         errorPayload = errorText ? JSON.parse(errorText) : null;
       } catch {
-        errorPayload = { error: { message: errorText || response.statusText } };
+        errorPayload = {
+          error: { message: errorText || response.statusText },
+        };
       }
 
       const message = formatGoogleErrorMessage(response.status, errorPayload);
@@ -166,7 +174,8 @@ export async function GET(request: NextRequest) {
     return NextResponse.json(
       {
         error:
-          lastError?.message || "Google Search API error (all API keys failed)",
+          lastError?.message ||
+          "Google Search API error (all API keys failed)",
       },
       { status: lastError?.status || 502 },
     );
@@ -174,5 +183,3 @@ export async function GET(request: NextRequest) {
     return handleApiError(error, { context: "Google Search API" });
   }
 }
-
-// Enable edge runtime for better performance

@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { rateLimit, getClientIp, rateLimitResponse } from "@/lib/rate-limit";
 import {
+  type UsernameSearchRequest,
   usernameSearchSchema,
   safeValidateRequest,
 } from "@/lib/api-validation";
@@ -27,8 +28,11 @@ export async function GET(request: NextRequest) {
   const searchParams = request.nextUrl.searchParams;
   const username = searchParams.get("username");
 
-  // Validate username with Zod
-  const validation = safeValidateRequest(usernameSearchSchema, { username });
+  // Validate username
+  const validation = safeValidateRequest<UsernameSearchRequest>(
+    usernameSearchSchema,
+    { username },
+  );
   if (!validation.success) {
     return NextResponse.json({ error: validation.error }, { status: 400 });
   }
@@ -129,5 +133,3 @@ export async function GET(request: NextRequest) {
     return handleApiError(error, { context: "WhatsMyName API" });
   }
 }
-
-// Enable edge runtime for better performance

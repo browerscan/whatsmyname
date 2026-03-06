@@ -48,7 +48,7 @@
   },
   "devDependencies": {
     "@next/bundle-analyzer": "15.5.9",
-    "@opennextjs/cloudflare": "1.14.7",
+    "@opennextjs/cloudflare": "1.17.1",
     "@playwright/test": "1.56.1",
     "@testing-library/dom": "^10.0.0",
     "@testing-library/jest-dom": "6.9.1",

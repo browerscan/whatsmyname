@@ -1,6 +1,10 @@
 import { NextRequest, NextResponse } from "next/server";
 import { rateLimit, getClientIp, rateLimitResponse } from "@/lib/rate-limit";
-import { aiAnalyzeSchema, safeValidateRequest } from "@/lib/api-validation";
+import {
+  type AIAnalyzeRequest,
+  aiAnalyzeSchema,
+  safeValidateRequest,
+} from "@/lib/api-validation";
 import {
   handleApiError,
   configurationErrorResponse,
@@ -25,8 +29,11 @@ export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
 
-    // Validate request with Zod
-    const validation = safeValidateRequest(aiAnalyzeSchema, body);
+    // Validate request
+    const validation = safeValidateRequest<AIAnalyzeRequest>(
+      aiAnalyzeSchema,
+      body,
+    );
     if (!validation.success) {
       return NextResponse.json({ error: validation.error }, { status: 400 });
     }
@@ -154,5 +161,3 @@ export async function POST(request: NextRequest) {
     return handleApiError(error, { context: "AI analyze API" });
   }
 }
-
-// Enable edge runtime for better performance

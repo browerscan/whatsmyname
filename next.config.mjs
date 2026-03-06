@@ -8,6 +8,12 @@ const withBundleAnalyzer = bundleAnalyzer({
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // Memory optimization for development
+  onDemandEntries: {
+    maxInactiveAge: 15 * 1000,
+    pagesBufferLength: 3,
+  },
+
   images: {
     remotePatterns: [
       {
@@ -76,7 +82,7 @@ const nextConfig = {
             key: "Content-Security-Policy",
             value: [
               "default-src 'self'",
-              "script-src 'self' 'unsafe-eval' 'unsafe-inline'", // Next.js requires unsafe-eval and unsafe-inline
+              "script-src 'self' 'unsafe-eval' 'unsafe-inline' https://static.cloudflareinsights.com", // Next.js requires unsafe-eval and unsafe-inline
               "style-src 'self' 'unsafe-inline'", // Tailwind and styled-components need unsafe-inline
               "img-src 'self' data: https: blob:", // Added blob for data URLs
               "font-src 'self' data:",
