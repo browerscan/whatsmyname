@@ -1,0 +1,377 @@
+{
+  "common": {
+    "app": {
+      "name": "What is my Name"
+    },
+    "buttons": {
+      "search": "Поиск",
+      "clear": "Очистить",
+      "cancel": "Отмена",
+      "submit": "Отправить",
+      "close": "Закрыть"
+    },
+    "status": {
+      "loading": "Загрузка...",
+      "searching": "Поиск...",
+      "error": "Ошибка",
+      "success": "Успешно"
+    },
+    "theme": {
+      "toggle_aria": "Переключить тему"
+    },
+    "language": {
+      "label": "Язык",
+      "en": "Английский",
+      "zh": "Китайский",
+      "es": "Испанский",
+      "ja": "Японский",
+      "fr": "Французский",
+      "ko": "Корейский",
+      "de": "Немецкий",
+      "pt": "Португальский",
+      "ru": "Русский"
+    }
+  },
+  "home": {
+    "hero": {
+      "kicker": "Платформа анализа имен пользователей",
+      "title_prefix": "What is my Name:",
+      "title_highlight": "Узнай свой цифровой след",
+      "description": "Мгновенно ищите по более чем 1 400 платформам и узнавайте, где ваше имя пользователя существует в сети"
+    },
+    "empty": {
+      "kicker": "Начать",
+      "title": "Готовы узнать о своем цифровом присутствии?",
+      "description": "Введите имя пользователя выше, чтобы выполнить поиск по более чем 1 400 платформам"
+    },
+    "web": {
+      "open_in_google": "Открыть в Google",
+      "open_in_google_aria": "Открыть полные результаты поиска в новой вкладке",
+      "about_results": "Примерно {total_results} результатов",
+      "seconds": "({seconds} с)",
+      "for_prefix": "Результаты в вебе для",
+      "for_username": "Результаты в вебе для @{username}",
+      "query_prefix": "Запрос:",
+      "load_more": "Загрузить еще",
+      "loading_more": "Загрузка..."
+    }
+  },
+  "search": {
+    "input": {
+      "placeholder": "Введите имя пользователя для поиска...",
+      "aria_label": "Поле поиска имени пользователя",
+      "error_required": "Имя пользователя не может быть пустым",
+      "error_too_short": "Имя пользователя должно содержать не менее {min} символов",
+      "error_too_long": "Имя пользователя должно содержать не более {max} символов",
+      "error_invalid_chars": "Имя пользователя может содержать только буквы, цифры, подчеркивания и дефисы",
+      "error_invalid": "Недопустимое имя пользователя"
+    },
+    "button": {
+      "submit": "Поиск",
+      "aria_label": "Искать имя пользователя",
+      "searching": "Поиск..."
+    },
+    "hint": "Ищите имя пользователя на более чем 1 400 платформах, в вебе и получайте ИИ-анализ"
+  },
+  "results": {
+    "header": {
+      "kicker": "Результаты поиска",
+      "title": "Результаты для «{username}»",
+      "title_default": "Результаты поиска",
+      "platforms_checked": "Проверено платформ: {count}"
+    },
+    "status": {
+      "found": "Найдено",
+      "not_found": "Не найдено",
+      "searching": "Поиск...",
+      "complete": "Поиск завершен",
+      "checking": "Проверяются платформы: {total}...",
+      "progress_aria": "Ход поиска: {percentage}%"
+    },
+    "tabs": {
+      "platforms": "Результаты What is my Name ({count})",
+      "web": "Результаты из веба ({count})"
+    },
+    "empty_web": "Результаты в вебе не найдены",
+    "empty_platforms_title": "Ничего не найдено",
+    "empty_platforms_description": "Попробуйте изменить фильтры"
+  },
+  "filters": {
+    "title": "Фильтры",
+    "search_placeholder": "Фильтр по названию платформы...",
+    "search_categories_placeholder": "Поиск по категориям...",
+    "status_label": "Статус",
+    "category_label": "Категория",
+    "all": "Все",
+    "found": "Найдено",
+    "not_found": "Не найдено",
+    "all_categories": "Все категории",
+    "show_nsfw": "Показывать NSFW-контент",
+    "clear": "Сбросить фильтры",
+    "show_more": "Показать еще {count}",
+    "show_less": "Показать меньше",
+    "no_categories_found": "Категории не найдены",
+    "close_aria": "Закрыть фильтры",
+    "showing_results": "Показано результатов: {count}",
+    "apply_filters": "Применить фильтры",
+    "clear_category_search": "Очистить поиск по категориям"
+  },
+  "platform": {
+    "badge_nsfw": "NSFW",
+    "badge_found": "Найдено",
+    "badge_not_found": "Не найдено",
+    "visit_profile": "Открыть профиль {source}",
+    "icon_alt": "Иконка {source}"
+  },
+  "google": {
+    "visit": "Перейти на {title}",
+    "icon_alt": "Иконка {domain}"
+  },
+  "ai": {
+    "open_aria": "Открыть ИИ-анализ",
+    "title": "ИИ-анализ",
+    "subtitle": "Помощник по исследованию имен пользователей",
+    "close_aria": "Закрыть диалог ИИ",
+    "templates_hint": "Выберите шаблон анализа или задайте свой вопрос",
+    "assistant_label": "ИИ-помощник",
+    "thinking": "ИИ думает...",
+    "templates_title": "Выберите шаблон",
+    "input_placeholder": "Спросите что угодно об этом имени пользователя...",
+    "send_aria": "Отправить сообщение",
+    "sending": "Отправка...",
+    "error_prefix": "Ошибка:",
+    "templates": {
+      "value_assessment": {
+        "name": "Оценка ценности",
+        "description": "Оцените редкость и потенциальную ценность этого имени пользователя",
+        "prompt": "Based on the search results for the username \"{username}\", please provide a comprehensive value assessment:\n\n1. Availability: How rare or common is this username across platforms?\n2. Brand Value: What is the potential brand/commercial value?\n3. Recommendations: Should someone try to claim this username? Why?\n4. Patterns: Any interesting patterns in where it is available vs taken?\n\nProvide actionable insights and specific recommendations."
+      },
+      "pattern_analysis": {
+        "name": "Анализ паттернов",
+        "description": "Найдите закономерности и инсайты об использовании имени пользователя",
+        "prompt": "Analyze the patterns in the search results for \"{username}\":\n\n1. Platform distribution: Which platform types is it most common on?\n2. Behavior: What can we infer about the user(s) using this handle?\n3. Cross-platform identity: Does it look like one person across sites or multiple?\n4. Risks: Any impersonation or privacy signals?\n\nProvide detailed, evidence-based insights."
+      },
+      "platform_suggestions": {
+        "name": "Рекомендации по платформам",
+        "description": "Порекомендуйте, где занять или защитить это имя пользователя",
+        "prompt": "Based on the search results for \"{username}\", provide strategic platform recommendations:\n\n1. Opportunities: Which important platforms are still available?\n2. Priority ranking: Rank them by impact (personal brand, professional, social reach).\n3. Quick wins: Which should be claimed immediately?\n4. Action plan: Step-by-step plan to secure this username across key platforms.\n\nFocus on practical, actionable recommendations."
+      },
+      "security_check": {
+        "name": "Проверка безопасности",
+        "description": "Выявите риски безопасности и конфиденциальности",
+        "prompt": "Perform a security and privacy analysis for username \"{username}\":\n\n1. Impersonation risk: Is this handle used by multiple different people?\n2. Brand protection: Any typosquatting or impersonation patterns?\n3. Privacy concerns: Any red flags based on where it appears?\n4. Recommendations: What security steps should be taken?\n\nGive a security-focused assessment with clear next steps."
+      }
+    }
+  },
+  "search_history": {
+    "title": "Недавние поиски",
+    "recent": "Недавние",
+    "toggle_aria": "Переключить историю поиска",
+    "clear_all": "Очистить всё",
+    "remove_aria": "Удалить {username} из истории",
+    "results": "результатов",
+    "just_now": "Только что",
+    "minutes_ago": "{count} мин назад",
+    "hours_ago": "{count} ч назад",
+    "days_ago": "{count} дн назад",
+    "on_date": "{date}",
+    "empty": "Недавних поисков нет"
+  },
+  "export": {
+    "aria_label": "Экспортировать результаты",
+    "export": "Экспорт",
+    "results_count": "Найдено результатов: {count}",
+    "format_csv": "Экспорт в CSV",
+    "format_json": "Экспорт в JSON",
+    "format_clipboard": "Скопировать в буфер обмена",
+    "copied": "Скопировано!"
+  },
+  "share": {
+    "share": "Поделиться",
+    "aria_label": "Поделиться результатами",
+    "title": "Результаты поиска для {username}",
+    "text_basic": "Посмотрите, где @{username} зарегистрирован в интернете",
+    "text_with_results": "@{username} найден на {count} платформах! Посмотрите полные результаты поиска:",
+    "via_email": "Email",
+    "copy_link": "Скопировать ссылку",
+    "copied": "Скопировано!",
+    "email_subject": "Результаты поиска имени пользователя {username}",
+    "email_body": "Я нашел несколько интересных результатов для имени пользователя {username}. Посмотрите их здесь: {url}",
+    "twitter": "Twitter",
+    "facebook": "Facebook",
+    "linkedin": "LinkedIn"
+  },
+  "shortcuts": {
+    "to_focus": "чтобы перейти к поиску"
+  },
+  "footer": {
+    "about_title": "О проекте",
+    "about_description": "Мгновенно находите свое имя пользователя на более чем 1 400 платформах. Мощный инструмент для исследования безопасности и анализа цифрового следа.",
+    "features_title": "Возможности",
+    "features": {
+      "username_search": "Поиск имени пользователя",
+      "platform_support": "Поддержка 1 400+ платформ",
+      "realtime_results": "Результаты в реальном времени",
+      "ai_analysis": "ИИ-анализ"
+    },
+    "connect_title": "Контакты",
+    "legal_title": "Правовая информация",
+    "privacy": "Политика конфиденциальности",
+    "terms": "Условия использования",
+    "email_aria": "Email",
+    "github_aria": "GitHub",
+    "copyright": "© {year} What is my Name. Все права защищены."
+  },
+  "errors": {
+    "search_failed": "Не удалось выполнить поиск",
+    "web_failed": "Ошибка веб-поиска",
+    "whatsmyname_failed": "Ошибка поиска WhatsMyName",
+    "ai_failed": "Не удалось получить ответ ИИ",
+    "timeout": "Время ожидания запроса истекло",
+    "invalid_response": "Некорректный ответ сервера"
+  },
+  "seo": {
+    "home": {
+      "title": "What is my Name - Поиск имени пользователя на 1 400+ платформах",
+      "description": "Мгновенно находите свое имя пользователя в соцсетях и на сайтах"
+    },
+    "platform": {
+      "title": "Поиск имени пользователя на {platform} - Проверка доступности",
+      "description": "Ищите и проверяйте доступность имени пользователя на {platform}. Узнайте, доступно ли желаемое имя пользователя на {platform}."
+    },
+    "category": {
+      "title": "Платформы категории {category} - Поиск имени пользователя",
+      "description": "Ищите и проверяйте доступность имени пользователя на платформах категории {category}. Узнайте, где ваше имя пользователя доступно."
+    },
+    "tools": {
+      "title": "Инструменты для имен пользователей - Генератор, проверка доступности и другое",
+      "description": "Бесплатные инструменты для имен пользователей: проверка доступности, генератор и идеи. Проверяйте и создавайте идеальные имена пользователей для любых платформ."
+    },
+    "blog": {
+      "title": "Блог - Советы по именам пользователей, руководства и цифровая идентичность",
+      "description": "Узнайте о лучших практиках выбора имени пользователя, защите цифровой идентичности, личном бренде и онлайн-безопасности. Экспертные советы и руководства по управлению своим присутствием в сети."
+    },
+    "categories": {
+      "title": "Категории платформ — поиск имени пользователя по категории",
+      "description": "Просматривайте категории платформ и проверяйте доступность имени пользователя в соцсетях, играх, бизнесе, разработке и развлекательных сервисах. Узнайте, где доступно ваше имя пользователя."
+    }
+  },
+  "pages": {
+    "blog_index": {
+      "home": "Главная",
+      "breadcrumb": "Блог",
+      "collection_name": "Блог What is my Name",
+      "collection_description": "Узнайте о лучших практиках выбора имени пользователя, защите цифровой идентичности, личном бренде и онлайн-безопасности.",
+      "title": "Блог",
+      "description": "Советы, руководства и идеи о именах пользователей, цифровой идентичности и развитии онлайн-присутствия",
+      "featured": "Рекомендуем",
+      "minutes_read": "{count} мин чтения",
+      "minutes_short": "{count} мин",
+      "latest_articles": "Последние статьи",
+      "browse_by_category": "По категориям",
+      "popular_topics": "Популярные темы",
+      "newsletter_title": "Будьте в курсе",
+      "newsletter_description": "Получайте на почту свежие советы по именам пользователей, цифровой идентичности и онлайн-безопасности.",
+      "newsletter_placeholder": "Введите e-mail",
+      "newsletter_button": "Подписаться"
+    },
+    "blog_post": {
+      "not_found_title": "Статья не найдена",
+      "home": "Главная",
+      "blog": "Блог",
+      "back_to_blog": "Назад в блог",
+      "minutes_read": "{count} мин чтения",
+      "share_title": "Поделиться статьёй",
+      "copy_link": "Копировать ссылку",
+      "related_articles": "Похожие статьи",
+      "cta_button": "Начать поиск имени пользователя",
+      "cta_title": "Проверьте своё имя пользователя сейчас",
+      "cta_description": "Используйте наш бесплатный инструмент, чтобы мгновенно проверить доступность вашего имени пользователя на более чем 1 400 платформах."
+    },
+    "categories_index": {
+      "home": "Главная",
+      "breadcrumb": "Категории",
+      "collection_name": "Категории платформ",
+      "collection_description": "Просматривайте категории платформ и проверяйте доступность имени пользователя в соцсетях, играх, бизнесе, разработке и развлекательных сервисах.",
+      "title": "Категории платформ",
+      "description": "Просматривайте категории платформ и проверяйте доступность имени пользователя на более чем 1 400 платформах",
+      "platform_count": "{count, plural, one {# платформа} few {# платформы} many {# платформ} other {# платформы}}",
+      "cta_title": "Ищите более чем на 1 400 платформах",
+      "cta_description": "Пропустите категории и выполните поиск сразу по всем платформам. Введите имя пользователя и узнайте, где оно доступно.",
+      "cta_button": "Начать общий поиск",
+      "content_title": "Поиск имени пользователя по категориям платформ",
+      "reason_title": "Почему искать по категории?"
+    },
+    "category_detail": {
+      "not_found_title": "Категория не найдена",
+      "home": "Главная",
+      "categories": "Категории",
+      "cta_button": "Начать поиск имени пользователя",
+      "cta_search_now": "Искать сейчас",
+      "search_title": "Проверить имя пользователя на всех платформах {category}",
+      "search_description": "Введите имя пользователя, чтобы проверить его доступность на всех платформах {category} и ещё на 1 400+ других.",
+      "popular_platforms_title": "Популярные платформы {category}",
+      "since": "С {year}",
+      "popularity_percent": "Популярность: {popularity}%",
+      "related_searches_title": "Похожие запросы",
+      "other_categories_title": "Другие категории",
+      "about_title": "О платформах {category}",
+      "cta_title": "Мгновенный поиск по 1 400+ платформам",
+      "cta_description": "Проверьте доступность имени пользователя на всех платформах {category} и ещё на тысячах других. Бесплатно, быстро и без аккаунта."
+    },
+    "tools": {
+      "home": "Главная",
+      "breadcrumb": "Инструменты",
+      "collection_name": "Инструменты для имён пользователей",
+      "collection_description": "Бесплатные инструменты для имён пользователей: проверка доступности, генератор и идеи.",
+      "title": "Инструменты для имён пользователей",
+      "description": "Бесплатные инструменты, которые помогут найти, проверить и создать идеальное имя пользователя на всех платформах",
+      "coming_soon": "Скоро",
+      "cta_title": "Проверьте своё имя пользователя сейчас",
+      "cta_description": "Используйте наш инструмент проверки, чтобы увидеть, где ваше имя пользователя уже занято и где его ещё можно зарегистрировать. Бесплатно, мгновенно и без аккаунта.",
+      "cta_button": "Начать проверку",
+      "content_title": "Бесплатные инструменты для имён пользователей",
+      "checker_title": "Проверка доступности имени пользователя",
+      "generator_title": "Генератор имён пользователей",
+      "ideas_title": "Идеи и вдохновение для имён пользователей",
+      "features_title": "Почему стоит использовать наши инструменты?",
+      "feature_search_title": "Поиск по более чем 1 400 платформам",
+      "feature_search_description": "Проверяйте доступность имени пользователя на большем количестве платформ, чем в любом другом сервисе",
+      "feature_results_title": "Мгновенные результаты",
+      "feature_results_description": "Получайте результаты в реальном времени без ожидания и без аккаунта",
+      "feature_free_title": "100% бесплатно",
+      "feature_free_description": "Все инструменты полностью бесплатны, без скрытых платежей и премиум-тарифов"
+    },
+    "platform_detail": {
+      "not_found_title": "Платформа не найдена",
+      "home": "Главная",
+      "categories": "Категории",
+      "category_label": "Категория:",
+      "popularity_label": "Популярность:",
+      "visit_platform": "Перейти на {platform}",
+      "profile_url_pattern": "Шаблон URL профиля:",
+      "username_placeholder": "Введите имя пользователя...",
+      "search_button": "Поиск",
+      "related_searches": "Похожие запросы",
+      "similar_platforms": "Похожие платформы",
+      "cta_button": "Начать поиск",
+      "search_title": "Проверить имя пользователя на {platform}",
+      "search_description": "Введите имя пользователя, чтобы проверить, доступно ли оно на {platform}. Мы выполним поиск по базе из 1 400+ платформ и покажем, где это имя свободно, а где уже занято.",
+      "about_title": "О {platform}",
+      "cta_title": "Поиск по более чем 1 400 платформам",
+      "cta_description": "Проверьте доступность своего имени пользователя на {platform} и тысячах других платформ одним поиском. Узнайте, где оно доступно, где занято, и защитите свою цифровую идентичность."
+    }
+  },
+  "error": {
+    "title": "Что-то пошло не так",
+    "description": "Произошла непредвиденная ошибка. Повторите попытку или обратитесь в поддержку, если проблема сохраняется.",
+    "retry": "Повторить",
+    "error_id": "ID ошибки: {id}",
+    "go_home": "На главную"
+  },
+  "not_found": {
+    "title": "Страница не найдена",
+    "description": "Страница, которую вы ищете, не существует или была перемещена.",
+    "go_home": "На главную"
+  }
+}

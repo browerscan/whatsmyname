@@ -1,0 +1,377 @@
+{
+  "common": {
+    "app": {
+      "name": "What is my Name"
+    },
+    "buttons": {
+      "search": "Suchen",
+      "clear": "Löschen",
+      "cancel": "Abbrechen",
+      "submit": "Senden",
+      "close": "Schließen"
+    },
+    "status": {
+      "loading": "Wird geladen...",
+      "searching": "Suche läuft...",
+      "error": "Fehler",
+      "success": "Erfolg"
+    },
+    "theme": {
+      "toggle_aria": "Design umschalten"
+    },
+    "language": {
+      "label": "Sprache",
+      "en": "Englisch",
+      "zh": "Chinesisch",
+      "es": "Spanisch",
+      "ja": "Japanisch",
+      "fr": "Französisch",
+      "ko": "Koreanisch",
+      "de": "Deutsch",
+      "pt": "Portugiesisch",
+      "ru": "Russisch"
+    }
+  },
+  "home": {
+    "hero": {
+      "kicker": "Plattform für Username-Intelligence",
+      "title_prefix": "What is my Name:",
+      "title_highlight": "Entdecke deinen digitalen Fußabdruck",
+      "description": "Durchsuche sofort über 1.400 Plattformen und finde heraus, wo dein Benutzername online existiert"
+    },
+    "empty": {
+      "kicker": "Loslegen",
+      "title": "Bereit, deine digitale Präsenz zu entdecken?",
+      "description": "Gib oben einen Benutzernamen ein, um über 1.400 Plattformen zu durchsuchen"
+    },
+    "web": {
+      "open_in_google": "In Google öffnen",
+      "open_in_google_aria": "Vollständige Suchergebnisse in einem neuen Tab öffnen",
+      "about_results": "Ungefähr {total_results} Ergebnisse",
+      "seconds": "({seconds}s)",
+      "for_prefix": "Webergebnisse für",
+      "for_username": "Webergebnisse für @{username}",
+      "query_prefix": "Suchanfrage:",
+      "load_more": "Mehr laden",
+      "loading_more": "Wird geladen..."
+    }
+  },
+  "search": {
+    "input": {
+      "placeholder": "Benutzernamen eingeben und suchen...",
+      "aria_label": "Suchfeld für Benutzernamen",
+      "error_required": "Benutzername darf nicht leer sein",
+      "error_too_short": "Benutzername muss mindestens {min} Zeichen haben",
+      "error_too_long": "Benutzername darf höchstens {max} Zeichen haben",
+      "error_invalid_chars": "Benutzername darf nur Buchstaben, Zahlen, Unterstriche und Bindestriche enthalten",
+      "error_invalid": "Ungültiger Benutzername"
+    },
+    "button": {
+      "submit": "Suchen",
+      "aria_label": "Nach Benutzernamen suchen",
+      "searching": "Suche läuft..."
+    },
+    "hint": "Durchsuche über 1.400 Plattformen und das Web nach einem Benutzernamen und erhalte eine KI-Analyse"
+  },
+  "results": {
+    "header": {
+      "kicker": "Suchergebnisse",
+      "title": "Ergebnisse für „{username}“",
+      "title_default": "Suchergebnisse",
+      "platforms_checked": "{count} Plattform{plural} geprüft"
+    },
+    "status": {
+      "found": "Gefunden",
+      "not_found": "Nicht gefunden",
+      "searching": "Suche läuft...",
+      "complete": "Suche abgeschlossen",
+      "checking": "{total} Plattformen werden geprüft...",
+      "progress_aria": "Suchfortschritt: {percentage}%"
+    },
+    "tabs": {
+      "platforms": "What is my Name Ergebnisse ({count})",
+      "web": "Webergebnisse ({count})"
+    },
+    "empty_web": "Keine Webergebnisse gefunden",
+    "empty_platforms_title": "Keine Ergebnisse gefunden",
+    "empty_platforms_description": "Passe deine Filter an"
+  },
+  "filters": {
+    "title": "Filter",
+    "search_placeholder": "Nach Plattformnamen filtern...",
+    "search_categories_placeholder": "Kategorien durchsuchen...",
+    "status_label": "Status",
+    "category_label": "Kategorie",
+    "all": "Alle",
+    "found": "Gefunden",
+    "not_found": "Nicht gefunden",
+    "all_categories": "Alle Kategorien",
+    "show_nsfw": "NSFW-Inhalte anzeigen",
+    "clear": "Filter zurücksetzen",
+    "show_more": "Weitere {count} anzeigen",
+    "show_less": "Weniger anzeigen",
+    "no_categories_found": "Keine Kategorien gefunden",
+    "close_aria": "Filter schließen",
+    "showing_results": "{count} Ergebnisse werden angezeigt",
+    "apply_filters": "Filter anwenden",
+    "clear_category_search": "Kategoriesuche löschen"
+  },
+  "platform": {
+    "badge_nsfw": "NSFW",
+    "badge_found": "Gefunden",
+    "badge_not_found": "Nicht gefunden",
+    "visit_profile": "{source}-Profil besuchen",
+    "icon_alt": "{source}-Symbol"
+  },
+  "google": {
+    "visit": "{title} besuchen",
+    "icon_alt": "{domain}-Symbol"
+  },
+  "ai": {
+    "open_aria": "KI-Analyse öffnen",
+    "title": "KI-Analyse",
+    "subtitle": "Assistent für Benutzernamen-Recherche",
+    "close_aria": "KI-Dialog schließen",
+    "templates_hint": "Wähle eine Analysevorlage oder stelle deine eigene Frage",
+    "assistant_label": "KI-Assistent",
+    "thinking": "KI denkt...",
+    "templates_title": "Vorlage auswählen",
+    "input_placeholder": "Frage alles zu diesem Benutzernamen...",
+    "send_aria": "Nachricht senden",
+    "sending": "Wird gesendet...",
+    "error_prefix": "Fehler:",
+    "templates": {
+      "value_assessment": {
+        "name": "Wertanalyse",
+        "description": "Bewerte Seltenheit und potenziellen Wert dieses Benutzernamens",
+        "prompt": "Based on the search results for the username \"{username}\", please provide a comprehensive value assessment:\n\n1. Availability: How rare or common is this username across platforms?\n2. Brand Value: What is the potential brand/commercial value?\n3. Recommendations: Should someone try to claim this username? Why?\n4. Patterns: Any interesting patterns in where it is available vs taken?\n\nProvide actionable insights and specific recommendations."
+      },
+      "pattern_analysis": {
+        "name": "Musteranalyse",
+        "description": "Erkenne Muster und Einblicke zur Nutzung des Benutzernamens",
+        "prompt": "Analyze the patterns in the search results for \"{username}\":\n\n1. Platform distribution: Which platform types is it most common on?\n2. Behavior: What can we infer about the user(s) using this handle?\n3. Cross-platform identity: Does it look like one person across sites or multiple?\n4. Risks: Any impersonation or privacy signals?\n\nProvide detailed, evidence-based insights."
+      },
+      "platform_suggestions": {
+        "name": "Plattform-Empfehlungen",
+        "description": "Empfiehl, wo dieser Benutzername beansprucht oder gesichert werden sollte",
+        "prompt": "Based on the search results for \"{username}\", provide strategic platform recommendations:\n\n1. Opportunities: Which important platforms are still available?\n2. Priority ranking: Rank them by impact (personal brand, professional, social reach).\n3. Quick wins: Which should be claimed immediately?\n4. Action plan: Step-by-step plan to secure this username across key platforms.\n\nFocus on practical, actionable recommendations."
+      },
+      "security_check": {
+        "name": "Sicherheitscheck",
+        "description": "Identifiziere Sicherheits- und Datenschutzrisiken",
+        "prompt": "Perform a security and privacy analysis for username \"{username}\":\n\n1. Impersonation risk: Is this handle used by multiple different people?\n2. Brand protection: Any typosquatting or impersonation patterns?\n3. Privacy concerns: Any red flags based on where it appears?\n4. Recommendations: What security steps should be taken?\n\nGive a security-focused assessment with clear next steps."
+      }
+    }
+  },
+  "search_history": {
+    "title": "Letzte Suchen",
+    "recent": "Neu",
+    "toggle_aria": "Suchverlauf umschalten",
+    "clear_all": "Alle löschen",
+    "remove_aria": "{username} aus dem Verlauf entfernen",
+    "results": "Ergebnisse",
+    "just_now": "Gerade eben",
+    "minutes_ago": "vor {count} Min.",
+    "hours_ago": "vor {count} Std.",
+    "days_ago": "vor {count} T.",
+    "on_date": "{date}",
+    "empty": "Keine letzten Suchen"
+  },
+  "export": {
+    "aria_label": "Ergebnisse exportieren",
+    "export": "Exportieren",
+    "results_count": "{count} Ergebnis(se) gefunden",
+    "format_csv": "Als CSV exportieren",
+    "format_json": "Als JSON exportieren",
+    "format_clipboard": "In die Zwischenablage kopieren",
+    "copied": "Kopiert!"
+  },
+  "share": {
+    "share": "Teilen",
+    "aria_label": "Ergebnisse teilen",
+    "title": "Suchergebnisse für {username}",
+    "text_basic": "Sieh nach, wo @{username} online registriert ist",
+    "text_with_results": "@{username} wurde auf {count} Plattformen gefunden! Sieh dir die vollständigen Suchergebnisse an:",
+    "via_email": "E-Mail",
+    "copy_link": "Link kopieren",
+    "copied": "Kopiert!",
+    "email_subject": "Suchergebnisse für den Benutzernamen {username}",
+    "email_body": "Ich habe einige interessante Ergebnisse für den Benutzernamen {username} gefunden. Schau sie dir hier an: {url}",
+    "twitter": "Twitter",
+    "facebook": "Facebook",
+    "linkedin": "LinkedIn"
+  },
+  "shortcuts": {
+    "to_focus": "zum Fokussieren der Suche"
+  },
+  "footer": {
+    "about_title": "Über",
+    "about_description": "Entdecke deinen Benutzernamen sofort auf über 1.400 Plattformen. Ein leistungsstarkes Tool für Sicherheitsforschung und die Analyse deines digitalen Fußabdrucks.",
+    "features_title": "Funktionen",
+    "features": {
+      "username_search": "Benutzernamensuche",
+      "platform_support": "Unterstützung für 1.400+ Plattformen",
+      "realtime_results": "Echtzeit-Ergebnisse",
+      "ai_analysis": "KI-Analyse"
+    },
+    "connect_title": "Kontakt",
+    "legal_title": "Rechtliches",
+    "privacy": "Datenschutzrichtlinie",
+    "terms": "Nutzungsbedingungen",
+    "email_aria": "E-Mail",
+    "github_aria": "GitHub",
+    "copyright": "© {year} What is my Name. Alle Rechte vorbehalten."
+  },
+  "errors": {
+    "search_failed": "Suche fehlgeschlagen",
+    "web_failed": "Websuche fehlgeschlagen",
+    "whatsmyname_failed": "WhatsMyName-Suche fehlgeschlagen",
+    "ai_failed": "KI-Antwort konnte nicht abgerufen werden",
+    "timeout": "Zeitüberschreitung bei der Anfrage",
+    "invalid_response": "Ungültige Serverantwort"
+  },
+  "seo": {
+    "home": {
+      "title": "What is my Name - Benutzernamen auf über 1.400 Plattformen suchen",
+      "description": "Finde deinen Benutzernamen sofort auf Social Media und Websites"
+    },
+    "platform": {
+      "title": "{platform} Benutzernamensuche - Verfügbarkeit prüfen",
+      "description": "Suche nach Benutzernamen auf {platform} und prüfe die Verfügbarkeit. Finde heraus, ob dein gewünschter Benutzername auf {platform} verfügbar ist."
+    },
+    "category": {
+      "title": "{category}-Plattformen - Benutzernamensuche",
+      "description": "Suche und prüfe die Verfügbarkeit von Benutzernamen auf {category}-Plattformen. Finde heraus, wo dein Benutzername verfügbar ist."
+    },
+    "tools": {
+      "title": "Benutzernamen-Tools - Generator, Verfügbarkeitsprüfung und mehr",
+      "description": "Kostenlose Benutzernamen-Tools wie Verfügbarkeitsprüfung, Benutzernamengenerator und Ideen. Prüfe und erstelle perfekte Benutzernamen für alle Plattformen."
+    },
+    "blog": {
+      "title": "Blog - Tipps, Anleitungen und digitale Identität rund um Benutzernamen",
+      "description": "Lerne Best Practices für Benutzernamen, Schutz der digitalen Identität, Personal Branding und Online-Sicherheit. Expertentipps und Anleitungen für deine Online-Präsenz."
+    },
+    "categories": {
+      "title": "Plattformkategorien – Benutzernamensuche nach Kategorie",
+      "description": "Durchsuche Plattformkategorien und prüfe die Verfügbarkeit von Benutzernamen auf Social Media, Gaming-, Business-, Coding- und Unterhaltungsplattformen. Finde heraus, wo dein Benutzername verfügbar ist."
+    }
+  },
+  "pages": {
+    "blog_index": {
+      "home": "Startseite",
+      "breadcrumb": "Blog",
+      "collection_name": "What is my Name Blog",
+      "collection_description": "Lerne Best Practices für Benutzernamen, Schutz der digitalen Identität, Personal Branding und Online-Sicherheit.",
+      "title": "Blog",
+      "description": "Tipps, Leitfäden und Einblicke zu Benutzernamen, digitaler Identität und deiner Online-Präsenz",
+      "featured": "Empfohlen",
+      "minutes_read": "{count} Min. Lesezeit",
+      "minutes_short": "{count} Min.",
+      "latest_articles": "Neueste Artikel",
+      "browse_by_category": "Nach Kategorie durchsuchen",
+      "popular_topics": "Beliebte Themen",
+      "newsletter_title": "Auf dem Laufenden bleiben",
+      "newsletter_description": "Erhalte die neuesten Tipps zu Benutzernamen, digitaler Identität und Online-Sicherheit per E-Mail.",
+      "newsletter_placeholder": "E-Mail eingeben",
+      "newsletter_button": "Abonnieren"
+    },
+    "blog_post": {
+      "not_found_title": "Beitrag nicht gefunden",
+      "home": "Startseite",
+      "blog": "Blog",
+      "back_to_blog": "Zurück zum Blog",
+      "minutes_read": "{count} Min. Lesezeit",
+      "share_title": "Diesen Artikel teilen",
+      "copy_link": "Link kopieren",
+      "related_articles": "Ähnliche Artikel",
+      "cta_button": "Benutzernamensuche starten",
+      "cta_title": "Prüfe deinen Benutzernamen jetzt",
+      "cta_description": "Nutze unser kostenloses Tool, um die Verfügbarkeit deines Benutzernamens auf über 1.400 Plattformen sofort zu prüfen."
+    },
+    "categories_index": {
+      "home": "Startseite",
+      "breadcrumb": "Kategorien",
+      "collection_name": "Plattformkategorien",
+      "collection_description": "Durchsuche Plattformkategorien und prüfe die Verfügbarkeit von Benutzernamen auf Social Media, Gaming-, Business-, Coding- und Unterhaltungsplattformen.",
+      "title": "Plattformkategorien",
+      "description": "Durchsuche Plattformkategorien und prüfe die Verfügbarkeit von Benutzernamen auf über 1.400 Plattformen",
+      "platform_count": "{count, plural, one {# Plattform} other {# Plattformen}}",
+      "cta_title": "Suche auf über 1.400 Plattformen",
+      "cta_description": "Überspringe die Kategorien und suche überall gleichzeitig. Gib deinen Benutzernamen ein und finde heraus, wo er verfügbar ist.",
+      "cta_button": "Universelle Suche starten",
+      "content_title": "Benutzernamen nach Plattformkategorie suchen",
+      "reason_title": "Warum nach Kategorie suchen?"
+    },
+    "category_detail": {
+      "not_found_title": "Kategorie nicht gefunden",
+      "home": "Startseite",
+      "categories": "Kategorien",
+      "cta_button": "Benutzernamensuche starten",
+      "cta_search_now": "Jetzt suchen",
+      "search_title": "Benutzernamen auf allen {category}-Plattformen prüfen",
+      "search_description": "Gib einen Benutzernamen ein, um die Verfügbarkeit auf allen {category}-Plattformen und 1.400 weiteren zu prüfen.",
+      "popular_platforms_title": "Beliebte {category}-Plattformen",
+      "since": "Seit {year}",
+      "popularity_percent": "Beliebtheit: {popularity}%",
+      "related_searches_title": "Ähnliche Suchanfragen",
+      "other_categories_title": "Weitere Kategorien",
+      "about_title": "Über {category}-Plattformen",
+      "cta_title": "Sofort auf über 1.400 Plattformen suchen",
+      "cta_description": "Prüfe die Verfügbarkeit deines Benutzernamens auf allen {category}-Plattformen und Tausenden weiteren. Kostenlos, schnell und ohne Konto."
+    },
+    "tools": {
+      "home": "Startseite",
+      "breadcrumb": "Tools",
+      "collection_name": "Benutzernamen-Tools",
+      "collection_description": "Kostenlose Tools für Benutzernamen, darunter Verfügbarkeitsprüfung, Generator und Ideen.",
+      "title": "Benutzernamen-Tools",
+      "description": "Kostenlose Tools, die dir helfen, den perfekten Benutzernamen auf allen Plattformen zu finden, zu prüfen und zu erstellen",
+      "coming_soon": "Demnächst",
+      "cta_title": "Prüfe deinen Benutzernamen jetzt",
+      "cta_description": "Mit unserem Verfügbarkeits-Checker siehst du, wo dein Benutzername bereits vergeben ist und wo du ihn noch sichern kannst. Kostenlos, sofort und ohne Konto.",
+      "cta_button": "Prüfung starten",
+      "content_title": "Kostenlose Benutzernamen-Tools",
+      "checker_title": "Benutzernamen-Verfügbarkeitsprüfung",
+      "generator_title": "Benutzernamen-Generator",
+      "ideas_title": "Benutzernamen-Ideen & Inspiration",
+      "features_title": "Warum unsere Benutzernamen-Tools nutzen?",
+      "feature_search_title": "Über 1.400 Plattformen durchsuchen",
+      "feature_search_description": "Prüfe die Verfügbarkeit auf mehr Plattformen als bei jedem anderen Dienst",
+      "feature_results_title": "Sofortige Ergebnisse",
+      "feature_results_description": "Echtzeit-Prüfungen ohne Wartezeit oder Konto",
+      "feature_free_title": "100 % kostenlos",
+      "feature_free_description": "Alle Tools sind komplett kostenlos – ohne versteckte Kosten oder Premium-Stufen"
+    },
+    "platform_detail": {
+      "not_found_title": "Plattform nicht gefunden",
+      "home": "Startseite",
+      "categories": "Kategorien",
+      "category_label": "Kategorie:",
+      "popularity_label": "Beliebtheit:",
+      "visit_platform": "{platform} besuchen",
+      "profile_url_pattern": "Profil-URL-Muster:",
+      "username_placeholder": "Benutzernamen eingeben...",
+      "search_button": "Suchen",
+      "related_searches": "Ähnliche Suchanfragen",
+      "similar_platforms": "Ähnliche Plattformen",
+      "cta_button": "Jetzt suchen",
+      "search_title": "Benutzernamen auf {platform} prüfen",
+      "search_description": "Gib einen Benutzernamen ein, um zu prüfen, ob er auf {platform} verfügbar ist. Wir durchsuchen unsere Datenbank mit über 1.400 Plattformen und zeigen dir, wo der Name frei oder bereits vergeben ist.",
+      "about_title": "Über {platform}",
+      "cta_title": "Auf über 1.400 Plattformen suchen",
+      "cta_description": "Prüfe die Verfügbarkeit deines Benutzernamens auf {platform} und Tausenden weiteren Plattformen in nur einer Suche. Sieh, wo er frei ist, wo er vergeben ist, und sichere deine digitale Identität."
+    }
+  },
+  "error": {
+    "title": "Etwas ist schiefgelaufen",
+    "description": "Ein unerwarteter Fehler ist aufgetreten. Bitte versuche es erneut oder kontaktiere den Support, wenn das Problem weiterhin besteht.",
+    "retry": "Erneut versuchen",
+    "error_id": "Fehler-ID: {id}",
+    "go_home": "Zur Startseite"
+  },
+  "not_found": {
+    "title": "Seite nicht gefunden",
+    "description": "Die gesuchte Seite existiert nicht oder wurde verschoben.",
+    "go_home": "Zur Startseite"
+  }
+}

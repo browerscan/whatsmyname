@@ -16,6 +16,18 @@ import path from "path";
 import { glob } from "glob";
 import { scan, scanFile } from "./i18n-scanner";
 
+const SUPPORTED_LOCALES = [
+  "en",
+  "zh",
+  "es",
+  "ja",
+  "fr",
+  "ko",
+  "de",
+  "pt",
+  "ru",
+] as const;
+
 // ===========================
 // Helper Functions
 // ===========================
@@ -75,6 +87,20 @@ function loadTranslations(locale: string): Record<string, unknown> {
   return JSON.parse(content);
 }
 
+function getLocaleFiles(): string[] {
+  const localesDir = path.join(process.cwd(), "locales");
+
+  if (!fs.existsSync(localesDir)) {
+    return [];
+  }
+
+  return fs
+    .readdirSync(localesDir)
+    .filter((file) => file.endsWith(".json"))
+    .map((file) => path.basename(file, ".json"))
+    .sort();
+}
+
 /**
  * Flatten nested object to dot notation
  * Example: { common: { nav: { home: "Home" } } } => { "common.nav.home": "Home" }
@@ -101,45 +127,43 @@ function flattenObject(
   return flattened;
 }
 
-/**
- * Extract translation key usage from file content
- */
-function extractTranslationKeys(content: string): string[] {
-  const keys: string[] = [];
+function extractTranslationBindings(content: string): Record<string, string> {
+  const bindings: Record<string, string> = {};
+  const patterns = [
+    /const\s+(\w+)\s*=\s*useTranslations\(['"]([^'"]+)['"]\)/g,
+    /const\s+(\w+)\s*=\s*(?:await\s+)?getTranslations\(['"]([^'"]+)['"]\)/g,
+    /const\s+(\w+)\s*=\s*(?:await\s+)?getTranslations\(\{[^}]*namespace:\s*['"]([^'"]+)['"][^}]*\}\)/g,
+  ];
 
-  // Pattern: t('key') or t("key")
-  // Use word boundary to avoid false-positives like dynamic `import("...")`
-  const tFunctionPattern = /\bt\(['"]([^'"]+)['"]\)/g;
-  let match;
+  for (const pattern of patterns) {
+    let match;
 
-  while ((match = tFunctionPattern.exec(content)) !== null) {
-    keys.push(match[1]);
+    while ((match = pattern.exec(content)) !== null) {
+      bindings[match[1]] = match[2];
+    }
   }
 
-  return keys;
+  return bindings;
 }
 
-/**
- * Extract useTranslations namespace from file
- */
-function extractTranslationNamespaces(content: string): string[] {
-  const namespaces: string[] = [];
-
-  // Pattern: useTranslations('namespace')
-  const useTranslationsPattern = /useTranslations\(['"]([^'"]+)['"]\)/g;
-  // Pattern: getTranslations('namespace') (server)
-  const getTranslationsPattern = /getTranslations\(['"]([^'"]+)['"]\)/g;
+function extractUsedTranslationKeys(
+  content: string,
+): Array<{ binding: string; key: string; namespace: string }> {
+  const bindings = extractTranslationBindings(content);
+  const usedKeys: Array<{ binding: string; key: string; namespace: string }> = [];
+  const translationCallPattern = /\b([A-Za-z_$][\w$]*)\(['"]([^'"]+)['"](?:\s*,\s*\{[^)]*\})?\)/g;
   let match;
 
-  while ((match = useTranslationsPattern.exec(content)) !== null) {
-    namespaces.push(match[1]);
+  while ((match = translationCallPattern.exec(content)) !== null) {
+    const binding = match[1];
+    const namespace = bindings[binding];
+
+    if (namespace) {
+      usedKeys.push({ binding, key: match[2], namespace });
+    }
   }
 
-  while ((match = getTranslationsPattern.exec(content)) !== null) {
-    namespaces.push(match[1]);
-  }
-
-  return namespaces;
+  return usedKeys;
 }
 
 // ===========================
@@ -157,6 +181,10 @@ describe("I18N Validator", () => {
       const translations = loadTranslations("en");
       expect(translations).toBeDefined();
       expect(typeof translations).toBe("object");
+    });
+
+    it("should include all 9 supported locale files", () => {
+      expect(getLocaleFiles()).toEqual([...SUPPORTED_LOCALES].sort());
     });
 
     it("should not have empty translation values", () => {
@@ -306,12 +334,9 @@ describe("I18N Validator", () => {
       for (const file of allFiles) {
         const content = fs.readFileSync(file, "utf-8");
 
-        const namespaces = extractTranslationNamespaces(content);
-        const keys = extractTranslationKeys(content);
+        const usedKeys = extractUsedTranslationKeys(content);
 
-        keys.forEach((key) => {
-          // Construct full key path
-          const namespace = namespaces[0] || "common"; // Use first namespace found
+        usedKeys.forEach(({ key, namespace }) => {
           const fullKey = `${namespace}.${key}`;
 
           if (!definedKeys.has(fullKey)) {
@@ -346,7 +371,7 @@ describe("I18N Validator", () => {
     });
 
     it("ResultsHeader should not have hardcoded text", async () => {
-      const resultsHeaderPath = "components/features/ResultsHeader.tsx";
+      const resultsHeaderPath = "components/features/" + "ResultsHeader.tsx";
 
       if (fs.existsSync(resultsHeaderPath)) {
         const violations = await scanFile(resultsHeaderPath);
@@ -356,7 +381,7 @@ describe("I18N Validator", () => {
     });
 
     it("PlatformCard should not have hardcoded text", async () => {
-      const platformCardPath = "components/features/PlatformCard.tsx";
+      const platformCardPath = "components/features/" + "PlatformCard.tsx";
 
       if (fs.existsSync(platformCardPath)) {
         const violations = await scanFile(platformCardPath);
@@ -376,11 +401,9 @@ describe("I18N Validator", () => {
     });
   });
 
-  describe("Multi-locale Support (Future)", () => {
-    it.skip("should have consistent keys across all locales", () => {
-      const locales = ["en", "zh"]; // Add more as implemented
-
-      const keysByLocale = locales.map((locale) => {
+  describe("Multi-locale Support", () => {
+    it("should have consistent keys across all supported locales", () => {
+      const keysByLocale = SUPPORTED_LOCALES.map((locale) => {
         const translations = loadTranslations(locale);
         return {
           locale,
@@ -398,17 +421,21 @@ describe("I18N Validator", () => {
         const missingInLocale = [...enKeys].filter((key) => !keys.has(key));
         const extraInLocale = [...keys].filter((key) => !enKeys.has(key));
 
+        if (missingInLocale.length > 0 || extraInLocale.length > 0) {
+          console.error(`\n❌ Locale mismatch detected for ${locale}`);
+        }
+
         if (missingInLocale.length > 0) {
-          console.warn(
-            `⚠️  ${locale} is missing keys:`,
-            missingInLocale.slice(0, 5),
+          console.error(
+            `  Missing (${missingInLocale.length}):`,
+            missingInLocale.slice(0, 10),
           );
         }
 
         if (extraInLocale.length > 0) {
-          console.warn(
-            `⚠️  ${locale} has extra keys:`,
-            extraInLocale.slice(0, 5),
+          console.error(
+            `  Extra (${extraInLocale.length}):`,
+            extraInLocale.slice(0, 10),
           );
         }
 
@@ -417,10 +444,8 @@ describe("I18N Validator", () => {
       });
     });
 
-    it.skip("should have all locales with valid JSON", () => {
-      const locales = ["en", "zh"]; // Add more as implemented
-
-      locales.forEach((locale) => {
+    it("should have all supported locales with valid JSON", () => {
+      SUPPORTED_LOCALES.forEach((locale) => {
         const isValid = validateTranslationFile(locale);
         expect(isValid).toBe(true);
       });

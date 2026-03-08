@@ -1,6 +1,11 @@
-import { test, expect } from "@playwright/test";
+import { test, expect, type Page } from "@playwright/test";
 
 const BASE_URL = process.env.BASE_URL || "http://localhost:3000";
+const SMOKE_TEST_LOCALES = ["es", "de"] as const;
+
+async function expectLocalizedSearchPage(page: Page) {
+  await expect(page.getByRole("textbox").first()).toBeVisible();
+}
 
 /**
  * E2E Tests for Internationalization (i18n)
@@ -50,24 +55,33 @@ test.describe("Internationalization", () => {
     await expect(searchInput.first()).toBeVisible();
   });
 
+  for (const locale of SMOKE_TEST_LOCALES) {
+    test(`should load ${locale} locale via URL smoke test`, async ({ page }) => {
+      await page.goto(`${BASE_URL}/${locale}`);
+
+      await expectLocalizedSearchPage(page);
+      await expect(page).toHaveURL(new RegExp(`/${locale}(?:$|[/?#])`));
+      await expect(page.locator("html")).toHaveAttribute("lang", locale);
+    });
+  }
+
   test("should maintain language preference across navigation", async ({
     page,
   }) => {
-    // Start with Spanish
-    await page.goto(`${BASE_URL}/es`);
+    // Start with a non-default supported locale
+    await page.goto(`${BASE_URL}/de`);
 
     // Navigate to different page or reload
     await page.reload();
 
     // Language should be maintained
     const url = page.url();
-    expect(url).toContain("/es");
+    expect(url).toContain("/de");
   });
 
   test("should translate validation errors", async ({ page }) => {
     await page.goto(BASE_URL);
 
-    const searchInput = page.getByRole("textbox", { name: /username/i });
     const searchButton = page.getByRole("button", { name: /search/i });
 
     // Trigger validation error

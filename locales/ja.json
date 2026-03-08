@@ -26,7 +26,10 @@
       "es": "スペイン語",
       "ja": "日本語",
       "fr": "フランス語",
-      "ko": "韓国語"
+      "ko": "韓国語",
+      "de": "ドイツ語",
+      "pt": "ポルトガル語",
+      "ru": "ロシア語"
     }
   },
   "home": {
@@ -41,14 +44,16 @@
       "title": "デジタル上の存在を確認しますか？",
       "description": "上にユーザー名を入力して 1,400+ プラットフォームを検索"
     },
-    "google": {
+    "web": {
       "open_in_google": "Google で開く",
-      "open_in_google_aria": "新しいタブで Google の全結果を開く",
+      "open_in_google_aria": "完全な検索結果を新しいタブで開く",
       "about_results": "約 {total_results} 件",
       "seconds": "（{seconds}s）",
-      "for_prefix": "Google の結果：",
-      "for_username": "@{username} の Google 検索結果",
-      "query_prefix": "クエリ："
+      "for_prefix": "ウェブ検索結果：",
+      "for_username": "@{username} のウェブ検索結果",
+      "query_prefix": "クエリ：",
+      "load_more": "もっと読み込む",
+      "loading_more": "読み込み中..."
     }
   },
   "search": {
@@ -66,7 +71,7 @@
       "aria_label": "ユーザー名を検索",
       "searching": "検索中..."
     },
-    "hint": "1,400+ プラットフォームと Google を検索し、AI 分析も取得できます"
+    "hint": "1,400+ プラットフォームとウェブを検索し、AI 分析も取得できます"
   },
   "results": {
     "header": {
@@ -85,15 +90,16 @@
     },
     "tabs": {
       "platforms": "What is my Name 結果（{count}）",
-      "google": "Google 結果（{count}）"
+      "web": "ウェブ結果（{count}）"
     },
-    "empty_google": "Google の結果が見つかりません",
+    "empty_web": "ウェブ結果が見つかりません",
     "empty_platforms_title": "結果がありません",
     "empty_platforms_description": "フィルターを調整してください"
   },
   "filters": {
     "title": "フィルター",
     "search_placeholder": "プラットフォーム名で絞り込み...",
+    "search_categories_placeholder": "カテゴリを検索...",
     "status_label": "ステータス",
     "category_label": "カテゴリ",
     "all": "すべて",
@@ -101,7 +107,14 @@
     "not_found": "未検出",
     "all_categories": "すべてのカテゴリ",
     "show_nsfw": "NSFW を表示",
-    "clear": "フィルターをクリア"
+    "clear": "フィルターをクリア",
+    "show_more": "{count} 件をさらに表示",
+    "show_less": "表示を減らす",
+    "no_categories_found": "カテゴリが見つかりません",
+    "close_aria": "フィルターを閉じる",
+    "showing_results": "{count} 件を表示中",
+    "apply_filters": "フィルターを適用",
+    "clear_category_search": "カテゴリ検索をクリア"
   },
   "platform": {
     "badge_nsfw": "NSFW",
@@ -150,6 +163,47 @@
       }
     }
   },
+  "search_history": {
+    "title": "最近の検索",
+    "recent": "最近",
+    "toggle_aria": "検索履歴を切り替え",
+    "clear_all": "すべてクリア",
+    "remove_aria": "{username} を履歴から削除",
+    "results": "件",
+    "just_now": "たった今",
+    "minutes_ago": "{count}分前",
+    "hours_ago": "{count}時間前",
+    "days_ago": "{count}日前",
+    "on_date": "{date}",
+    "empty": "最近の検索はありません"
+  },
+  "export": {
+    "aria_label": "結果をエクスポート",
+    "export": "エクスポート",
+    "results_count": "{count} 件の結果",
+    "format_csv": "CSV としてエクスポート",
+    "format_json": "JSON としてエクスポート",
+    "format_clipboard": "クリップボードにコピー",
+    "copied": "コピーしました！"
+  },
+  "share": {
+    "share": "共有",
+    "aria_label": "結果を共有",
+    "title": "{username} の検索結果",
+    "text_basic": "@{username} がオンラインのどこで登録されているか確認",
+    "text_with_results": "@{username} が {count} 件のプラットフォームで見つかりました！完全な検索結果はこちら：",
+    "via_email": "メール",
+    "copy_link": "リンクをコピー",
+    "copied": "コピーしました！",
+    "email_subject": "ユーザー名 {username} の検索結果",
+    "email_body": "ユーザー名 {username} について興味深い結果が見つかりました。こちらで確認できます: {url}",
+    "twitter": "Twitter",
+    "facebook": "Facebook",
+    "linkedin": "LinkedIn"
+  },
+  "shortcuts": {
+    "to_focus": "で検索にフォーカス"
+  },
   "footer": {
     "about_title": "概要",
     "about_description": "1,400+ のプラットフォームでユーザー名を即時検索。セキュリティ調査とデジタルフットプリント分析のための強力なツールです。",
@@ -161,16 +215,16 @@
       "ai_analysis": "AI 分析"
     },
     "connect_title": "リンク",
-    "email_aria": "メール",
-    "github_aria": "GitHub",
-    "copyright": "© {year} What is my Name. All rights reserved.",
     "legal_title": "法的情報",
     "privacy": "プライバシーポリシー",
-    "terms": "利用規約"
+    "terms": "利用規約",
+    "email_aria": "メール",
+    "github_aria": "GitHub",
+    "copyright": "© {year} What is my Name. All rights reserved."
   },
   "errors": {
     "search_failed": "検索に失敗しました",
-    "google_failed": "Google 検索に失敗しました",
+    "web_failed": "ウェブ検索に失敗しました",
     "whatsmyname_failed": "WhatsMyName 検索に失敗しました",
     "ai_failed": "AI の応答を取得できませんでした",
     "timeout": "タイムアウトしました",
@@ -180,6 +234,132 @@
     "home": {
       "title": "What is my Name - 1,400+ プラットフォームでユーザー名を検索",
       "description": "SNS やウェブサイト上のユーザー名をすばやく見つけます"
+    },
+    "platform": {
+      "title": "{platform} ユーザー名検索 - 利用可否を確認",
+      "description": "{platform} でユーザー名を検索し、利用可否を確認します。希望するユーザー名が {platform} で使えるか確かめましょう。"
+    },
+    "category": {
+      "title": "{category} プラットフォーム - ユーザー名検索",
+      "description": "{category} プラットフォームでユーザー名の利用可否を検索・確認します。どこで利用できるかを見つけましょう。"
+    },
+    "tools": {
+      "title": "ユーザー名ツール - ジェネレーター、利用可否チェッカーなど",
+      "description": "利用可否チェッカー、ユーザー名ジェネレーター、アイデア集などの無料ツール。あらゆるプラットフォーム向けに最適なユーザー名を確認・作成できます。"
+    },
+    "blog": {
+      "title": "ブログ - ユーザー名のコツ、ガイド、デジタルアイデンティティ",
+      "description": "ユーザー名のベストプラクティス、デジタルアイデンティティ保護、パーソナルブランディング、オンラインセキュリティについて学べます。オンラインでの存在感を管理するための専門的なヒントとガイドです。"
+    },
+    "categories": {
+      "title": "プラットフォームカテゴリ - カテゴリ別ユーザー名検索",
+      "description": "プラットフォームのカテゴリを閲覧し、SNS、ゲーム、ビジネス、開発、エンタメ分野でユーザー名の利用可否を確認できます。あなたのユーザー名が使える場所を見つけましょう。"
+    }
+  },
+  "pages": {
+    "blog_index": {
+      "home": "ホーム",
+      "breadcrumb": "ブログ",
+      "collection_name": "What is my Name ブログ",
+      "collection_description": "ユーザー名のベストプラクティス、デジタルアイデンティティ保護、パーソナルブランディング、オンラインセキュリティを学べます。",
+      "title": "ブログ",
+      "description": "ユーザー名、デジタルアイデンティティ、オンラインでの存在感づくりに関するヒント・ガイド・知見",
+      "featured": "注目",
+      "minutes_read": "{count}分で読めます",
+      "minutes_short": "{count}分",
+      "latest_articles": "最新記事",
+      "browse_by_category": "カテゴリ別に見る",
+      "popular_topics": "人気トピック",
+      "newsletter_title": "最新情報を受け取る",
+      "newsletter_description": "ユーザー名、デジタルアイデンティティ、オンラインセキュリティに関する最新情報をメールで受け取りましょう。",
+      "newsletter_placeholder": "メールアドレスを入力",
+      "newsletter_button": "登録する"
+    },
+    "blog_post": {
+      "not_found_title": "記事が見つかりません",
+      "home": "ホーム",
+      "blog": "ブログ",
+      "back_to_blog": "ブログに戻る",
+      "minutes_read": "{count}分で読めます",
+      "share_title": "この記事を共有",
+      "copy_link": "リンクをコピー",
+      "related_articles": "関連記事",
+      "cta_button": "ユーザー名検索を始める",
+      "cta_title": "今すぐユーザー名を確認",
+      "cta_description": "無料ツールを使って、1,400以上のプラットフォームでのユーザー名の利用可否を今すぐ確認しましょう。"
+    },
+    "categories_index": {
+      "home": "ホーム",
+      "breadcrumb": "カテゴリ",
+      "collection_name": "プラットフォームカテゴリ",
+      "collection_description": "プラットフォームのカテゴリを閲覧し、SNS、ゲーム、ビジネス、開発、エンタメ分野でユーザー名の利用可否を確認できます。",
+      "title": "プラットフォームカテゴリ",
+      "description": "1,400以上のプラットフォームでユーザー名の利用可否をカテゴリ別に確認できます",
+      "platform_count": "{count, plural, other {# 件のプラットフォーム}}",
+      "cta_title": "1,400以上のプラットフォームをまとめて検索",
+      "cta_description": "カテゴリをまたいで一度に検索できます。ユーザー名を入力して、どこで利用できるか確認しましょう。",
+      "cta_button": "一括検索を開始",
+      "content_title": "プラットフォームカテゴリ別にユーザー名を検索",
+      "reason_title": "カテゴリ別に検索する理由"
+    },
+    "category_detail": {
+      "not_found_title": "カテゴリが見つかりません",
+      "home": "ホーム",
+      "categories": "カテゴリ",
+      "cta_button": "ユーザー名検索を始める",
+      "cta_search_now": "今すぐ検索",
+      "search_title": "{category} の全プラットフォームでユーザー名を確認",
+      "search_description": "ユーザー名を入力すると、すべての {category} プラットフォームとさらに1,400以上で利用可否を確認できます。",
+      "popular_platforms_title": "人気の{category}プラットフォーム",
+      "since": "{year}年から",
+      "popularity_percent": "人気度: {popularity}%",
+      "related_searches_title": "関連検索",
+      "other_categories_title": "その他のカテゴリ",
+      "about_title": "{category} プラットフォームについて",
+      "cta_title": "1,400以上のプラットフォームをすぐに検索",
+      "cta_description": "すべての {category} プラットフォームとさらに数千のサイトでユーザー名の利用可否を確認できます。無料・高速・登録不要です。"
+    },
+    "tools": {
+      "home": "ホーム",
+      "breadcrumb": "ツール",
+      "collection_name": "ユーザー名ツール",
+      "collection_description": "空き状況チェッカー、ユーザー名ジェネレーター、アイデア集などの無料ツール。",
+      "title": "ユーザー名ツール",
+      "description": "すべてのプラットフォームで理想のユーザー名を見つけ、確認し、作成するための無料ツール",
+      "coming_soon": "近日公開",
+      "cta_title": "今すぐユーザー名を確認",
+      "cta_description": "空き状況チェッカーで、そのユーザー名がどこで使われているか、まだ取得できるかを確認できます。無料・即時・登録不要です。",
+      "cta_button": "確認を始める",
+      "content_title": "無料のユーザー名ツール",
+      "checker_title": "ユーザー名利用可否チェッカー",
+      "generator_title": "ユーザー名ジェネレーター",
+      "ideas_title": "ユーザー名のアイデアとヒント",
+      "features_title": "当社のユーザー名ツールを使う理由",
+      "feature_search_title": "1,400以上のプラットフォームを検索",
+      "feature_search_description": "他のどのサービスよりも多くのプラットフォームで利用可否を確認できます",
+      "feature_results_title": "即時結果",
+      "feature_results_description": "待ち時間やアカウント登録なしでリアルタイム結果を取得",
+      "feature_free_title": "100%無料",
+      "feature_free_description": "すべてのツールが完全無料で、隠れた費用や有料プランはありません"
+    },
+    "platform_detail": {
+      "not_found_title": "プラットフォームが見つかりません",
+      "home": "ホーム",
+      "categories": "カテゴリ",
+      "category_label": "カテゴリ:",
+      "popularity_label": "人気度:",
+      "visit_platform": "{platform} にアクセス",
+      "profile_url_pattern": "プロフィールURLパターン:",
+      "username_placeholder": "ユーザー名を入力...",
+      "search_button": "検索",
+      "related_searches": "関連検索",
+      "similar_platforms": "類似プラットフォーム",
+      "cta_button": "今すぐ検索",
+      "search_title": "{platform} でユーザー名を確認",
+      "search_description": "ユーザー名を入力して、{platform} で利用可能かどうか確認します。1,400以上のプラットフォームのデータベースを検索し、どこで利用可能か、どこで既に使われているかを表示します。",
+      "about_title": "{platform} について",
+      "cta_title": "1,400以上のプラットフォームを検索",
+      "cta_description": "1回の検索で、{platform} と数千の他プラットフォームでユーザー名の利用可否を確認できます。どこで使えるか、どこで既に使われているかを知り、デジタルアイデンティティを守りましょう。"
     }
   },
   "error": {

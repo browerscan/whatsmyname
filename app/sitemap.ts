@@ -1,22 +1,22 @@
 import { MetadataRoute } from "next";
+import { getLocaleAlternates, getLocalizedUrl, locales } from "@/i18n/request";
 import { getAllPlatformSlugs, getAllCategories } from "@/lib/platforms-data";
 import { getAllBlogSlugs } from "@/lib/blog-data";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl =
     process.env.NEXT_PUBLIC_BASE_URL || "https://whatismyname.org";
-  const locales = ["en", "zh", "es", "ja", "fr", "ko"];
 
   const currentDate = new Date();
 
   // Generate sitemap entries for all locales
   const localePages: MetadataRoute.Sitemap = locales.map((locale) => ({
-    url: `${baseUrl}/${locale}`,
+    url: getLocalizedUrl(baseUrl, locale),
     lastModified: currentDate,
     changeFrequency: "weekly",
     priority: locale === "en" ? 1.0 : 0.8,
     alternates: {
-      languages: Object.fromEntries(locales.map((l) => [l, `${baseUrl}/${l}`])),
+      languages: getLocaleAlternates(baseUrl),
     },
   }));
 
@@ -26,26 +26,22 @@ export default function sitemap(): MetadataRoute.Sitemap {
     return [
       // Categories index
       {
-        url: `${baseUrl}/${locale}/categories`,
+        url: getLocalizedUrl(baseUrl, locale, "/categories"),
         lastModified: currentDate,
         changeFrequency: "weekly" as const,
         priority: 0.8,
         alternates: {
-          languages: Object.fromEntries(
-            locales.map((l) => [l, `${baseUrl}/${l}/categories`]),
-          ),
+          languages: getLocaleAlternates(baseUrl, "/categories"),
         },
       },
       // Individual category pages
       ...categories.map((category) => ({
-        url: `${baseUrl}/${locale}/categories/${category}`,
+        url: getLocalizedUrl(baseUrl, locale, `/categories/${category}`),
         lastModified: currentDate,
         changeFrequency: "weekly" as const,
         priority: 0.7,
         alternates: {
-          languages: Object.fromEntries(
-            locales.map((l) => [l, `${baseUrl}/${l}/categories/${category}`]),
-          ),
+          languages: getLocaleAlternates(baseUrl, `/categories/${category}`),
         },
       })),
     ];
@@ -55,28 +51,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const platformPages: MetadataRoute.Sitemap = locales.flatMap((locale) => {
     const platforms = getAllPlatformSlugs();
     return platforms.map((slug) => ({
-      url: `${baseUrl}/${locale}/platforms/${slug}`,
+      url: getLocalizedUrl(baseUrl, locale, `/platforms/${slug}`),
       lastModified: currentDate,
       changeFrequency: "monthly" as const,
       priority: 0.6,
       alternates: {
-        languages: Object.fromEntries(
-          locales.map((l) => [l, `${baseUrl}/${l}/platforms/${slug}`]),
-        ),
+        languages: getLocaleAlternates(baseUrl, `/platforms/${slug}`),
       },
     }));
   });
 
   // Add tools pages for all locales
   const toolsPages: MetadataRoute.Sitemap = locales.map((locale) => ({
-    url: `${baseUrl}/${locale}/tools`,
+    url: getLocalizedUrl(baseUrl, locale, "/tools"),
     lastModified: currentDate,
     changeFrequency: "weekly" as const,
     priority: 0.7,
     alternates: {
-      languages: Object.fromEntries(
-        locales.map((l) => [l, `${baseUrl}/${l}/tools`]),
-      ),
+      languages: getLocaleAlternates(baseUrl, "/tools"),
     },
   }));
 
@@ -86,26 +78,22 @@ export default function sitemap(): MetadataRoute.Sitemap {
     return [
       // Blog index
       {
-        url: `${baseUrl}/${locale}/blog`,
+        url: getLocalizedUrl(baseUrl, locale, "/blog"),
         lastModified: currentDate,
         changeFrequency: "daily" as const,
         priority: 0.8,
         alternates: {
-          languages: Object.fromEntries(
-            locales.map((l) => [l, `${baseUrl}/${l}/blog`]),
-          ),
+          languages: getLocaleAlternates(baseUrl, "/blog"),
         },
       },
       // Individual blog posts
       ...blogSlugs.map((slug) => ({
-        url: `${baseUrl}/${locale}/blog/${slug}`,
+        url: getLocalizedUrl(baseUrl, locale, `/blog/${slug}`),
         lastModified: currentDate,
         changeFrequency: "monthly" as const,
         priority: 0.6,
         alternates: {
-          languages: Object.fromEntries(
-            locales.map((l) => [l, `${baseUrl}/${l}/blog/${slug}`]),
-          ),
+          languages: getLocaleAlternates(baseUrl, `/blog/${slug}`),
         },
       })),
     ];
@@ -114,13 +102,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Add privacy and terms pages for all locales
   const legalPages: MetadataRoute.Sitemap = locales.flatMap((locale) => [
     {
-      url: `${baseUrl}/${locale}/privacy`,
+      url: getLocalizedUrl(baseUrl, locale, "/privacy"),
       lastModified: currentDate,
       changeFrequency: "monthly" as const,
       priority: 0.5,
     },
     {
-      url: `${baseUrl}/${locale}/terms`,
+      url: getLocalizedUrl(baseUrl, locale, "/terms"),
       lastModified: currentDate,
       changeFrequency: "monthly" as const,
       priority: 0.5,
@@ -135,9 +123,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly" as const,
       priority: 1.0,
       alternates: {
-        languages: Object.fromEntries(
-          locales.map((l) => [l, `${baseUrl}/${l}`]),
-        ),
+        languages: getLocaleAlternates(baseUrl),
       },
     },
   ];

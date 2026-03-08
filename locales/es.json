@@ -26,7 +26,10 @@
       "es": "Español",
       "ja": "Japonés",
       "fr": "Francés",
-      "ko": "Coreano"
+      "ko": "Coreano",
+      "de": "Alemán",
+      "pt": "Portugués",
+      "ru": "Ruso"
     }
   },
   "home": {
@@ -41,14 +44,16 @@
       "title": "¿Listo para descubrir tu presencia digital?",
       "description": "Ingresa un nombre de usuario arriba para buscar en más de 1.400 plataformas"
     },
-    "google": {
+    "web": {
       "open_in_google": "Abrir en Google",
-      "open_in_google_aria": "Abrir resultados completos de Google en una pestaña nueva",
+      "open_in_google_aria": "Abrir los resultados completos de búsqueda en una pestaña nueva",
       "about_results": "Aproximadamente {total_results} resultados",
       "seconds": "({seconds}s)",
-      "for_prefix": "Resultados de Google para",
-      "for_username": "Resultados de Google para @{username}",
-      "query_prefix": "Consulta:"
+      "for_prefix": "Resultados web para",
+      "for_username": "Resultados web para @{username}",
+      "query_prefix": "Consulta:",
+      "load_more": "Cargar más",
+      "loading_more": "Cargando..."
     }
   },
   "search": {
@@ -66,7 +71,7 @@
       "aria_label": "Buscar nombre de usuario",
       "searching": "Buscando..."
     },
-    "hint": "Busca un nombre de usuario en más de 1.400 plataformas, Google y obtén análisis con IA"
+    "hint": "Busca un nombre de usuario en más de 1.400 plataformas, en la web y obtén análisis con IA"
   },
   "results": {
     "header": {
@@ -85,15 +90,16 @@
     },
     "tabs": {
       "platforms": "Resultados What is my Name ({count})",
-      "google": "Resultados de Google ({count})"
+      "web": "Resultados web ({count})"
     },
-    "empty_google": "No se encontraron resultados de Google",
+    "empty_web": "No se encontraron resultados web",
     "empty_platforms_title": "No hay resultados",
     "empty_platforms_description": "Prueba ajustando tus filtros"
   },
   "filters": {
     "title": "Filtros",
     "search_placeholder": "Filtrar por nombre de plataforma...",
+    "search_categories_placeholder": "Buscar categorías...",
     "status_label": "Estado",
     "category_label": "Categoría",
     "all": "Todos",
@@ -101,7 +107,14 @@
     "not_found": "No encontrado",
     "all_categories": "Todas las categorías",
     "show_nsfw": "Mostrar contenido NSFW",
-    "clear": "Borrar filtros"
+    "clear": "Borrar filtros",
+    "show_more": "Mostrar {count} más",
+    "show_less": "Mostrar menos",
+    "no_categories_found": "No se encontraron categorías",
+    "close_aria": "Cerrar filtros",
+    "showing_results": "Mostrando {count} resultados",
+    "apply_filters": "Aplicar filtros",
+    "clear_category_search": "Borrar búsqueda de categorías"
   },
   "platform": {
     "badge_nsfw": "NSFW",
@@ -150,6 +163,47 @@
       }
     }
   },
+  "search_history": {
+    "title": "Búsquedas recientes",
+    "recent": "Reciente",
+    "toggle_aria": "Mostrar u ocultar el historial de búsqueda",
+    "clear_all": "Borrar todo",
+    "remove_aria": "Eliminar {username} del historial",
+    "results": "resultados",
+    "just_now": "Ahora mismo",
+    "minutes_ago": "hace {count} min",
+    "hours_ago": "hace {count} h",
+    "days_ago": "hace {count} d",
+    "on_date": "{date}",
+    "empty": "No hay búsquedas recientes"
+  },
+  "export": {
+    "aria_label": "Exportar resultados",
+    "export": "Exportar",
+    "results_count": "{count} resultado(s) encontrado(s)",
+    "format_csv": "Exportar como CSV",
+    "format_json": "Exportar como JSON",
+    "format_clipboard": "Copiar al portapapeles",
+    "copied": "¡Copiado!"
+  },
+  "share": {
+    "share": "Compartir",
+    "aria_label": "Compartir resultados",
+    "title": "Resultados de búsqueda para {username}",
+    "text_basic": "Mira dónde @{username} está registrado en línea",
+    "text_with_results": "¡Se encontró @{username} en {count} plataformas! Mira los resultados completos:",
+    "via_email": "Correo",
+    "copy_link": "Copiar enlace",
+    "copied": "¡Copiado!",
+    "email_subject": "Resultados de búsqueda del nombre de usuario {username}",
+    "email_body": "Encontré algunos resultados interesantes para el nombre de usuario {username}. Revísalos aquí: {url}",
+    "twitter": "Twitter",
+    "facebook": "Facebook",
+    "linkedin": "LinkedIn"
+  },
+  "shortcuts": {
+    "to_focus": "para enfocar la búsqueda"
+  },
   "footer": {
     "about_title": "Acerca de",
     "about_description": "Descubre tu nombre de usuario en más de 1400 plataformas al instante. Una potente herramienta para investigación de seguridad y análisis de huella digital.",
@@ -161,16 +215,16 @@
       "ai_analysis": "Análisis con IA"
     },
     "connect_title": "Conectar",
-    "email_aria": "Correo",
-    "github_aria": "GitHub",
-    "copyright": "© {year} What is my Name. Todos los derechos reservados.",
     "legal_title": "Legal",
     "privacy": "Política de Privacidad",
-    "terms": "Términos de Servicio"
+    "terms": "Términos de Servicio",
+    "email_aria": "Correo",
+    "github_aria": "GitHub",
+    "copyright": "© {year} What is my Name. Todos los derechos reservados."
   },
   "errors": {
     "search_failed": "La búsqueda falló",
-    "google_failed": "La búsqueda de Google falló",
+    "web_failed": "La búsqueda web falló",
     "whatsmyname_failed": "La búsqueda de WhatsMyName falló",
     "ai_failed": "No se pudo obtener la respuesta de la IA",
     "timeout": "La solicitud agotó el tiempo",
@@ -180,6 +234,132 @@
     "home": {
       "title": "What is my Name - Busca un nombre de usuario en 1400+ plataformas",
       "description": "Encuentra tu nombre de usuario en redes sociales y sitios web al instante"
+    },
+    "platform": {
+      "title": "Búsqueda de nombre de usuario en {platform} - Verifica disponibilidad",
+      "description": "Busca y comprueba la disponibilidad del nombre de usuario en {platform}. Descubre si tu nombre de usuario deseado está disponible en {platform}."
+    },
+    "category": {
+      "title": "Plataformas de {category} - Búsqueda de nombre de usuario",
+      "description": "Busca y comprueba la disponibilidad del nombre de usuario en plataformas de {category}. Descubre dónde está disponible tu nombre de usuario."
+    },
+    "tools": {
+      "title": "Herramientas de nombres de usuario - Generador, verificador de disponibilidad y más",
+      "description": "Herramientas gratuitas de nombres de usuario, incluyendo verificador de disponibilidad, generador y ideas de nombres. Encuentra y crea el nombre perfecto para todas las plataformas."
+    },
+    "blog": {
+      "title": "Blog - Consejos, guías e identidad digital sobre nombres de usuario",
+      "description": "Aprende buenas prácticas para nombres de usuario, protección de identidad digital, marca personal y seguridad en línea. Consejos y guías expertas para gestionar tu presencia en internet."
+    },
+    "categories": {
+      "title": "Categorías de plataformas - Búsqueda de nombre de usuario por categoría",
+      "description": "Explora categorías de plataformas y comprueba la disponibilidad de nombres de usuario en redes sociales, juegos, negocios, programación y entretenimiento. Descubre dónde está disponible tu nombre de usuario."
+    }
+  },
+  "pages": {
+    "blog_index": {
+      "home": "Inicio",
+      "breadcrumb": "Blog",
+      "collection_name": "Blog de What is my Name",
+      "collection_description": "Aprende sobre buenas prácticas de nombres de usuario, protección de identidad digital, marca personal y seguridad en línea.",
+      "title": "Blog",
+      "description": "Consejos, guías e ideas sobre nombres de usuario, identidad digital y cómo construir tu presencia en línea",
+      "featured": "Destacado",
+      "minutes_read": "{count} min de lectura",
+      "minutes_short": "{count} min",
+      "latest_articles": "Últimos artículos",
+      "browse_by_category": "Explorar por categoría",
+      "popular_topics": "Temas populares",
+      "newsletter_title": "Mantente al día",
+      "newsletter_description": "Recibe en tu correo los últimos consejos sobre nombres de usuario, identidad digital y seguridad en línea.",
+      "newsletter_placeholder": "Introduce tu correo",
+      "newsletter_button": "Suscribirse"
+    },
+    "blog_post": {
+      "not_found_title": "Artículo no encontrado",
+      "home": "Inicio",
+      "blog": "Blog",
+      "back_to_blog": "Volver al blog",
+      "minutes_read": "{count} min de lectura",
+      "share_title": "Comparte este artículo",
+      "copy_link": "Copiar enlace",
+      "related_articles": "Artículos relacionados",
+      "cta_button": "Empezar búsqueda de nombre de usuario",
+      "cta_title": "Comprueba tu nombre de usuario ahora",
+      "cta_description": "Usa nuestra herramienta gratuita para comprobar al instante la disponibilidad de tu nombre de usuario en más de 1.400 plataformas."
+    },
+    "categories_index": {
+      "home": "Inicio",
+      "breadcrumb": "Categorías",
+      "collection_name": "Categorías de plataformas",
+      "collection_description": "Explora categorías de plataformas y comprueba la disponibilidad de nombres de usuario en redes sociales, juegos, negocios, programación y entretenimiento.",
+      "title": "Categorías de plataformas",
+      "description": "Explora categorías de plataformas y comprueba la disponibilidad de nombres de usuario en más de 1.400 plataformas",
+      "platform_count": "{count, plural, one {# plataforma} other {# plataformas}}",
+      "cta_title": "Busca en más de 1.400 plataformas",
+      "cta_description": "Omite las categorías y busca en todas las plataformas a la vez. Introduce tu nombre de usuario y descubre dónde está disponible.",
+      "cta_button": "Iniciar búsqueda universal",
+      "content_title": "Buscar nombre de usuario por categoría de plataforma",
+      "reason_title": "¿Por qué buscar por categoría?"
+    },
+    "category_detail": {
+      "not_found_title": "Categoría no encontrada",
+      "home": "Inicio",
+      "categories": "Categorías",
+      "cta_button": "Empezar búsqueda de nombre de usuario",
+      "cta_search_now": "Buscar ahora",
+      "search_title": "Comprueba nombres de usuario en todas las plataformas de {category}",
+      "search_description": "Introduce un nombre de usuario para comprobar su disponibilidad en todas las plataformas de {category} y en 1.400 más.",
+      "popular_platforms_title": "Plataformas populares de {category}",
+      "since": "Desde {year}",
+      "popularity_percent": "Popularidad: {popularity}%",
+      "related_searches_title": "Búsquedas relacionadas",
+      "other_categories_title": "Otras categorías",
+      "about_title": "Sobre las plataformas de {category}",
+      "cta_title": "Busca al instante en más de 1.400 plataformas",
+      "cta_description": "Comprueba la disponibilidad de nombres de usuario en todas las plataformas de {category} y miles más. Gratis, rápido y sin cuenta."
+    },
+    "tools": {
+      "home": "Inicio",
+      "breadcrumb": "Herramientas",
+      "collection_name": "Herramientas de nombres de usuario",
+      "collection_description": "Herramientas gratuitas de nombres de usuario, incluido comprobador de disponibilidad, generador y ideas.",
+      "title": "Herramientas de nombres de usuario",
+      "description": "Herramientas gratuitas para ayudarte a encontrar, comprobar y crear el nombre de usuario perfecto en todas las plataformas",
+      "coming_soon": "Próximamente",
+      "cta_title": "Comprueba tu nombre de usuario ahora",
+      "cta_description": "Usa nuestro comprobador de disponibilidad para ver dónde tu nombre de usuario está ocupado y dónde aún puedes reclamarlo. Gratis, instantáneo y sin cuenta.",
+      "cta_button": "Empezar a comprobar",
+      "content_title": "Herramientas gratuitas de nombres de usuario",
+      "checker_title": "Comprobador de disponibilidad de nombres de usuario",
+      "generator_title": "Generador de nombres de usuario",
+      "ideas_title": "Ideas e inspiración para nombres de usuario",
+      "features_title": "¿Por qué usar nuestras herramientas?",
+      "feature_search_title": "Busca en más de 1.400 plataformas",
+      "feature_search_description": "Comprueba la disponibilidad en más plataformas que cualquier otro servicio",
+      "feature_results_title": "Resultados instantáneos",
+      "feature_results_description": "Obtén comprobaciones en tiempo real sin esperas ni cuenta",
+      "feature_free_title": "100% gratis",
+      "feature_free_description": "Todas las herramientas son completamente gratuitas, sin costes ocultos ni planes premium"
+    },
+    "platform_detail": {
+      "not_found_title": "Plataforma no encontrada",
+      "home": "Inicio",
+      "categories": "Categorías",
+      "category_label": "Categoría:",
+      "popularity_label": "Popularidad:",
+      "visit_platform": "Visitar {platform}",
+      "profile_url_pattern": "Patrón de URL del perfil:",
+      "username_placeholder": "Introduce un nombre de usuario...",
+      "search_button": "Buscar",
+      "related_searches": "Búsquedas relacionadas",
+      "similar_platforms": "Plataformas similares",
+      "cta_button": "Empezar a buscar",
+      "search_title": "Comprobar nombre de usuario en {platform}",
+      "search_description": "Introduce un nombre de usuario para comprobar si está disponible en {platform}. Buscaremos en nuestra base de datos de más de 1.400 plataformas para mostrarte dónde está libre u ocupado.",
+      "about_title": "Acerca de {platform}",
+      "cta_title": "Busca en más de 1.400 plataformas",
+      "cta_description": "Comprueba la disponibilidad de tu nombre de usuario en {platform} y miles de plataformas más con una sola búsqueda. Descubre dónde está disponible, dónde ya está ocupado y protege tu identidad digital."
     }
   },
   "error": {

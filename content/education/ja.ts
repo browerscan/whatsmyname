@@ -2,7 +2,7 @@
 export default `<div class="container mx-auto px-4 py-16 max-w-4xl">
   <article class="prose prose-lg dark:prose-invert max-w-none">
     <h1 class="text-4xl font-bold mb-8 text-center">
-      What Is My Name：ユーザー名検索とデジタルアイデンティティ保護の完全ガイド
+      ユーザー名検索とデジタルアイデンティティ保護の完全ガイド
     </h1>
     <p class="text-xl text-muted-foreground mb-12 text-center">
       率直に言います。あなたのユーザー名は、基本的にあなたのデジタル指紋です。そして今この瞬間、誰かがあなたの知らないうちにあなたの指紋を使っているかもしれません。その事実を確認する方法をお見せしましょう。
@@ -18,7 +18,7 @@ export default `<div class="container mx-auto px-4 py-16 max-w-4xl">
         こう考えてみてください：もし私が「毎月14億件のソーシャルメディアアカウントがハッキングされている」と言ったら、おそらく驚きますよね？でも、それは実際に起こっていることなのです。今この瞬間も。あなたがこれを読んでいる間も。
       </p>
       <p>
-        <strong>whatsmyname app</strong
+        <strong>whatsmynameアプリ</strong
         >が存在する理由は、私たちが解決すべき大きな問題があるからです。人々は自分のユーザー名がインターネット上のどこに散らばっているか全く知らないのです。そしてそれは危険です。本当に危険なのです。
       </p>
       <div class="bg-card rounded-lg p-6 my-8 border">
@@ -52,7 +52,7 @@ export default `<div class="container mx-auto px-4 py-16 max-w-4xl">
         Hoffmanによって作成されました。彼は重要なことに気づきました：人々は自分がインターネット上にいくつのアカウントを持っているか全く知らないということです。平均的な人は200以上のウェブサイトにアカウントを持っています。そのうち半分は作成したことすら覚えていないでしょう。
       </p>
       <p>
-        私たちの<strong>whatsmyname app</strong
+        私たちの<strong>whatsmynameアプリ</strong
         >は、この技術をすべての人が利用できるようにしています。サイバーセキュリティの専門家だけでなく。ハッカーだけでなく。すべての人に。なぜなら、あなたには自分のデジタルアイデンティティがどこに存在するかを知る権利があるからです。
       </p>
       <h3 class="text-xl font-semibold mb-3">どのように機能するのか？</h3>
@@ -97,8 +97,8 @@ export default `<div class="container mx-auto px-4 py-16 max-w-4xl">
             </tr>
             <tr>
               <td class="border p-3">詐欺による総損失額</td>
-              <td class="border p-3">$10.4 billion</td>
-              <td class="border p-3">$12.7 billion</td>
+              <td class="border p-3">104億ドル</td>
+              <td class="border p-3">127億ドル</td>
               <td class="border p-3 text-destructive font-semibold">+22.1%</td>
             </tr>
             <tr>
@@ -115,16 +115,15 @@ export default `<div class="container mx-auto px-4 py-16 max-w-4xl">
             </tr>
             <tr>
               <td class="border p-3">平均的な侵害コスト</td>
-              <td class="border p-3">$4.45 million</td>
-              <td class="border p-3">$4.88 million</td>
+              <td class="border p-3">445万ドル</td>
+              <td class="border p-3">488万ドル</td>
               <td class="border p-3 text-destructive font-semibold">+9.7%</td>
             </tr>
           </tbody>
         </table>
       </div>
       <p class="text-sm text-muted-foreground">
-        出典：Federal Trade Commission (FTC) 2024報告書、IBM Security Cost of
-        Data Breach Report 2024、Cybersecurity Insiders 2024
+        出典：米国連邦取引委員会（FTC）2024年報告書、IBM Security「2024年データ侵害コスト報告書」、Cybersecurity Insiders 2024
       </p>
       <p>
         この傾向が見えますか？すべてが上昇しています。ハッキング数が増え、侵害が増え、損失額が増えています。そして重要なのは：<strong>ハッキングされたアカウントの80%は、以前に流出したログイン認証情報を使用してアクセスされた</strong>ということです。つまり、あなたが忘れてしまった古いパスワードを誰かが使っているということです。
@@ -164,7 +163,7 @@ export default `<div class="container mx-auto px-4 py-16 max-w-4xl">
         私たちが検索するもの：1,400以上のプラットフォーム、そして成長中
       </h2>
       <p>
-        私たちの<strong>whatsmyname app</strong
+        私たちの<strong>whatsmynameアプリ</strong
         >は大手サイトだけをチェックするのではありません。すべてをチェックします。カバーしているカテゴリーの内訳は次のとおりです：
       </p>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-8">
@@ -275,7 +274,7 @@ export default `<div class="container mx-auto px-4 py-16 max-w-4xl">
         私たちの<strong>whatsmyname</strong>ツールは、世界中のプロフェッショナル調査員によって使用されている技術の上に構築されています。コア方法論は、オープンソースのWhatsMyNameプロジェクトから来ており、次のような実績があります：
       </p>
       <ul class="list-disc pl-6 space-y-2">
-        <li>BellingcatのOnline Investigation Toolkitで参照されている</li>
+        <li>Bellingcatのオンライン調査ツールキットで参照されている</li>
         <li>
           MaltegoやSpiderFootのようなプロフェッショナルOSINTツールに統合されている
         </li>
@@ -303,7 +302,7 @@ export default `<div class="container mx-auto px-4 py-16 max-w-4xl">
       </p>
       <p>
         良いニュースは？あなたはここにいる。これを読んでいる。ツールが目の前にある。<strong
-          >whatsmyname app</strong
+          >whatsmynameアプリ</strong
         >は無料で使えます。検索には文字通り数秒しかかかりません。自分のデジタルフットプリントを知らない言い訳はありません。
       </p>
       <div

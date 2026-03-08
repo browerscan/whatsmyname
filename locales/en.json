@@ -26,7 +26,10 @@
       "es": "Español",
       "ja": "日本語",
       "fr": "Français",
-      "ko": "한국어"
+      "ko": "한국어",
+      "de": "Deutsch",
+      "pt": "Português",
+      "ru": "Русский"
     }
   },
   "home": {
@@ -247,6 +250,116 @@
     "blog": {
       "title": "Blog - Username Tips, Guides & Digital Identity",
       "description": "Learn about username best practices, digital identity protection, personal branding, and online security. Expert tips and guides for managing your online presence."
+    },
+    "categories": {
+      "title": "Platform Categories - Username Search by Category",
+      "description": "Browse platform categories and check username availability across social media, gaming, business, coding, and entertainment platforms. Find where your username is available."
+    }
+  },
+  "pages": {
+    "blog_index": {
+      "home": "Home",
+      "breadcrumb": "Blog",
+      "collection_name": "What is my Name Blog",
+      "collection_description": "Learn about username best practices, digital identity protection, personal branding, and online security.",
+      "title": "Blog",
+      "description": "Expert tips, guides, and insights on usernames, digital identity, and building your online presence",
+      "featured": "Featured",
+      "minutes_read": "{count} min read",
+      "minutes_short": "{count} min",
+      "latest_articles": "Latest Articles",
+      "browse_by_category": "Browse by Category",
+      "popular_topics": "Popular Topics",
+      "newsletter_title": "Stay Updated",
+      "newsletter_description": "Get the latest tips on usernames, digital identity, and online security delivered to your inbox.",
+      "newsletter_placeholder": "Enter your email",
+      "newsletter_button": "Subscribe"
+    },
+    "blog_post": {
+      "not_found_title": "Post Not Found",
+      "home": "Home",
+      "blog": "Blog",
+      "back_to_blog": "Back to Blog",
+      "minutes_read": "{count} min read",
+      "share_title": "Share this article",
+      "copy_link": "Copy Link",
+      "related_articles": "Related Articles",
+      "cta_button": "Start Username Search",
+      "cta_title": "Check Your Username Now",
+      "cta_description": "Use our free tool to check username availability across 1,400+ platforms instantly."
+    },
+    "categories_index": {
+      "home": "Home",
+      "breadcrumb": "Categories",
+      "collection_name": "Platform Categories",
+      "collection_description": "Browse platform categories and check username availability across social media, gaming, business, coding, and entertainment platforms.",
+      "title": "Platform Categories",
+      "description": "Browse platform categories and check username availability across 1,400+ platforms worldwide",
+      "platform_count": "{count, plural, one {# platform} other {# platforms}}",
+      "cta_title": "Search Across All 1,400+ Platforms",
+      "cta_description": "Skip the categories and search everywhere at once. Enter your username and find where it is available across all platforms.",
+      "cta_button": "Start Universal Search",
+      "content_title": "Search Username by Platform Category",
+      "reason_title": "Why Search by Category?"
+    },
+    "category_detail": {
+      "not_found_title": "Category Not Found",
+      "home": "Home",
+      "categories": "Categories",
+      "cta_button": "Start Username Search",
+      "cta_search_now": "Start Searching Now",
+      "search_title": "Check Username Across All {category} Platforms",
+      "search_description": "Enter a username to check availability across all {category} platforms and 1,400+ more.",
+      "popular_platforms_title": "Popular {category} Platforms",
+      "since": "Since {year}",
+      "popularity_percent": "Popularity: {popularity}%",
+      "related_searches_title": "Related Searches",
+      "other_categories_title": "Other Categories",
+      "about_title": "About {category} Platforms",
+      "cta_title": "Search Across 1,400+ Platforms Instantly",
+      "cta_description": "Check username availability on all {category} platforms and thousands more. Free, fast, and no account required."
+    },
+    "tools": {
+      "home": "Home",
+      "breadcrumb": "Tools",
+      "collection_name": "Username Tools",
+      "collection_description": "Free username tools including availability checker, username generator, and username ideas.",
+      "title": "Username Tools",
+      "description": "Free tools to help you find, check, and create the perfect username across all platforms",
+      "coming_soon": "Coming Soon",
+      "cta_title": "Check Your Username Now",
+      "cta_description": "Use our availability checker to see where your username is taken and where you can still claim it. Free, instant, and no account required.",
+      "cta_button": "Start Checking Now",
+      "content_title": "Free Username Tools",
+      "checker_title": "Username Availability Checker",
+      "generator_title": "Username Generator",
+      "ideas_title": "Username Ideas & Inspiration",
+      "features_title": "Why Use Our Username Tools?",
+      "feature_search_title": "Search 1,400+ Platforms",
+      "feature_search_description": "Check username availability across more platforms than any other service",
+      "feature_results_title": "Instant Results",
+      "feature_results_description": "Get real-time availability checks with no waiting or account required",
+      "feature_free_title": "100% Free",
+      "feature_free_description": "All tools are completely free with no hidden costs or premium tiers"
+    },
+    "platform_detail": {
+      "not_found_title": "Platform Not Found",
+      "home": "Home",
+      "categories": "Categories",
+      "category_label": "Category:",
+      "popularity_label": "Popularity:",
+      "visit_platform": "Visit {platform}",
+      "profile_url_pattern": "Profile URL pattern:",
+      "username_placeholder": "Enter username...",
+      "search_button": "Search",
+      "related_searches": "Related Searches",
+      "similar_platforms": "Similar Platforms",
+      "cta_button": "Start Searching Now",
+      "search_title": "Check Username on {platform}",
+      "search_description": "Enter a username to check if it's available on {platform}. We'll search across our database of 1,400+ platforms to show you where this username is taken or available.",
+      "about_title": "About {platform}",
+      "cta_title": "Search Across 1,400+ Platforms",
+      "cta_description": "Check username availability on {platform} and thousands of other platforms in one search. Find where your username is available, where it's taken, and secure your digital identity across the web."
     }
   },
   "error": {

@@ -2,7 +2,7 @@
 export default `<div class="container mx-auto px-4 py-16 max-w-4xl">
   <article class="prose prose-lg dark:prose-invert max-w-none">
     <h1 class="text-4xl font-bold mb-8 text-center">
-      What Is My Name: 사용자명 검색과 디지털 신원 보호 완벽 가이드
+      사용자명 검색과 디지털 신원 보호 완벽 가이드
     </h1>
     <p class="text-xl text-muted-foreground mb-12 text-center">
       솔직히 말씀드리겠습니다. 여러분의 사용자명은 기본적으로 디지털 지문입니다.
@@ -111,8 +111,8 @@ export default `<div class="container mx-auto px-4 py-16 max-w-4xl">
             </tr>
             <tr>
               <td class="border p-3">총 사기 손실액</td>
-              <td class="border p-3">$10.4 billion</td>
-              <td class="border p-3">$12.7 billion</td>
+              <td class="border p-3">104억 달러</td>
+              <td class="border p-3">127억 달러</td>
               <td class="border p-3 text-destructive font-semibold">+22.1%</td>
             </tr>
             <tr>
@@ -129,16 +129,15 @@ export default `<div class="container mx-auto px-4 py-16 max-w-4xl">
             </tr>
             <tr>
               <td class="border p-3">평균 유출 비용</td>
-              <td class="border p-3">$4.45 million</td>
-              <td class="border p-3">$4.88 million</td>
+              <td class="border p-3">445만 달러</td>
+              <td class="border p-3">488만 달러</td>
               <td class="border p-3 text-destructive font-semibold">+9.7%</td>
             </tr>
           </tbody>
         </table>
       </div>
       <p class="text-sm text-muted-foreground">
-        출처: Federal Trade Commission (FTC) 2024 보고서, IBM Security 데이터
-        유출 비용 보고서 2024, Cybersecurity Insiders 2024
+        출처: 미국 연방거래위원회(FTC) 2024 보고서, IBM Security 2024 데이터 유출 비용 보고서, Cybersecurity Insiders 2024
       </p>
       <p>
         이 추세가 보이시나요? 모든 것이 증가하고 있습니다. 더 많은 해킹. 더 많은
@@ -282,7 +281,7 @@ export default `<div class="container mx-auto px-4 py-16 max-w-4xl">
     </section>
     <section class="mb-12">
       <h2 class="text-2xl font-semibold mb-4">
-        WhatIsMyName 도구를 효과적으로 사용하는 방법
+        WhatIsMyName 도구를 효과적으로 활용하는 방법
       </h2>
       <p>
         좋습니다. 실용적으로 접근해 봅시다. 여기 여러분의 행동 계획이 있습니다:

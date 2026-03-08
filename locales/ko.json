@@ -26,7 +26,10 @@
       "es": "스페인어",
       "ja": "일본어",
       "fr": "프랑스어",
-      "ko": "한국어"
+      "ko": "한국어",
+      "de": "독일어",
+      "pt": "포르투갈어",
+      "ru": "러시아어"
     }
   },
   "home": {
@@ -41,14 +44,16 @@
       "title": "디지털 존재감을 확인할 준비가 되었나요?",
       "description": "위에 사용자명을 입력하여 1,400+ 플랫폼에서 검색하세요"
     },
-    "google": {
+    "web": {
       "open_in_google": "Google에서 열기",
-      "open_in_google_aria": "새 탭에서 전체 Google 결과 열기",
+      "open_in_google_aria": "전체 검색 결과를 새 탭에서 열기",
       "about_results": "약 {total_results}개 결과",
       "seconds": "({seconds}s)",
-      "for_prefix": "다음에 대한 Google 결과",
-      "for_username": "@{username}에 대한 Google 결과",
-      "query_prefix": "쿼리:"
+      "for_prefix": "웹 결과:",
+      "for_username": "@{username}의 웹 결과",
+      "query_prefix": "쿼리:",
+      "load_more": "더 보기",
+      "loading_more": "로딩 중..."
     }
   },
   "search": {
@@ -66,7 +71,7 @@
       "aria_label": "사용자명 검색",
       "searching": "검색 중..."
     },
-    "hint": "1,400+ 플랫폼, Google, AI 분석으로 사용자명을 검색하세요"
+    "hint": "1,400+ 플랫폼과 웹에서 사용자명을 검색하고 AI 분석도 받아보세요"
   },
   "results": {
     "header": {
@@ -85,15 +90,16 @@
     },
     "tabs": {
       "platforms": "What is my Name 결과 ({count})",
-      "google": "Google 결과 ({count})"
+      "web": "웹 결과 ({count})"
     },
-    "empty_google": "Google 결과가 없습니다",
+    "empty_web": "웹 결과가 없습니다",
     "empty_platforms_title": "결과가 없습니다",
     "empty_platforms_description": "필터를 조정해 보세요"
   },
   "filters": {
     "title": "필터",
     "search_placeholder": "플랫폼 이름으로 필터...",
+    "search_categories_placeholder": "카테고리 검색...",
     "status_label": "상태",
     "category_label": "카테고리",
     "all": "전체",
@@ -101,7 +107,14 @@
     "not_found": "없음",
     "all_categories": "모든 카테고리",
     "show_nsfw": "NSFW 콘텐츠 표시",
-    "clear": "필터 초기화"
+    "clear": "필터 초기화",
+    "show_more": "{count}개 더 보기",
+    "show_less": "적게 보기",
+    "no_categories_found": "카테고리를 찾을 수 없습니다",
+    "close_aria": "필터 닫기",
+    "showing_results": "{count}개 결과 표시 중",
+    "apply_filters": "필터 적용",
+    "clear_category_search": "카테고리 검색 지우기"
   },
   "platform": {
     "badge_nsfw": "NSFW",
@@ -150,6 +163,47 @@
       }
     }
   },
+  "search_history": {
+    "title": "최근 검색",
+    "recent": "최근",
+    "toggle_aria": "검색 기록 전환",
+    "clear_all": "모두 지우기",
+    "remove_aria": "기록에서 {username} 삭제",
+    "results": "결과",
+    "just_now": "방금 전",
+    "minutes_ago": "{count}분 전",
+    "hours_ago": "{count}시간 전",
+    "days_ago": "{count}일 전",
+    "on_date": "{date}",
+    "empty": "최근 검색이 없습니다"
+  },
+  "export": {
+    "aria_label": "결과 내보내기",
+    "export": "내보내기",
+    "results_count": "{count}개 결과 찾음",
+    "format_csv": "CSV로 내보내기",
+    "format_json": "JSON으로 내보내기",
+    "format_clipboard": "클립보드에 복사",
+    "copied": "복사됨!"
+  },
+  "share": {
+    "share": "공유",
+    "aria_label": "결과 공유",
+    "title": "{username} 검색 결과",
+    "text_basic": "@{username}이 온라인 어디에 등록되어 있는지 확인하세요",
+    "text_with_results": "@{username}이 {count}개 플랫폼에서 발견되었습니다! 전체 검색 결과를 확인하세요:",
+    "via_email": "이메일",
+    "copy_link": "링크 복사",
+    "copied": "복사됨!",
+    "email_subject": "{username} 사용자명 검색 결과",
+    "email_body": "사용자명 {username}에 대한 흥미로운 결과를 찾았습니다. 여기에서 확인하세요: {url}",
+    "twitter": "Twitter",
+    "facebook": "Facebook",
+    "linkedin": "LinkedIn"
+  },
+  "shortcuts": {
+    "to_focus": "검색에 포커스"
+  },
   "footer": {
     "about_title": "소개",
     "about_description": "1,400+ 플랫폼에서 즉시 사용자명을 확인하세요. 보안 리서치와 디지털 발자국 분석을 위한 강력한 사용자명 검색 도구입니다.",
@@ -161,16 +215,16 @@
       "ai_analysis": "AI 분석"
     },
     "connect_title": "연결",
-    "email_aria": "이메일",
-    "github_aria": "GitHub",
-    "copyright": "© {year} What is my Name. 모든 권리 보유.",
     "legal_title": "법률",
     "privacy": "개인정보 보호정책",
-    "terms": "서비스 약관"
+    "terms": "서비스 약관",
+    "email_aria": "이메일",
+    "github_aria": "GitHub",
+    "copyright": "© {year} What is my Name. 모든 권리 보유."
   },
   "errors": {
     "search_failed": "검색 실패",
-    "google_failed": "Google 검색 실패",
+    "web_failed": "웹 검색 실패",
     "whatsmyname_failed": "WhatsMyName 검색 실패",
     "ai_failed": "AI 응답을 가져오지 못했습니다",
     "timeout": "요청 시간이 초과되었습니다",
@@ -180,6 +234,132 @@
     "home": {
       "title": "What is my Name - 1,400+ 플랫폼 사용자명 검색",
       "description": "소셜 미디어와 웹사이트에서 사용자명을 즉시 찾아보세요"
+    },
+    "platform": {
+      "title": "{platform} 사용자명 검색 - 사용 가능 여부 확인",
+      "description": "{platform}에서 사용자명을 검색하고 사용 가능 여부를 확인하세요. 원하는 사용자명이 {platform}에서 사용 가능한지 알아보세요."
+    },
+    "category": {
+      "title": "{category} 플랫폼 - 사용자명 검색",
+      "description": "{category} 플랫폼 전반에서 사용자명 사용 가능 여부를 검색하고 확인하세요. 어떤 곳에서 사용자명을 사용할 수 있는지 알아보세요."
+    },
+    "tools": {
+      "title": "사용자명 도구 - 생성기, 사용 가능 여부 확인기 등",
+      "description": "사용 가능 여부 확인기, 사용자명 생성기, 아이디어를 포함한 무료 사용자명 도구입니다. 모든 플랫폼에 맞는 완벽한 사용자명을 확인하고 만들어 보세요."
+    },
+    "blog": {
+      "title": "블로그 - 사용자명 팁, 가이드, 디지털 아이덴티티",
+      "description": "사용자명 모범 사례, 디지털 아이덴티티 보호, 퍼스널 브랜딩, 온라인 보안에 대해 알아보세요. 온라인 존재를 관리하기 위한 전문가 팁과 가이드입니다."
+    },
+    "categories": {
+      "title": "플랫폼 카테고리 - 카테고리별 사용자 이름 검색",
+      "description": "플랫폼 카테고리를 둘러보고 소셜 미디어, 게임, 비즈니스, 개발, 엔터테인먼트 플랫폼에서 사용자 이름 사용 가능 여부를 확인하세요. 내 사용자 이름이 어디에서 사용 가능한지 찾아보세요."
+    }
+  },
+  "pages": {
+    "blog_index": {
+      "home": "홈",
+      "breadcrumb": "블로그",
+      "collection_name": "What is my Name 블로그",
+      "collection_description": "사용자 이름 모범 사례, 디지털 아이덴티티 보호, 퍼스널 브랜딩, 온라인 보안에 대해 알아보세요.",
+      "title": "블로그",
+      "description": "사용자 이름, 디지털 아이덴티티, 온라인 존재감 구축에 대한 팁과 가이드, 인사이트",
+      "featured": "추천",
+      "minutes_read": "{count}분 읽기",
+      "minutes_short": "{count}분",
+      "latest_articles": "최신 글",
+      "browse_by_category": "카테고리별 보기",
+      "popular_topics": "인기 주제",
+      "newsletter_title": "최신 정보 받기",
+      "newsletter_description": "사용자 이름, 디지털 아이덴티티, 온라인 보안에 대한 최신 팁을 이메일로 받아보세요.",
+      "newsletter_placeholder": "이메일을 입력하세요",
+      "newsletter_button": "구독"
+    },
+    "blog_post": {
+      "not_found_title": "게시물을 찾을 수 없습니다",
+      "home": "홈",
+      "blog": "블로그",
+      "back_to_blog": "블로그로 돌아가기",
+      "minutes_read": "{count}분 읽기",
+      "share_title": "이 글 공유하기",
+      "copy_link": "링크 복사",
+      "related_articles": "관련 글",
+      "cta_button": "사용자 이름 검색 시작",
+      "cta_title": "지금 사용자 이름 확인",
+      "cta_description": "무료 도구를 사용해 1,400개 이상의 플랫폼에서 사용자 이름 사용 가능 여부를 즉시 확인하세요."
+    },
+    "categories_index": {
+      "home": "홈",
+      "breadcrumb": "카테고리",
+      "collection_name": "플랫폼 카테고리",
+      "collection_description": "플랫폼 카테고리를 둘러보고 소셜 미디어, 게임, 비즈니스, 개발, 엔터테인먼트 플랫폼에서 사용자 이름 사용 가능 여부를 확인하세요.",
+      "title": "플랫폼 카테고리",
+      "description": "1,400개 이상의 플랫폼에서 사용자 이름 사용 가능 여부를 카테고리별로 확인하세요",
+      "platform_count": "{count, plural, other {#개 플랫폼}}",
+      "cta_title": "1,400개 이상의 플랫폼에서 검색",
+      "cta_description": "카테고리를 건너뛰고 모든 플랫폼을 한 번에 검색하세요. 사용자 이름을 입력하면 어디에서 사용 가능한지 확인할 수 있습니다.",
+      "cta_button": "통합 검색 시작",
+      "content_title": "플랫폼 카테고리별 사용자 이름 검색",
+      "reason_title": "왜 카테고리별로 검색해야 하나요?"
+    },
+    "category_detail": {
+      "not_found_title": "카테고리를 찾을 수 없습니다",
+      "home": "홈",
+      "categories": "카테고리",
+      "cta_button": "사용자 이름 검색 시작",
+      "cta_search_now": "지금 검색하기",
+      "search_title": "모든 {category} 플랫폼에서 사용자 이름 확인",
+      "search_description": "사용자 이름을 입력하면 모든 {category} 플랫폼과 추가 1,400개 이상의 플랫폼에서 사용 가능 여부를 확인할 수 있습니다.",
+      "popular_platforms_title": "인기 {category} 플랫폼",
+      "since": "{year}부터",
+      "popularity_percent": "인기도: {popularity}%",
+      "related_searches_title": "관련 검색",
+      "other_categories_title": "다른 카테고리",
+      "about_title": "{category} 플랫폼 정보",
+      "cta_title": "1,400개 이상의 플랫폼을 즉시 검색",
+      "cta_description": "모든 {category} 플랫폼과 수천 개의 다른 플랫폼에서 사용자 이름 사용 가능 여부를 확인하세요. 무료이고 빠르며 계정이 필요 없습니다."
+    },
+    "tools": {
+      "home": "홈",
+      "breadcrumb": "도구",
+      "collection_name": "사용자 이름 도구",
+      "collection_description": "사용 가능 여부 확인기, 사용자 이름 생성기, 아이디어 모음 등 무료 도구.",
+      "title": "사용자 이름 도구",
+      "description": "모든 플랫폼에서 완벽한 사용자 이름을 찾고, 확인하고, 만드는 데 도움이 되는 무료 도구",
+      "coming_soon": "곧 출시",
+      "cta_title": "지금 사용자 이름 확인",
+      "cta_description": "사용 가능 여부 확인기로 내 사용자 이름이 어디에서 이미 사용 중인지, 어디에서 아직 확보할 수 있는지 확인하세요. 무료, 즉시, 계정 불필요.",
+      "cta_button": "확인 시작",
+      "content_title": "무료 사용자 이름 도구",
+      "checker_title": "사용자 이름 사용 가능 여부 확인기",
+      "generator_title": "사용자 이름 생성기",
+      "ideas_title": "사용자 이름 아이디어와 영감",
+      "features_title": "왜 우리의 사용자 이름 도구를 사용해야 할까요?",
+      "feature_search_title": "1,400개 이상의 플랫폼 검색",
+      "feature_search_description": "어떤 서비스보다 더 많은 플랫폼에서 사용자 이름 사용 가능 여부를 확인하세요",
+      "feature_results_title": "즉시 결과",
+      "feature_results_description": "대기나 계정 없이 실시간으로 확인 결과를 받으세요",
+      "feature_free_title": "100% 무료",
+      "feature_free_description": "모든 도구는 완전히 무료이며 숨겨진 비용이나 프리미엄 요금제가 없습니다"
+    },
+    "platform_detail": {
+      "not_found_title": "플랫폼을 찾을 수 없습니다",
+      "home": "홈",
+      "categories": "카테고리",
+      "category_label": "카테고리:",
+      "popularity_label": "인기도:",
+      "visit_platform": "{platform} 방문",
+      "profile_url_pattern": "프로필 URL 패턴:",
+      "username_placeholder": "사용자 이름 입력...",
+      "search_button": "검색",
+      "related_searches": "관련 검색",
+      "similar_platforms": "유사한 플랫폼",
+      "cta_button": "지금 검색 시작",
+      "search_title": "{platform}에서 사용자 이름 확인",
+      "search_description": "사용자 이름을 입력하여 {platform}에서 사용 가능한지 확인하세요. 1,400개 이상의 플랫폼 데이터베이스를 검색해 이 이름이 어디에서 사용 가능하거나 이미 사용 중인지 보여드립니다.",
+      "about_title": "{platform} 소개",
+      "cta_title": "1,400개 이상의 플랫폼 검색",
+      "cta_description": "한 번의 검색으로 {platform}와 수천 개의 다른 플랫폼에서 사용자 이름 사용 가능 여부를 확인하세요. 어디에서 사용 가능한지, 어디에서 이미 사용 중인지 파악하고 디지털 아이덴티티를 보호하세요."
     }
   },
   "error": {

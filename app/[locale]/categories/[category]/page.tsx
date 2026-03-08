@@ -18,13 +18,22 @@ import {
   BreadcrumbJsonLd,
   CollectionPageJsonLd,
 } from "@/components/seo/schema-org";
+import { getAllCategories } from "@/lib/platforms-data";
 import {
-  getAllCategories,
-  getPlatformsByCategory,
-  CATEGORY_METADATA,
-} from "@/lib/platforms-data";
+  getLocalizedCategoryMetadata,
+  getLocalizedPlatformsByCategory,
+} from "@/lib/platforms-i18n";
+import {
+  getLocaleAlternates,
+  getLocalePath,
+  getLocalizedUrl,
+  locales,
+} from "@/i18n/request";
+import {
+  getCategoryDetailCopy,
+  getCategoryHeaderCopy,
+} from "@/content/route-copy";
 
-// Icons mapping
 const iconMap: Record<string, React.ElementType> = {
   users: Users,
   code: Code,
@@ -45,11 +54,7 @@ interface CategoryPageProps {
   }>;
 }
 
-/**
- * Generate static params for all categories
- */
 export async function generateStaticParams() {
-  const locales = ["en", "zh", "es", "ja", "fr", "ko"];
   const categories = getAllCategories();
 
   return locales.flatMap((locale) =>
@@ -60,137 +65,117 @@ export async function generateStaticParams() {
   );
 }
 
-/**
- * Generate metadata for SEO
- */
 export async function generateMetadata({
   params,
 }: CategoryPageProps): Promise<Metadata> {
   const { locale, category } = await params;
-  const categoryMeta = CATEGORY_METADATA[category];
+  const tSeo = await getTranslations({ locale, namespace: "seo.category" });
+  const t = await getTranslations({ locale, namespace: "pages.category_detail" });
+  const categoryMeta = getLocalizedCategoryMetadata(category, locale);
 
   if (!categoryMeta) {
-    return {
-      title: "Category Not Found",
-    };
+    return { title: t("not_found_title") };
   }
 
   const baseUrl =
     process.env.NEXT_PUBLIC_BASE_URL || "https://whatismyname.org";
-  const canonicalUrl = `${baseUrl}/${locale}/categories/${category}`;
+  const canonicalUrl = getLocalizedUrl(baseUrl, locale, `/categories/${category}`);
 
   return {
-    title: `${categoryMeta.name} Platforms - Username Search | What is my Name`,
-    description: `Search and check username availability across ${categoryMeta.name.toLowerCase()} platforms. ${categoryMeta.description}`,
-    keywords: [
-      ...categoryMeta.keywords,
-      `${categoryMeta.name} username search`,
-      `${categoryMeta.name} platforms list`,
-      `username availability ${categoryMeta.name.toLowerCase()}`,
-    ],
+    title: tSeo("title", { category: categoryMeta.name }),
+    description: `${tSeo("description", { category: categoryMeta.name })} ${categoryMeta.description}`,
+    keywords: categoryMeta.keywords,
     authors: [{ name: "What is my Name Team" }],
     creator: "What is my Name",
     publisher: "What is my Name",
-
     openGraph: {
       type: "website",
-      locale: locale,
+      locale,
       url: canonicalUrl,
       siteName: "What is my Name",
-      title: `${categoryMeta.name} Platforms - Username Search`,
+      title: tSeo("title", { category: categoryMeta.name }),
       description: categoryMeta.description,
       images: [
         {
           url: `${baseUrl}/images/og-image.svg`,
           width: 1200,
           height: 630,
-          alt: `${categoryMeta.name} Platforms Username Search`,
+          alt: categoryMeta.name,
         },
       ],
     },
-
     twitter: {
       card: "summary_large_image",
-      title: `${categoryMeta.name} Platforms - Username Search`,
+      title: tSeo("title", { category: categoryMeta.name }),
       description: categoryMeta.description,
       images: [`${baseUrl}/images/og-image.svg`],
     },
-
     alternates: {
       canonical: canonicalUrl,
-      languages: {
-        en: `${baseUrl}/en/categories/${category}`,
-        zh: `${baseUrl}/zh/categories/${category}`,
-        es: `${baseUrl}/es/categories/${category}`,
-        ja: `${baseUrl}/ja/categories/${category}`,
-        fr: `${baseUrl}/fr/categories/${category}`,
-        ko: `${baseUrl}/ko/categories/${category}`,
-      },
+      languages: getLocaleAlternates(baseUrl, `/categories/${category}`),
     },
   };
 }
 
-/**
- * Category page component
- */
 export default async function CategoryPage({ params }: CategoryPageProps) {
   const { locale, category } = await params;
-  const categoryMeta = CATEGORY_METADATA[category];
+  const t = await getTranslations({ locale, namespace: "pages.category_detail" });
+  const categoryMeta = getLocalizedCategoryMetadata(category, locale);
 
   if (!categoryMeta) {
     notFound();
   }
 
-  const platforms = getPlatformsByCategory(category);
+  const platforms = getLocalizedPlatformsByCategory(category, locale);
+  const allCategories = getAllCategories().filter((item) => item !== category);
+  const categoryHeader = getCategoryHeaderCopy(locale, categoryMeta.name, platforms.length);
+  const categoryCopy = getCategoryDetailCopy(
+    locale,
+    categoryMeta.name,
+    categoryMeta.description,
+    platforms.length,
+  );
+
   const baseUrl =
     process.env.NEXT_PUBLIC_BASE_URL || "https://whatismyname.org";
-  const canonicalUrl = `${baseUrl}/${locale}/categories/${category}`;
+  const canonicalUrl = getLocalizedUrl(baseUrl, locale, `/categories/${category}`);
+  const homeHref = getLocalePath(locale);
+  const categoriesHref = getLocalePath(locale, "/categories");
   const IconComponent = iconMap[categoryMeta.icon] || Grid;
-
-  // Get all categories for the "Other Categories" section
-  const allCategories = getAllCategories().filter((c) => c !== category);
 
   return (
     <>
-      {/* Structured Data */}
       <BreadcrumbJsonLd
         items={[
-          { name: "Home", item: `${baseUrl}/${locale}` },
-          { name: "Categories", item: `${baseUrl}/${locale}/categories` },
+          { name: t("home"), item: homeHref },
+          { name: t("categories"), item: categoriesHref },
           { name: categoryMeta.name, item: canonicalUrl },
         ]}
       />
       <CollectionPageJsonLd
-        name={`${categoryMeta.name} Platforms`}
-        description={`Search and check username availability across ${categoryMeta.name.toLowerCase()} platforms. ${categoryMeta.description}`}
+        name={categoryHeader.title}
+        description={categoryMeta.description}
         url={canonicalUrl}
         inLanguage={locale}
-        items={platforms.map((p) => ({
-          name: p.name,
-          url: `${baseUrl}/${locale}/platforms/${p.slug}`,
-          description: p.description,
+        items={platforms.map((platform) => ({
+          name: platform.name,
+          url: getLocalizedUrl(baseUrl, locale, `/platforms/${platform.slug}`),
+          description: platform.description,
         }))}
       />
 
       <div className="container mx-auto px-4 py-12 max-w-6xl">
-        {/* Breadcrumb */}
         <nav className="mb-8 text-sm text-muted-foreground">
           <ol className="flex items-center gap-2">
             <li>
-              <Link
-                href={`/${locale}`}
-                className="hover:text-foreground transition-colors"
-              >
-                Home
+              <Link href={homeHref} className="hover:text-foreground transition-colors">
+                {t("home")}
               </Link>
             </li>
             <li>/</li>
             <li>
-              <Link
-                href={`/${locale}/categories`}
-                className="hover:text-foreground transition-colors"
-              >
-                Categories
+              <Link href={categoriesHref} className="hover:text-foreground transition-colors">
+                {t("categories")}
               </Link>
             </li>
             <li>/</li>
@@ -198,52 +183,35 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
           </ol>
         </nav>
 
-        {/* Category Header */}
         <div className="mb-12 text-center">
           <div className="inline-flex p-4 rounded-2xl bg-gradient-subtle border border-border/50 mb-6">
             <IconComponent className="w-12 h-12 text-primary" />
           </div>
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">
-            {categoryMeta.name} Platforms
-          </h1>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            {categoryMeta.description}
-          </p>
-          <p className="text-muted-foreground mt-4">
-            Showing {platforms.length} popular {categoryMeta.name.toLowerCase()}{" "}
-            platforms
-          </p>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">{categoryHeader.title}</h1>
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">{categoryMeta.description}</p>
+          <p className="text-muted-foreground mt-4">{categoryHeader.summary}</p>
         </div>
 
-        {/* Search CTA */}
         <section className="mb-12 p-8 rounded-3xl bg-gradient-subtle border border-border/50 shadow-custom-lg">
           <div className="text-center max-w-2xl mx-auto">
-            <h2 className="text-2xl font-semibold mb-4">
-              Check Username Across All {categoryMeta.name} Platforms
-            </h2>
-            <p className="text-muted-foreground mb-6">
-              Enter a username to check availability across all{" "}
-              {categoryMeta.name.toLowerCase()} platforms and 1,400+ more.
-            </p>
+            <h2 className="text-2xl font-semibold mb-4">{t("search_title", { category: categoryMeta.name })}</h2>
+            <p className="text-muted-foreground mb-6">{t("search_description", { category: categoryMeta.name })}</p>
             <Link
-              href={`/${locale}`}
+              href={homeHref}
               className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-primary text-primary-foreground font-medium hover:bg-primary/90 transition-colors"
             >
-              Start Username Search
+              {t("cta_button")}
             </Link>
           </div>
         </section>
 
-        {/* Platforms Grid */}
         <section className="mb-12">
-          <h2 className="text-2xl font-semibold mb-6">
-            Popular {categoryMeta.name} Platforms
-          </h2>
+          <h2 className="text-2xl font-semibold mb-6">{t("popular_platforms_title", { category: categoryMeta.name })}</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {platforms.map((platform) => (
               <Link
                 key={platform.slug}
-                href={`/${locale}/platforms/${platform.slug}`}
+                href={getLocalePath(locale, `/platforms/${platform.slug}`)}
                 className="group p-6 rounded-2xl bg-muted/20 border border-border/30 hover:border-primary/50 hover:bg-muted/40 transition-all"
               >
                 <div className="flex items-start gap-4">
@@ -254,14 +222,10 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
                     <h3 className="font-semibold text-lg group-hover:text-primary transition-colors mb-1">
                       {platform.name}
                     </h3>
-                    <p className="text-sm text-muted-foreground line-clamp-2 mb-3">
-                      {platform.description}
-                    </p>
+                    <p className="text-sm text-muted-foreground line-clamp-2 mb-3">{platform.description}</p>
                     <div className="flex items-center gap-3 text-xs text-muted-foreground">
-                      {platform.founded && (
-                        <span>Since {platform.founded}</span>
-                      )}
-                      <span>Popularity: {platform.popularity}%</span>
+                      {platform.founded && <span>{t("since", { year: platform.founded })}</span>}
+                      <span>{t("popularity_percent", { popularity: platform.popularity })}</span>
                     </div>
                   </div>
                 </div>
@@ -270,9 +234,8 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
           </div>
         </section>
 
-        {/* SEO Keywords */}
         <section className="mb-12">
-          <h2 className="text-2xl font-semibold mb-4">Related Searches</h2>
+          <h2 className="text-2xl font-semibold mb-4">{t("related_searches_title")}</h2>
           <div className="flex flex-wrap gap-2">
             {categoryMeta.keywords.map((keyword) => (
               <span
@@ -285,28 +248,25 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
           </div>
         </section>
 
-        {/* Other Categories */}
         {allCategories.length > 0 && (
           <section className="mb-12">
-            <h2 className="text-2xl font-semibold mb-6">Other Categories</h2>
+            <h2 className="text-2xl font-semibold mb-6">{t("other_categories_title")}</h2>
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-              {allCategories.map((cat) => {
-                const catMeta = CATEGORY_METADATA[cat];
-                const CatIcon = iconMap[catMeta.icon] || Grid;
+              {allCategories.map((item) => {
+                const itemMeta = getLocalizedCategoryMetadata(item, locale);
+                const ItemIcon = iconMap[itemMeta.icon] || Grid;
 
                 return (
                   <Link
-                    key={cat}
-                    href={`/${locale}/categories/${cat}`}
+                    key={item}
+                    href={getLocalePath(locale, `/categories/${item}`)}
                     className="group p-4 rounded-xl bg-muted/20 border border-border/30 hover:border-primary/50 hover:bg-muted/40 transition-all text-center"
                   >
                     <div className="flex flex-col items-center gap-2">
                       <div className="p-2 rounded-lg bg-background">
-                        <CatIcon className="w-5 h-5 text-primary" />
+                        <ItemIcon className="w-5 h-5 text-primary" />
                       </div>
-                      <span className="text-sm font-medium">
-                        {catMeta.name}
-                      </span>
+                      <span className="text-sm font-medium">{itemMeta.name}</span>
                     </div>
                   </Link>
                 );
@@ -315,47 +275,23 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
           </section>
         )}
 
-        {/* Category Description for SEO */}
         <article className="mb-12 max-w-4xl mx-auto">
-          <h2 className="text-2xl font-semibold mb-4">
-            About {categoryMeta.name} Platforms
-          </h2>
+          <h2 className="text-2xl font-semibold mb-4">{t("about_title", { category: categoryMeta.name })}</h2>
           <div className="prose prose-neutral dark:prose-invert max-w-none">
-            <p className="text-muted-foreground leading-relaxed mb-4">
-              {categoryMeta.description} Checking username availability across
-              multiple {categoryMeta.name.toLowerCase()} platforms is essential
-              for maintaining a consistent online presence. Whether you are
-              building a personal brand, establishing a business presence, or
-              simply want to secure your preferred handle across the web, our
-              platform makes it easy to see where your username is available.
-            </p>
-            <p className="text-muted-foreground leading-relaxed mb-4">
-              Our service searches across {platforms.length} popular{" "}
-              {categoryMeta.name.toLowerCase()} platforms and over 1,400 total
-              platforms worldwide. Simply enter your desired username and we
-              will show you exactly where it is available, where it is already
-              taken, and provide direct links to claim it on available
-              platforms.
-            </p>
+            <p className="text-muted-foreground leading-relaxed mb-4">{categoryCopy.paragraph1}</p>
+            <p className="text-muted-foreground leading-relaxed mb-4">{categoryCopy.paragraph2}</p>
           </div>
         </article>
 
-        {/* CTA Section */}
         <section className="p-8 rounded-3xl bg-gradient-to-r from-primary/10 to-primary/5 border border-primary/20">
           <div className="text-center max-w-2xl mx-auto">
-            <h2 className="text-2xl font-semibold mb-4">
-              Search Across 1,400+ Platforms Instantly
-            </h2>
-            <p className="text-muted-foreground mb-6">
-              Check username availability on all{" "}
-              {categoryMeta.name.toLowerCase()} platforms and thousands more.
-              Free, fast, and no account required.
-            </p>
+            <h2 className="text-2xl font-semibold mb-4">{t("cta_title")}</h2>
+            <p className="text-muted-foreground mb-6">{t("cta_description")}</p>
             <Link
-              href={`/${locale}`}
+              href={homeHref}
               className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-primary text-primary-foreground font-medium hover:bg-primary/90 transition-colors"
             >
-              Start Searching Now
+              {t("cta_search_now")}
             </Link>
           </div>
         </section>

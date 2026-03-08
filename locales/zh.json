@@ -26,7 +26,10 @@
       "es": "西班牙语",
       "ja": "日语",
       "fr": "法语",
-      "ko": "韩语"
+      "ko": "韩语",
+      "de": "德语",
+      "pt": "葡萄牙语",
+      "ru": "俄语"
     }
   },
   "home": {
@@ -96,6 +99,7 @@
   "filters": {
     "title": "筛选",
     "search_placeholder": "按平台名称筛选...",
+    "search_categories_placeholder": "搜索分类...",
     "status_label": "状态",
     "category_label": "分类",
     "all": "全部",
@@ -103,7 +107,14 @@
     "not_found": "未发现",
     "all_categories": "所有分类",
     "show_nsfw": "显示 NSFW 内容",
-    "clear": "清除筛选"
+    "clear": "清除筛选",
+    "show_more": "再显示 {count} 项",
+    "show_less": "收起",
+    "no_categories_found": "未找到分类",
+    "close_aria": "关闭筛选",
+    "showing_results": "显示 {count} 条结果",
+    "apply_filters": "应用筛选",
+    "clear_category_search": "清除分类搜索"
   },
   "platform": {
     "badge_nsfw": "NSFW",
@@ -152,6 +163,47 @@
       }
     }
   },
+  "search_history": {
+    "title": "最近搜索",
+    "recent": "最近",
+    "toggle_aria": "切换搜索历史",
+    "clear_all": "全部清除",
+    "remove_aria": "从历史记录中移除 {username}",
+    "results": "条结果",
+    "just_now": "刚刚",
+    "minutes_ago": "{count} 分钟前",
+    "hours_ago": "{count} 小时前",
+    "days_ago": "{count} 天前",
+    "on_date": "{date}",
+    "empty": "暂无最近搜索"
+  },
+  "export": {
+    "aria_label": "导出结果",
+    "export": "导出",
+    "results_count": "找到 {count} 条结果",
+    "format_csv": "导出为 CSV",
+    "format_json": "导出为 JSON",
+    "format_clipboard": "复制到剪贴板",
+    "copied": "已复制！"
+  },
+  "share": {
+    "share": "分享",
+    "aria_label": "分享结果",
+    "title": "{username} 的搜索结果",
+    "text_basic": "看看 @{username} 在网上哪些地方已被注册",
+    "text_with_results": "已在 {count} 个平台找到 @{username}！查看完整搜索结果：",
+    "via_email": "电子邮件",
+    "copy_link": "复制链接",
+    "copied": "已复制！",
+    "email_subject": "{username} 的用户名搜索结果",
+    "email_body": "我找到了一些关于用户名 {username} 的有趣结果。点击这里查看：{url}",
+    "twitter": "Twitter",
+    "facebook": "Facebook",
+    "linkedin": "LinkedIn"
+  },
+  "shortcuts": {
+    "to_focus": "聚焦搜索"
+  },
   "footer": {
     "about_title": "关于",
     "about_description": "一键搜索你的用户名在 1400+ 平台的存在情况。面向安全研究与数字足迹分析的强大用户名搜索工具。",
@@ -163,12 +215,12 @@
       "ai_analysis": "AI 分析"
     },
     "connect_title": "联系",
-    "email_aria": "邮箱",
-    "github_aria": "GitHub",
-    "copyright": "© {year} What is my Name. 版权所有。",
     "legal_title": "法律",
     "privacy": "隐私政策",
-    "terms": "服务条款"
+    "terms": "服务条款",
+    "email_aria": "邮箱",
+    "github_aria": "GitHub",
+    "copyright": "© {year} What is my Name. 版权所有。"
   },
   "errors": {
     "search_failed": "搜索失败",
@@ -182,6 +234,132 @@
     "home": {
       "title": "What is my Name - 全网用户名搜索（1400+ 平台）",
       "description": "快速查询用户名在社交媒体与网站上的出现情况"
+    },
+    "platform": {
+      "title": "{platform} 用户名搜索 - 检查可用性",
+      "description": "在 {platform} 上搜索并检查用户名可用性。看看你想要的用户名是否能在 {platform} 上使用。"
+    },
+    "category": {
+      "title": "{category} 平台 - 用户名搜索",
+      "description": "在 {category} 平台中搜索并检查用户名可用性。查看你的用户名在哪些平台可用。"
+    },
+    "tools": {
+      "title": "用户名工具 - 生成器、可用性检查等",
+      "description": "免费的用户名工具，包括可用性检查器、用户名生成器和用户名灵感。为所有平台检查并创建理想用户名。"
+    },
+    "blog": {
+      "title": "博客 - 用户名技巧、指南与数字身份",
+      "description": "了解用户名最佳实践、数字身份保护、个人品牌和在线安全。帮助你管理线上存在的专家技巧与指南。"
+    },
+    "categories": {
+      "title": "平台分类 - 按分类搜索用户名",
+      "description": "浏览平台分类，并在社交媒体、游戏、商业、编程和娱乐平台中检查用户名可用性。找到你的用户名可用的位置。"
+    }
+  },
+  "pages": {
+    "blog_index": {
+      "home": "首页",
+      "breadcrumb": "博客",
+      "collection_name": "What is my Name 博客",
+      "collection_description": "了解用户名最佳实践、数字身份保护、个人品牌与在线安全。",
+      "title": "博客",
+      "description": "关于用户名、数字身份与在线形象建设的专业技巧、指南和见解",
+      "featured": "精选",
+      "minutes_read": "{count} 分钟阅读",
+      "minutes_short": "{count} 分钟",
+      "latest_articles": "最新文章",
+      "browse_by_category": "按分类浏览",
+      "popular_topics": "热门主题",
+      "newsletter_title": "保持更新",
+      "newsletter_description": "将关于用户名、数字身份和在线安全的最新技巧发送到你的邮箱。",
+      "newsletter_placeholder": "输入你的邮箱",
+      "newsletter_button": "订阅"
+    },
+    "blog_post": {
+      "not_found_title": "未找到文章",
+      "home": "首页",
+      "blog": "博客",
+      "back_to_blog": "返回博客",
+      "minutes_read": "{count} 分钟阅读",
+      "share_title": "分享这篇文章",
+      "copy_link": "复制链接",
+      "related_articles": "相关文章",
+      "cta_button": "开始搜索用户名",
+      "cta_title": "立即检查你的用户名",
+      "cta_description": "使用我们的免费工具，立即检查你的用户名在 1,400+ 平台上的可用性。"
+    },
+    "categories_index": {
+      "home": "首页",
+      "breadcrumb": "分类",
+      "collection_name": "平台分类",
+      "collection_description": "浏览平台分类，并在社交媒体、游戏、商业、编程和娱乐平台中检查用户名可用性。",
+      "title": "平台分类",
+      "description": "浏览平台分类，并检查 1,400+ 平台上的用户名可用性",
+      "platform_count": "{count, plural, other {# 个平台}}",
+      "cta_title": "搜索全部 1,400+ 平台",
+      "cta_description": "跳过分类，一次搜索全部平台。输入你的用户名，查看它在哪些平台可用。",
+      "cta_button": "开始全平台搜索",
+      "content_title": "按平台分类搜索用户名",
+      "reason_title": "为什么按分类搜索？"
+    },
+    "category_detail": {
+      "not_found_title": "未找到分类",
+      "home": "首页",
+      "categories": "分类",
+      "cta_button": "开始搜索用户名",
+      "cta_search_now": "立即开始搜索",
+      "search_title": "检查 {category} 全部平台上的用户名",
+      "search_description": "输入用户名，检查其在全部 {category} 平台以及另外 1,400+ 平台上的可用性。",
+      "popular_platforms_title": "热门{category}平台",
+      "since": "自 {year} 年起",
+      "popularity_percent": "热度：{popularity}%",
+      "related_searches_title": "相关搜索",
+      "other_categories_title": "其他分类",
+      "about_title": "关于 {category} 平台",
+      "cta_title": "立即搜索 1,400+ 平台",
+      "cta_description": "检查你的用户名在所有 {category} 平台及更多平台上的可用性。免费、快速、无需账号。"
+    },
+    "tools": {
+      "home": "首页",
+      "breadcrumb": "工具",
+      "collection_name": "用户名工具",
+      "collection_description": "免费的用户名工具，包括可用性检查、用户名生成器和用户名创意。",
+      "title": "用户名工具",
+      "description": "帮助你在所有平台上查找、检查并创建理想用户名的免费工具",
+      "coming_soon": "即将推出",
+      "cta_title": "立即检查你的用户名",
+      "cta_description": "使用我们的可用性检查器查看你的用户名在哪些地方已被占用，哪些地方仍可注册。免费、即时且无需账户。",
+      "cta_button": "开始检查",
+      "content_title": "免费用户名工具",
+      "checker_title": "用户名可用性检查器",
+      "generator_title": "用户名生成器",
+      "ideas_title": "用户名灵感与创意",
+      "features_title": "为什么使用我们的用户名工具？",
+      "feature_search_title": "搜索 1,400+ 平台",
+      "feature_search_description": "比其他服务覆盖更多平台，检查用户名可用性",
+      "feature_results_title": "即时结果",
+      "feature_results_description": "实时返回可用性结果，无需等待或注册账号",
+      "feature_free_title": "100% 免费",
+      "feature_free_description": "所有工具完全免费，没有隐藏费用或高级门槛"
+    },
+    "platform_detail": {
+      "not_found_title": "未找到平台",
+      "home": "首页",
+      "categories": "分类",
+      "category_label": "分类：",
+      "popularity_label": "热度：",
+      "visit_platform": "访问 {platform}",
+      "profile_url_pattern": "个人主页 URL 模板：",
+      "username_placeholder": "输入用户名...",
+      "search_button": "搜索",
+      "related_searches": "相关搜索",
+      "similar_platforms": "相似平台",
+      "cta_button": "立即开始搜索",
+      "search_title": "在 {platform} 上检查用户名",
+      "search_description": "输入用户名，检查它在 {platform} 上是否可用。我们会在 1,400+ 平台数据库中搜索，告诉你该用户名在哪里已被占用或可用。",
+      "about_title": "关于 {platform}",
+      "cta_title": "搜索 1,400+ 平台",
+      "cta_description": "一次搜索即可检查你的用户名在 {platform} 和数千个平台上的可用性。了解哪里可用、哪里已被占用，并保护你的数字身份。"
     }
   },
   "error": {

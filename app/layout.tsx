@@ -5,6 +5,7 @@ import { getLocale, getMessages, getTranslations } from "next-intl/server";
 import "./globals.css";
 import { ThemeProvider } from "@/components/providers";
 import { Header, Footer } from "@/components/layout";
+import { getLocaleAlternates, getLocalizedUrl } from "@/i18n/request";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -40,7 +41,7 @@ export async function generateMetadata(): Promise<Metadata> {
   // Base URL - update this with your production domain
   const baseUrl =
     process.env.NEXT_PUBLIC_BASE_URL || "https://whatismyname.org";
-  const canonicalUrl = `${baseUrl}/${locale === "en" ? "" : locale}`;
+  const canonicalUrl = getLocalizedUrl(baseUrl, locale);
 
   return {
     // Basic metadata
@@ -135,13 +136,8 @@ export async function generateMetadata(): Promise<Metadata> {
     alternates: {
       canonical: canonicalUrl,
       languages: {
-        "x-default": `${baseUrl}/en`,
-        en: `${baseUrl}/en`,
-        zh: `${baseUrl}/zh`,
-        es: `${baseUrl}/es`,
-        ja: `${baseUrl}/ja`,
-        fr: `${baseUrl}/fr`,
-        ko: `${baseUrl}/ko`,
+        "x-default": baseUrl,
+        ...getLocaleAlternates(baseUrl),
       },
     },
 

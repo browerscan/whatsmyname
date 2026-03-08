@@ -1,4 +1,5 @@
 import { getTranslations } from "next-intl/server";
+import { localeSchemaNames, locales } from "@/i18n/request";
 
 export async function StructuredData() {
   const t = await getTranslations("seo.home");
@@ -24,7 +25,7 @@ export async function StructuredData() {
       "Search across 1,400+ platforms",
       "Real-time username availability check",
       "AI-powered analysis",
-      "Multi-language support (6 languages)",
+      `Multi-language support (${locales.length} languages)`,
       "Google Custom Search integration",
       "OSINT capabilities",
     ],
@@ -52,7 +53,7 @@ export async function StructuredData() {
     alternateName: "Username Search Platform",
     url: baseUrl,
     description: t("description"),
-    inLanguage: ["en", "zh", "es", "ja", "fr", "ko"],
+    inLanguage: [...locales],
     potentialAction: {
       "@type": "SearchAction",
       target: {
@@ -101,14 +102,7 @@ export async function StructuredData() {
       "@type": "ContactPoint",
       contactType: "Customer Support",
       email: "contact@whatismyname.com",
-      availableLanguage: [
-        "English",
-        "Chinese",
-        "Spanish",
-        "Japanese",
-        "French",
-        "Korean",
-      ],
+      availableLanguage: Object.values(localeSchemaNames),
     },
   };
 

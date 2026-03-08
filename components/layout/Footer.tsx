@@ -1,15 +1,17 @@
-"use client";
-
 import Link from "next/link";
-import { useLocale, useTranslations } from "next-intl";
+import { getLocale, getTranslations } from "next-intl/server";
 import { CONTACT_EMAIL } from "@/lib/constants";
+import { defaultLocale } from "@/i18n/request";
 
-export function Footer() {
+export async function Footer() {
   const currentYear = new Date().getFullYear();
-  const locale = useLocale();
-  const homeHref = locale === "en" ? "/" : `/${locale}`;
-  const t = useTranslations("footer");
-  const tFeatures = useTranslations("footer.features");
+  const [locale, t, tFeatures] = await Promise.all([
+    getLocale(),
+    getTranslations("footer"),
+    getTranslations("footer.features"),
+  ]);
+
+  const homeHref = locale === defaultLocale ? "/" : `/${locale}`;
 
   return (
     <footer className="w-full border-t bg-background">
@@ -30,34 +32,22 @@ export function Footer() {
             </h3>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li>
-                <Link
-                  href={homeHref}
-                  className="hover:text-primary transition-colors"
-                >
+                <Link className="transition-colors hover:text-primary" href={homeHref}>
                   {tFeatures("username_search")}
                 </Link>
               </li>
               <li>
-                <Link
-                  href={homeHref}
-                  className="hover:text-primary transition-colors"
-                >
+                <Link className="transition-colors hover:text-primary" href={homeHref}>
                   {tFeatures("platform_support")}
                 </Link>
               </li>
               <li>
-                <Link
-                  href={homeHref}
-                  className="hover:text-primary transition-colors"
-                >
+                <Link className="transition-colors hover:text-primary" href={homeHref}>
                   {tFeatures("realtime_results")}
                 </Link>
               </li>
               <li>
-                <Link
-                  href={homeHref}
-                  className="hover:text-primary transition-colors"
-                >
+                <Link className="transition-colors hover:text-primary" href={homeHref}>
                   {tFeatures("ai_analysis")}
                 </Link>
               </li>
@@ -69,8 +59,8 @@ export function Footer() {
               {t("connect_title")}
             </h3>
             <a
+              className="font-mono text-sm text-muted-foreground transition-colors hover:text-primary"
               href={`mailto:${CONTACT_EMAIL}`}
-              className="text-sm text-muted-foreground hover:text-primary transition-colors font-mono"
             >
               {CONTACT_EMAIL}
             </a>
