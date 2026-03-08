@@ -202,7 +202,9 @@
     "linkedin": "LinkedIn"
   },
   "shortcuts": {
-    "to_focus": "聚焦搜索"
+    "to_focus": "聚焦搜索",
+    "hint_prefix": "按下",
+    "hint_suffix": "即可聚焦搜索"
   },
   "footer": {
     "about_title": "关于",

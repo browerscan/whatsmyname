@@ -202,7 +202,9 @@
     "linkedin": "LinkedIn"
   },
   "shortcuts": {
-    "to_focus": "pour activer la recherche"
+    "to_focus": "pour activer la recherche",
+    "hint_prefix": "Appuyez sur",
+    "hint_suffix": "pour activer la recherche"
   },
   "footer": {
     "about_title": "À propos",

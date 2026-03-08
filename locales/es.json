@@ -202,7 +202,9 @@
     "linkedin": "LinkedIn"
   },
   "shortcuts": {
-    "to_focus": "para enfocar la búsqueda"
+    "to_focus": "para enfocar la búsqueda",
+    "hint_prefix": "Presiona",
+    "hint_suffix": "para enfocar la búsqueda"
   },
   "footer": {
     "about_title": "Acerca de",

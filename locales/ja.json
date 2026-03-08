@@ -202,7 +202,9 @@
     "linkedin": "LinkedIn"
   },
   "shortcuts": {
-    "to_focus": "で検索にフォーカス"
+    "to_focus": "で検索にフォーカス",
+    "hint_prefix": "検索にフォーカスするには",
+    "hint_suffix": "を押す"
   },
   "footer": {
     "about_title": "概要",

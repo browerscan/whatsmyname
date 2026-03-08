@@ -202,7 +202,9 @@
     "linkedin": "LinkedIn"
   },
   "shortcuts": {
-    "to_focus": "чтобы перейти к поиску"
+    "to_focus": "чтобы перейти к поиску",
+    "hint_prefix": "Нажмите",
+    "hint_suffix": "чтобы перейти к поиску"
   },
   "footer": {
     "about_title": "О проекте",

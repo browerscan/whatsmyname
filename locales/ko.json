@@ -202,7 +202,9 @@
     "linkedin": "LinkedIn"
   },
   "shortcuts": {
-    "to_focus": "검색에 포커스"
+    "to_focus": "검색에 포커스",
+    "hint_prefix": "검색에 포커스하려면",
+    "hint_suffix": "를 누르세요"
   },
   "footer": {
     "about_title": "소개",

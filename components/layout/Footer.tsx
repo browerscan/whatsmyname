@@ -5,11 +5,8 @@ import { defaultLocale } from "@/i18n/request";
 
 export async function Footer() {
   const currentYear = new Date().getFullYear();
-  const [locale, t, tFeatures] = await Promise.all([
-    getLocale(),
-    getTranslations("footer"),
-    getTranslations("footer.features"),
-  ]);
+  const locale = await getLocale();
+  const t = await getTranslations({ locale, namespace: "footer" });
 
   const homeHref = locale === defaultLocale ? "/" : `/${locale}`;
 
@@ -33,22 +30,22 @@ export async function Footer() {
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li>
                 <Link className="transition-colors hover:text-primary" href={homeHref}>
-                  {tFeatures("username_search")}
+                  {t("features.username_search")}
                 </Link>
               </li>
               <li>
                 <Link className="transition-colors hover:text-primary" href={homeHref}>
-                  {tFeatures("platform_support")}
+                  {t("features.platform_support")}
                 </Link>
               </li>
               <li>
                 <Link className="transition-colors hover:text-primary" href={homeHref}>
-                  {tFeatures("realtime_results")}
+                  {t("features.realtime_results")}
                 </Link>
               </li>
               <li>
                 <Link className="transition-colors hover:text-primary" href={homeHref}>
-                  {tFeatures("ai_analysis")}
+                  {t("features.ai_analysis")}
                 </Link>
               </li>
             </ul>

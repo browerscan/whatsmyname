@@ -194,15 +194,13 @@ export function SearchBar({
 
         <p className="text-sm text-muted-foreground/80 text-center">
           {tSearch("hint")}
-          {tShortcut && (
-            <span className="ml-2">
-              Press{" "}
-              <kbd className="mx-1 px-2 py-0.5 rounded-lg bg-muted/60 border border-border/50 font-mono text-xs">
-                {KEYBOARD_SHORTCUT}
-              </kbd>{" "}
-              {tShortcut("to_focus")}
-            </span>
-          )}
+          <span className="ml-2">
+            {tShortcut("hint_prefix")}{" "}
+            <kbd className="mx-1 px-2 py-0.5 rounded-lg bg-muted/60 border border-border/50 font-mono text-xs">
+              {KEYBOARD_SHORTCUT}
+            </kbd>{" "}
+            {tShortcut("hint_suffix")}
+          </span>
         </p>
       </form>
     </div>
