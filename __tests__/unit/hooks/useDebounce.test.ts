@@ -271,7 +271,7 @@ describe("useDebounce", () => {
     });
 
     it("should use latest callback reference", () => {
-      let callbackValue = "initial";
+      const callbackValue = "initial";
       const callback1 = vi.fn(() => callbackValue);
       const callback2 = vi.fn(() => "updated");
 

@@ -566,7 +566,7 @@ describe("useSearchCache", () => {
 
       expect(cached).not.toBeNull();
       expect(cached?.whatsMyNameResults).toEqual([]);
-      expect(cached?.googleResults.items).toEqual([]);
+      expect(cached?.googleResults?.items).toEqual([]);
     });
 
     it("should handle large result sets", () => {

@@ -11,18 +11,17 @@ describe("Google Search API", () => {
   const originalEnv = process.env;
   let mockFetch: ReturnType<typeof vi.fn>;
   let testCounter = 0;
-
   beforeEach(() => {
     vi.resetModules();
     testCounter++;
     process.env = { ...originalEnv };
     process.env.GOOGLE_CUSTOM_SEARCH_API_KEYS = "key1,key2";
     process.env.GOOGLE_CUSTOM_SEARCH_CX = "test-cx-123";
-    process.env.NODE_ENV = "test";
+    process.env = { ...process.env, NODE_ENV: "test" };
 
     // Mock fetch globally
     mockFetch = vi.fn();
-    global.fetch = mockFetch;
+    global.fetch = mockFetch as typeof fetch;
   });
 
   afterEach(() => {
@@ -217,11 +216,28 @@ describe("Google Search API", () => {
 
     const response = await GET(request);
 
-    expect(response.headers.get("Cache-Control")).toContain("public");
-    expect(response.headers.get("Cache-Control")).toContain("s-maxage=900");
-    expect(response.headers.get("Cache-Control")).toContain(
-      "stale-while-revalidate=1800",
+    expect(response.headers.get("Cache-Control")).toBe("private, no-store");
+    expect(response.headers.get("X-Google-Key-Index")).toBeNull();
+  });
+
+  it("should block known bots before calling Google", async () => {
+    const request = new NextRequest(
+      "http://localhost:3000/api/search/google?username=test",
+      {
+        headers: {
+          "user-agent": "SemrushBot/7~bl",
+          "x-forwarded-for": `127.0.0.${testCounter}`,
+        },
+      },
     );
+
+    const response = await GET(request);
+    const data = await response.json();
+
+    expect(response.status).toBe(403);
+    expect(data.error).toBe("Forbidden");
+    expect(response.headers.get("Cache-Control")).toBe("private, no-store");
+    expect(mockFetch).not.toHaveBeenCalled();
   });
 
   it("should use rotated API key order", async () => {
@@ -291,7 +307,7 @@ describe("Google Search API", () => {
   });
 
   it("should sanitize errors in production mode", async () => {
-    process.env.NODE_ENV = "production";
+    process.env = { ...process.env, NODE_ENV: "production" };
 
     // Mock rejection for all API keys
     mockFetch
@@ -314,7 +330,7 @@ describe("Google Search API", () => {
   });
 
   it("should include detailed errors in development mode", async () => {
-    process.env.NODE_ENV = "development";
+    process.env = { ...process.env, NODE_ENV: "development" };
 
     // Mock rejection for all API keys
     mockFetch

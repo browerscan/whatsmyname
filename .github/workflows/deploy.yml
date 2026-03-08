@@ -43,6 +43,15 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
+      - name: Generate wrangler.toml from template
+        run: cp wrangler.toml.example wrangler.toml
+
+      - name: Run lint
+        run: pnpm lint
+
+      - name: Run typecheck
+        run: pnpm typecheck
+
       - name: Run tests
         run: pnpm test
 
@@ -78,5 +87,5 @@ jobs:
           echo "- Status: ${{ job.status }}" >> "$GITHUB_STEP_SUMMARY"
           echo "- Branch: ${{ github.ref_name }}" >> "$GITHUB_STEP_SUMMARY"
           echo "- Commit: ${{ github.sha }}" >> "$GITHUB_STEP_SUMMARY"
-          echo "- Worker URL: https://whatsmyname.browserscan.workers.dev" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Worker URL: https://whatsmyname.7and1.workers.dev" >> "$GITHUB_STEP_SUMMARY"
           echo "- Domain: https://whatismyname.org" >> "$GITHUB_STEP_SUMMARY"

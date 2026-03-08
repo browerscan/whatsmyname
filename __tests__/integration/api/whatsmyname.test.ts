@@ -18,7 +18,7 @@ describe("WhatsMyName Search API", () => {
 
     // Mock fetch globally
     mockFetch = vi.fn();
-    global.fetch = mockFetch;
+    global.fetch = mockFetch as typeof fetch;
   });
 
   afterEach(() => {
@@ -97,7 +97,7 @@ describe("WhatsMyName Search API", () => {
     expect(response.status).toBe(200);
     expect(response.headers.get("Content-Type")).toBe("application/x-ndjson");
     expect(response.headers.get("Cache-Control")).toBe(
-      "no-cache, no-transform",
+      "private, no-store, no-transform",
     );
     expect(response.headers.get("X-Content-Type-Options")).toBe("nosniff");
     expect(response.headers.get("X-RateLimit-Limit")).toBeTruthy();
@@ -251,5 +251,27 @@ describe("WhatsMyName Search API", () => {
       expect(fullText).toContain("GitHub");
       expect(fullText).toContain("Twitter");
     }
+  });
+
+  it("should block known bots before calling WhatsMyName", async () => {
+    const request = new NextRequest(
+      "http://localhost:3000/api/search/whatsmyname?username=testuser",
+      {
+        headers: {
+          "user-agent": "AhrefsBot/8.0",
+          "x-forwarded-for": "127.0.0.240",
+        },
+      },
+    );
+
+    const response = await GET(request);
+    const data = await response.json();
+
+    expect(response.status).toBe(403);
+    expect(data.error).toBe("Forbidden");
+    expect(response.headers.get("Cache-Control")).toBe(
+      "private, no-store, no-transform",
+    );
+    expect(mockFetch).not.toHaveBeenCalled();
   });
 });

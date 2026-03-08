@@ -7,7 +7,10 @@ import {
   type UsernameSearchRequest,
   type AIAnalyzeRequest,
 } from "@/lib/api-validation";
-import { ZodError } from "zod";
+
+type MockSchema<T> = {
+  parse: (input: unknown) => T;
+};
 
 /**
  * Unit Tests for API Validation
@@ -410,7 +413,7 @@ describe("api-validation", () => {
         },
       };
 
-      expect(() => validateRequest(badSchema as any, {})).toThrow(
+      expect(() => validateRequest(badSchema as MockSchema<unknown>, {})).toThrow(
         "Custom error",
       );
     });
@@ -470,7 +473,7 @@ describe("api-validation", () => {
         },
       };
 
-      const result = safeValidateRequest(badSchema as any, {});
+      const result = safeValidateRequest(badSchema as MockSchema<unknown>, {});
 
       expect(result.success).toBe(false);
       if (!result.success) {

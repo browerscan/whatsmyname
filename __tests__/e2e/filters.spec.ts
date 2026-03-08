@@ -65,7 +65,7 @@ test.describe("Filter Functionality", () => {
     const notFoundBadges = page.locator("text=/not found/i");
 
     const foundCount = await foundBadges.count();
-    const notFoundCount = await notFoundBadges.count();
+    await notFoundBadges.count();
 
     expect(foundCount).toBeGreaterThan(0);
     // Not found badges should not be visible in filtered results
@@ -121,7 +121,7 @@ test.describe("Filter Functionality", () => {
       await page.waitForTimeout(500);
 
       // NSFW badges should be hidden or limited
-      const nsfwBadges = page.locator("text=/nsfw/i");
+      page.locator("text=/nsfw/i");
       // After unchecking, NSFW results should be filtered out
     }
   });
@@ -254,7 +254,6 @@ test.describe("Filter Functionality", () => {
       .locator("text=/found/i")
       .or(page.locator("[data-filter-status='found']"));
 
-    const initialUrl = page.url();
     await foundFilter.first().click();
     await page.waitForTimeout(500);
 

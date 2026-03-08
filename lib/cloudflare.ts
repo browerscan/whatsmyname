@@ -5,15 +5,6 @@
  * in OpenNext deployments. Falls back to process.env for local development.
  */
 
-interface CloudflareContext {
-  env: Record<string, string>;
-  ctx: {
-    waitUntil: (fn: Promise<unknown>) => void;
-    passThroughOnException: () => void;
-  };
-  cf?: Record<string, unknown>;
-}
-
 /**
  * Get Cloudflare env from OpenNext context
  * Falls back to process.env for local development

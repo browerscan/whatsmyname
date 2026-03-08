@@ -16,6 +16,16 @@ export interface HandleApiErrorOptions {
   context?: string;
   /** Whether to include error details in production (default: false) */
   exposeDetailsInProduction?: boolean;
+  /** Additional headers for the response */
+  headers?: HeadersInit;
+}
+
+function createJsonHeaders(headers?: HeadersInit): HeadersInit | undefined {
+  if (!headers) {
+    return undefined;
+  }
+
+  return new Headers(headers);
 }
 
 /**
@@ -44,7 +54,11 @@ export function handleApiError(
   error: unknown,
   options: HandleApiErrorOptions = {},
 ): NextResponse<ApiErrorResponse> {
-  const { context = "API", exposeDetailsInProduction = false } = options;
+  const {
+    context = "API",
+    exposeDetailsInProduction = false,
+    headers,
+  } = options;
   const errorObj = error as Error;
 
   // Log the error with context
@@ -52,7 +66,10 @@ export function handleApiError(
 
   // Handle timeout errors
   if (isTimeoutError(errorObj)) {
-    return NextResponse.json({ error: "Request timed out" }, { status: 504 });
+    return NextResponse.json(
+      { error: "Request timed out" },
+      { status: 504, headers: createJsonHeaders(headers) },
+    );
   }
 
   // Determine error details based on environment
@@ -60,7 +77,7 @@ export function handleApiError(
 
   return NextResponse.json(
     { error: "Internal server error", details },
-    { status: 500 },
+    { status: 500, headers: createJsonHeaders(headers) },
   );
 }
 
@@ -89,8 +106,12 @@ export function getErrorDetails(
  */
 export function validationErrorResponse(
   message: string,
+  headers?: HeadersInit,
 ): NextResponse<ApiErrorResponse> {
-  return NextResponse.json({ error: message }, { status: 400 });
+  return NextResponse.json(
+    { error: message },
+    { status: 400, headers: createJsonHeaders(headers) },
+  );
 }
 
 /**
@@ -98,8 +119,12 @@ export function validationErrorResponse(
  */
 export function configurationErrorResponse(
   message: string,
+  headers?: HeadersInit,
 ): NextResponse<ApiErrorResponse> {
-  return NextResponse.json({ error: message }, { status: 500 });
+  return NextResponse.json(
+    { error: message },
+    { status: 500, headers: createJsonHeaders(headers) },
+  );
 }
 
 /**
@@ -109,9 +134,10 @@ export function upstreamApiErrorResponse(
   serviceName: string,
   statusText: string,
   status: number,
+  headers?: HeadersInit,
 ): NextResponse<ApiErrorResponse> {
   return NextResponse.json(
     { error: `${serviceName} API error: ${statusText}` },
-    { status },
+    { status, headers: createJsonHeaders(headers) },
   );
 }

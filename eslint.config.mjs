@@ -14,6 +14,9 @@ const config = [
     ignores: [
       "node_modules/**",
       ".next/**",
+      ".open-next/**",
+      ".pnpm-store/**",
+      ".wrangler/**",
       "dist/**",
       "build/**",
       "out/**",
@@ -34,6 +37,24 @@ const config = [
     files: ["components/features/PlatformGrid.tsx"],
     rules: {
       "react-hooks/incompatible-library": "off",
+    },
+  },
+  {
+    files: ["next-env.d.ts"],
+    rules: {
+      "@typescript-eslint/triple-slash-reference": "off",
+    },
+  },
+  {
+    files: ["scripts/**/*.js"],
+    rules: {
+      "@typescript-eslint/no-require-imports": "off",
+    },
+  },
+  {
+    files: ["content/education/*.ts"],
+    rules: {
+      "import/no-anonymous-default-export": "off",
     },
   },
 ];

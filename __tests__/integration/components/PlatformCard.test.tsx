@@ -123,7 +123,7 @@ describe("PlatformCard Component", () => {
   });
 
   it("should display response time badge with correct color", () => {
-    const { container } = render(<PlatformCard result={mockFoundResult} />);
+    render(<PlatformCard result={mockFoundResult} />);
 
     // Fast response time should have green color
     const responseTimeBadge = screen.getByText("150ms");
@@ -210,7 +210,7 @@ describe("PlatformCard Component", () => {
       },
     };
 
-    const { container } = render(<PlatformCard result={slowResult} />);
+    render(<PlatformCard result={slowResult} />);
 
     const responseTimeBadge = screen.getByText(/1500|1.50s/);
     expect(responseTimeBadge).toBeVisible();

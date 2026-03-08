@@ -1,5 +1,10 @@
 import { NextRequest, NextResponse } from "next/server";
-import { rateLimit, getClientIp, rateLimitResponse } from "@/lib/rate-limit";
+import {
+  rateLimit,
+  getClientIp,
+  rateLimitResponse,
+  isBlockedBotRequest,
+} from "@/lib/rate-limit";
 import {
   type UsernameSearchRequest,
   usernameSearchSchema,
@@ -12,8 +17,32 @@ import {
 } from "@/lib/api-error-handler";
 
 const WHATSMYNAME_API_URL = "https://api.whatsmynameapp.org/api/v1/search";
+const WHATSMYNAME_CACHE_CONTROL = "private, no-store, no-transform";
+
+function createWhatsMyNameHeaders(headers?: HeadersInit): Headers {
+  const responseHeaders = new Headers(headers);
+  responseHeaders.set("Cache-Control", WHATSMYNAME_CACHE_CONTROL);
+  return responseHeaders;
+}
+
+function createWhatsMyNameJsonResponse(
+  body: unknown,
+  init: ResponseInit = {},
+): NextResponse {
+  return NextResponse.json(body, {
+    ...init,
+    headers: createWhatsMyNameHeaders(init.headers),
+  });
+}
 
 export async function GET(request: NextRequest) {
+  if (isBlockedBotRequest(request)) {
+    return createWhatsMyNameJsonResponse(
+      { error: "Forbidden" },
+      { status: 403 },
+    );
+  }
+
   // Rate limiting: 10 requests per 10 seconds per IP
   const clientIp = getClientIp(request);
   const rateLimitResult = await rateLimit(`whatsmyname:${clientIp}`, {
@@ -22,7 +51,11 @@ export async function GET(request: NextRequest) {
   });
 
   if (!rateLimitResult.success) {
-    return rateLimitResponse(rateLimitResult);
+    return rateLimitResponse(
+      rateLimitResult,
+      undefined,
+      createWhatsMyNameHeaders(),
+    );
   }
 
   const searchParams = request.nextUrl.searchParams;
@@ -34,7 +67,10 @@ export async function GET(request: NextRequest) {
     { username },
   );
   if (!validation.success) {
-    return NextResponse.json({ error: validation.error }, { status: 400 });
+    return createWhatsMyNameJsonResponse(
+      { error: validation.error },
+      { status: 400 },
+    );
   }
 
   const validatedUsername = validation.data.username;
@@ -42,7 +78,10 @@ export async function GET(request: NextRequest) {
   // Validate API key - use process.env (injected by OpenNext from Cloudflare env)
   const apiKey = process.env.WHATSMYNAME_API_KEY;
   if (!apiKey) {
-    return configurationErrorResponse("WhatsMyName API key not configured");
+    return configurationErrorResponse(
+      "WhatsMyName API key not configured",
+      createWhatsMyNameHeaders(),
+    );
   }
 
   try {
@@ -66,6 +105,7 @@ export async function GET(request: NextRequest) {
         "WhatsMyName",
         response.statusText,
         response.status,
+        createWhatsMyNameHeaders(),
       );
     }
 
@@ -122,7 +162,7 @@ export async function GET(request: NextRequest) {
     return new NextResponse(stream, {
       headers: {
         "Content-Type": "application/x-ndjson",
-        "Cache-Control": "no-cache, no-transform",
+        "Cache-Control": WHATSMYNAME_CACHE_CONTROL,
         "X-Content-Type-Options": "nosniff",
         "X-RateLimit-Limit": rateLimitResult.limit.toString(),
         "X-RateLimit-Remaining": rateLimitResult.remaining.toString(),
@@ -130,6 +170,9 @@ export async function GET(request: NextRequest) {
       },
     });
   } catch (error: unknown) {
-    return handleApiError(error, { context: "WhatsMyName API" });
+    return handleApiError(error, {
+      context: "WhatsMyName API",
+      headers: createWhatsMyNameHeaders(),
+    });
   }
 }

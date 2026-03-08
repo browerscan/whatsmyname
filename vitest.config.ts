@@ -16,6 +16,9 @@ export default defineConfig({
       "**/node_modules/**",
       "**/dist/**",
       "**/.next/**",
+      "**/.open-next/**",
+      "**/.pnpm-store/**",
+      "**/.wrangler/**",
       "**/__tests__/e2e/**", // E2E tests run via Playwright, not Vitest
     ],
     coverage: {
@@ -26,6 +29,9 @@ export default defineConfig({
         "__tests__/",
         "*.config.{js,ts}",
         ".next/",
+        ".open-next/",
+        ".pnpm-store/",
+        ".wrangler/",
         "coverage/",
       ],
     },

@@ -1,5 +1,5 @@
+import AxeBuilder from "@axe-core/playwright";
 import { test, expect } from "@playwright/test";
-import { AxeBuilder } from "@playwright/test";
 
 const BASE_URL = process.env.BASE_URL || "http://localhost:3000";
 
@@ -148,7 +148,6 @@ test.describe("Accessibility", () => {
   test("should announce errors to screen readers", async ({ page }) => {
     await page.goto(BASE_URL);
 
-    const searchInput = page.getByRole("textbox", { name: /username/i });
     const searchButton = page.getByRole("button", { name: /search/i });
 
     // Trigger validation error
@@ -170,7 +169,7 @@ test.describe("Accessibility", () => {
 
     // Filter for color-contrast violations
     const contrastViolations = accessibilityScanResults.violations.filter(
-      (v) => v.id === "color-contrast",
+      (violation) => violation.id === "color-contrast",
     );
 
     expect(contrastViolations).toEqual([]);
@@ -207,7 +206,7 @@ test.describe("Accessibility", () => {
 
     // Check for nav landmark
     const nav = page.locator("nav").or(page.locator("[role='navigation']"));
-    const navCount = await nav.count();
+    await nav.count();
     // Nav is optional on homepage
   });
 

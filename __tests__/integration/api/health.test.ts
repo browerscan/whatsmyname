@@ -8,7 +8,6 @@ import { GET } from "@/app/api/health/route";
  */
 describe("Health API", () => {
   const originalEnv = process.env;
-
   beforeEach(() => {
     vi.resetModules();
     process.env = { ...originalEnv };
@@ -24,7 +23,7 @@ describe("Health API", () => {
     process.env.GOOGLE_CUSTOM_SEARCH_CX = "test-cx";
     process.env.OPENROUTER_API_KEY = "openrouter-key";
     process.env.npm_package_version = "1.0.0";
-    process.env.NODE_ENV = "production";
+    process.env = { ...process.env, NODE_ENV: "production" };
 
     const response = await GET();
     const data = await response.json();
@@ -37,6 +36,7 @@ describe("Health API", () => {
     expect(data.services.whatsmyname.status).toBe("available");
     expect(data.services.google.status).toBe("available");
     expect(data.services.openrouter.status).toBe("available");
+    expect(response.headers.get("Cache-Control")).toBe("no-store");
   });
 
   it("should return degraded status when some services are missing", async () => {
@@ -44,7 +44,7 @@ describe("Health API", () => {
     process.env.GOOGLE_CUSTOM_SEARCH_API_KEYS = "";
     process.env.GOOGLE_CUSTOM_SEARCH_CX = "";
     process.env.OPENROUTER_API_KEY = "";
-    process.env.NODE_ENV = "development";
+    process.env = { ...process.env, NODE_ENV: "development" };
 
     const response = await GET();
     const data = await response.json();

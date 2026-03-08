@@ -6,6 +6,25 @@ const withBundleAnalyzer = bundleAnalyzer({
   enabled: process.env.ANALYZE === "true",
 });
 
+const isProduction = process.env.NODE_ENV === "production";
+const contentSecurityPolicy = [
+  "default-src 'self'",
+  isProduction
+    ? "script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com"
+    : "script-src 'self' 'unsafe-eval' 'unsafe-inline' https://static.cloudflareinsights.com",
+  "style-src 'self' 'unsafe-inline'",
+  "img-src 'self' data: https: blob:",
+  "font-src 'self' data:",
+  isProduction
+    ? "connect-src 'self'"
+    : "connect-src 'self' https://api.whatsmynameapp.org https://www.googleapis.com https://*.googleapis.com https://google.com https://*.google.com https://openrouter.ai https://*.openrouter.ai",
+  "frame-ancestors 'none'",
+  "base-uri 'self'",
+  "form-action 'self'",
+  "object-src 'none'",
+  "manifest-src 'self'",
+].join("; ");
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   // Memory optimization for development
@@ -80,22 +99,7 @@ const nextConfig = {
           },
           {
             key: "Content-Security-Policy",
-            value: [
-              "default-src 'self'",
-              "script-src 'self' 'unsafe-eval' 'unsafe-inline' https://static.cloudflareinsights.com", // Next.js requires unsafe-eval and unsafe-inline
-              "style-src 'self' 'unsafe-inline'", // Tailwind and styled-components need unsafe-inline
-              "img-src 'self' data: https: blob:", // Added blob for data URLs
-              "font-src 'self' data:",
-              // Connect-src includes all external API domains
-              "connect-src 'self' https://api.whatsmynameapp.org https://www.googleapis.com https://*.googleapis.com https://google.com https://*.google.com https://openrouter.ai https://*.openrouter.ai",
-              // Frame-ancestors prevents clickjacking
-              "frame-ancestors 'none'",
-              "base-uri 'self'",
-              "form-action 'self'",
-              // Additional security directives
-              "object-src 'none'", // No plugins
-              "manifest-src 'self'",
-            ].join("; "),
+            value: contentSecurityPolicy,
           },
         ],
       },
@@ -116,16 +120,6 @@ const nextConfig = {
           {
             key: "Cache-Control",
             value: "public, max-age=31536000, immutable",
-          },
-        ],
-      },
-      // Cache headers for API responses
-      {
-        source: "/api/:path*",
-        headers: [
-          {
-            key: "Cache-Control",
-            value: "public, max-age=60, stale-while-revalidate=300",
           },
         ],
       },

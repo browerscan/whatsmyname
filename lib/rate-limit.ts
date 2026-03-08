@@ -36,6 +36,19 @@ interface RateLimitResult {
   retryAfter?: number;
 }
 
+const BLOCKED_BOTS = [
+  "AhrefsBot",
+  "MJ12bot",
+  "DotBot",
+  "SemrushBot",
+  "BLEXBot",
+  "DataForSeoBot",
+  "megaindex",
+  "MauiBot",
+  "Sogou",
+  "YandexBot",
+];
+
 // Per-instance rate limit storage
 // In edge runtime, each instance maintains its own map
 // This provides basic rate limiting but not global coordination
@@ -346,17 +359,18 @@ function generateRequestFingerprint(request: Request): string {
 export function rateLimitResponse(
   result: RateLimitResult,
   message: string = "Rate limit exceeded. Please try again later.",
+  extraHeaders?: HeadersInit,
 ): Response {
-  const headers: Record<string, string> = {
-    "Content-Type": "application/json",
-    "X-RateLimit-Limit": result.limit.toString(),
-    "X-RateLimit-Remaining": result.remaining.toString(),
-    "X-RateLimit-Reset": new Date(result.reset).toISOString(),
-  };
+  const headers = new Headers(extraHeaders);
+
+  headers.set("Content-Type", "application/json");
+  headers.set("X-RateLimit-Limit", result.limit.toString());
+  headers.set("X-RateLimit-Remaining", result.remaining.toString());
+  headers.set("X-RateLimit-Reset", new Date(result.reset).toISOString());
 
   // Add Retry-After header for rate limit responses
   if (result.retryAfter) {
-    headers["Retry-After"] = result.retryAfter.toString();
+    headers.set("Retry-After", result.retryAfter.toString());
   }
 
   return new Response(
@@ -391,6 +405,22 @@ export function addRateLimitHeaders(
   );
 
   return newResponse;
+}
+
+/**
+ * Check whether the request user agent matches a blocked bot signature.
+ */
+export function isBlockedBotRequest(request: Request): boolean {
+  const userAgent = request.headers.get("user-agent");
+
+  if (!userAgent) {
+    return false;
+  }
+
+  const normalizedUserAgent = userAgent.toLowerCase();
+  return BLOCKED_BOTS.some((bot) =>
+    normalizedUserAgent.includes(bot.toLowerCase()),
+  );
 }
 
 /**

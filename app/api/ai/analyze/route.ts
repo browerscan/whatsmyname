@@ -1,5 +1,10 @@
 import { NextRequest, NextResponse } from "next/server";
-import { rateLimit, getClientIp, rateLimitResponse } from "@/lib/rate-limit";
+import {
+  rateLimit,
+  getClientIp,
+  rateLimitResponse,
+  isBlockedBotRequest,
+} from "@/lib/rate-limit";
 import {
   type AIAnalyzeRequest,
   aiAnalyzeSchema,
@@ -13,8 +18,32 @@ import {
 import { getEnvVar } from "@/lib/cloudflare";
 
 const OPENROUTER_API_URL = "https://openrouter.ai/api/v1/chat/completions";
+const AI_ANALYZE_CACHE_CONTROL = "private, no-store, no-transform";
+
+function createAiAnalyzeHeaders(headers?: HeadersInit): Headers {
+  const responseHeaders = new Headers(headers);
+  responseHeaders.set("Cache-Control", AI_ANALYZE_CACHE_CONTROL);
+  return responseHeaders;
+}
+
+function createAiAnalyzeJsonResponse(
+  body: unknown,
+  init: ResponseInit = {},
+): NextResponse {
+  return NextResponse.json(body, {
+    ...init,
+    headers: createAiAnalyzeHeaders(init.headers),
+  });
+}
 
 export async function POST(request: NextRequest) {
+  if (isBlockedBotRequest(request)) {
+    return createAiAnalyzeJsonResponse(
+      { error: "Forbidden" },
+      { status: 403 },
+    );
+  }
+
   // Rate limiting: 3 requests per 10 seconds per IP (AI queries are expensive)
   const clientIp = getClientIp(request);
   const rateLimitResult = await rateLimit(`ai:${clientIp}`, {
@@ -23,7 +52,11 @@ export async function POST(request: NextRequest) {
   });
 
   if (!rateLimitResult.success) {
-    return rateLimitResponse(rateLimitResult);
+    return rateLimitResponse(
+      rateLimitResult,
+      undefined,
+      createAiAnalyzeHeaders(),
+    );
   }
 
   try {
@@ -35,7 +68,10 @@ export async function POST(request: NextRequest) {
       body,
     );
     if (!validation.success) {
-      return NextResponse.json({ error: validation.error }, { status: 400 });
+      return createAiAnalyzeJsonResponse(
+        { error: validation.error },
+        { status: 400 },
+      );
     }
 
     const { messages } = validation.data;
@@ -46,7 +82,10 @@ export async function POST(request: NextRequest) {
       getEnvVar("OPENROUTER_MODEL") || "deepseek/deepseek-chat-v3.1:free";
 
     if (!apiKey) {
-      return configurationErrorResponse("OpenRouter API key not configured");
+      return configurationErrorResponse(
+        "OpenRouter API key not configured",
+        createAiAnalyzeHeaders(),
+      );
     }
 
     // Convert our message format to OpenRouter format
@@ -82,6 +121,7 @@ export async function POST(request: NextRequest) {
         "OpenRouter",
         response.statusText,
         response.status,
+        createAiAnalyzeHeaders(),
       );
     }
 
@@ -149,7 +189,7 @@ export async function POST(request: NextRequest) {
     return new NextResponse(stream, {
       headers: {
         "Content-Type": "text/event-stream",
-        "Cache-Control": "no-cache, no-transform",
+        "Cache-Control": AI_ANALYZE_CACHE_CONTROL,
         Connection: "keep-alive",
         "X-Content-Type-Options": "nosniff",
         "X-RateLimit-Limit": rateLimitResult.limit.toString(),
@@ -158,6 +198,9 @@ export async function POST(request: NextRequest) {
       },
     });
   } catch (error: unknown) {
-    return handleApiError(error, { context: "AI analyze API" });
+    return handleApiError(error, {
+      context: "AI analyze API",
+      headers: createAiAnalyzeHeaders(),
+    });
   }
 }

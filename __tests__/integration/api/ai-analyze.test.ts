@@ -11,18 +11,17 @@ describe("AI Analyze API", () => {
   const originalEnv = process.env;
   let mockFetch: ReturnType<typeof vi.fn>;
   let testCounter = 0;
-
   beforeEach(() => {
     vi.resetModules();
     testCounter++;
     process.env = { ...originalEnv };
     process.env.OPENROUTER_API_KEY = "test-openrouter-key";
     process.env.OPENROUTER_MODEL = "deepseek/deepseek-chat-v3.1:free";
-    process.env.NODE_ENV = "test";
+    process.env = { ...process.env, NODE_ENV: "test" };
 
     // Mock fetch globally
     mockFetch = vi.fn();
-    global.fetch = mockFetch;
+    global.fetch = mockFetch as typeof fetch;
   });
 
   afterEach(() => {
@@ -166,7 +165,7 @@ describe("AI Analyze API", () => {
     expect(response.status).toBe(200);
     expect(response.headers.get("Content-Type")).toBe("text/event-stream");
     expect(response.headers.get("Cache-Control")).toBe(
-      "no-cache, no-transform",
+      "private, no-store, no-transform",
     );
     expect(response.headers.get("Connection")).toBe("keep-alive");
     expect(response.headers.get("X-Content-Type-Options")).toBe("nosniff");
@@ -342,7 +341,7 @@ describe("AI Analyze API", () => {
   });
 
   it("should sanitize error messages in production mode", async () => {
-    process.env.NODE_ENV = "production";
+    process.env = { ...process.env, NODE_ENV: "production" };
 
     mockFetch.mockRejectedValueOnce(new Error("Detailed internal error"));
 
@@ -363,7 +362,7 @@ describe("AI Analyze API", () => {
   });
 
   it("should include detailed errors in development mode", async () => {
-    process.env.NODE_ENV = "development";
+    process.env = { ...process.env, NODE_ENV: "development" };
 
     mockFetch.mockRejectedValueOnce(new Error("Detailed internal error"));
 
@@ -437,5 +436,28 @@ describe("AI Analyze API", () => {
 
       expect(fullText).toContain("[DONE]");
     }
+  });
+
+  it("should block known bots before calling OpenRouter", async () => {
+    const request = new NextRequest("http://localhost:3000/api/ai/analyze", {
+      method: "POST",
+      headers: {
+        "user-agent": "DotBot/1.2",
+        "x-forwarded-for": `127.0.0.${testCounter}`,
+      },
+      body: JSON.stringify({
+        messages: [{ role: "user", content: "Hello" }],
+      }),
+    });
+
+    const response = await POST(request);
+    const data = await response.json();
+
+    expect(response.status).toBe(403);
+    expect(data.error).toBe("Forbidden");
+    expect(response.headers.get("Cache-Control")).toBe(
+      "private, no-store, no-transform",
+    );
+    expect(mockFetch).not.toHaveBeenCalled();
   });
 });

@@ -13,7 +13,12 @@ import {
   isRetryableGoogleError,
   parseGoogleApiKeys,
 } from "@/lib/google-search";
-import { rateLimit, getClientIp, rateLimitResponse } from "@/lib/rate-limit";
+import {
+  rateLimit,
+  getClientIp,
+  rateLimitResponse,
+  isBlockedBotRequest,
+} from "@/lib/rate-limit";
 import {
   handleApiError,
   configurationErrorResponse,
@@ -22,8 +27,33 @@ import {
 import { getEnvVar } from "@/lib/cloudflare";
 
 const GOOGLE_SEARCH_API_URL = "https://www.googleapis.com/customsearch/v1";
+const GOOGLE_CACHE_CONTROL = "private, no-store";
+
+function createGoogleHeaders(headers?: HeadersInit): Headers {
+  const responseHeaders = new Headers(headers);
+  responseHeaders.set("Cache-Control", GOOGLE_CACHE_CONTROL);
+  return responseHeaders;
+}
+
+function createGoogleJsonResponse(
+  body: unknown,
+  init: ResponseInit = {},
+): NextResponse {
+  return NextResponse.json(body, {
+    ...init,
+    headers: createGoogleHeaders(init.headers),
+  });
+}
+
+function createBlockedBotResponse(): NextResponse {
+  return createGoogleJsonResponse({ error: "Forbidden" }, { status: 403 });
+}
 
 export async function GET(request: NextRequest) {
+  if (isBlockedBotRequest(request)) {
+    return createBlockedBotResponse();
+  }
+
   // Rate limiting: 5 requests per 10 seconds per IP (stricter due to Google quota)
   const clientIp = getClientIp(request);
   const rateLimitResult = await rateLimit(`google:${clientIp}`, {
@@ -32,7 +62,11 @@ export async function GET(request: NextRequest) {
   });
 
   if (!rateLimitResult.success) {
-    return rateLimitResponse(rateLimitResult);
+    return rateLimitResponse(
+      rateLimitResult,
+      undefined,
+      createGoogleHeaders(),
+    );
   }
 
   const searchParams = request.nextUrl.searchParams;
@@ -46,7 +80,10 @@ export async function GET(request: NextRequest) {
     { username },
   );
   if (!validation.success) {
-    return NextResponse.json({ error: validation.error }, { status: 400 });
+    return createGoogleJsonResponse(
+      { error: validation.error },
+      { status: 400 },
+    );
   }
 
   const validatedUsername = validation.data.username;
@@ -67,13 +104,17 @@ export async function GET(request: NextRequest) {
   if (apiKeys.length === 0 || !cx) {
     return configurationErrorResponse(
       "Google Custom Search API credentials not configured (set GOOGLE_CUSTOM_SEARCH_CX and GOOGLE_CUSTOM_SEARCH_API_KEY(S))",
+      createGoogleHeaders(),
     );
   }
 
   try {
     const searchQuery = buildGoogleUsernameQuery(validatedUsername);
     if (!searchQuery) {
-      return validationErrorResponse("Invalid search query");
+      return validationErrorResponse(
+        "Invalid search query",
+        createGoogleHeaders(),
+      );
     }
 
     const keyOrder = getRotatedKeyOrder(
@@ -127,18 +168,15 @@ export async function GET(request: NextRequest) {
           nextStartIndex: data.queries?.nextPage?.[0]?.startIndex,
         };
 
-        // Cache the response to reduce quota usage
+        // Return the response with route-scoped cache controls
         return NextResponse.json(result, {
-          headers: {
-            "Cache-Control":
-              "public, s-maxage=900, stale-while-revalidate=1800",
-            "X-Google-Key-Index": String(index),
+          headers: createGoogleHeaders({
             "X-RateLimit-Limit": rateLimitResult.limit.toString(),
             "X-RateLimit-Remaining": rateLimitResult.remaining.toString(),
             "X-RateLimit-Reset": new Date(
               rateLimitResult.reset,
             ).toISOString(),
-          },
+          }),
         });
       }
 
@@ -160,7 +198,7 @@ export async function GET(request: NextRequest) {
         isRetryableGoogleError(response.status, errorPayload);
 
       if (!shouldRetry) {
-        return NextResponse.json(
+        return createGoogleJsonResponse(
           { error: message },
           { status: response.status },
         );
@@ -171,7 +209,7 @@ export async function GET(request: NextRequest) {
       );
     }
 
-    return NextResponse.json(
+    return createGoogleJsonResponse(
       {
         error:
           lastError?.message ||
@@ -180,6 +218,9 @@ export async function GET(request: NextRequest) {
       { status: lastError?.status || 502 },
     );
   } catch (error: unknown) {
-    return handleApiError(error, { context: "Google Search API" });
+    return handleApiError(error, {
+      context: "Google Search API",
+      headers: createGoogleHeaders(),
+    });
   }
 }

@@ -1,6 +1,8 @@
 import { NextResponse } from "next/server";
 import { getEnvVar } from "@/lib/cloudflare";
 
+const HEALTH_CACHE_CONTROL = "no-store";
+
 /**
  * Health check endpoint
  * Returns service status and configuration validity
@@ -35,7 +37,12 @@ export async function GET() {
   // Return 503 if unhealthy, 200 otherwise
   const statusCode = checks.status === "unhealthy" ? 503 : 200;
 
-  return NextResponse.json(checks, { status: statusCode });
+  return NextResponse.json(checks, {
+    status: statusCode,
+    headers: {
+      "Cache-Control": HEALTH_CACHE_CONTROL,
+    },
+  });
 }
 
 function checkWhatsmynameConfig() {

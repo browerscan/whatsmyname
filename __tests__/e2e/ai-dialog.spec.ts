@@ -353,10 +353,6 @@ test.describe("AI Dialog Flow", () => {
   });
 
   test("should support keyboard navigation", async ({ page }) => {
-    const aiButton = page
-      .locator("[data-testid='ai-button']")
-      .or(page.locator("button:has-text('AI')").or(page.locator("text=/ai/i")));
-
     // Press Tab to focus AI button (if it's focusable)
     await page.keyboard.press("Tab");
     await page.keyboard.press("Enter");

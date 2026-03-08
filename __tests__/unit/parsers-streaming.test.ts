@@ -181,14 +181,15 @@ describe("NDJSON Stream Parsing", () => {
     }
 
     expect(results).toHaveLength(1);
-    expect(results[0].tags[0].length).toBe(10000);
+    expect(results[0]?.tags?.[0]?.length).toBe(10000);
   });
 
   it("should throw error when response body is not readable", async () => {
     const mockResponse = new Response(null) as Response;
 
     await expect(async () => {
-      for await (const _ of parseNDJSONStream(mockResponse)) {
+      for await (const item of parseNDJSONStream(mockResponse)) {
+        void item;
         // Should throw
       }
     }).rejects.toThrow();
@@ -208,7 +209,8 @@ describe("NDJSON Stream Parsing", () => {
     const response = new Response(mockStream);
 
     // Consume the stream
-    for await (const _ of parseNDJSONStream(response)) {
+    for await (const item of parseNDJSONStream(response)) {
+      void item;
       // Process items
     }
 
@@ -474,7 +476,8 @@ data: {"choices":[{"delta":{"content":"Hello"}}]}
 
     const response = new Response(mockStream);
 
-    for await (const _ of parseSSEStream(response)) {
+    for await (const chunk of parseSSEStream(response)) {
+      void chunk;
       // Process
     }
 
@@ -485,7 +488,8 @@ data: {"choices":[{"delta":{"content":"Hello"}}]}
     const mockResponse = new Response(null) as Response;
 
     await expect(async () => {
-      for await (const _ of parseSSEStream(mockResponse)) {
+      for await (const chunk of parseSSEStream(mockResponse)) {
+        void chunk;
         // Should throw
       }
     }).rejects.toThrow();
@@ -514,7 +518,7 @@ describe("Stream Type Guards", () => {
   });
 
   it("should identify SearchMetadata objects", () => {
-    const metadata: SearchMetadata = { total: 100, completed: 50 };
+    const metadata: SearchMetadata = { total: 100, completed: true };
 
     expect(isSearchMetadata(metadata)).toBe(true);
     expect(isSearchResult(metadata)).toBe(false);

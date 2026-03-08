@@ -22,7 +22,7 @@ A modern, lightning-fast username search tool built with Next.js that searches a
 ### Prerequisites
 
 - Node.js 20.9 or higher
-- npm or yarn package manager
+- pnpm package manager
 - API keys (see [Environment Variables](#environment-variables))
 
 ### Installation
@@ -33,7 +33,7 @@ git clone https://github.com/yourusername/whatsmyname.git
 cd whatsmyname
 
 # Install dependencies
-npm install
+pnpm install
 
 # Copy environment template
 cp .env.example .env.local
@@ -41,7 +41,7 @@ cp .env.example .env.local
 # Add your API keys to .env.local
 
 # Start development server
-npm run dev
+pnpm dev
 
 # Open browser to http://localhost:3000
 ```
@@ -69,14 +69,14 @@ Once running, you should see:
 | AI Analysis           | Get intelligent insights about usernames |
 | Advanced Filtering    | Filter by status, category, NSFW content |
 | Export Results        | Save as CSV or JSON                      |
-| Multi-Language        | Support for 6 languages                  |
+| Multi-Language        | Support for 9 languages                  |
 
 ### Technical Features
 
 - Edge Runtime for global low latency
 - TypeScript strict mode for type safety
 - WCAG AA accessibility compliance
-- Full i18n support (en/zh/es/ja/fr/ko)
+- Full i18n support (en/zh/es/ja/fr/ko/de/pt/ru)
 - Responsive design (mobile, tablet, desktop)
 
 ---
@@ -245,7 +245,7 @@ whatsmyname/
 
 ```bash
 # Install Vercel CLI
-npm i -g vercel
+pnpm add -g vercel
 
 # Deploy
 vercel
@@ -261,7 +261,7 @@ vercel --prod
 
 ```bash
 # Build the project
-npm run build
+pnpm build
 
 # Deploy using Wrangler
 npx wrangler pages deploy .next
@@ -278,7 +278,7 @@ For detailed deployment instructions, see [docs/DEPLOYMENT.md](docs/DEPLOYMENT.m
 | Issue          | Solution                             |
 | -------------- | ------------------------------------ |
 | API errors     | Verify API keys in `.env.local`      |
-| Build fails    | Run `rm -rf .next && npm install`    |
+| Build fails    | Run `rm -rf .next && pnpm install`   |
 | No results     | Check username format and API status |
 | AI not working | Verify OpenRouter API key and model  |
 
@@ -291,28 +291,28 @@ For detailed troubleshooting, see [docs/TROUBLESHOOTING.md](docs/TROUBLESHOOTING
 ### Available Scripts
 
 ```bash
-npm run dev          # Start development server
-npm run build        # Build for production
-npm start            # Start production server
-npm run lint         # Run ESLint
-npm test             # Run unit tests
-npm run test:e2e     # Run E2E tests
+pnpm dev             # Start development server
+pnpm build           # Build for production
+pnpm start           # Start production server
+pnpm lint            # Run ESLint
+pnpm test            # Run unit tests
+pnpm test:e2e        # Run E2E tests
 ```
 
 ### Testing
 
 ```bash
 # Run all tests
-npm test
+pnpm test
 
 # Run tests with coverage
-npm run test:coverage
+pnpm test:coverage
 
 # Run E2E tests
-npm run test:e2e
+pnpm test:e2e
 
 # Run tests with UI
-npm run test:ui
+pnpm test:ui
 ```
 
 ---
@@ -350,7 +350,7 @@ MIT License - see LICENSE file for details.
 For issues, questions, or contributions:
 
 1. Check the [Troubleshooting Guide](docs/TROUBLESHOOTING.md)
-2. Search existing [GitHub Issues](https://github.com/yourusername/whatsmyname/issues)
+2. Search the repository's **Issues** tab on GitHub
 3. Create a new issue with details
 
 ---

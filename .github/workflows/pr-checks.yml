@@ -12,7 +12,7 @@ concurrency:
 
 jobs:
   validate:
-    name: Test and Build
+    name: Lint, Typecheck, Test and Build
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -42,6 +42,15 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
+      - name: Generate wrangler.toml from template
+        run: cp wrangler.toml.example wrangler.toml
+
+      - name: Run lint
+        run: pnpm lint
+
+      - name: Run typecheck
+        run: pnpm typecheck
+
       - name: Run tests
         run: pnpm test
 
@@ -56,4 +65,4 @@ jobs:
           echo "- Status: ${{ job.status }}" >> "$GITHUB_STEP_SUMMARY"
           echo "- Branch: ${{ github.head_ref || github.ref_name }}" >> "$GITHUB_STEP_SUMMARY"
           echo "- Commit: ${{ github.sha }}" >> "$GITHUB_STEP_SUMMARY"
-          echo "- Checks: pnpm test, pnpm build:cloudflare" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Checks: pnpm lint, pnpm typecheck, pnpm test, pnpm build:cloudflare" >> "$GITHUB_STEP_SUMMARY"

@@ -9,6 +9,7 @@
 
 # testing
 /coverage
+playwright-report/
 
 # next.js
 /.next/
@@ -20,6 +21,7 @@
 # misc
 .DS_Store
 *.pem
+package-lock.json
 
 # debug
 npm-debug.log*
@@ -40,6 +42,7 @@ docs/QUICK_SETUP.md
 
 # wrangler / OpenNext
 .wrangler/
+wrangler.toml
 wrangler.toml.local
 .dev.vars
 .open-next/

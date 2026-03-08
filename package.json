@@ -8,9 +8,10 @@
     "build:analyze": "ANALYZE=true next build",
     "build:cloudflare": "npx opennextjs-cloudflare build",
     "preview:cloudflare": "wrangler dev",
-    "deploy:cloudflare": "npm run build && npm run build:cloudflare && wrangler deploy",
+    "deploy:cloudflare": "pnpm build && pnpm build:cloudflare && wrangler deploy",
     "start": "next start",
     "lint": "eslint . --max-warnings=0",
+    "typecheck": "tsc --noEmit",
     "test": "vitest run",
     "test:watch": "vitest",
     "test:ui": "vitest --ui",
@@ -47,6 +48,7 @@
     "zustand": "5.0.8"
   },
   "devDependencies": {
+    "@axe-core/playwright": "4.11.0",
     "@eslint/eslintrc": "3.3.4",
     "@next/bundle-analyzer": "15.5.9",
     "@opennextjs/cloudflare": "1.17.1",
