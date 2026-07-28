@@ -1,7 +1,11 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import { getPrivacyDocument } from "@/content/legal";
-import { getLocalePath } from "@/i18n/request";
+import {
+  getLocaleAlternates,
+  getLocalePath,
+  getLocalizedUrl,
+} from "@/i18n/request";
 
 interface PrivacyPageProps {
   params: Promise<{
@@ -12,10 +16,19 @@ interface PrivacyPageProps {
 export async function generateMetadata({ params }: PrivacyPageProps): Promise<Metadata> {
   const { locale } = await params;
   const document = getPrivacyDocument(locale);
+  const baseUrl =
+    process.env.NEXT_PUBLIC_BASE_URL || "https://whatismyname.org";
 
   return {
     title: document.title,
     description: document.sections[0]?.paragraphs?.[0] ?? document.title,
+    alternates: {
+      canonical: getLocalizedUrl(baseUrl, locale, "/privacy"),
+      languages: {
+        "x-default": `${baseUrl}/privacy`,
+        ...getLocaleAlternates(baseUrl, "/privacy"),
+      },
+    },
   };
 }
 
@@ -50,7 +63,18 @@ export default async function PrivacyPage({ params }: PrivacyPageProps) {
                   <li key={`${section.title}-${item.label ?? item.text}`}>
                     {item.label ? (
                       <>
-                        <strong>{item.label}:</strong> {item.text}
+                        <strong>{item.label}:</strong>{" "}
+                        {item.href ? (
+                          <a
+                            href={item.href}
+                            rel="noopener noreferrer"
+                            target="_blank"
+                          >
+                            {item.text}
+                          </a>
+                        ) : (
+                          item.text
+                        )}
                       </>
                     ) : (
                       item.text

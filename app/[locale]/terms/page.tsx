@@ -1,7 +1,11 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import { getTermsDocument } from "@/content/legal";
-import { getLocalePath } from "@/i18n/request";
+import {
+  getLocaleAlternates,
+  getLocalePath,
+  getLocalizedUrl,
+} from "@/i18n/request";
 
 interface TermsPageProps {
   params: Promise<{
@@ -12,10 +16,19 @@ interface TermsPageProps {
 export async function generateMetadata({ params }: TermsPageProps): Promise<Metadata> {
   const { locale } = await params;
   const document = getTermsDocument(locale);
+  const baseUrl =
+    process.env.NEXT_PUBLIC_BASE_URL || "https://whatismyname.org";
 
   return {
     title: document.title,
     description: document.sections[0]?.paragraphs?.[0] ?? document.title,
+    alternates: {
+      canonical: getLocalizedUrl(baseUrl, locale, "/terms"),
+      languages: {
+        "x-default": `${baseUrl}/terms`,
+        ...getLocaleAlternates(baseUrl, "/terms"),
+      },
+    },
   };
 }
 

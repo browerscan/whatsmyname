@@ -1,5 +1,6 @@
 import { getTranslations } from "next-intl/server";
 import { localeSchemaNames, locales } from "@/i18n/request";
+import { CONTACT_EMAIL } from "@/lib/constants";
 
 export async function StructuredData() {
   const t = await getTranslations("seo.home");
@@ -31,13 +32,6 @@ export async function StructuredData() {
     ],
     browserRequirements: "Requires JavaScript. Requires HTML5.",
     softwareVersion: "1.0",
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: "4.8",
-      ratingCount: "1000",
-      bestRating: "5",
-      worstRating: "1",
-    },
     author: {
       "@type": "Organization",
       name: "What is my Name Team",
@@ -101,7 +95,7 @@ export async function StructuredData() {
     contactPoint: {
       "@type": "ContactPoint",
       contactType: "Customer Support",
-      email: "contact@whatismyname.com",
+      email: CONTACT_EMAIL,
       availableLanguage: Object.values(localeSchemaNames),
     },
   };

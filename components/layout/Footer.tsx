@@ -9,6 +9,8 @@ export async function Footer() {
   const t = await getTranslations({ locale, namespace: "footer" });
 
   const homeHref = locale === defaultLocale ? "/" : `/${locale}`;
+  const privacyHref = locale === defaultLocale ? "/privacy" : `/${locale}/privacy`;
+  const termsHref = locale === defaultLocale ? "/terms" : `/${locale}/terms`;
 
   return (
     <footer className="w-full border-t bg-background">
@@ -64,8 +66,22 @@ export async function Footer() {
           </div>
         </div>
 
-        <div className="mt-8 border-t pt-8 text-center text-sm text-muted-foreground">
+        <div className="mt-8 flex flex-col items-center justify-between gap-3 border-t pt-8 text-sm text-muted-foreground sm:flex-row">
           <p>{t("copyright", { year: currentYear })}</p>
+          <nav aria-label={t("legal_title")}>
+            <ul className="flex items-center gap-4">
+              <li>
+                <Link className="transition-colors hover:text-primary" href={privacyHref}>
+                  {t("privacy")}
+                </Link>
+              </li>
+              <li>
+                <Link className="transition-colors hover:text-primary" href={termsHref}>
+                  {t("terms")}
+                </Link>
+              </li>
+            </ul>
+          </nav>
         </div>
       </div>
     </footer>

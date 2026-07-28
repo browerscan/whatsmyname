@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
+import Script from "next/script";
 import { getLocale, getTranslations } from "next-intl/server";
 import "./globals.css";
 import { getLocaleAlternates, getLocalizedUrl } from "@/i18n/request";
@@ -166,6 +167,13 @@ export default async function RootLayout({
   return (
     <html lang={locale} suppressHydrationWarning>
       <head>
+        <Script
+          id="adsense-script"
+          async
+          crossOrigin="anonymous"
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4544056559294154"
+          strategy="beforeInteractive"
+        />
         {/* Resource hints for Core Web Vitals */}
         <link rel="preconnect" href="https://api.whatsmynameapp.org" />
         <link rel="preconnect" href="https://www.googleapis.com" />

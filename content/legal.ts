@@ -1,6 +1,7 @@
 import { defaultLocale, isSupportedLocale, type AppLocale } from "@/i18n/request";
 
 export interface LegalSectionItem {
+  href?: string;
   label?: string;
   text: string;
 }
@@ -2107,8 +2108,222 @@ const TERMS_DOCS: Record<AppLocale, LegalDocument> = {
   },
 };
 
+const PRIVACY_LAST_UPDATED_LABELS: Record<AppLocale, string> = {
+  en: "Last updated: July 28, 2026",
+  zh: "最后更新：2026 年 7 月 28 日",
+  es: "Última actualización: 28 de julio de 2026",
+  ja: "最終更新日：2026年7月28日",
+  fr: "Dernière mise à jour : 28 juillet 2026",
+  ko: "최종 업데이트: 2026년 7월 28일",
+  de: "Zuletzt aktualisiert: 28. Juli 2026",
+  pt: "Última atualização: 28 de julho de 2026",
+  ru: "Последнее обновление: 28 июля 2026 г.",
+};
+
+const ADVERTISING_PRIVACY_SECTIONS: Record<AppLocale, LegalSection> = {
+  en: {
+    title: "13. Advertising and Cookies",
+    paragraphs: [
+      "We may use Google AdSense to display advertising. When advertising is enabled, third parties, including Google, may place or read cookies, use web beacons, IP addresses, or similar identifiers to serve, measure, limit repetition of, and—where permitted—personalize ads.",
+    ],
+    items: [
+      {
+        text: "Third-party vendors, including Google, use cookies to serve ads based on a user's prior visits to this website or other websites. Google's advertising cookies enable Google and its partners to serve ads based on visits to this site and other sites on the Internet.",
+      },
+      {
+        href: "https://policies.google.com/technologies/partner-sites",
+        label: "How Google uses data",
+        text: "Review how Google uses information from sites or apps that use its services.",
+      },
+      {
+        href: "https://adssettings.google.com/",
+        label: "Ad choices",
+        text: "Manage or opt out of personalized advertising in Google Ads Settings.",
+      },
+    ],
+  },
+  zh: {
+    title: "13. 广告与 Cookie",
+    paragraphs: [
+      "我们可能会使用 Google AdSense 展示广告。启用广告后，包括 Google 在内的第三方可能会设置或读取 Cookie，并使用网络信标、IP 地址或类似标识符来投放、衡量、限制重复展示，并在允许的情况下个性化广告。",
+    ],
+    items: [
+      {
+        text: "包括 Google 在内的第三方供应商会根据用户此前访问本网站或其他网站的情况，使用 Cookie 投放广告。Google 的广告 Cookie 可让 Google 及其合作伙伴根据用户访问本网站及互联网其他网站的情况投放广告。",
+      },
+      {
+        href: "https://policies.google.com/technologies/partner-sites?hl=zh-CN",
+        label: "Google 如何使用数据",
+        text: "了解 Google 如何使用来自采用其服务的网站或应用的信息。",
+      },
+      {
+        href: "https://adssettings.google.com/",
+        label: "广告选择",
+        text: "在 Google 广告设置中管理或停用个性化广告。",
+      },
+    ],
+  },
+  es: {
+    title: "13. Publicidad y cookies",
+    paragraphs: [
+      "Podemos usar Google AdSense para mostrar publicidad. Cuando la publicidad está habilitada, terceros, incluido Google, pueden colocar o leer cookies y usar balizas web, direcciones IP o identificadores similares para publicar, medir, limitar la repetición y, cuando esté permitido, personalizar anuncios.",
+    ],
+    items: [
+      {
+        text: "Los proveedores externos, incluido Google, usan cookies para publicar anuncios basados en visitas anteriores de una persona a este u otros sitios web. Las cookies publicitarias de Google permiten que Google y sus socios muestren anuncios según las visitas a este sitio y a otros sitios de Internet.",
+      },
+      {
+        href: "https://policies.google.com/technologies/partner-sites?hl=es",
+        label: "Cómo usa Google los datos",
+        text: "Consulta cómo utiliza Google la información de sitios o aplicaciones que usan sus servicios.",
+      },
+      {
+        href: "https://adssettings.google.com/",
+        label: "Opciones de anuncios",
+        text: "Gestiona o desactiva la publicidad personalizada en la Configuración de anuncios de Google.",
+      },
+    ],
+  },
+  ja: {
+    title: "13. 広告と Cookie",
+    paragraphs: [
+      "当サイトは広告表示に Google AdSense を使用することがあります。広告が有効な場合、Google を含む第三者は、広告の配信、測定、反復表示の制限、および許可される場合のパーソナライズのために、Cookie の設定や読み取り、ウェブビーコン、IP アドレス、または類似の識別子を使用することがあります。",
+    ],
+    items: [
+      {
+        text: "Google を含む第三者配信事業者は、このウェブサイトまたは他のウェブサイトへの過去のアクセスに基づいて広告を配信するため Cookie を使用します。Google の広告 Cookie により、Google とそのパートナーは、このサイトやインターネット上の他のサイトへのアクセスに基づく広告を配信できます。",
+      },
+      {
+        href: "https://policies.google.com/technologies/partner-sites?hl=ja",
+        label: "Google によるデータの使用",
+        text: "Google のサービスを利用するサイトやアプリからの情報の使用方法を確認できます。",
+      },
+      {
+        href: "https://adssettings.google.com/",
+        label: "広告の設定",
+        text: "Google の広告設定でパーソナライズ広告を管理または無効にできます。",
+      },
+    ],
+  },
+  fr: {
+    title: "13. Publicité et cookies",
+    paragraphs: [
+      "Nous pouvons utiliser Google AdSense pour afficher de la publicité. Lorsque la publicité est activée, des tiers, dont Google, peuvent déposer ou lire des cookies et utiliser des balises web, des adresses IP ou des identifiants similaires afin de diffuser et mesurer les annonces, d'en limiter la répétition et, lorsque cela est autorisé, de les personnaliser.",
+    ],
+    items: [
+      {
+        text: "Les fournisseurs tiers, dont Google, utilisent des cookies pour diffuser des annonces en fonction des visites antérieures d'un utilisateur sur ce site ou sur d'autres sites. Les cookies publicitaires de Google permettent à Google et à ses partenaires de diffuser des annonces selon les visites sur ce site et sur d'autres sites Internet.",
+      },
+      {
+        href: "https://policies.google.com/technologies/partner-sites?hl=fr",
+        label: "Utilisation des données par Google",
+        text: "Consultez la manière dont Google utilise les informations provenant des sites ou applications qui utilisent ses services.",
+      },
+      {
+        href: "https://adssettings.google.com/",
+        label: "Choix publicitaires",
+        text: "Gérez ou désactivez la publicité personnalisée dans les paramètres des annonces Google.",
+      },
+    ],
+  },
+  ko: {
+    title: "13. 광고 및 쿠키",
+    paragraphs: [
+      "당사는 광고를 표시하기 위해 Google AdSense를 사용할 수 있습니다. 광고가 활성화되면 Google을 포함한 제3자는 광고 제공, 측정, 반복 노출 제한 및 허용되는 경우 맞춤설정을 위해 쿠키를 설정하거나 읽고 웹 비콘, IP 주소 또는 유사한 식별자를 사용할 수 있습니다.",
+    ],
+    items: [
+      {
+        text: "Google을 포함한 제3자 공급업체는 사용자의 이 웹사이트 또는 다른 웹사이트에 대한 이전 방문 기록을 바탕으로 광고를 게재하기 위해 쿠키를 사용합니다. Google의 광고 쿠키를 통해 Google과 파트너는 이 사이트 및 인터넷상의 다른 사이트 방문 기록을 바탕으로 광고를 게재할 수 있습니다.",
+      },
+      {
+        href: "https://policies.google.com/technologies/partner-sites?hl=ko",
+        label: "Google의 데이터 사용 방식",
+        text: "Google 서비스를 사용하는 사이트 또는 앱의 정보를 Google이 사용하는 방식을 확인할 수 있습니다.",
+      },
+      {
+        href: "https://adssettings.google.com/",
+        label: "광고 선택",
+        text: "Google 광고 설정에서 맞춤 광고를 관리하거나 사용 중지할 수 있습니다.",
+      },
+    ],
+  },
+  de: {
+    title: "13. Werbung und Cookies",
+    paragraphs: [
+      "Wir können Google AdSense verwenden, um Werbung anzuzeigen. Wenn Werbung aktiviert ist, können Dritte, einschließlich Google, Cookies setzen oder auslesen und Web-Beacons, IP-Adressen oder ähnliche Kennungen verwenden, um Anzeigen auszuliefern, zu messen, Wiederholungen zu begrenzen und sie – soweit zulässig – zu personalisieren.",
+    ],
+    items: [
+      {
+        text: "Drittanbieter, einschließlich Google, verwenden Cookies zur Anzeigenschaltung auf Grundlage früherer Besuche eines Nutzers auf dieser oder anderen Websites. Die Werbe-Cookies von Google ermöglichen Google und seinen Partnern, Anzeigen auf Grundlage von Besuchen dieser Website und anderer Websites im Internet zu schalten.",
+      },
+      {
+        href: "https://policies.google.com/technologies/partner-sites?hl=de",
+        label: "Datennutzung durch Google",
+        text: "Lesen Sie, wie Google Informationen von Websites oder Apps verwendet, die Google-Dienste nutzen.",
+      },
+      {
+        href: "https://adssettings.google.com/",
+        label: "Anzeigeneinstellungen",
+        text: "Personalisierte Werbung in den Google-Anzeigeneinstellungen verwalten oder deaktivieren.",
+      },
+    ],
+  },
+  pt: {
+    title: "13. Publicidade e cookies",
+    paragraphs: [
+      "Podemos usar o Google AdSense para exibir publicidade. Quando a publicidade estiver ativada, terceiros, incluindo o Google, podem definir ou ler cookies e usar web beacons, endereços IP ou identificadores semelhantes para veicular e medir anúncios, limitar repetições e, quando permitido, personalizá-los.",
+    ],
+    items: [
+      {
+        text: "Fornecedores terceiros, incluindo o Google, usam cookies para veicular anúncios com base nas visitas anteriores de um usuário a este ou a outros sites. Os cookies de publicidade do Google permitem que o Google e seus parceiros veiculem anúncios com base nas visitas a este site e a outros sites na Internet.",
+      },
+      {
+        href: "https://policies.google.com/technologies/partner-sites?hl=pt-BR",
+        label: "Como o Google usa os dados",
+        text: "Consulte como o Google usa informações de sites ou aplicativos que utilizam seus serviços.",
+      },
+      {
+        href: "https://adssettings.google.com/",
+        label: "Opções de anúncios",
+        text: "Gerencie ou desative a publicidade personalizada nas Configurações de anúncios do Google.",
+      },
+    ],
+  },
+  ru: {
+    title: "13. Реклама и файлы cookie",
+    paragraphs: [
+      "Мы можем использовать Google AdSense для показа рекламы. Когда реклама включена, третьи лица, включая Google, могут устанавливать или считывать файлы cookie и использовать веб-маяки, IP-адреса или аналогичные идентификаторы для показа и измерения рекламы, ограничения повторов и, когда это разрешено, персонализации.",
+    ],
+    items: [
+      {
+        text: "Сторонние поставщики, включая Google, используют файлы cookie для показа рекламы с учетом предыдущих посещений пользователем этого или других сайтов. Рекламные файлы cookie Google позволяют Google и его партнерам показывать рекламу с учетом посещений этого сайта и других сайтов в Интернете.",
+      },
+      {
+        href: "https://policies.google.com/technologies/partner-sites?hl=ru",
+        label: "Как Google использует данные",
+        text: "Узнайте, как Google использует информацию с сайтов и приложений, использующих его сервисы.",
+      },
+      {
+        href: "https://adssettings.google.com/",
+        label: "Настройки рекламы",
+        text: "Управляйте персонализированной рекламой или отключите ее в настройках рекламы Google.",
+      },
+    ],
+  },
+};
+
 export function getPrivacyDocument(locale: string) {
-  return PRIVACY_DOCS[resolveLocale(locale)];
+  const resolvedLocale = resolveLocale(locale);
+  const document = PRIVACY_DOCS[resolvedLocale];
+
+  return {
+    ...document,
+    lastUpdatedLabel: PRIVACY_LAST_UPDATED_LABELS[resolvedLocale],
+    sections: [
+      ...document.sections,
+      ADVERTISING_PRIVACY_SECTIONS[resolvedLocale],
+    ],
+  };
 }
 
 export function getTermsDocument(locale: string) {

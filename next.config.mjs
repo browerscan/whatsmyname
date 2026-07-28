@@ -7,17 +7,29 @@ const withBundleAnalyzer = bundleAnalyzer({
 });
 
 const isProduction = process.env.NODE_ENV === "production";
+const adsenseScriptSources = [
+  "https://pagead2.googlesyndication.com",
+  "https://*.googlesyndication.com",
+  "https://*.doubleclick.net",
+  "https://*.google.com",
+].join(" ");
+const adsenseConnectionSources = [
+  "https://*.googlesyndication.com",
+  "https://*.doubleclick.net",
+  "https://*.google.com",
+].join(" ");
 const contentSecurityPolicy = [
   "default-src 'self'",
   isProduction
-    ? "script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com"
-    : "script-src 'self' 'unsafe-eval' 'unsafe-inline' https://static.cloudflareinsights.com",
+    ? `script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com ${adsenseScriptSources}`
+    : `script-src 'self' 'unsafe-eval' 'unsafe-inline' https://static.cloudflareinsights.com ${adsenseScriptSources}`,
   "style-src 'self' 'unsafe-inline'",
   "img-src 'self' data: https: blob:",
   "font-src 'self' data:",
   isProduction
-    ? "connect-src 'self'"
-    : "connect-src 'self' https://api.whatsmynameapp.org https://www.googleapis.com https://*.googleapis.com https://google.com https://*.google.com https://openrouter.ai https://*.openrouter.ai",
+    ? `connect-src 'self' ${adsenseConnectionSources}`
+    : `connect-src 'self' https://api.whatsmynameapp.org https://www.googleapis.com https://*.googleapis.com https://google.com https://*.google.com https://openrouter.ai https://*.openrouter.ai ${adsenseConnectionSources}`,
+  `frame-src 'self' ${adsenseConnectionSources}`,
   "frame-ancestors 'none'",
   "base-uri 'self'",
   "form-action 'self'",

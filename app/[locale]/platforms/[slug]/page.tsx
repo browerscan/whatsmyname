@@ -170,13 +170,6 @@ export default async function PlatformPage({ params }: PlatformPageProps) {
           price: "0",
           priceCurrency: "USD",
         }}
-        aggregateRating={{
-          ratingValue:
-            platform.popularity > 90 ? "4.8" : platform.popularity > 80 ? "4.5" : "4.2",
-          ratingCount: Math.floor(platform.popularity * 10).toString(),
-          bestRating: "5",
-          worstRating: "1",
-        }}
       />
 
       <div className="container mx-auto px-4 py-12 max-w-5xl">
