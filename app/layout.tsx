@@ -171,7 +171,7 @@ export default async function RootLayout({
           id="adsense-script"
           async
           crossOrigin="anonymous"
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4544056559294154"
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8231175075553786"
           strategy="beforeInteractive"
         />
         {/* Resource hints for Core Web Vitals */}
