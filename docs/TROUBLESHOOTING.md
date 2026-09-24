@@ -101,7 +101,7 @@ This guide helps you diagnose and resolve common issues with the whatsmyname app
 3. **Check Model Availability**
    ```env
    # .env.local - Verify model setting
-   OPENROUTER_MODEL=deepseek/deepseek-chat-v3.1:free
+   OPENROUTER_MODEL=nvidia/nemotron-3-super-120b-a12b:free,google/gemma-4-31b-it:free,nvidia/nemotron-3.5-lightning:free,minimax/minimax-m2.7:free,openrouter/free
    ```
 
 ---

@@ -29,7 +29,7 @@ Add the following repository secrets:
 
 | Secret Name        | Description     | Default Value                      |
 | ------------------ | --------------- | ---------------------------------- |
-| `OPENROUTER_MODEL` | AI model to use | `deepseek/deepseek-chat-v3.1:free` |
+| `OPENROUTER_MODEL` | Comma-separated OpenRouter model fallback list | `nvidia/nemotron-3-super-120b-a12b:free,google/gemma-4-31b-it:free,nvidia/nemotron-3.5-lightning:free,minimax/minimax-m2.7:free,openrouter/free` |
 
 ## Step 2: Create Cloudflare API Token
 
@@ -107,7 +107,7 @@ GOOGLE_CUSTOM_SEARCH_CX=your_cx_id
 OPENROUTER_API_KEY=your_openrouter_key
 
 # Optional
-OPENROUTER_MODEL=deepseek/deepseek-chat-v3.1:free
+OPENROUTER_MODEL=nvidia/nemotron-3-super-120b-a12b:free,google/gemma-4-31b-it:free,nvidia/nemotron-3.5-lightning:free,minimax/minimax-m2.7:free,openrouter/free
 NEXT_PUBLIC_BASE_URL=https://whatismyname.app
 NODE_ENV=production
 ```
@@ -178,7 +178,7 @@ Response:
       "name": "OpenRouter AI",
       "status": "available",
       "configured": true,
-      "model": "deepseek/deepseek-chat-v3.1:free"
+      "model": "nvidia/nemotron-3-super-120b-a12b:free"
     }
   }
 }

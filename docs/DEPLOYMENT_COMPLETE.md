@@ -197,7 +197,7 @@ GOOGLE_CUSTOM_SEARCH_CX=****** (已配置)
 OPENROUTER_API_KEY=****** (已配置)
 
 # 配置
-OPENROUTER_MODEL=deepseek/deepseek-chat-v3.1:free
+OPENROUTER_MODEL=nvidia/nemotron-3-super-120b-a12b:free,google/gemma-4-31b-it:free,nvidia/nemotron-3.5-lightning:free,minimax/minimax-m2.7:free,openrouter/free
 NEXT_PUBLIC_BASE_URL=https://whatismyname.org
 NODE_ENV=production
 ```
