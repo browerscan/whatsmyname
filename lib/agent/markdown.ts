@@ -23,6 +23,8 @@ import {
 } from "@/content/route-copy";
 import { getPrivacyDocument, getTermsDocument } from "@/content/legal";
 import { educationContent } from "@/content/education";
+import { getHomeFaq } from "@/content/faq";
+import type { FaqCopy } from "@/content/faq";
 import type { LegalDocument } from "@/content/legal";
 
 import { AGENT_PATHS, getBaseUrl } from "./site";
@@ -81,6 +83,14 @@ export function educationHtmlToMarkdown(html: string): string {
     .trim();
 }
 
+export function faqToMarkdown(faq: FaqCopy, headingLevel = 2): string {
+  const heading = "#".repeat(headingLevel);
+  return [
+    `${heading} ${faq.title}`,
+    ...faq.entries.flatMap((entry) => ["", `${heading}# ${entry.question}`, "", entry.answer]),
+  ].join("\n");
+}
+
 function legalToMarkdown(document: LegalDocument): string {
   const lines = [`# ${document.title}`, "", document.lastUpdatedLabel];
   for (const section of document.sections) {
@@ -132,6 +142,8 @@ export async function renderMarkdownPage(
         `[${t("pages.platform_detail.cta_button")}](${url("/")})`,
         "",
         guide,
+        "",
+        faqToMarkdown(getHomeFaq(locale)),
         "",
         `- [${t("seo.tools.title")}](${url("/tools")})`,
         `- [${t("pages.blog_index.title")}](${url("/blog")})`,

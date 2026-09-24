@@ -3,8 +3,9 @@ import { getAllBlogSlugs, getBlogPostBySlug } from "@/lib/blog-data";
 import { POPULAR_PLATFORMS, getAllCategories } from "@/lib/platforms-data";
 import { getLocalizedCategoryMetadata } from "@/lib/platforms-i18n";
 import { educationContent } from "@/content/education";
+import { getHomeFaq } from "@/content/faq";
 
-import { educationHtmlToMarkdown } from "./markdown";
+import { educationHtmlToMarkdown, faqToMarkdown } from "./markdown";
 import { getMcpToolSummaries } from "./mcp";
 import {
   AGENT_PATHS,
@@ -77,7 +78,7 @@ export function buildLlmsTxt(): string {
     "",
     "## For agents",
     "",
-    `- Markdown: request any page URL with \`Accept: text/markdown\` to get it as Markdown.`,
+    `- Markdown: every page has a Markdown twin at its URL plus \`.md\` (the home page is ${abs("/index.html.md")}), and any page URL requested with \`Accept: text/markdown\` returns the same Markdown.`,
     `- MCP server: ${abs(AGENT_PATHS.mcp)} (Streamable HTTP, JSON responses, read-only, no auth). Server card: ${abs(AGENT_PATHS.mcpServerCard)}. Tools:`,
     ...tools,
     `- Agent skill: ${abs(AGENT_PATHS.agentSkill)}`,
@@ -120,6 +121,8 @@ export function buildLlmsFullTxt(): string {
     "",
     guide.replace(/^## .*\n+/, ""),
     "",
+    faqToMarkdown(getHomeFaq("en"), 1),
+    "",
     "# Platform guides",
     "",
     ...platformGuides.flatMap((entry) => [entry, ""]),
@@ -155,7 +158,7 @@ export function buildAgentSkill(): string {
     "## Look things up without searching",
     "",
     `- MCP (Streamable HTTP, read-only, no auth): ${abs(AGENT_PATHS.mcp)}. Tools: ${getMcpToolSummaries().map((tool) => `\`${tool.name}\``).join(", ")}.`,
-    "- Any page as Markdown: send `Accept: text/markdown`.",
+    `- Any page as Markdown: append \`.md\` to its URL (home: ${abs("/index.html.md")}) or send \`Accept: text/markdown\`.`,
     `- Route map: ${abs(AGENT_PATHS.llms)}; full text: ${abs(AGENT_PATHS.llmsFull)}.`,
     "",
     "## Rules",

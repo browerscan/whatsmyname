@@ -29,6 +29,35 @@ test.describe("agent discovery over HTTP", () => {
     expect((await full.text()).length).toBeGreaterThan((await llms.text()).length * 3);
   });
 
+  test("/llm.txt serves the llms.txt file with a canonical link", async ({ request }) => {
+    const alias = await request.get("/llm.txt", { maxRedirects: 0 });
+    expect(alias.status()).toBe(200);
+    expect(alias.headers()["content-type"]).toContain("text/plain");
+    expect(alias.headers()["link"]).toBe('<https://whatismyname.org/llms.txt>; rel="canonical"');
+    expect(await alias.text()).toBe(await (await request.get("/llms.txt")).text());
+  });
+
+  test("pages have .md twins and static .md files stay static", async ({ request }) => {
+    for (const [twin, canonical] of [
+      ["/index.html.md", "https://whatismyname.org/"],
+      ["/platforms/github.md", "https://whatismyname.org/platforms/github"],
+      ["/de/blog/how-to-choose-the-perfect-username.md", "https://whatismyname.org/de/blog/how-to-choose-the-perfect-username"],
+      ["/zh.md", "https://whatismyname.org/zh"],
+    ]) {
+      const response = await request.get(twin, { maxRedirects: 0 });
+      expect(response.status(), twin).toBe(200);
+      expect(response.headers()["content-type"], twin).toBe("text/markdown; charset=utf-8");
+      expect(response.headers()["link"], twin).toBe(`<${canonical}>; rel="canonical"`);
+      expect(await response.text(), twin).toMatch(/^---\ntitle: ".+"\n/);
+    }
+    expect((await request.get("/platforms/not-a-platform.md", { maxRedirects: 0 })).status()).toBe(404);
+
+    // A real file under public/ must not be taken over by the twin rewrite.
+    const asset = await request.get("/ASSETS_README.md", { maxRedirects: 0 });
+    expect(asset.status()).toBe(200);
+    expect(await asset.text()).not.toMatch(/^---\ntitle:/);
+  });
+
   test("well-known discovery documents resolve with CORS", async ({ request }) => {
     const catalog = await request.get("/.well-known/api-catalog");
     expect(catalog.status()).toBe(200);
@@ -93,7 +122,27 @@ test.describe("agent discovery over HTTP", () => {
     expect(link).toContain('rel="alternate"; hreflang="zh"');
     expect(link).toContain('</.well-known/api-catalog>; rel="api-catalog"');
     expect(link).toContain('</llms.txt>; rel="service-doc"');
+    expect(link).toContain('</index.html.md>; rel="alternate"; type="text/markdown"');
   });
+});
+
+test("home page shows the FAQ and publishes the same questions as FAQPage JSON-LD", async ({ page }) => {
+  await page.route("**/adsbygoogle.js*", (route) => route.abort());
+  await page.goto("/de");
+  const faq = page.locator('section[aria-labelledby="home-faq-title"]');
+  await expect(faq.getByRole("heading", { level: 2 })).toHaveText("Häufige Fragen");
+  await faq.scrollIntoViewIfNeeded();
+  await expect(faq.getByRole("heading", { level: 3 }).first()).toBeVisible();
+
+  const visible = await faq.getByRole("heading", { level: 3 }).allTextContents();
+  const published = await page.evaluate(() =>
+    [...document.querySelectorAll('script[type="application/ld+json"]')]
+      .map((script) => JSON.parse(script.textContent || "{}"))
+      .find((schema) => schema["@type"] === "FAQPage")
+      ?.mainEntity.map((item: { name: string }) => item.name),
+  );
+  expect(visible).toHaveLength(7);
+  expect(published).toEqual(visible);
 });
 
 test("home page registers the WebMCP search tool and runs the page's own search", async ({ page }, testInfo) => {

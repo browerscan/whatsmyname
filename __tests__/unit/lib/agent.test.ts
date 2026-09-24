@@ -5,6 +5,8 @@ import { GET as getMarkdown } from "@/app/api/markdown/[[...path]]/route";
 import { GET as getSkillIndex } from "@/app/.well-known/agent-skills/index.json/route";
 import { GET as getSkill } from "@/app/.well-known/agent-skills/username-search/SKILL.md/route";
 import { GET as getApiCatalog } from "@/app/.well-known/api-catalog/route";
+import { GET as getLlmTxt } from "@/app/llm.txt/route";
+import { GET as getLlmsTxt } from "@/app/llms.txt/route";
 import { GET as getMcpGet, OPTIONS as mcpOptions, POST as mcpPost } from "@/app/mcp/route";
 import {
   buildAiCatalog,
@@ -14,10 +16,13 @@ import {
   buildRobotsTxt,
 } from "@/lib/agent/documents";
 import { renderMarkdownPage } from "@/lib/agent/markdown";
+import { markdownTwinPath, markdownTwinToPagePath } from "@/lib/agent/markdown-path";
 import { handleMcpMessage } from "@/lib/agent/mcp";
 import { AGENT_LINK_HEADER, prefersMarkdown } from "@/lib/agent/site";
 import { getAllBlogSlugs } from "@/lib/blog-data";
 import { getAllPlatformSlugs } from "@/lib/platforms-data";
+import { getHomeFaq } from "@/content/faq";
+import { locales } from "@/i18n/request";
 
 function robotsGroups(robots: string) {
   return robots
@@ -71,6 +76,42 @@ describe("Markdown negotiation", () => {
       const page = await renderMarkdownPage(path);
       expect(page, path).not.toBeNull();
       expect(page?.body.length, path).toBeGreaterThan(100);
+    }
+  });
+
+  it.each([
+    ["/index.html.md", "/"],
+    ["/index.md", "/"],
+    ["/de.md", "/de"],
+    ["/de/index.html.md", "/de"],
+    ["/platforms/github.md", "/platforms/github"],
+    ["/zh/blog/how-to-choose-the-perfect-username.md", "/zh/blog/how-to-choose-the-perfect-username"],
+    ["/categories.md", "/categories"],
+    ["/ASSETS_README.md", null],
+    ["/images/README.md", null],
+    ["/de/unknown.md", null],
+    ["/platforms/github", null],
+  ])(".md twin %s -> page %s", (twin, page) => {
+    expect(markdownTwinToPagePath(twin)).toBe(page);
+  });
+
+  it("advertises a .md twin that maps back to the same page", () => {
+    for (const path of ["/", "/de", "/platforms/github", "/zh/blog/how-to-choose-the-perfect-username", "/blog/"]) {
+      const twin = markdownTwinPath(path);
+      expect(twin.endsWith(".md"), path).toBe(true);
+      expect(markdownTwinToPagePath(twin), path).toBe(path === "/blog/" ? "/blog" : path);
+    }
+    expect(markdownTwinPath("/")).toBe("/index.html.md");
+  });
+
+  it("puts the localized FAQ in the Markdown home page", async () => {
+    for (const locale of ["en", "ja"] as const) {
+      const faq = getHomeFaq(locale);
+      const home = await renderMarkdownPage(locale === "en" ? "/" : `/${locale}`);
+      expect(home?.body).toContain(`## ${faq.title}`);
+      for (const entry of faq.entries) {
+        expect(home?.body).toContain(`### ${entry.question}\n\n${entry.answer}`);
+      }
     }
   });
 
@@ -137,11 +178,38 @@ describe("llms.txt", () => {
     expect(llms).not.toContain("undefined");
   });
 
+  it("serves /llm.txt as the same file with a canonical link to /llms.txt", async () => {
+    const alias = getLlmTxt();
+    expect(alias.status).toBe(200);
+    expect(alias.headers.get("content-type")).toBe("text/plain; charset=utf-8");
+    expect(alias.headers.get("link")).toBe('<https://whatismyname.org/llms.txt>; rel="canonical"');
+    expect(await alias.text()).toBe(await getLlmsTxt().text());
+  });
+
+  it("points agents at the .md twins", () => {
+    expect(buildLlmsTxt()).toContain("https://whatismyname.org/index.html.md");
+  });
+
   it("puts every article body in llms-full.txt", () => {
     const full = buildLlmsFullTxt();
     expect(full.length).toBeGreaterThan(buildLlmsTxt().length * 3);
     expect(full).toContain("# Responsible use");
+    const faq = getHomeFaq("en");
+    expect(full).toContain(`# ${faq.title}\n\n## ${faq.entries[0].question}`);
     expect(full).not.toMatch(/<\/?(p|h2|h3|section)\b/);
+  });
+});
+
+describe("Home FAQ", () => {
+  it.each([...locales])("has the same complete set of questions in %s", (locale) => {
+    const faq = getHomeFaq(locale);
+    expect(faq.entries).toHaveLength(getHomeFaq("en").entries.length);
+    expect(new Set(faq.entries.map((entry) => entry.question)).size).toBe(faq.entries.length);
+    for (const entry of faq.entries) {
+      expect(entry.question.length, locale).toBeGreaterThan(5);
+      expect(entry.answer.length, locale).toBeGreaterThan(15);
+      expect(entry.answer, locale).not.toMatch(/\d+(?:[.,]\d+)?\s*[%％]/);
+    }
   });
 });
 
