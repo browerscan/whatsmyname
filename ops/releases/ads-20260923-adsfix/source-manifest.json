@@ -1,0 +1,19 @@
+{
+ "baseline_release": "ads-20260923-search",
+ "baseline_version": "5595ad32-174e-4430-bdf9-dc7ff5041654",
+ "source_commit": "3a9ba185f492b9e96615fc927e65a68a67613a26",
+ "baseline_source": "/tmp/whatismyname-search-20260923",
+ "source": "/tmp/whatismyname-adsfix-20260923",
+ "changed_files": {
+  "app/globals.css": "1deb87dfe18e9c327f903d1527574abe96bae4221bae8addb148262d2a19cfc4",
+  "next.config.mjs": "086b90cd4961a319c912ac888437d412644b8e68f377095561f60f6534f75917"
+ },
+ "baseline_files": {
+  "app/globals.css": "91e684a5b1589e99f258e83deec52cf323d54f561c670f1a1b5cef872298ab7d",
+  "next.config.mjs": "8415712b84282839eb018aa062bccfdc288a2439213162f93c43e52ea4851c1c"
+ },
+ "deleted_files": [],
+ "note": "Production source of ads-20260923-search plus the AdSense unfilled-slot CSS rule (app/globals.css) and CSP allowance for fonts.googleapis.com/fonts.gstatic.com (next.config.mjs) only; wrangler.toml, public/ads.txt and all other files byte-identical to the baseline source.",
+ "worker_js_sha256": "9bbcb8427d669e462b16af357cb210085ddabf011cecf686eedfd2ce53336d50",
+ "ads_txt_sha256": "bd958ae2b7bba074f3cf17b84c6dd399fd7e0828fa0c91a9aff62ba74a3aa1a1"
+}

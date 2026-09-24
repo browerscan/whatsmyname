@@ -1,0 +1,60 @@
+{
+  "release": "ads-20260923-panels",
+  "observed_at": "2026-09-24T01:00:00+00:00",
+  "status": "passed",
+  "production_url": "https://whatismyname.org/",
+  "worker_version": "c699b90e-ad15-4ca5-b1a6-9998cf581612",
+  "previous_worker_version": "99de4166-5802-4661-ba1d-74cd0a9b6848",
+  "deploy_receipt": "ops/deploy-receipts/20260924T005143Z-production-domain-deploy.json",
+  "scope": "Results header, progress and filter panels render as white cards in light mode; dark unchanged.",
+  "checks": {
+    "typecheck": "passed",
+    "lint": "passed",
+    "unit_tests": {
+      "files": 25,
+      "passed": 429
+    },
+    "build": "passed",
+    "preview_browser": {
+      "agent_ready": {
+        "passed": 7,
+        "skipped": 5
+      },
+      "ai_markdown_regression": {
+        "passed": 6,
+        "skipped": 2
+      },
+      "ui_csp": {
+        "passed": 84,
+        "failed": 0
+      }
+    },
+    "public_browser": {
+      "agent_ready": {
+        "passed": 7,
+        "skipped": 5
+      },
+      "ui_csp": {
+        "passed": 83,
+        "failed": 0
+      },
+      "panels": {
+        "light": "rgb(255,255,255) x3",
+        "dark": "transparent gradient x3"
+      }
+    },
+    "public_ads_matches": true
+  },
+  "evidence": [
+    "validation.txt",
+    "source-manifest.json",
+    "agent-browser.json",
+    "markdown-browser.json",
+    "preview-ui-qa.json",
+    "preview-shots/",
+    "public-ui-qa.json"
+  ],
+  "notes": [
+    "First production run (exec 20260924T005238Z) stopped at mobile-light: page.goto networkidle exceeded 30 s while ads were loading; rerun (exec 20260924T005437Z) passed 83/83."
+  ]
+}

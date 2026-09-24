@@ -1,0 +1,11 @@
+{
+  "name": "wimn-stream-fix",
+  "main": "worker2.mjs",
+  "compatibility_date": "2024-12-01",
+  "compatibility_flags": ["nodejs_compat"],
+  "vars": {
+    "UPSTREAM": "http://127.0.0.1:4391/",
+    "RESPONSE_TIMEOUT_MS": "3000",
+    "IDLE_TIMEOUT_MS": "3000"
+  }
+}

@@ -1,0 +1,17 @@
+{
+ "baseline_release": "ads-20260923-adsfix",
+ "baseline_version": "30fd2ace-5ebb-4d62-a6a6-f79cb9a11e7d",
+ "source_commit": "3a9ba185f492b9e96615fc927e65a68a67613a26",
+ "baseline_source": "/tmp/whatismyname-adsfix-20260923",
+ "source": "/tmp/whatismyname-light-20260923",
+ "changed_files": {
+  "app/globals.css": "15911775f9dd4b08826e5ebbe2b89e9655c3fccd93e8181bf78343128a0684f4"
+ },
+ "baseline_files": {
+  "app/globals.css": "1deb87dfe18e9c327f903d1527574abe96bae4221bae8addb148262d2a19cfc4"
+ },
+ "deleted_files": [],
+ "note": "Production source of ads-20260923-adsfix plus app/globals.css only: valid hsl() syntax for .glass/.glass-strong/.tech-grid (surfaces were transparent) and light-theme token tuning; .dark tokens unchanged.",
+ "worker_js_sha256": "adc5802897864f6f6660d3d9feec4656ac6b5384551fcb4c6c607c4636b31a93",
+ "ads_txt_sha256": "bd958ae2b7bba074f3cf17b84c6dd399fd7e0828fa0c91a9aff62ba74a3aa1a1"
+}

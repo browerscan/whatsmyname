@@ -1,0 +1,71 @@
+{
+  "release": "ads-20260923-ui-tabs",
+  "observed_at": "2026-09-23T09:44:30+00:00",
+  "status": "passed",
+  "production_url": "https://whatismyname.org/",
+  "worker_version": "c83ab4d2-5c50-44c9-acb6-da2a4789b245",
+  "previous_worker_version": "73283e77-4d33-4777-83af-88cc80fdca4c",
+  "deploy_receipt": "ops/deploy-receipts/20260923T094134Z-production-domain-deploy.json",
+  "scope": "UI polish (13 component/style files) + CSP allowance for https://*.adtrafficquality.google in script/connect/frame-src + mobile tab wrap fix. Backend, secrets, ads.txt preserved.",
+  "checks": {
+    "typecheck": "passed",
+    "lint": "passed",
+    "unit_tests": {
+      "files": 25,
+      "passed": 425
+    },
+    "build": "passed",
+    "preview_browser": {
+      "agent_ready": {
+        "passed": 7,
+        "skipped": 5
+      },
+      "ai_markdown_regression": {
+        "passed": 6,
+        "skipped": 2
+      },
+      "ui_csp": {
+        "passed": 59,
+        "failed": 0
+      }
+    },
+    "public_browser": {
+      "agent_ready": {
+        "passed": 7,
+        "skipped": 5
+      },
+      "ui_csp": {
+        "passed": 59,
+        "failed": 0,
+        "tab_overflow_measured_while_searching": true,
+        "variants": [
+          "desktop-light 1366",
+          "desktop-dark 1366",
+          "mobile-light 390",
+          "mobile-dark 390",
+          "mobile-pt 390"
+        ],
+        "lane": "OpenClaw headless Chrome for Testing against https://whatismyname.org (real search, no stubs)"
+      }
+    },
+    "public_csp_header_allows_adtrafficquality": true,
+    "public_csp_violations": 0,
+    "public_ads_matches": true
+  },
+  "evidence": [
+    "validation.txt",
+    "source-manifest.json",
+    "agent-browser.json",
+    "markdown-browser.json",
+    "preview-ui-qa.json",
+    "preview-shots/",
+    "public-ui-qa.json",
+    "public-mobile-light-mid-search.jpg",
+    "public-desktop-dark-cards.jpg"
+  ],
+  "notes": [
+    "Supersedes ads-20260923-ui (73283e77), whose production QA failed one check: 3px tab overflow at 390px during a search.",
+    "Remaining console errors are external 'Failed to load resource: 404' image loads (not served by the Worker).",
+    "Google documents only a nonce-based strict CSP for AdSense; the allowlist entry is the minimal fix and is annotated in next.config.mjs with its upgrade trigger."
+  ]
+}

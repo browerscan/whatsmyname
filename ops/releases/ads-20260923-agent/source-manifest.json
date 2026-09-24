@@ -1,0 +1,37 @@
+{
+ "baseline_release": "ads-20260922-markdown",
+ "baseline_version": "c2826d68-7003-4a0e-9981-8dee48c5e123",
+ "source_commit": "3a9ba185f492b9e96615fc927e65a68a67613a26",
+ "baseline_source": "/tmp/whatismyname-md-20260922",
+ "source": "/tmp/whatismyname-agent-20260923",
+ "changed_files": {
+  "lib/agent/site.ts": "862cf17365b7d772c7427530946732b73b8b78a245be6fe0576f5b25c99abc60",
+  "lib/agent/markdown.ts": "682ae50c9662f7e68c18295375ffe6be609c337f3b9700c8af58a4630aedc08d",
+  "lib/agent/mcp.ts": "2df3fbf9d756694f42164226b7c86a63715af45598cd060c945eccca47b257e9",
+  "lib/agent/documents.ts": "138e68f793ed71577505f76e8091cc96ac9df3fb4d0e6e010b0eed15811b7549",
+  "app/robots.txt/route.ts": "71f4defe9d008b5a7640ff7be1bf1142c8029da02a8e3e93bdec9660d10f927c",
+  "app/llms.txt/route.ts": "8842d62a3ecec558b62806ecab4b2a92e4ca63074dfbb4b92c343fe07987e97f",
+  "app/llms-full.txt/route.ts": "474f10751028c0a233c9ea1ef2192d73d0ebe7009723d063eb0302af7302a018",
+  "app/mcp/route.ts": "3c8aebc64cf517c66942c6a227698eb6a546b2cbd477aed3449f957fbd5bd430",
+  "app/.well-known/api-catalog/route.ts": "1392a143ca80b751996f6e28fa7b57bd7eeea548735d0c4360c1a8b99b518f5b",
+  "app/.well-known/mcp/server-card.json/route.ts": "6d439c76335991256a2410f18613c57c0ea95a70d4c139b90cac72d8712ff15f",
+  "app/.well-known/agent-skills/index.json/route.ts": "9928554be97960e00b5969f1480ab18533c27ed020aef44dcd691f83d5f9054c",
+  "app/.well-known/agent-skills/username-search/SKILL.md/route.ts": "70f270ff7bf57ef5aa6f087db732d75ae048b1a66932f4d52e487a4c973eb674",
+  "app/.well-known/ai-catalog.json/route.ts": "ff19b43595f7e2f55f58ab5b59c512b84a976cdad48ea801f0eae1cc8a6bca09",
+  "app/api/markdown/[[...path]]/route.ts": "da78b5e26ef3ff2e440490bea345e95a616dcc760607904453d71c81e7bba867",
+  "middleware.ts": "fb3fed5d5977fe891754ab3696f703671bea83060273ef9bd7572417b14f8235",
+  "components/pages/HomeClient.tsx": "29a32d9da39825a2577165075909c8bed9114148f5a3e3da69fe8e74bce90eae",
+  "hooks/useWebMcpSearchTool.ts": "5a299b0e0c84df5850e54f317b41bd732024ba95391c1bb7b8db127696fe7da4",
+  "scripts/i18n-scanner.ts": "8d02b0caf810d3e27feaf2d57166cffa6edc16f1474a4cc764133f551974ecea",
+  "__tests__/unit/adsense-readiness.test.ts": "1b330c1dd33c9ef151cab815a5e58d9ae62403f5a58f122f64395f4d736af403",
+  "__tests__/unit/lib/agent.test.ts": "5d19a564f2d618ec0bcbb81bebdc9fa479f0c8a037a5fef9081c5913c7e04f50",
+  "__tests__/unit/hooks/useWebMcpSearchTool.test.ts": "b4eff96e7f97b24c60a7064c4bb571f7bf422854397c9f8771886e01a21d0f40",
+  "__tests__/e2e/agent-ready.spec.ts": "0b85112e4ae2ca7367cf5361b33cfb15a49b5fee25d05c21bffd75453e265f91",
+  "playwright.agent.config.ts": "6b29a41797a26adc9fa5f2b333adca261c86bb63dc5ccbfac2df063bf8479780"
+ },
+ "deleted_files": [
+  "app/robots.ts"
+ ],
+ "note": "Production source of ads-20260922-markdown plus the agent-readiness delta only; wrangler.toml, public/ads.txt, lib/env.ts and all other files byte-identical to the baseline source.",
+ "worker_js_sha256": "e0db252c4232d26b3f776951cc7b90edff776a5112667568e7f9fe0620a39401"
+}

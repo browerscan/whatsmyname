@@ -1,0 +1,17 @@
+Release: ads-20260923-ui-tabs
+UTC: 2026-09-23T09:32:00+00:00
+Scope: follow-up to ads-20260923-ui. Production QA of ads-20260923-ui found the results tab row overflowing by 3px at 390px while a search was running (in-tab percentage badge + label). components/pages/ResultsPanel.tsx now lets tab labels wrap on mobile and hides the in-tab badge below 640px (the progress card directly above shows the same percentage). Everything else is identical to ads-20260923-ui: UI polish + CSP allowance for https://*.adtrafficquality.google in script-src, connect-src and frame-src. Existing backend, runtime secrets, routes and ads.txt preserved.
+Baseline: production 73283e77-4d33-4777-83af-88cc80fdca4c (ads-20260923-ui); source lineage /tmp/whatismyname-agent-20260923 (ads-20260923-agent, 7c943aad-a5f5-43c0-b57b-ad8dcf803884).
+Source: /tmp/whatismyname-ui-20260923. Exact 14-file delta against the ads-20260923-agent source in source-manifest.json.
+SOURCE_COMMIT_3a9ba18
+OpenClaw workspace: /Users/openclaw/test-workspace/whatismyname-ui-rel-20260923 (dependencies cloned from the byte-identical lockfile of whatismyname-agent-20260923).
+Checks: TypeScript passed; ESLint passed; Vitest 25 files / 425 tests passed.
+Next production build + OpenNext Cloudflare + Wrangler dry-run bundle + packaging passed.
+CLOUDFLARE_BUILD_PASS
+ADS_TXT_SHA256_MATCH
+Worker SHA256: 5a65789aa703853060d7ac93a250399feb941fcbd191e95f429ed6b241faa2c7
+ads.txt SHA256: bd958ae2b7bba074f3cf17b84c6dd399fd7e0828fa0c91a9aff62ba74a3aa1a1
+OpenClaw build receipt: /Users/openclaw/artifacts/whatismyname-ui-rel-20260923/exec/20260923T092755Z
+Collected bundle: ~/.codex/tmp/openclaw-collect/whatismyname-org-ads-20260923-ui-tabs
+Preview browser (packaged Worker, served locally on OpenClaw): agent-ready spec 7 passed / 5 skipped; ai-markdown regression spec 6 passed / 2 production-only skipped; UI/CSP QA 59/59 passed (desktop 1366 + mobile 390 light/dark + Portuguese 390 for the longest tab labels). Preview search arrives complete, so the mid-search tab state is verified on production. Receipt: /Users/openclaw/artifacts/whatismyname-ui-rel-20260923/exec/20260923T092855Z. Evidence: agent-browser.json, markdown-browser.json, preview-ui-qa.json, preview-shots/.
+Deployment approval: user asked to publish the UI polish and add the CSP fix on 2026-09-23; this release completes that request.

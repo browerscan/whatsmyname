@@ -1,0 +1,17 @@
+Release: ads-20260923-ui
+UTC: 2026-09-23T09:20:00+00:00
+Scope: UI polish only — header/logo mark and single-row mobile brand, hero spacing and balanced headings, search bar (icon inside input on the left, stacked button on mobile, focus state after autofocus, shortcut hint desktop-only), light-theme muted token (--color-muted 215 16% 47% -> 214 32% 93%), result cards (tinted Found badge, readable response-time badges, lift hover), results header/progress/tabs spacing, filter chips as aria-pressed buttons with the empty clear row removed, static AI button (no infinite pulse). CSP: https://*.adtrafficquality.google added to script-src, connect-src and frame-src (AdSense ad traffic quality / sodar was blocked on every page). Existing backend, runtime secrets, routes and ads.txt preserved.
+Baseline: production 7c943aad-a5f5-43c0-b57b-ad8dcf803884 (ads-20260923-agent), source /tmp/whatismyname-agent-20260923.
+Source: /tmp/whatismyname-ui-20260923. Exact 14-file delta in source-manifest.json.
+SOURCE_COMMIT_3a9ba18
+OpenClaw workspace: /Users/openclaw/test-workspace/whatismyname-ui-rel-20260923 (dependencies cloned from the byte-identical lockfile of whatismyname-agent-20260923).
+Checks: TypeScript passed; ESLint passed; Vitest 25 files / 425 tests passed.
+Next production build + OpenNext Cloudflare + Wrangler dry-run bundle + packaging passed.
+CLOUDFLARE_BUILD_PASS
+ADS_TXT_SHA256_MATCH
+Worker SHA256: 252752004cb23bf938a0e2e88b0355d646087e4b877aa5433b01e5d891282287
+ads.txt SHA256: bd958ae2b7bba074f3cf17b84c6dd399fd7e0828fa0c91a9aff62ba74a3aa1a1
+OpenClaw build receipt: /Users/openclaw/artifacts/whatismyname-ui-rel-20260923/exec/20260923T090832Z
+Collected bundle: ~/.codex/tmp/openclaw-collect/whatismyname-org-ads-20260923-ui
+Preview browser (packaged Worker, served locally on OpenClaw): agent-ready spec 7 passed / 5 skipped; ai-markdown regression spec 6 passed / 2 production-only skipped; UI/CSP QA 49/49 passed (desktop 1366 + mobile 390, light + dark, real search data proxied from production; layout, filter-chip, CSP-header and zero-CSP-violation checks). Receipt: /Users/openclaw/artifacts/whatismyname-ui-rel-20260923/exec/20260923T091043Z. Evidence: agent-browser.json, markdown-browser.json, preview-ui-qa.json, preview-shots/.
+Deployment approval: user asked to publish the UI polish and add the CSP fix on 2026-09-23.

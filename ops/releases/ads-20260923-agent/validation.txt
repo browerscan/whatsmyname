@@ -1,0 +1,17 @@
+Release: ads-20260923-agent
+UTC: 2026-09-23T06:38:52.287603+00:00
+Scope: agent/GEO readiness only — robots.txt with Content-Signal and AI answer/training crawlers allowed (search API still disallowed), llms.txt, llms-full.txt, Accept: text/markdown negotiation for every page family, agent Link header, RFC 9727 API catalog, read-only MCP server (/mcp) + server card, agent skill index + SKILL.md, ARD ai-catalog, WebMCP search_username tool on the home page. Existing backend, runtime secrets, routes and ads.txt preserved.
+Baseline: production c2826d68-7003-4a0e-9981-8dee48c5e123 (ads-20260922-markdown), source /tmp/whatismyname-md-20260922.
+Source: /tmp/whatismyname-agent-20260923. Exact delta in source-manifest.json.
+SOURCE_COMMIT_3a9ba18
+OpenClaw workspace: /Users/openclaw/test-workspace/whatismyname-agent-20260923 (dependencies cloned from the byte-identical lockfile of whatismyname-md-20260922; broken native-binary links materialised from their .installed copies after pnpm install hung in macOS 'stuck' state).
+Checks: TypeScript passed; ESLint passed; Vitest 25 files / 425 tests passed.
+Next production build + OpenNext Cloudflare + Wrangler dry-run bundle + packaging passed.
+CLOUDFLARE_BUILD_PASS
+ADS_TXT_SHA256_MATCH
+Worker SHA256: e0db252c4232d26b3f776951cc7b90edff776a5112667568e7f9fe0620a39401
+ads.txt SHA256: bd958ae2b7bba074f3cf17b84c6dd399fd7e0828fa0c91a9aff62ba74a3aa1a1
+OpenClaw build receipt: /Users/openclaw/artifacts/whatismyname-agent-20260923/exec/20260923T063632Z
+Collected bundle: ~/.codex/tmp/openclaw-collect/whatismyname-org-ads-20260923-agent
+Preview browser (packaged Worker, wrangler dev --local): agent-ready spec 7 passed / 5 device-duplicate HTTP checks skipped; ai-markdown regression spec 6 passed / 2 production-only skipped. Evidence: agent-browser.json, markdown-browser.json, agent-webmcp-*.png.
+Deployment approval: user chose "Deploy as built" (AI answer and training crawlers allowed, ai-train=yes) on 2026-09-23.

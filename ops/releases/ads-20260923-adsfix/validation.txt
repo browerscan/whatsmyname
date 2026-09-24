@@ -1,0 +1,17 @@
+Release: ads-20260923-adsfix
+UTC: 2026-09-23T12:40:00+00:00
+Scope: AdSense Auto ads follow-up. app/globals.css hides ins.adsbygoogle[data-ad-status="unfilled"] (Google's documented rule; unfill-optimized slots stay visible) because an unfilled Auto ads slot collapsed to 0 width kept its 1200 px iframe and widened the desktop page by 517 px. next.config.mjs CSP adds https://fonts.googleapis.com to style-src and https://fonts.gstatic.com to font-src for the Google Sans stylesheets AdSense injects into the page. Search timeout fix, UI polish, backend, runtime secrets, routes and ads.txt unchanged from ads-20260923-search.
+Baseline: production 5595ad32-174e-4430-bdf9-dc7ff5041654 (ads-20260923-search), source /tmp/whatismyname-search-20260923.
+Source: /tmp/whatismyname-adsfix-20260923. Exact 2-file delta in source-manifest.json.
+SOURCE_COMMIT_3a9ba18
+OpenClaw workspace: /Users/openclaw/test-workspace/whatismyname-adsfix-rel-20260923 (dependencies cloned from the byte-identical lockfile of whatismyname-agent-20260923).
+Checks: TypeScript passed; ESLint passed; Vitest 25 files / 429 tests passed.
+Next production build + OpenNext Cloudflare + Wrangler dry-run bundle + packaging passed; the unfilled-slot rule is present in the built stylesheet.
+CLOUDFLARE_BUILD_PASS
+ADS_TXT_SHA256_MATCH
+Worker SHA256: 9bbcb8427d669e462b16af357cb210085ddabf011cecf686eedfd2ce53336d50
+ads.txt SHA256: bd958ae2b7bba074f3cf17b84c6dd399fd7e0828fa0c91a9aff62ba74a3aa1a1
+OpenClaw build receipt: /Users/openclaw/artifacts/whatismyname-adsfix-rel-20260923/exec/20260923T114258Z
+Collected bundle: ~/.codex/tmp/openclaw-collect/whatismyname-org-ads-20260923-adsfix
+Preview browser (packaged Worker, served locally on OpenClaw): agent-ready spec 7 passed / 5 skipped; ai-markdown regression spec 6 passed / 2 production-only skipped; UI/CSP QA 69/69 passed, including CSP header checks and a simulated unfilled slot (0-width ins + 1200 px iframe: hidden, no overflow) and unfill-optimized slot (visible) in desktop and mobile, light and dark. The search fixture is one full production stream (1,489 lines, 292 s) replayed per variant. Receipt: /Users/openclaw/artifacts/whatismyname-adsfix-rel-20260923/exec/20260923T123030Z.
+Deployment approval: user asked to fix the AdSense issues and publish on 2026-09-23.

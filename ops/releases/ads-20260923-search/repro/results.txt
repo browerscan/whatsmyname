@@ -1,0 +1,7 @@
+workerd repro on OpenClaw (wrangler local runtime), fake upstream 5 results/s.
+Before (production logic, 5 s total timeout standing in for 60 s): 24/100 results, cut at 5.02 s, no completed line, client saw clean EOF, worker logged 'Streaming error: TimeoutError'.
+After (fixed logic, 3 s response + 3 s idle standing in for 20 s + 30 s):
+  steady 20 s stream: 100/100 results + completed line at 20.65 s, clean EOF
+  stall after 10 results: last line 2.08 s, stream ended 5.08 s (3 s idle), worker logged TimeoutError
+  visitor left at 2.10 s: upstream saw the connection close after 13 results (cancel propagated)
+Production before the fix (probe_stream.py from OpenClaw): octocat 731/1487 ended 60.3 s; torvalds 744/1487 ended 60.8 s; only a total line, clean EOF.

@@ -1,0 +1,3 @@
+Production stream probes from OpenClaw after deploy (probe_stream.py, real upstream):
+octocat: 1487/1487 results, completed line at 220.91 s, clean EOF (before the fix: 731 at 60.3 s)
+torvalds: 1487/1487 results, completed line at 211.82 s, longest gap between lines 4.37 s, clean EOF (before: 744 at 60.8 s)

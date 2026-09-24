@@ -1,0 +1,19 @@
+{
+ "baseline_release": "ads-20260923-ui-tabs",
+ "baseline_version": "c83ab4d2-5c50-44c9-acb6-da2a4789b245",
+ "source_commit": "3a9ba185f492b9e96615fc927e65a68a67613a26",
+ "baseline_source": "/tmp/whatismyname-ui-20260923",
+ "source": "/tmp/whatismyname-search-20260923",
+ "changed_files": {
+  "app/api/search/whatsmyname/route.ts": "08553398da95c9018cebd18f4953408d5014e51b58b1f030f49d132897d665d6",
+  "__tests__/integration/api/whatsmyname.test.ts": "6e429c5be033f18a39772df13fff1bfc15dd511f569a07d9f0bbadf55660cab7"
+ },
+ "baseline_files": {
+  "app/api/search/whatsmyname/route.ts": "d468c436a9d2a0ac77362466c3376436866a6bde91e0f582034618438091eff8",
+  "__tests__/integration/api/whatsmyname.test.ts": "e94844497b30c2c4cdf4c01c67ea2adcd30c1a1e8777f5b1357714d0ec16126a"
+ },
+ "deleted_files": [],
+ "note": "Production source of ads-20260923-ui-tabs plus the search stream timeout fix (route.ts) and its tests only; wrangler.toml, public/ads.txt, lib/env.ts and all other files byte-identical to the baseline source.",
+ "worker_js_sha256": "f61b6bbe29f17549f4821f8def719e8b01dd9705582a24e0d752ff957ddc5ee5",
+ "ads_txt_sha256": "bd958ae2b7bba074f3cf17b84c6dd399fd7e0828fa0c91a9aff62ba74a3aa1a1"
+}

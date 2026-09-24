@@ -1,0 +1,63 @@
+{
+  "release": "ads-20260923-ui",
+  "observed_at": "2026-09-23T09:23:30+00:00",
+  "status": "failed",
+  "production_url": "https://whatismyname.org/",
+  "worker_version": "73283e77-4d33-4777-83af-88cc80fdca4c",
+  "previous_worker_version": "7c943aad-a5f5-43c0-b57b-ad8dcf803884",
+  "deploy_receipt": "ops/deploy-receipts/20260923T092113Z-production-domain-deploy.json",
+  "scope": "UI polish (13 component/style files) + CSP allowance for https://*.adtrafficquality.google in script/connect/frame-src. Backend, secrets, ads.txt preserved.",
+  "checks": {
+    "typecheck": "passed",
+    "lint": "passed",
+    "unit_tests": {
+      "files": 25,
+      "passed": 425
+    },
+    "build": "passed",
+    "preview_browser": {
+      "agent_ready": {
+        "passed": 7,
+        "skipped": 5
+      },
+      "ai_markdown_regression": {
+        "passed": 6,
+        "skipped": 2
+      },
+      "ui_csp": {
+        "passed": 49,
+        "failed": 0
+      }
+    },
+    "public_browser": {
+      "agent_ready": {
+        "passed": 7,
+        "skipped": 5
+      },
+      "ui_csp": {
+        "passed": 48,
+        "failed": 1,
+        "lane": "OpenClaw Playwright + Chrome for Testing against https://whatismyname.org (real search, no stubs)"
+      }
+    },
+    "public_csp_header_allows_adtrafficquality": true,
+    "public_csp_violations": 0,
+    "public_ads_matches": true
+  },
+  "failures": [
+    "mobile-light (390px): results tab row overflowed by 3px while a search was still running; the in-tab percentage badge plus the label did not fit. Preview missed it because the proxied search arrived complete. Fixed in ads-20260923-ui-tabs."
+  ],
+  "evidence": [
+    "validation.txt",
+    "source-manifest.json",
+    "agent-browser.json",
+    "markdown-browser.json",
+    "preview-ui-qa.json",
+    "preview-shots/",
+    "public-ui-qa.json",
+    "public-mobile-light-tabs-overflow.jpg"
+  ],
+  "notes": [
+    "Remaining console errors on production are external 'Failed to load resource: 404' image loads (not served by the Worker); zero CSP violations in every variant."
+  ]
+}

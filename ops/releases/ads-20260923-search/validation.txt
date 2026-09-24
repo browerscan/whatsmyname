@@ -1,0 +1,18 @@
+Release: ads-20260923-search
+UTC: 2026-09-23T10:40:00+00:00
+Scope: search stream timeout fix only. app/api/search/whatsmyname/route.ts replaced AbortSignal.timeout(60000), which covered the whole streamed body and cut every search at 60 s (~730 of 1,487 platforms, reported to the page as "Search complete"), with one watchdog: 20 s for the upstream to answer, then 30 s of silence between chunks; no total deadline. When the visitor disconnects, the upstream request is aborted. Four integration tests added (steady 100 s stream delivered; 30 s stall ends the stream; 20 s no-answer returns 504; visitor leaving aborts upstream). UI polish, CSP, backend, runtime secrets, routes and ads.txt unchanged from ads-20260923-ui-tabs.
+Baseline: production c83ab4d2-5c50-44c9-acb6-da2a4789b245 (ads-20260923-ui-tabs), source /tmp/whatismyname-ui-20260923.
+Source: /tmp/whatismyname-search-20260923. Exact 2-file delta in source-manifest.json.
+SOURCE_COMMIT_3a9ba18
+OpenClaw workspace: /Users/openclaw/test-workspace/whatismyname-search-rel-20260923 (dependencies cloned from the byte-identical lockfile of whatismyname-agent-20260923).
+Checks: TypeScript passed; ESLint passed; Vitest 25 files / 429 tests passed. The three stall/no-answer/leave tests fail against the previous route (mutation check).
+Next production build + OpenNext Cloudflare + Wrangler dry-run bundle + packaging passed. Bundle contains the new watchdog; the remaining 60 s AbortSignal.timeout belongs to app/api/ai/analyze (unchanged).
+CLOUDFLARE_BUILD_PASS
+ADS_TXT_SHA256_MATCH
+Worker SHA256: f61b6bbe29f17549f4821f8def719e8b01dd9705582a24e0d752ff957ddc5ee5
+ads.txt SHA256: bd958ae2b7bba074f3cf17b84c6dd399fd7e0828fa0c91a9aff62ba74a3aa1a1
+OpenClaw build receipt: /Users/openclaw/artifacts/whatismyname-search-rel-20260923/exec/20260923T103328Z
+Collected bundle: ~/.codex/tmp/openclaw-collect/whatismyname-org-ads-20260923-search
+Runtime verification (workerd on OpenClaw, fake upstream, see repro/results.txt): steady 20 s stream fully delivered with completed line; stall ends after the idle window; visitor leaving closes the upstream connection.
+Preview browser (packaged Worker, served locally on OpenClaw): agent-ready spec 7 passed / 5 skipped; ai-markdown regression spec 6 passed / 2 production-only skipped; UI/CSP QA 59/59 passed. Receipt: /Users/openclaw/artifacts/whatismyname-search-rel-20260923/exec/20260923T103418Z. The real upstream needs the production key, so the full-length search is verified on production after deploy.
+Deployment approval: user chose "fix the server side and publish" on 2026-09-23.

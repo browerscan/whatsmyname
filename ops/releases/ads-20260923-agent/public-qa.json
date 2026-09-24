@@ -1,0 +1,71 @@
+{
+  "release": "ads-20260923-agent",
+  "observed_at": "2026-09-23T06:48:21.606757+00:00",
+  "status": "passed",
+  "production_url": "https://whatismyname.org/",
+  "worker_version": "7c943aad-a5f5-43c0-b57b-ad8dcf803884",
+  "previous_worker_version": "c2826d68-7003-4a0e-9981-8dee48c5e123",
+  "deploy_receipt": "ops/deploy-receipts/20260923T064308Z-production-domain-deploy.json",
+  "scope": "Agent/GEO readiness: robots Content-Signal + AI crawlers allowed, llms.txt/llms-full.txt, Markdown negotiation, agent Link header, API catalog, read-only MCP + server card, agent skill, ARD ai-catalog, WebMCP search_username. Backend, secrets, ads.txt preserved.",
+  "checks": {
+    "typecheck": "passed",
+    "lint": "passed",
+    "unit_tests": {
+      "files": 25,
+      "passed": 425
+    },
+    "build": "passed",
+    "preview_browser": {
+      "agent_ready": {
+        "passed": 7,
+        "skipped": 5
+      },
+      "ai_markdown_regression": {
+        "passed": 6,
+        "skipped": 2
+      }
+    },
+    "public_browser": {
+      "agent_ready": {
+        "passed": 7,
+        "skipped": 5,
+        "lane": "OpenClaw Playwright + Google Chrome against https://whatismyname.org (search API stubbed with fixtures)"
+      }
+    },
+    "public_http": {
+      "robots_txt": 200,
+      "llms_txt": 200,
+      "llms_full_txt": 200,
+      "api_catalog": 200,
+      "mcp_server_card": 200,
+      "agent_skills_index": 200,
+      "skill_md": 200,
+      "ai_catalog": 200,
+      "mcp_initialize": 200,
+      "mcp_tools_call": 200,
+      "markdown_negotiation_content_type": "text/markdown; charset=utf-8",
+      "html_link_header_agent_rels": [
+        "api-catalog",
+        "service-doc",
+        "describedby"
+      ]
+    },
+    "public_build_id_matches": true,
+    "public_ads_matches": true
+  },
+  "evidence": [
+    "validation.txt",
+    "source-manifest.json",
+    "agent-browser.json",
+    "markdown-browser.json",
+    "public-browser.json",
+    "agent-webmcp-desktop.png",
+    "agent-webmcp-mobile.png",
+    "public-webmcp-desktop.png",
+    "public-webmcp-mobile.png"
+  ],
+  "notes": [
+    "5 skipped agent-ready tests are the HTTP contract checks deduplicated on the mobile project; 2 skipped ai-markdown tests are production-only real-AI checks not run on preview.",
+    "Not addressed by design: OAuth/OIDC discovery, OAuth protected resource and auth.md (the site has no authenticated API); Web Bot Auth (applies to bot operators); DNS-AID (needs DNS records + DNSSEC on the Cloudflare zone, not authorised in this release)."
+  ]
+}

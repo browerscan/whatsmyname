@@ -1,0 +1,43 @@
+{
+ "baseline_release": "ads-20260923-agent",
+ "baseline_version": "7c943aad-a5f5-43c0-b57b-ad8dcf803884",
+ "source_commit": "3a9ba185f492b9e96615fc927e65a68a67613a26",
+ "baseline_source": "/tmp/whatismyname-agent-20260923",
+ "source": "/tmp/whatismyname-ui-20260923",
+ "changed_files": {
+  "app/globals.css": "91e684a5b1589e99f258e83deec52cf323d54f561c670f1a1b5cef872298ab7d",
+  "next.config.mjs": "8415712b84282839eb018aa062bccfdc288a2439213162f93c43e52ea4851c1c",
+  "components/layout/Header.tsx": "9f981656d8fb05356e587fcd87ac4653f6fdfe06e9ddddc2914558f7ce770e69",
+  "components/layout/HeaderLocaleSwitcher.tsx": "f87c9513b54338a768b5a403e03383133c7ed59721dd238d3c45d3a24eccaa23",
+  "components/pages/SearchHero.tsx": "4531a2e0878b9e4e26776c0342838c1826199ab3b23acf4c5e6549cb901bc8f3",
+  "components/pages/HomeClient.tsx": "45065f3c5100b6e362039f051cf2f6ecde8e675e0786f8b599280fad68a4f037",
+  "components/pages/ResultsPanel.tsx": "624782993ca35b75079f5ae352085583af71a7e466ef1eb9d32816f6a24aeb20",
+  "components/features/SearchBar.tsx": "6368232495581f6772ea86f7241f753032d1fd79acee9bc11247ab1177adc969",
+  "components/features/PlatformCard.tsx": "d1070c014f23cbcf23668abcdb6403d5da761bdb32f3b244271a638ae6cbdabf",
+  "components/features/ResultsHeader.tsx": "9a78f55252db6b1e72e6bd0b08a097555c92b5c36ab408f695c6019f6eff0647",
+  "components/features/FilterBar.tsx": "2846aa2c557eb270a7703ead35110a6038c4646b842ee59def5b5bf8f947eb2a",
+  "components/features/AIButton.tsx": "7a60625aec888cf9cf9bae3f562a45a75b6ebd87e354488a7056decffb35da6b",
+  "components/features/PlatformGrid.tsx": "1d612b461c335f6b86060aca67c92b4f2df5aa8148c0681380d14621d13fded8",
+  "components/features/SearchProgress.tsx": "127df77ed0a8294270d27225c50f97c454a28b091b5d7da35de9fa15668cbc6d"
+ },
+ "baseline_files": {
+  "app/globals.css": "c917ef7ff32fb529ecdc59197ce7e8c5aa8e0b158a283f04de208fb72d5a4462",
+  "next.config.mjs": "d9f27ac2edfe6efcf0d4b3f12e5ae322092b537ff757a08349ecc12315afb5db",
+  "components/layout/Header.tsx": "5e2eeca019b804098c1865dd0b0773aad1d0a75563d14feacee45eab0edd998a",
+  "components/layout/HeaderLocaleSwitcher.tsx": "68f1baca77389eff360bed62f3b3beba8dd86b2c5466ccde50436effae5dc809",
+  "components/pages/SearchHero.tsx": "e7deb5ed06b1e37aef7e3b1fe7c45e660ff51419eea06ceaf24e1deb09c3393a",
+  "components/pages/HomeClient.tsx": "29a32d9da39825a2577165075909c8bed9114148f5a3e3da69fe8e74bce90eae",
+  "components/pages/ResultsPanel.tsx": "52584bcb53585f405baf64b13edd8f0391c8b2f6facd799ff4a33b0fc8f2d3b3",
+  "components/features/SearchBar.tsx": "46783144c283b99a58abde6f3aeab381d2b8ea993334a94200272062127d14eb",
+  "components/features/PlatformCard.tsx": "7def83f4fb57cec19fb2621b8c92d5ce3490de738c80bd64192678d4ff52e6a2",
+  "components/features/ResultsHeader.tsx": "8c437c65540c4d009c8cd6650e6497bd33a03530ccb0e4b573155fd78ba9ad02",
+  "components/features/FilterBar.tsx": "b003cd8c9585b9ed4b0a034add7efd0c16c569d9ba8ba0c20b8ad637c80042b3",
+  "components/features/AIButton.tsx": "1a00dd08cad4c4b02d8553cc7b41eb28093ac86a633e78cd4279fcf6ff6364eb",
+  "components/features/PlatformGrid.tsx": "552ef7dbecafa1b665c04ec142c7e101edb19be47e8eccc321db0454c682fc83",
+  "components/features/SearchProgress.tsx": "19497b1cfd7c15e855bc0da279ad1ffc9a74cff499c96eb701276a1dee2c6759"
+ },
+ "deleted_files": [],
+ "note": "Production source of ads-20260923-agent plus the UI polish delta (13 component/style files) and the CSP allowance for *.adtrafficquality.google (next.config.mjs) only; wrangler.toml, public/ads.txt, lib/env.ts and all other files byte-identical to the baseline source.",
+ "worker_js_sha256": "252752004cb23bf938a0e2e88b0355d646087e4b877aa5433b01e5d891282287",
+ "ads_txt_sha256": "bd958ae2b7bba074f3cf17b84c6dd399fd7e0828fa0c91a9aff62ba74a3aa1a1"
+}

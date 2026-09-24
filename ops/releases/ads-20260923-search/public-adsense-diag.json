@@ -1,0 +1,274 @@
+[
+  {
+    "run": 1,
+    "vw": 1366,
+    "scrollWidth": 1883,
+    "outermost": [
+      {
+        "tag": "div",
+        "id": "aswift_3_host",
+        "left": 683,
+        "right": 1883,
+        "width": 1200,
+        "position": "relative",
+        "parent": "ins"
+      }
+    ],
+    "styleLinks": [
+      {
+        "href": "https://whatismyname.org/_next/static/css/b57d1e94f6f6ccfe.css",
+        "parent": "head"
+      },
+      {
+        "href": "https://fonts.googleapis.com/css?family=Google%20Sans%3A400",
+        "parent": "head"
+      },
+      {
+        "href": "https://fonts.googleapis.com/css?family=Google%20Sans%3A700",
+        "parent": "head"
+      }
+    ],
+    "ads": [
+      {
+        "tag": "div",
+        "cls": "google-auto-placed",
+        "left": 0,
+        "right": 1366,
+        "width": 1366,
+        "position": "static",
+        "parent": "main#main-content"
+      },
+      {
+        "tag": "ins",
+        "cls": "adsbygoogle adsbygoogle-noablate",
+        "left": 0,
+        "right": 1366,
+        "width": 1366,
+        "position": "static",
+        "parent": "div"
+      },
+      {
+        "tag": "div",
+        "cls": "google-auto-placed",
+        "left": 0,
+        "right": 1366,
+        "width": 1366,
+        "position": "static",
+        "parent": "div"
+      },
+      {
+        "tag": "ins",
+        "cls": "adsbygoogle adsbygoogle-noablate",
+        "left": 0,
+        "right": 1366,
+        "width": 1366,
+        "position": "static",
+        "parent": "div"
+      },
+      {
+        "tag": "ins",
+        "cls": "adsbygoogle adsbygoogle-noablate",
+        "left": 0,
+        "right": 0,
+        "width": 0,
+        "position": "static",
+        "parent": "body"
+      },
+      {
+        "tag": "iframe",
+        "id": "aswift_0",
+        "left": 0,
+        "right": 0,
+        "width": 0,
+        "position": "absolute",
+        "parent": "div#aswift_0_host"
+      },
+      {
+        "tag": "div",
+        "cls": "google-auto-placed",
+        "left": 0,
+        "right": 1366,
+        "width": 1366,
+        "position": "static",
+        "parent": "body"
+      },
+      {
+        "tag": "ins",
+        "cls": "adsbygoogle adsbygoogle-noablate",
+        "left": 683,
+        "right": 683,
+        "width": 0,
+        "position": "static",
+        "parent": "div"
+      },
+      {
+        "tag": "iframe",
+        "id": "aswift_3",
+        "left": 683,
+        "right": 1883,
+        "width": 1200,
+        "position": "absolute",
+        "parent": "div#aswift_3_host"
+      },
+      {
+        "tag": "iframe",
+        "id": "google_esf",
+        "left": 0,
+        "right": 0,
+        "width": 0,
+        "position": "static",
+        "parent": "html"
+      }
+    ],
+    "cspErrors": [
+      "Loading the stylesheet 'https://fonts.googleapis.com/css?family=Google%20Sans%3A400' violates the following Content Security Policy directive: \"style-src 'self'",
+      "Loading the stylesheet 'https://fonts.googleapis.com/css?family=Google%20Sans%3A700' violates the following Content Security Policy directive: \"style-src 'self'"
+    ],
+    "fontRequests": [
+      {
+        "url": "https://fonts.googleapis.com/css?family=Google%20Sans%3A400",
+        "frame": "main"
+      },
+      {
+        "url": "https://fonts.googleapis.com/css?family=Google%20Sans%3A700",
+        "frame": "main"
+      }
+    ]
+  },
+  {
+    "run": 2,
+    "vw": 1366,
+    "scrollWidth": 1883,
+    "outermost": [
+      {
+        "tag": "div",
+        "id": "aswift_3_host",
+        "left": 683,
+        "right": 1883,
+        "width": 1200,
+        "position": "relative",
+        "parent": "ins"
+      }
+    ],
+    "styleLinks": [
+      {
+        "href": "https://whatismyname.org/_next/static/css/b57d1e94f6f6ccfe.css",
+        "parent": "head"
+      },
+      {
+        "href": "https://fonts.googleapis.com/css?family=Google%20Sans%3A400",
+        "parent": "head"
+      },
+      {
+        "href": "https://fonts.googleapis.com/css?family=Google%20Sans%3A700",
+        "parent": "head"
+      }
+    ],
+    "ads": [
+      {
+        "tag": "div",
+        "cls": "google-auto-placed",
+        "left": 0,
+        "right": 1366,
+        "width": 1366,
+        "position": "static",
+        "parent": "main#main-content"
+      },
+      {
+        "tag": "ins",
+        "cls": "adsbygoogle adsbygoogle-noablate",
+        "left": 0,
+        "right": 1366,
+        "width": 1366,
+        "position": "static",
+        "parent": "div"
+      },
+      {
+        "tag": "div",
+        "cls": "google-auto-placed",
+        "left": 0,
+        "right": 1366,
+        "width": 1366,
+        "position": "static",
+        "parent": "div"
+      },
+      {
+        "tag": "ins",
+        "cls": "adsbygoogle adsbygoogle-noablate",
+        "left": 0,
+        "right": 1366,
+        "width": 1366,
+        "position": "static",
+        "parent": "div"
+      },
+      {
+        "tag": "ins",
+        "cls": "adsbygoogle adsbygoogle-noablate",
+        "left": 0,
+        "right": 0,
+        "width": 0,
+        "position": "static",
+        "parent": "body"
+      },
+      {
+        "tag": "iframe",
+        "id": "aswift_0",
+        "left": 0,
+        "right": 0,
+        "width": 0,
+        "position": "absolute",
+        "parent": "div#aswift_0_host"
+      },
+      {
+        "tag": "div",
+        "cls": "google-auto-placed",
+        "left": 0,
+        "right": 1366,
+        "width": 1366,
+        "position": "static",
+        "parent": "body"
+      },
+      {
+        "tag": "ins",
+        "cls": "adsbygoogle adsbygoogle-noablate",
+        "left": 683,
+        "right": 683,
+        "width": 0,
+        "position": "static",
+        "parent": "div"
+      },
+      {
+        "tag": "iframe",
+        "id": "aswift_3",
+        "left": 683,
+        "right": 1883,
+        "width": 1200,
+        "position": "absolute",
+        "parent": "div#aswift_3_host"
+      },
+      {
+        "tag": "iframe",
+        "id": "google_esf",
+        "left": 0,
+        "right": 0,
+        "width": 0,
+        "position": "static",
+        "parent": "html"
+      }
+    ],
+    "cspErrors": [
+      "Loading the stylesheet 'https://fonts.googleapis.com/css?family=Google%20Sans%3A400' violates the following Content Security Policy directive: \"style-src 'self'",
+      "Loading the stylesheet 'https://fonts.googleapis.com/css?family=Google%20Sans%3A700' violates the following Content Security Policy directive: \"style-src 'self'"
+    ],
+    "fontRequests": [
+      {
+        "url": "https://fonts.googleapis.com/css?family=Google%20Sans%3A400",
+        "frame": "main"
+      },
+      {
+        "url": "https://fonts.googleapis.com/css?family=Google%20Sans%3A700",
+        "frame": "main"
+      }
+    ]
+  }
+]

@@ -1,0 +1,21 @@
+{
+ "baseline_release": "ads-20260923-light",
+ "baseline_version": "99de4166-5802-4661-ba1d-74cd0a9b6848",
+ "source_commit": "3a9ba185f492b9e96615fc927e65a68a67613a26",
+ "baseline_source": "/tmp/whatismyname-light-20260923",
+ "source": "/tmp/whatismyname-panels-20260923",
+ "changed_files": {
+  "components/features/ResultsHeader.tsx": "3b2b87b82ee6aa3fcb934d81548af88a7b63b4a4e84f8f89be66195679784019",
+  "components/features/SearchProgress.tsx": "a1ed9fa1da77fe946c222528ffc6eb1187d438ae87300868a89d3bcb6c616841",
+  "components/features/FilterBar.tsx": "8077f930161d3a9530ea181668a8dcc734e35daf6e7ed4661d3b8addf36491fd"
+ },
+ "baseline_files": {
+  "components/features/ResultsHeader.tsx": "9a78f55252db6b1e72e6bd0b08a097555c92b5c36ab408f695c6019f6eff0647",
+  "components/features/SearchProgress.tsx": "127df77ed0a8294270d27225c50f97c454a28b091b5d7da35de9fa15668cbc6d",
+  "components/features/FilterBar.tsx": "2846aa2c557eb270a7703ead35110a6038c4646b842ee59def5b5bf8f947eb2a"
+ },
+ "deleted_files": [],
+ "note": "Production source of ads-20260923-light plus white card surfaces for the results header, progress and filter panels in light mode (dark keeps the translucent gradient); nothing else changed.",
+ "worker_js_sha256": "d83662641d54b1c847d411c61fcd89c8cfb9f69d1a6027e0f53952ecdd54d28b",
+ "ads_txt_sha256": "bd958ae2b7bba074f3cf17b84c6dd399fd7e0828fa0c91a9aff62ba74a3aa1a1"
+}

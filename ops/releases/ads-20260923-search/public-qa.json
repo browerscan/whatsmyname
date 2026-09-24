@@ -1,0 +1,77 @@
+{
+  "release": "ads-20260923-search",
+  "observed_at": "2026-09-23T11:05:00+00:00",
+  "status": "failed",
+  "status_note": "Release scope passed (full searches complete); site-level UI regression failed because AdSense Auto ads began placing slots on production between 09:44 and 10:57 UTC, independent of this server-only change.",
+  "production_url": "https://whatismyname.org/",
+  "worker_version": "5595ad32-174e-4430-bdf9-dc7ff5041654",
+  "previous_worker_version": "c83ab4d2-5c50-44c9-acb6-da2a4789b245",
+  "deploy_receipt": "ops/deploy-receipts/20260923T104443Z-production-domain-deploy.json",
+  "scope": "Search stream timeout fix: 20 s response + 30 s idle watchdog replaces the 60 s total timeout; upstream aborted when the visitor leaves.",
+  "checks": {
+    "typecheck": "passed",
+    "lint": "passed",
+    "unit_tests": {
+      "files": 25,
+      "passed": 429
+    },
+    "build": "passed",
+    "runtime_repro_workerd": "passed (steady stream delivered, stall ends after idle window, visitor leaving closes upstream)",
+    "preview_browser": {
+      "agent_ready": {
+        "passed": 7,
+        "skipped": 5
+      },
+      "ai_markdown_regression": {
+        "passed": 6,
+        "skipped": 2
+      },
+      "ui_csp": {
+        "passed": 59,
+        "failed": 0
+      }
+    },
+    "public_stream_probes": {
+      "octocat": "1487/1487 + completed, 220.9 s",
+      "torvalds": "1487/1487 + completed, 211.8 s, max gap 4.4 s"
+    },
+    "public_browser": {
+      "full_search": {
+        "status": "passed",
+        "username": "linus",
+        "result": "Search complete, 1,487 / 1,487 (100%), tab (1487), 228 s"
+      },
+      "agent_ready": {
+        "passed": 7,
+        "skipped": 5
+      },
+      "ui_csp": {
+        "passed": 50,
+        "failed": 9
+      }
+    },
+    "public_ads_matches": true
+  },
+  "failures": [
+    "desktop light/dark: page 517 px wider than the viewport. An unfilled AdSense Auto ads slot (ins width 0 at the page centre, data-ad-status=unfilled) keeps its 1200 px iframe aswift_2, which extends to x=1883.",
+    "all variants: CSP style-src blocks AdSense-injected stylesheets https://fonts.googleapis.com/css?family=Google Sans (main document)."
+  ],
+  "evidence": [
+    "validation.txt",
+    "source-manifest.json",
+    "repro/",
+    "agent-browser.json",
+    "markdown-browser.json",
+    "preview-ui-qa.json",
+    "public-stream-probes.txt",
+    "public-fullrun.json",
+    "public-fullrun-complete.jpg",
+    "public-ui-qa.json",
+    "public-adsense-diag.json",
+    "public-adsense-slots.json"
+  ],
+  "notes": [
+    "Previous production QA (ads-20260923-ui-tabs, 09:44 UTC) passed 59/59 with no AdSense slots on the page.",
+    "Google documents hiding unfilled units with ins.adsbygoogle[data-ad-status=\"unfilled\"] { display: none !important; }."
+  ]
+}

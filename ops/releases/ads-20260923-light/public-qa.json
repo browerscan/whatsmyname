@@ -1,0 +1,62 @@
+{
+  "release": "ads-20260923-light",
+  "observed_at": "2026-09-23T14:05:00+00:00",
+  "status": "passed",
+  "production_url": "https://whatismyname.org/",
+  "worker_version": "99de4166-5802-4661-ba1d-74cd0a9b6848",
+  "previous_worker_version": "30fd2ace-5ebb-4d62-a6a6-f79cb9a11e7d",
+  "deploy_receipt": "ops/deploy-receipts/20260923T135622Z-production-domain-deploy.json",
+  "scope": "Light colour balance: glass/tech-grid surfaces render (valid hsl syntax), deeper primary, neutral slate page wash, softer slate shadows.",
+  "checks": {
+    "typecheck": "passed",
+    "lint": "passed",
+    "unit_tests": {
+      "files": 25,
+      "passed": 429
+    },
+    "build": "passed",
+    "preview_browser": {
+      "agent_ready": {
+        "passed": 7,
+        "skipped": 5
+      },
+      "ai_markdown_regression": {
+        "passed": 6,
+        "skipped": 2
+      },
+      "ui_csp": {
+        "passed": 78,
+        "failed": 1,
+        "note": "report-only message from google.com inside an ad frame; check narrowed to enforced violations"
+      }
+    },
+    "public_browser": {
+      "agent_ready": {
+        "passed": 7,
+        "skipped": 5
+      },
+      "ui_csp": {
+        "passed": 78,
+        "failed": 0
+      },
+      "primary_text_contrast": {
+        "light": 5.17,
+        "dark": 5.88
+      },
+      "hero_surface": {
+        "light": "rgba(255,255,255,0.85) + 1px border",
+        "dark": "rgba(15,23,41,0.85) + 1px border"
+      }
+    },
+    "public_ads_matches": true
+  },
+  "evidence": [
+    "validation.txt",
+    "source-manifest.json",
+    "agent-browser.json",
+    "markdown-browser.json",
+    "preview-ui-qa.json",
+    "preview-shots/",
+    "public-ui-qa.json"
+  ]
+}

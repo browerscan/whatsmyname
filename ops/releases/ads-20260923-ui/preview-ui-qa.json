@@ -1,0 +1,275 @@
+{
+  "at": "2026-09-23T09:16:30.186Z",
+  "base": "http://127.0.0.1:4390",
+  "mode": "preview-packaged-worker",
+  "results": [
+    {
+      "name": "CSP allows *.adtrafficquality.google in script/connect/frame-src",
+      "ok": true,
+      "detail": "script-src,connect-src,frame-src"
+    },
+    {
+      "name": "desktop-light: no horizontal overflow",
+      "ok": true,
+      "detail": "overflow=0"
+    },
+    {
+      "name": "desktop-light: brand name not truncated",
+      "ok": true,
+      "detail": "clipped=0"
+    },
+    {
+      "name": "desktop-light: header single row",
+      "ok": true,
+      "detail": "h=65 lines=1"
+    },
+    {
+      "name": "desktop-light: search icon sits left inside input",
+      "ok": true,
+      "detail": "iconLeft=16 pl=44"
+    },
+    {
+      "name": "desktop-light: icon and kbd hint do not overlap",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "desktop-light: input is usable width",
+      "ok": true,
+      "detail": "w=518.984375"
+    },
+    {
+      "name": "desktop-light: tabs fit",
+      "ok": true,
+      "detail": "overflow=0"
+    },
+    {
+      "name": "desktop-light: results no horizontal overflow",
+      "ok": true,
+      "detail": "overflow=0"
+    },
+    {
+      "name": "desktop-light: status chip toggles aria-pressed",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "desktop-light: clear appears with active filter",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "desktop-light: no CSP violations",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "desktop-light: no uncaught page errors",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "desktop-dark: no horizontal overflow",
+      "ok": true,
+      "detail": "overflow=0"
+    },
+    {
+      "name": "desktop-dark: brand name not truncated",
+      "ok": true,
+      "detail": "clipped=0"
+    },
+    {
+      "name": "desktop-dark: header single row",
+      "ok": true,
+      "detail": "h=65 lines=1"
+    },
+    {
+      "name": "desktop-dark: search icon sits left inside input",
+      "ok": true,
+      "detail": "iconLeft=16 pl=44"
+    },
+    {
+      "name": "desktop-dark: icon and kbd hint do not overlap",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "desktop-dark: input is usable width",
+      "ok": true,
+      "detail": "w=518.984375"
+    },
+    {
+      "name": "desktop-dark: tabs fit",
+      "ok": true,
+      "detail": "overflow=0"
+    },
+    {
+      "name": "desktop-dark: results no horizontal overflow",
+      "ok": true,
+      "detail": "overflow=0"
+    },
+    {
+      "name": "desktop-dark: status chip toggles aria-pressed",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "desktop-dark: clear appears with active filter",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "desktop-dark: no CSP violations",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "desktop-dark: no uncaught page errors",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "mobile-light: no horizontal overflow",
+      "ok": true,
+      "detail": "overflow=0"
+    },
+    {
+      "name": "mobile-light: brand name not truncated",
+      "ok": true,
+      "detail": "clipped=0"
+    },
+    {
+      "name": "mobile-light: header single row",
+      "ok": true,
+      "detail": "h=65 lines=1"
+    },
+    {
+      "name": "mobile-light: search icon sits left inside input",
+      "ok": true,
+      "detail": "iconLeft=16 pl=44"
+    },
+    {
+      "name": "mobile-light: icon and kbd hint do not overlap",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "mobile-light: input is usable width",
+      "ok": true,
+      "detail": "w=318"
+    },
+    {
+      "name": "mobile-light: tabs fit",
+      "ok": true,
+      "detail": "overflow=0"
+    },
+    {
+      "name": "mobile-light: results no horizontal overflow",
+      "ok": true,
+      "detail": "overflow=0"
+    },
+    {
+      "name": "mobile-light: status chip toggles aria-pressed",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "mobile-light: clear appears with active filter",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "mobile-light: no CSP violations",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "mobile-light: no uncaught page errors",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "mobile-dark: no horizontal overflow",
+      "ok": true,
+      "detail": "overflow=0"
+    },
+    {
+      "name": "mobile-dark: brand name not truncated",
+      "ok": true,
+      "detail": "clipped=0"
+    },
+    {
+      "name": "mobile-dark: header single row",
+      "ok": true,
+      "detail": "h=65 lines=1"
+    },
+    {
+      "name": "mobile-dark: search icon sits left inside input",
+      "ok": true,
+      "detail": "iconLeft=16 pl=44"
+    },
+    {
+      "name": "mobile-dark: icon and kbd hint do not overlap",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "mobile-dark: input is usable width",
+      "ok": true,
+      "detail": "w=318"
+    },
+    {
+      "name": "mobile-dark: tabs fit",
+      "ok": true,
+      "detail": "overflow=0"
+    },
+    {
+      "name": "mobile-dark: results no horizontal overflow",
+      "ok": true,
+      "detail": "overflow=0"
+    },
+    {
+      "name": "mobile-dark: status chip toggles aria-pressed",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "mobile-dark: clear appears with active filter",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "mobile-dark: no CSP violations",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "mobile-dark: no uncaught page errors",
+      "ok": true,
+      "detail": ""
+    }
+  ],
+  "console": [
+    {
+      "variant": "desktop-light",
+      "console_errors": [
+        "Failed to load resource: the server responded with a status of 404 ()"
+      ]
+    },
+    {
+      "variant": "desktop-dark",
+      "console_errors": [
+        "Failed to load resource: the server responded with a status of 404 ()",
+        "Failed to load resource: the server responded with a status of 404 ()"
+      ]
+    },
+    {
+      "variant": "mobile-light",
+      "console_errors": []
+    },
+    {
+      "variant": "mobile-dark",
+      "console_errors": []
+    }
+  ]
+}

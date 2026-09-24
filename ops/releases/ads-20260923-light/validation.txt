@@ -1,0 +1,17 @@
+Release: ads-20260923-light
+UTC: 2026-09-23T13:55:00+00:00
+Scope: light-theme colour balance. app/globals.css only. (1) .glass, .glass-strong and .tech-grid used hsla(var(--token), a) with space-separated tokens, which is invalid, so the hero and empty-state cards rendered with no background and no border in both themes; now hsl(var(--token) / a). (2) Light tokens: primary 217 91% 60% -> 221 83% 53% (white text 3.63 -> 5.20:1), title/AI gradient end 189 94% 50% -> 199 89% 42% (1.79 -> 3.66:1, large text), neutral slate page wash instead of blue/cyan, slightly stronger border/input, slate-tinted softer shadows. .dark tokens unchanged. Everything else identical to ads-20260923-adsfix.
+Baseline: production 30fd2ace-5ebb-4d62-a6a6-f79cb9a11e7d (ads-20260923-adsfix), source /tmp/whatismyname-adsfix-20260923.
+Source: /tmp/whatismyname-light-20260923. Exact 1-file delta in source-manifest.json.
+SOURCE_COMMIT_3a9ba18
+OpenClaw workspace: /Users/openclaw/test-workspace/whatismyname-light-rel-20260923 (dependencies cloned from the byte-identical lockfile of whatismyname-agent-20260923).
+Checks: TypeScript passed; ESLint passed; Vitest 25 files / 429 tests passed.
+Next production build + OpenNext Cloudflare + Wrangler dry-run bundle + packaging passed.
+CLOUDFLARE_BUILD_PASS
+ADS_TXT_SHA256_MATCH
+Worker SHA256: adc5802897864f6f6660d3d9feec4656ac6b5384551fcb4c6c607c4636b31a93
+ads.txt SHA256: bd958ae2b7bba074f3cf17b84c6dd399fd7e0828fa0c91a9aff62ba74a3aa1a1
+OpenClaw build receipt: /Users/openclaw/artifacts/whatismyname-light-rel-20260923/exec/20260923T134025Z
+Collected bundle: ~/.codex/tmp/openclaw-collect/whatismyname-org-ads-20260923-light
+Preview browser (packaged Worker, served locally on OpenClaw): agent-ready 7 passed / 5 skipped; ai-markdown 6 passed / 2 production-only skipped; UI/CSP QA 78/79. New checks all passed: primary text contrast 5.17 (light) / 5.88 (dark); hero surface rgba(255,255,255,0.85) / rgba(15,23,41,0.85) with 1px border. The single failure was a report-only frame-ancestors message from google.com's own policy inside an ad frame (not this site's enforced CSP, nothing blocked); the check now counts enforced violations only. Receipt: /Users/openclaw/artifacts/whatismyname-light-rel-20260923/exec/20260923T134122Z. Screenshots: preview-shots/.
+Deployment approval: user asked to optimise the light colour balance and said go on 2026-09-23.

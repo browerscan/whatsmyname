@@ -1,0 +1,60 @@
+{
+  "release": "ads-20260923-adsfix",
+  "observed_at": "2026-09-23T12:50:00+00:00",
+  "status": "passed",
+  "production_url": "https://whatismyname.org/",
+  "worker_version": "30fd2ace-5ebb-4d62-a6a6-f79cb9a11e7d",
+  "previous_worker_version": "5595ad32-174e-4430-bdf9-dc7ff5041654",
+  "deploy_receipt": "ops/deploy-receipts/20260923T123932Z-production-domain-deploy.json",
+  "scope": "Hide unfilled AdSense Auto ads slots (Google's data-ad-status rule) and allow AdSense's Google Sans stylesheets/fonts in CSP.",
+  "checks": {
+    "typecheck": "passed",
+    "lint": "passed",
+    "unit_tests": {
+      "files": 25,
+      "passed": 429
+    },
+    "build": "passed",
+    "preview_browser": {
+      "agent_ready": {
+        "passed": 7,
+        "skipped": 5
+      },
+      "ai_markdown_regression": {
+        "passed": 6,
+        "skipped": 2
+      },
+      "ui_csp": {
+        "passed": 69,
+        "failed": 0
+      }
+    },
+    "public_browser": {
+      "agent_ready": {
+        "passed": 7,
+        "skipped": 5
+      },
+      "ui_csp": {
+        "passed": 68,
+        "failed": 0,
+        "csp_violations": 0,
+        "horizontal_overflow_px": 0
+      },
+      "real_adsense_slots": "desktop scrollWidth 1366 = viewport; unfilled slot aswift_2 (1200 px iframe) renders 0x0; mobile scrollWidth 390 = viewport"
+    },
+    "public_ads_matches": true
+  },
+  "evidence": [
+    "validation.txt",
+    "source-manifest.json",
+    "agent-browser.json",
+    "markdown-browser.json",
+    "preview-ui-qa.json",
+    "public-ui-qa.json",
+    "public-adsense-slots.json"
+  ],
+  "notes": [
+    "Resolves the site-level failures recorded in ads-20260923-search/public-qa.json.",
+    "All observed slots were unfilled or unfill-optimized in headless runs; unfill-optimized slots stay visible by design."
+  ]
+}

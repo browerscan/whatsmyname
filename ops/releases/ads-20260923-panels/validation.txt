@@ -1,0 +1,17 @@
+Release: ads-20260923-panels
+UTC: 2026-09-24T00:55:00+00:00
+Scope: results-page panels as white cards in light mode. ResultsHeader, SearchProgress and FilterBar: bg-gradient-subtle + border-border/30 -> bg-card + border-border/80, with dark:bg-transparent dark:bg-gradient-subtle dark:border-border/30 so dark mode is unchanged. Everything else identical to ads-20260923-light.
+Baseline: production 99de4166-5802-4661-ba1d-74cd0a9b6848 (ads-20260923-light), source /tmp/whatismyname-light-20260923.
+Source: /tmp/whatismyname-panels-20260923. Exact 3-file delta in source-manifest.json.
+SOURCE_COMMIT_3a9ba18
+OpenClaw workspace: /Users/openclaw/test-workspace/whatismyname-panels-rel-20260923 (dependencies cloned from the byte-identical lockfile of whatismyname-agent-20260923).
+Checks: TypeScript passed; ESLint passed; Vitest 25 files / 429 tests passed.
+Next production build + OpenNext Cloudflare + Wrangler dry-run bundle + packaging passed.
+CLOUDFLARE_BUILD_PASS
+ADS_TXT_SHA256_MATCH
+Worker SHA256: d83662641d54b1c847d411c61fcd89c8cfb9f69d1a6027e0f53952ecdd54d28b
+ads.txt SHA256: bd958ae2b7bba074f3cf17b84c6dd399fd7e0828fa0c91a9aff62ba74a3aa1a1
+OpenClaw build receipt: /Users/openclaw/artifacts/whatismyname-panels-rel-20260923/exec/20260924T004241Z
+Collected bundle: ~/.codex/tmp/openclaw-collect/whatismyname-org-ads-20260923-panels
+Preview browser (packaged Worker, served locally on OpenClaw): agent-ready 7 passed / 5 skipped; ai-markdown 6 passed / 2 production-only skipped; UI/CSP QA 84/84, including the new panel check (light: three panels rgb(255,255,255); dark: transparent with gradient). Receipt: /Users/openclaw/artifacts/whatismyname-panels-rel-20260923/exec/20260924T004330Z. Screenshots: preview-shots/.
+Deployment approval: user asked to turn the results-page panels into white cards on 2026-09-24.
