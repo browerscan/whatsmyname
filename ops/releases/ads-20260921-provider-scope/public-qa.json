@@ -1,0 +1,72 @@
+{
+  "scope": "public_production",
+  "validation_kind": "browser",
+  "target_url": "https://whatismyname.org/",
+  "status": "passed",
+  "observed_at": "2026-09-21T13:48:45Z",
+  "worker_version": "82c49a7e-58ab-4c2c-b589-b8374894c5fc",
+  "deployment_receipt": "ops/deploy-receipts/20260921T134305Z-workers-dev-deploy.json",
+  "publisher": "ca-pub-7152359349184850",
+  "website_remediation": "deployed",
+  "change": "Narrowed client providers so header, main and footer are not hydrated as one large provider boundary; targets intermittent React #418 observed on production.",
+  "unit_integration_tests": {
+    "typecheck": "passed",
+    "lint": "passed",
+    "tests": "passed",
+    "build_cloudflare": "passed",
+    "wrangler_dry_run_bundle": "passed",
+    "artifact": "/Users/openclaw/artifacts/whatismyname-adsense-release/exec/20260921T134020Z"
+  },
+  "preview_browser": {
+    "artifact_name": "adsense-provider-scope-preview",
+    "passed": 60,
+    "failed": 0,
+    "hydration_errors_observed": 0
+  },
+  "public_browser": {
+    "artifact_name": "adsense-provider-scope-public",
+    "passed": 60,
+    "failed": 0,
+    "hydration_errors_observed": 0
+  },
+  "pre_fix_public_browser": {
+    "artifact_name": "adsense-post-backend-public",
+    "passed": 58,
+    "failed": 2,
+    "failure": "React #418 hydration errors on desktop / and mobile /platforms/discord"
+  },
+  "metadata": "AdSense tag, title and canonical present in initial head; title remains equal after hydration.",
+  "content": "Nine-language factual guides; no unsupported statistics/future-tool promotion; single homepage H1; obsolete FAQ/SearchAction/social-equivalence schema removed.",
+  "ads_sha256": "b3fc276e23ca17d5fa43063d9183bc2474eac4e71bc73196280ab63e41b45064",
+  "worker_sha256": "32411a5a51f6cf8489543534f1b213b14fbd0c66b77f5b7ff40b60054b0e7023",
+  "real_services": {
+    "provider_health": {
+      "url": "https://api.whatsmynameapp.org/health",
+      "status": 200,
+      "body": "UP",
+      "observed_at": "2026-09-21T13:43:17Z"
+    },
+    "site_platform_lookup": {
+      "url": "https://whatismyname.org/api/search/whatsmyname?username=example",
+      "status": 200,
+      "content_type": "application/x-ndjson",
+      "observed_total": 1487,
+      "observed_at": "2026-09-21T13:43:17Z"
+    },
+    "google_search": {
+      "url": "https://whatismyname.org/api/search/google?username=example&num=1",
+      "status": 200,
+      "items": 1,
+      "observed_at": "2026-09-21T13:43:18Z"
+    }
+  },
+  "website_application_ready": true,
+  "account_items_unverified": [
+    "AdSense site verification/review status",
+    "applicant eligibility",
+    "applicable CMP settings",
+    "traffic provenance",
+    "actual ad fill after Google enables serving"
+  ],
+  "test_safety": "Ad network scripts were stubbed or blocked in browser tests; no ad clicks. Real service probes are bounded GET checks."
+}

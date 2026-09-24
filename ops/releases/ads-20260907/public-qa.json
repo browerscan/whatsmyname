@@ -1,0 +1,19 @@
+{
+  "scope": "public_production",
+  "validation_kind": "browser",
+  "target_url": "https://whatismyname.org/ads.txt",
+  "status": "passed",
+  "observed_at": "2026-09-07T07:48:02.606904+00:00",
+  "evidence_path": "/Volumes/SSD/dev/project/whatsismyname/ops/releases/ads-20260907/public-qa.json",
+  "tests_passed": 2,
+  "browsers": [
+    "Chromium desktop",
+    "Chromium mobile"
+  ],
+  "http_status": 200,
+  "content_type": "text/plain",
+  "redirects": 0,
+  "ads_sha256": "27bc741846d2b3cb8def3a2af5f469425c5bf0c62b4f22f0c2de600a70695982",
+  "remote_artifact_dir": "/Users/openclaw/artifacts/whatsismyname-adplus/adplus-public-20260907",
+  "worker_version": "6c540703-7036-4a28-8fd5-a026fb8ec3f9"
+}

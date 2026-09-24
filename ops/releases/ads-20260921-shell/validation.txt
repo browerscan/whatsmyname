@@ -1,0 +1,14 @@
+CLOUDFLARE_BUILD_PASS
+ADS_TXT_SHA256_MATCH
+SOURCE_COMMIT_3a9ba18
+Source base: 3a9ba185f492b9e96615fc927e65a68a67613a26 plus isolated reviewed readiness patches.
+Source: /tmp/whatismyname-apply-ready.G71YEE
+Build: /Users/openclaw/artifacts/whatismyname-adsense-release/exec/20260921T110452Z
+Typecheck, lint, 385 tests, OpenNext build and Wrangler bundling: PASS.
+Actual Worker preview: 30/30 passed; /Users/openclaw/artifacts/whatismyname-adsense-release/adsense-shell-preview.
+Diagnostic: prior production React throw expected MAIN while next node was its inner DIV (parent MAIN). See ops/releases/ads-20260921-submit-prep/hydration-diagnostic-summary.json.
+Change: resolve header/footer translations once in locale layout and render those common siblings synchronously, retaining same public content and client controls. No suppression of hydration checks.
+Includes the preceding content, structured-data, metadata and provider-outage UX fixes. Pending AI/API edits excluded.
+Worker SHA256: 39056adb786f085e28803ee8115e338c20d9474b6a28af4abff53ef21d658490
+ads.txt SHA256: b3fc276e23ca17d5fa43063d9183bc2474eac4e71bc73196280ab63e41b45064
+Known external blocker: platform API 521; Google web query succeeds. Independent backend recovery scope awaits operator confirmation.

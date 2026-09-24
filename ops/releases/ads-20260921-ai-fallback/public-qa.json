@@ -1,0 +1,98 @@
+{
+  "release": "ads-20260921-ai-fallback",
+  "observed_at": "2026-09-21T14:48:24Z",
+  "status": "passed",
+  "production_url": "https://whatismyname.org/",
+  "cloudflare": {
+    "account_alias": "jessgaojia",
+    "worker": "whatsmyname",
+    "active_version_id": "d96ed331-88e1-4880-8262-a85c5b13c216",
+    "deployment_id": "53d86d4b-d5f9-4995-8eb8-e32dfb24e80d",
+    "workers_dev_url": "https://whatsmyname.browserscan.workers.dev",
+    "deploy_receipt": "ops/deploy-receipts/20260921T143421Z-workers-dev-deploy.json"
+  },
+  "artifact": {
+    "bundle": "/Users/butterfly/.codex/tmp/openclaw-collect/whatismyname-org-ads-20260921-ai-fallback-r3",
+    "worker_bundle_sha256": "f06c113f8b0a8e9892743be0334196f90a8fd70587458438b669ea8eb158b226",
+    "worker_js_sha256": "1a624d554e079a34b0f925ade74b50c90d27d15816e5a2b008dee5d718e50ac6",
+    "ads_txt_sha256": "bd958ae2b7bba074f3cf17b84c6dd399fd7e0828fa0c91a9aff62ba74a3aa1a1"
+  },
+  "ads_txt": {
+    "url": "https://whatismyname.org/ads.txt",
+    "http_status": 200,
+    "content_type": "text/plain",
+    "content_length": 630,
+    "hash_matches_release_artifact": true,
+    "required_lines_present": [
+      "google.com, pub-7152359349184850, DIRECT, f08c47fec0942fa0",
+      "google.com, pub-8231175075553786, DIRECT, f08c47fec0942fa0"
+    ]
+  },
+  "health": {
+    "url": "https://whatismyname.org/api/health",
+    "http_status": 200,
+    "openrouter_configured": true,
+    "openrouter_model": "openrouter/free",
+    "openrouter_models": [
+      "openrouter/free",
+      "nvidia/nemotron-3-super-120b-a12b:free",
+      "google/gemma-4-31b-it:free",
+      "nvidia/nemotron-3.5-lightning:free",
+      "google/gemma-4-26b-a4b-it:free",
+      "z-ai/glm-5.2:free"
+    ]
+  },
+  "ai_api": {
+    "url": "https://whatismyname.org/api/ai/analyze",
+    "http_status": 200,
+    "content_type": "text/event-stream",
+    "first_model_after_reorder": "openrouter/free",
+    "observed_routed_models": [
+      "liquid/lfm-2.5-2.6b:free",
+      "poolside/laguna-xs-2.1:free"
+    ],
+    "content_chunks_observed": true,
+    "api_error_observed": false
+  },
+  "browser_flow": {
+    "tool": "openclaw-ops e2e",
+    "host": "openclaw-wired",
+    "artifact": "/Users/openclaw/artifacts/whatismyname-adsense-release/ai-final-public-flow5",
+    "status": "passed",
+    "steps": [
+      "opened https://whatismyname.org/",
+      "searched username testuser",
+      "waited for right-bottom AI button to become enabled",
+      "opened AI dialog",
+      "selected the first template card",
+      "observed /api/ai/analyze 200 text/event-stream",
+      "observed assistant content in the page"
+    ],
+    "responses": [
+      {
+        "kind": "whatsmyname",
+        "status": 200,
+        "content_type": "application/x-ndjson"
+      },
+      {
+        "kind": "google",
+        "status": 200,
+        "content_type": "application/json"
+      },
+      {
+        "kind": "ai",
+        "status": 200,
+        "content_type": "text/event-stream"
+      }
+    ],
+    "ai_console_error_count": 0,
+    "ai_button_enabled_after_seconds": 65,
+    "page_ai_error_observed": false,
+    "assistant_content_observed": true
+  },
+  "notes": [
+    "The previous minimax/minimax-m3:free production model returned OpenRouter 404 because that free model was no longer available.",
+    "The initial explicit Nvidia free model recovered the API but later showed a 200 SSE envelope with in-stream provider_overloaded 503; production OPENROUTER_MODEL and code defaults were reordered to use openrouter/free first.",
+    "Generic browser 404 resource messages may appear from unrelated page assets; no AI-specific console error was observed in the final browser flow."
+  ]
+}

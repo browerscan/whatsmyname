@@ -1,0 +1,39 @@
+{
+  "scope": "public_production",
+  "validation_kind": "browser",
+  "status": "passed",
+  "observed_at": "2026-09-07T16:02:14.726806+00:00",
+  "target_url": "https://whatismyname.org/",
+  "account_alias": "jessgaojia",
+  "worker": "whatsmyname",
+  "worker_version": "57478a2b-adb5-4555-8965-1d96b6f3b51e",
+  "deployment_id": "7e4807d0-dfe9-4b54-8a2b-8486fd1db164",
+  "release_scope": "Existing Worker configuration only: OPENROUTER_API_KEY and OPENROUTER_MODEL; no code deployment.",
+  "model": "minimax/minimax-m3:free",
+  "checks": {
+    "model_catalog_prompt_price": "0",
+    "model_catalog_completion_price": "0",
+    "direct_stream_probe_http": 200,
+    "direct_stream_probe_seconds": 8.7,
+    "direct_stream_probe_done": true,
+    "public_health_model": "minimax/minimax-m3:free",
+    "browser_flow": "Open AI Analysis; search synthetic username codexqatest0908; select Platform Suggestions; wait for completed assistant reply.",
+    "browser_ai_post_http": 200,
+    "browser_ai_post_content_type": "text/event-stream",
+    "assistant_response_visible": true,
+    "thinking_indicator_cleared": true,
+    "followup_input_enabled": true
+  },
+  "validation_commands": [
+    "wrangler whoami --account <registered-account-id> --json",
+    "wrangler secret put OPENROUTER_API_KEY --name whatsmyname --config wrangler.toml (stdin)",
+    "wrangler secret put OPENROUTER_MODEL --name whatsmyname --config wrangler.toml (stdin)",
+    "curl -fsS --max-time 20 https://whatismyname.org/api/health",
+    "~/.codex/bin/cloudflare-deploy --status",
+    "~/.codex/bin/browser-act --session whatismyname-ai-20260907 state",
+    "~/.codex/bin/browser-act --session whatismyname-ai-20260907 network requests --filter /api/ai/analyze",
+    "~/.codex/bin/browser-act --session whatismyname-ai-20260907 eval <DOM completion checks>"
+  ],
+  "skipped": "No build/unit test rerun because no application code was deployed. Prior uncommitted fallback and advertising changes remain untouched.",
+  "residual_risk": "GitHub Actions OPENROUTER_API_KEY secret was not changed; a future workflow deployment may overwrite the Worker key. Free model availability is not guaranteed."
+}

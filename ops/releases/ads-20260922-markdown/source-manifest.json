@@ -1,0 +1,19 @@
+{
+  "baseline_release": "ads-20260921-ai-fallback",
+  "baseline_version": "d96ed331-88e1-4880-8262-a85c5b13c216",
+  "source_commit": "3a9ba185f492b9e96615fc927e65a68a67613a26",
+  "baseline_source": "/tmp/whatismyname-apply-ready.G71YEE",
+  "source": "/tmp/whatismyname-md-20260922",
+  "changed_files": {
+    "pnpm-lock.yaml": "9f84e04fb2d1fac7fbe4c05b31185b4a504e27dffadac907b7ba4a8c4f90303c",
+    "package.json": "baa9cfbf028bc0dd29247b7914a26f99bda25c9d33560cf2174ef4ee98ee10dc",
+    "wrangler.toml": "d29e8ca469af9b253a24d704da18b7c83910a376dd29c4f384cdad9cfa4c09ed",
+    "playwright.markdown.config.ts": "008007ca7fdfa13ea757d39e6e4265f3db20f7571ac08b887807319ebfa751ca",
+    "components/features/AIMessageContent.tsx": "d8e450660b58b084a4a9d91d14c154433a91d3c7c7c340b45af8b2848aea5c28",
+    "components/features/AIDialog.tsx": "35367a3c24399a5acb33dbaa5611b20cd00ad32f3e09ffdd1533744457d5494d",
+    "__tests__/integration/components/AIMessageContent.test.tsx": "63d3646e6d2b131566df0f867aca7791c35b9d46b107970037e48faa9c636e2e",
+    "__tests__/e2e/ai-markdown.spec.ts": "fe83681b07bb5f427b4ef3f6e2a5fbb5dd91329131713e99f795cc0c0cf754a7"
+  },
+  "note": "wrangler.toml copied unchanged from registered project; all other production baseline files preserved",
+  "worker_js_sha256": "4473bedb2c06ec9f4fb53e5ba73c915a588f21e83ff518562aeb013c395fc0f1"
+}

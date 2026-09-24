@@ -1,0 +1,26 @@
+{
+  "account_alias": "jessgaojia",
+  "assets_artifact": null,
+  "assets_sha256": null,
+  "created_at": "2026-09-23T09:41:34.229099+00:00",
+  "custom_domains": [
+    "whatismyname.org"
+  ],
+  "deploy_surface_sha256": "503b54b41f3b23171b565fd43162632b9f9bdb1324afbe266f2a9406c7a93543",
+  "deployment_id": "a8429519-a1c2-40e3-817d-a46db7979e9b",
+  "dist_sha256": null,
+  "event": "production_domain_deploy",
+  "new_version_id": "c83ab4d2-5c50-44c9-acb6-da2a4789b245",
+  "previous_version_id": "73283e77-4d33-4777-83af-88cc80fdca4c",
+  "project": "whatismyname-org",
+  "project_surface_sha256": "285d8dd1b3bb379c00ddcce2be0f29cb64333cb6f285fff787199150ae9d1ae1",
+  "receipt_sha256": "748c1ec3a64fa3259a7e1cd5bfc25bc664f5f27285f77f8ec8dfbe5023d6ceae",
+  "release_evidence": "ads-20260923-ui-tabs",
+  "schema_version": 1,
+  "source_sha256": null,
+  "worker": "whatsmyname",
+  "worker_bundle_artifact": "whatismyname-org-ads-20260923-ui-tabs",
+  "worker_bundle_sha256": "dd8916273200b6d6b40a0b77ac6ad1b5b8d48aa8c359faabd171e07c8267219b",
+  "workers_dev_url": "https://whatsmyname.browserscan.workers.dev",
+  "wrangler_output_sha256": "b698a020054ac4e073a7c37630a477512ecd74e20476a2a804b346ce585e03fc"
+}

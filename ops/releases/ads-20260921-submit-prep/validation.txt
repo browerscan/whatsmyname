@@ -1,0 +1,14 @@
+CLOUDFLARE_BUILD_PASS
+ADS_TXT_SHA256_MATCH
+SOURCE_COMMIT_3a9ba18
+Source base: 3a9ba185f492b9e96615fc927e65a68a67613a26 plus isolated reviewed website changes; unrelated pending AI/API changes excluded.
+Source directory: /tmp/whatismyname-apply-ready.G71YEE
+Build receipt: /Users/openclaw/artifacts/whatismyname-adsense-release/exec/20260921T105454Z
+Typecheck, lint, 385 tests, OpenNext build, Wrangler bundling: PASS.
+Actual Worker preview: 30/30 desktop/mobile checks passed, including initial-head metadata, single homepage H1, accurate structured data, blocked ads, normal/negative search fixtures, 521 web fallback, and clipboard denial/success.
+Preview artifact: /Users/openclaw/artifacts/whatismyname-adsense-release/adsense-submit-prep-preview
+Worker SHA256: bf39c78175ce87722ab6f2cfe1cd5f92e48143c39b3ed7eec9a5177d88e0df0d
+ads.txt SHA256: b3fc276e23ca17d5fa43063d9183bc2474eac4e71bc73196280ab63e41b45064
+Scope includes nine-language factual guides, generated content index, tools/footer copy/navigation, initial metadata, removal of unverified schema/social claims, and honest provider-outage fallback.
+Known external application blocker: real api.whatsmynameapp.org platform lookup/health 521. Google web query 200 with one item. Backend recovery scope confirmation requested and not yet received.
+This code release does not certify AdSense account approval, CMP settings, or the upstream backend.

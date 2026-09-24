@@ -1,0 +1,32 @@
+{
+  "scope": "public_production",
+  "validation_kind": "browser",
+  "target_url": "https://whatismyname.org/",
+  "status": "blocked",
+  "observed_at": "2026-09-21T11:13:12Z",
+  "worker_version": "3e2fbc76-9554-409a-af71-cf1aec3625aa",
+  "deployment_receipt": "ops/deploy-receipts/20260921T110834Z-workers-dev-deploy.json",
+  "publisher": "ca-pub-7152359349184850",
+  "website_remediation": "deployed",
+  "unit_integration_tests_passed": 385,
+  "preview": { "passed": 30, "failed": 0 },
+  "public_browser": { "passed": 59, "failed": 1, "failure": "ERR_CONNECTION_CLOSED during one mobile /platforms/discord navigation", "hydration_errors_observed": 0 },
+  "targeted_network_recheck": { "passed": 4, "failed": 0, "hydration_errors_observed": 0 },
+  "metadata": "AdSense tag, title and canonical present in initial head; title remains equal after hydration",
+  "content": "Nine-language factual guides; no unsupported statistics/future-tool promotion; single homepage H1; obsolete FAQ/SearchAction/social-equivalence schema removed",
+  "ads_sha256": "b3fc276e23ca17d5fa43063d9183bc2474eac4e71bc73196280ab63e41b45064",
+  "sitemap": { "urls": 396, "unique": 396 },
+  "real_services": {
+    "google_search": { "status": 200, "items": 1 },
+    "site_platform_lookup": { "url": "https://whatismyname.org/api/search/whatsmyname?username=example", "status": 521, "observed_at": "2026-09-21T11:10:45.896Z" },
+    "provider_health": { "url": "https://api.whatsmynameapp.org/health", "status": 521, "observed_at": "2026-09-21T11:10:47.179Z" },
+    "documented_origin": "redacted; recorded in the portfolio host-runtime registry",
+    "origin_tls_probe": "curl exit 35 SSL_ERROR_SYSCALL"
+  },
+  "application_ready": false,
+  "blocker": "Independent platform-search provider unavailable; recovery scope confirmation pending. Browser fixtures verify outage fallback, not provider recovery.",
+  "backend_scope_reference": "/Volumes/SSD/dev/project/whatsmynameapp.org/front/README.md:5",
+  "account_items_unverified": ["AdSense site verification/review status", "applicant eligibility", "applicable CMP settings", "traffic provenance"],
+  "artifacts": ["preview-browser.json", "public-browser.json", "public-network-recheck.json", "source-manifest.json"],
+  "test_safety": "Ad network scripts were stubbed or blocked; no ad clicks. Simulated search tests are separate from the bounded real-service probes."
+}

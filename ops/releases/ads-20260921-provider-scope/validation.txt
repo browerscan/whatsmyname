@@ -1,0 +1,14 @@
+CLOUDFLARE_BUILD_PASS
+ADS_TXT_SHA256_MATCH
+SOURCE_COMMIT_3a9ba18
+Source base: 3a9ba185f492b9e96615fc927e65a68a67613a26 plus isolated reviewed AdSense readiness patches.
+Source: /tmp/whatismyname-apply-ready.G71YEE
+Build: /Users/openclaw/artifacts/whatismyname-adsense-release/exec/20260921T134020Z
+Typecheck, lint, tests, OpenNext build and Wrangler bundling: PASS.
+Actual Worker preview browser QA: 60/60 passed; artifact name adsense-provider-scope-preview.
+Change: narrow ThemeProvider to the header and NextIntlClientProvider to the main page subtree so header/main/footer are not hydrated as one large client-provider boundary. This targets intermittent React #418 where React expected MAIN while the hydratable DOM pointer was inside MAIN.
+Publisher script remains literal in the initial head: ca-pub-7152359349184850.
+ads.txt SHA256: b3fc276e23ca17d5fa43063d9183bc2474eac4e71bc73196280ab63e41b45064.
+Worker SHA256: 32411a5a51f6cf8489543534f1b213b14fbd0c66b77f5b7ff40b60054b0e7023.
+Known change in external state before this release: platform API recovered; https://api.whatsmynameapp.org/health returned 200 UP and https://whatismyname.org/api/search/whatsmyname returned 200 NDJSON on 2026-09-21T13:33Z.
+Pending AI/API edits remain excluded from the isolated release source.

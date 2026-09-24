@@ -1,0 +1,36 @@
+{
+  "checked_at": "2026-09-22T14:26:24.492318+00:00",
+  "/ads.txt": {
+    "status": 200,
+    "sha256": "bd958ae2b7bba074f3cf17b84c6dd399fd7e0828fa0c91a9aff62ba74a3aa1a1",
+    "matches_source": true
+  },
+  "/api/health": {
+    "status": 200,
+    "sha256": "9e1b5046f4427a4030aede8eb5d76c287b8a12e244de3f7b9fec3cd0f8519c8f",
+    "openrouter": {
+      "name": "OpenRouter AI",
+      "status": "available",
+      "configured": true,
+      "model": "openrouter/free",
+      "models": [
+        "openrouter/free",
+        "nvidia/nemotron-3-super-120b-a12b:free",
+        "google/gemma-4-31b-it:free",
+        "nvidia/nemotron-3.5-lightning:free",
+        "google/gemma-4-26b-a4b-it:free",
+        "z-ai/glm-5.2:free"
+      ]
+    }
+  },
+  "/BUILD_ID": {
+    "status": 200,
+    "sha256": "6ab1b48f68ef8e31499c1afbb0104c1fc8d12897ba57d0b4d12584ba29bf2d10",
+    "matches_release": true
+  },
+  "/": {
+    "status": 200,
+    "sha256": "05ffae927f8acb3c799e5bc8e07d3d386f34c328f7be53d7a338c633027aa2b2",
+    "release_chunk_present": true
+  }
+}

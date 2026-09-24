@@ -1,0 +1,15 @@
+{
+  "source": "Captured execution output of scripts/diagnose-hydration.mjs through OpenClaw e2e; original working-output JSON was removed by subsequent source sync before collection.",
+  "target": "https://whatismyname.org",
+  "paths": ["/categories", "/zh/privacy"],
+  "attempts": 40,
+  "observed_hydration_errors": 1,
+  "failure_attempt": 5,
+  "failure_path": "/zh/privacy",
+  "react_expected_type": "main",
+  "react_expected_props": { "id": "main-content", "className": "flex-1" },
+  "actual_node": "div.container.mx-auto.px-4.py-12.max-w-4xl",
+  "actual_parent": "MAIN",
+  "instrumentation": "Browser-response-only logging at React rD throw site. Error behavior was retained; no production files were changed by this diagnostic.",
+  "interpretation": "Hydration cursor was inside the main element while expecting the main element. Async header/footer siblings are being removed as independent streaming boundaries and verified with normal, uninstrumented browser checks."
+}

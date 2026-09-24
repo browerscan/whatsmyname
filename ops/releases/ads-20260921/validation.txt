@@ -1,0 +1,9 @@
+CLOUDFLARE_BUILD_PASS
+ADS_TXT_SHA256_MATCH
+SOURCE_COMMIT_3a9ba18
+Source commit: 3a9ba185f492b9e96615fc927e65a68a67613a26
+ads.txt SHA256: 8b8289405ebde6432baf639e6a7a2628851bc61ff6b14163720ef0c8f7ff28dc
+Scope: public/ads.txt only; replace the Google publisher row with the user-supplied DIRECT record.
+Build: isolated staging from HEAD plus the requested ads.txt change; unrelated working-tree changes excluded.
+Wrangler collection: complete OpenNext runtime bundle with additional ES modules enabled.
+Wrangler module rules: ESModule and CommonJS attachments; default text handling retained.

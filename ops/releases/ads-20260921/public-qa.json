@@ -1,0 +1,17 @@
+{
+  "scope": "public_production",
+  "validation_kind": "http",
+  "target_url": "https://whatismyname.org/ads.txt",
+  "canonical_url": "https://whatismyname.org/ads.txt",
+  "status": "passed",
+  "observed_at": "2026-09-21T04:16:19+00:00",
+  "http_status": 200,
+  "content_type": "text/plain",
+  "redirects": 0,
+  "body_matches_source": true,
+  "source_path": "public/ads.txt",
+  "ads_sha256": "8b8289405ebde6432baf639e6a7a2628851bc61ff6b14163720ef0c8f7ff28dc",
+  "target_row": "google.com, pub-7152359349184850, DIRECT, f08c47fec0942fa0",
+  "worker_version": "8cba7408-51d3-4115-9a0f-6162b5027d32",
+  "deployment_receipt": "ops/deploy-receipts/20260921T041511Z-workers-dev-deploy.json"
+}

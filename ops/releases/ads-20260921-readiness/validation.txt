@@ -1,0 +1,17 @@
+CLOUDFLARE_BUILD_PASS
+ADS_TXT_SHA256_MATCH
+SOURCE_COMMIT_3a9ba18
+Source base: 3a9ba185f492b9e96615fc927e65a68a67613a26 plus the reviewed AdSense readiness patch (not an unchanged base commit).
+Scope: standard AdSense head tag, localized disclosure, safe-result ingestion, unavailable tool links, sitemap/Discord dedupe, crawler assets, shortcut translation, blog clipboard client boundary and correct Worker bundling.
+Excluded: pending AI/API/lib-env working-tree changes; those files equal HEAD in isolated release source.
+Source staging: /tmp/whatismyname-adsense-source.c2Eys5
+OpenClaw workspace: /Users/openclaw/test-workspace/whatismyname-adsense-release
+Build receipt: /Users/openclaw/artifacts/whatismyname-adsense-release/exec/20260921T045159Z
+Typecheck, lint, 376 tests, OpenNext build and Wrangler bundling dry-run: PASS.
+Actual packaged Worker browser preview: 28 passed, desktop/mobile, including raw HTML head, blocked ads, search fixtures, restricted-result exclusion, clipboard denial/success and JavaScript-disabled first render.
+Preview artifacts: /Users/openclaw/artifacts/whatismyname-adsense-release/adsense-worker-preview-accepted
+Compiled worker.js SHA256: fa95197147bf4ae74efeb6024b2bed0439c6dfe866a26343c3f0536927302cb3
+ads.txt SHA256: b3fc276e23ca17d5fa43063d9183bc2474eac4e71bc73196280ab63e41b45064
+Bundle: whatismyname-org-ads-20260921-readiness
+Account: jessgaojia; Worker: whatsmyname; existing production routes and secrets retained via registered bridge keep-vars.
+AdSense account approval/CMP/traffic provenance: UNKNOWN, not asserted by this release.

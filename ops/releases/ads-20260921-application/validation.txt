@@ -1,0 +1,16 @@
+CLOUDFLARE_BUILD_PASS
+ADS_TXT_SHA256_MATCH
+SOURCE_COMMIT_3a9ba18
+Base: 3a9ba185f492b9e96615fc927e65a68a67613a26 plus reviewed website-readiness patches.
+Source: /tmp/whatismyname-apply-ready.G71YEE
+Changes: nine-language factual guides and generated-index repair; truthful tools metadata; removal of unsupported research/instant-registration claims; working footer navigation; initial-head metadata; honest platform-outage warning and automatic usable web-results fallback.
+Retains preceding AdSense, privacy, restricted-result filtering, sitemap, clipboard and Worker-bundling fixes.
+Unrelated pending AI/API/lib-env changes excluded from the release source.
+OpenClaw build: /Users/openclaw/artifacts/whatismyname-adsense-release/exec/20260921T104719Z
+Typecheck, lint, 385 tests, OpenNext production build and Wrangler compilation: PASS.
+Packaged Worker preview: 30/30 desktop/mobile tests passed.
+Preview: /Users/openclaw/artifacts/whatismyname-adsense-release/adsense-application-preview-final
+Worker SHA256: 760fec975924fc83fcb9ab32ae7021ffa934249605f0ad6c03b77dc72ec76628
+ads.txt SHA256: b3fc276e23ca17d5fa43063d9183bc2474eac4e71bc73196280ab63e41b45064
+BLOCKER for application recommendation: real platform upstream api.whatsmynameapp.org returns 521; independent backend recovery not yet authorized. Real Google query returned 200 with one item.
+This is a website remediation release, not a declaration that AdSense review or the external lookup backend passed.

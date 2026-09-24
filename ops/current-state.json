@@ -1,0 +1,156 @@
+{
+  "project": "whatsismyname",
+  "platform": "cloudflare",
+  "canonical_domain": "whatismyname.org",
+  "production_urls": [
+    "https://whatismyname.org/"
+  ],
+  "worker": "whatsmyname",
+  "worker_version": "c2570aa7-3dd5-49d3-b6b5-e2e11eb63926",
+  "public_qa_receipts": [
+    {
+      "scope": "public_production",
+      "validation_kind": "browser",
+      "target_url": "https://whatismyname.org/ads.txt",
+      "status": "passed",
+      "observed_at": "2026-09-07T07:48:02.606904+00:00",
+      "evidence_path": "/Volumes/SSD/dev/project/whatsismyname/ops/releases/ads-20260907/public-qa.json"
+    },
+    {
+      "scope": "public_production",
+      "validation_kind": "browser",
+      "target_url": "https://whatismyname.org/",
+      "status": "passed",
+      "observed_at": "2026-09-07T16:02:14.726806+00:00",
+      "evidence_path": "/Volumes/SSD/dev/project/whatsismyname/ops/releases/ai-20260908/public-qa.json"
+    },
+    {
+      "scope": "public_production",
+      "validation_kind": "http",
+      "target_url": "https://whatismyname.org/ads.txt",
+      "status": "passed",
+      "observed_at": "2026-09-21T04:16:19+00:00",
+      "evidence_path": "/Volumes/SSD/dev/project/whatsismyname/ops/releases/ads-20260921/public-qa.json"
+    },
+    {
+      "scope": "public_production",
+      "validation_kind": "browser",
+      "target_url": "https://whatismyname.org/",
+      "status": "failed",
+      "observed_at": "2026-09-21T05:01:09Z",
+      "evidence_path": "/Volumes/SSD/dev/project/whatsismyname/ops/releases/ads-20260921-readiness/public-qa.json"
+    },
+    {
+      "scope": "public_production",
+      "validation_kind": "browser",
+      "target_url": "https://whatismyname.org/",
+      "status": "blocked",
+      "observed_at": "2026-09-21T11:13:12Z",
+      "evidence_path": "/Volumes/SSD/dev/project/whatsismyname/ops/releases/ads-20260921-shell/public-qa.json"
+    },
+    {
+      "scope": "public_production",
+      "validation_kind": "browser",
+      "target_url": "https://whatismyname.org/",
+      "status": "passed",
+      "observed_at": "2026-09-21T13:48:45Z",
+      "evidence_path": "/Volumes/SSD/dev/project/whatsismyname/ops/releases/ads-20260921-provider-scope/public-qa.json"
+    },
+    {
+      "scope": "public_production",
+      "validation_kind": "browser",
+      "target_url": "https://whatismyname.org/",
+      "status": "passed",
+      "observed_at": "2026-09-21T14:48:24Z",
+      "evidence_path": "/Volumes/SSD/dev/project/whatsismyname/ops/releases/ads-20260921-ai-fallback/public-qa.json"
+    },
+    {
+      "scope": "public_production",
+      "validation_kind": "browser",
+      "target_url": "https://whatismyname.org/",
+      "status": "passed",
+      "observed_at": "2026-09-22T14:28:05.789158+00:00",
+      "evidence_path": "/Volumes/SSD/dev/project/whatsismyname/ops/releases/ads-20260922-markdown/public-qa.json"
+    },
+    {
+      "scope": "public_production",
+      "validation_kind": "browser",
+      "target_url": "https://whatismyname.org/",
+      "status": "passed",
+      "observed_at": "2026-09-23T06:48:21.606757+00:00",
+      "evidence_path": "/Volumes/SSD/dev/project/whatsismyname/ops/releases/ads-20260923-agent/public-qa.json"
+    },
+    {
+      "scope": "public_production",
+      "validation_kind": "browser",
+      "target_url": "https://whatismyname.org/",
+      "status": "failed",
+      "observed_at": "2026-09-23T09:23:30+00:00",
+      "evidence_path": "/Volumes/SSD/dev/project/whatsismyname/ops/releases/ads-20260923-ui/public-qa.json"
+    },
+    {
+      "scope": "public_production",
+      "validation_kind": "browser",
+      "target_url": "https://whatismyname.org/",
+      "status": "passed",
+      "observed_at": "2026-09-23T09:44:30+00:00",
+      "evidence_path": "/Volumes/SSD/dev/project/whatsismyname/ops/releases/ads-20260923-ui-tabs/public-qa.json"
+    },
+    {
+      "scope": "public_production",
+      "validation_kind": "browser",
+      "target_url": "https://whatismyname.org/",
+      "status": "failed",
+      "observed_at": "2026-09-23T11:05:00+00:00",
+      "evidence_path": "/Volumes/SSD/dev/project/whatsismyname/ops/releases/ads-20260923-search/public-qa.json"
+    },
+    {
+      "scope": "public_production",
+      "validation_kind": "browser",
+      "target_url": "https://whatismyname.org/",
+      "status": "passed",
+      "observed_at": "2026-09-23T12:50:00+00:00",
+      "evidence_path": "/Volumes/SSD/dev/project/whatsismyname/ops/releases/ads-20260923-adsfix/public-qa.json"
+    },
+    {
+      "scope": "public_production",
+      "validation_kind": "browser",
+      "target_url": "https://whatismyname.org/",
+      "status": "passed",
+      "observed_at": "2026-09-23T14:05:00+00:00",
+      "evidence_path": "/Volumes/SSD/dev/project/whatsismyname/ops/releases/ads-20260923-light/public-qa.json"
+    },
+    {
+      "scope": "public_production",
+      "validation_kind": "browser",
+      "target_url": "https://whatismyname.org/",
+      "status": "passed",
+      "observed_at": "2026-09-24T01:00:00+00:00",
+      "evidence_path": "/Volumes/SSD/dev/project/whatsismyname/ops/releases/ads-20260923-panels/public-qa.json"
+    },
+    {
+      "scope": "public_production",
+      "validation_kind": "browser",
+      "target_url": "https://whatismyname.org/",
+      "status": "passed",
+      "observed_at": "2026-09-24T05:47:00+00:00",
+      "evidence_path": "/Volumes/SSD/dev/project/whatsismyname/ops/releases/ads-20260924-geo/public-qa.json"
+    },
+    {
+      "scope": "public_production",
+      "validation_kind": "browser",
+      "target_url": "https://whatismyname.org/",
+      "status": "passed",
+      "observed_at": "2026-09-24T09:20:00+00:00",
+      "evidence_path": "/Volumes/SSD/dev/project/whatsismyname/ops/releases/ads-20260924-adclip/public-qa.json"
+    }
+  ],
+  "updated_at": "2026-09-24T09:20:00+00:00",
+  "release_scope": "Loading Auto ads slots clipped horizontally at their wrapper, on top of GEO (/llm.txt, .md page twins, 9-locale home FAQ with FAQPage JSON-LD, IndexNow key), results-panel, light colour balance, AdSense fixes, search timeout fix, UI polish and AdSense CSP releases; backend, runtime model configuration and ads.txt preserved",
+  "latest_public_qa": "ops/releases/ads-20260924-adclip/public-qa.json",
+  "latest_public_qa_status": "passed",
+  "account_alias": "jessgaojia",
+  "credential_source_profile": "jessgaojia",
+  "deployment_bridge": "~/.codex/bin/cloudflare-deploy",
+  "openrouter_model": "openrouter/free,nvidia/nemotron-3-super-120b-a12b:free,google/gemma-4-31b-it:free,nvidia/nemotron-3.5-lightning:free,google/gemma-4-26b-a4b-it:free,z-ai/glm-5.2:free"
+}

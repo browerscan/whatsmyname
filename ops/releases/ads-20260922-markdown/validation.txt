@@ -1,0 +1,18 @@
+Release: ads-20260922-markdown
+UTC: 2026-09-22T14:24:20.077740+00:00
+Scope: assistant Markdown rendering only; existing backend, runtime secrets, routes and ads.txt preserved.
+Baseline: production d96ed331-88e1-4880-8262-a85c5b13c216, isolated source /tmp/whatismyname-apply-ready.G71YEE.
+Source: /tmp/whatismyname-md-20260922. Exact delta in source-manifest.json.
+SOURCE_COMMIT_3a9ba18
+Checks: TypeScript passed; ESLint passed; 14/14 focused component tests passed.
+Next production build + OpenNext Cloudflare + Wrangler dry-run bundle + packaging passed.
+CLOUDFLARE_BUILD_PASS
+ADS_TXT_SHA256_MATCH
+Worker SHA256: 4473bedb2c06ec9f4fb53e5ba73c915a588f21e83ff518562aeb013c395fc0f1
+ads.txt SHA256: bd958ae2b7bba074f3cf17b84c6dd399fd7e0828fa0c91a9aff62ba74a3aa1a1
+OpenClaw build artifact: /Users/openclaw/artifacts/whatismyname-md-20260922/exec/20260922T141958Z
+Preview browser: 6 passed, 2 production-only checks skipped; desktop/mobile dark/light rendering and error recovery passed.
+Browser screenshots visually reviewed; fixed Markdown SSE and search fixtures used for deterministic UI checks.
+Deployment approval: user requested rendering fix then minimal deployment.
+Environment notes: reused byte-identical cached native dependencies after macOS loader wait; ran Node CLI entrypoints to avoid shebang wait; completed dry-run CLI required terminating a lingering CLI child after dry-run output completed. Metrics-disabled second dry-run completed; packaging correctly refused overwrite of the already-created package.
+Completed: production deployed as c2826d68-7003-4a0e-9981-8dee48c5e123; 7 public browser checks passed, 1 duplicate real-AI check intentionally skipped. Canonical BUILD_ID matches release; ads.txt unchanged; health 200; live AI response rendered successfully. Receipt: public-qa.json.

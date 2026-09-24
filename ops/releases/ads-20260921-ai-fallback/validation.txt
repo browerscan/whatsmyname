@@ -1,0 +1,49 @@
+Release: ads-20260921-ai-fallback
+UTC: 2026-09-21T14:32:25Z
+
+Scope
+- Publish the already-approved AdSense readiness Worker bundle with the AI analyze endpoint model fallback.
+- Keep the production OPENROUTER_MODEL secret aligned with the same ordered free-model pool.
+- Add the requested second Google AdSense seller line to ads.txt:
+  google.com, pub-8231175075553786, DIRECT, f08c47fec0942fa0
+
+Source
+- Isolated source: /tmp/whatismyname-apply-ready.G71YEE
+- Baseline source commit: 3a9ba18
+- SOURCE_COMMIT_3a9ba18
+- Local workspace public/ads.txt was updated to match the release source.
+- Pending unrelated working-tree changes remain excluded from the release source.
+
+AI model routing
+- Default/fallback model pool:
+  openrouter/free
+  nvidia/nemotron-3-super-120b-a12b:free
+  google/gemma-4-31b-it:free
+  nvidia/nemotron-3.5-lightning:free
+  google/gemma-4-26b-a4b-it:free
+  z-ai/glm-5.2:free
+- Config layer was already updated in production before this code deploy.
+- Pre-code-deploy production API recovery evidence: /api/ai/analyze returned 200 text/event-stream using nvidia/nemotron-3-super-120b-a12b via OpenRouter provider DekaLLM.
+- During public QA the first explicit Nvidia candidate returned a 200 SSE envelope with an in-stream provider_overloaded 503, so the production OPENROUTER_MODEL secret was reordered to make openrouter/free first.
+- Post-reorder public API evidence: /api/ai/analyze returned 200 text/event-stream with content chunks via liquid/lfm-2.5-2.6b:free provider Liquid.
+
+Validation
+- OpenClaw host: openclaw-wired
+- OpenClaw run id: 20260921T143156Z
+- Remote artifact dir: /Users/openclaw/artifacts/whatismyname-adsense-release/exec/20260921T143156Z
+- Command: pnpm typecheck && pnpm lint && pnpm test && pnpm build:cloudflare && wrangler deploy --dry-run && package-adsense-release
+- Result: passed
+- CLOUDFLARE_BUILD_PASS
+
+Collected artifact
+- Local bundle: /Users/butterfly/.codex/tmp/openclaw-collect/whatismyname-org-ads-20260921-ai-fallback-r3
+- worker.js sha256: 1a624d554e079a34b0f925ade74b50c90d27d15816e5a2b008dee5d718e50ac6
+- assets/ads.txt sha256: bd958ae2b7bba074f3cf17b84c6dd399fd7e0828fa0c91a9aff62ba74a3aa1a1
+- app/api/ai/analyze/route.ts sha256: 35c5537b4b527a8b33cb9c8a73371c575e03a373ea178a3127d2b4004406442c
+- app/api/health/route.ts sha256: a6f1c77f56449d5d8a7e51006ea5fab4992317c0a0cc98383cc726af0fa3f0a9
+- lib/openrouter.ts sha256: 12da93ea58c7220f188a2227955153f841faf55f28c644121a5af1d15d54a70e
+- ADS_TXT_SHA256_MATCH
+
+Pending
+- Publish collected artifact through the registered Cloudflare deploy bridge.
+- Verify production status, ads.txt content, health route, AI analyze SSE, and browser AI flow.

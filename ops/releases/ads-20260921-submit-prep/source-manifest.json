@@ -1,0 +1,208 @@
+{
+  "base_commit": "3a9ba185f492b9e96615fc927e65a68a67613a26",
+  "worker_version": "34a2800c-1ac1-4699-b4ee-ef0b4a5a0635",
+  "source_files": [
+    {
+      "path": "app/layout.tsx",
+      "sha256": "ddeda40995ced530850e36d59c1cad6ce9b83b7f585a74bb12e940554a834e30"
+    },
+    {
+      "path": "app/robots.ts",
+      "sha256": "2e0d291367ae001902d54c385354dc063398b31ec1e87b6a5d9afb912c2db8b6"
+    },
+    {
+      "path": "app/sitemap.ts",
+      "sha256": "856f4198cbb13cefd7723d31e4ec18d2a09229f9e2d33e5d0316c9d78cd7442a"
+    },
+    {
+      "path": "app/[locale]/tools/page.tsx",
+      "sha256": "cf4b1e69130db7e46d87ddab33dbc4181f7803f6aaabc4e427e01cc9f7702fc2"
+    },
+    {
+      "path": "app/[locale]/blog/[slug]/page.tsx",
+      "sha256": "edbf252524321b6669ef71615a946b3f8c6e07138af083617fac47f5ceb98ec5"
+    },
+    {
+      "path": "components/features/CopyLinkButton.tsx",
+      "sha256": "ed53fb135ef932ac0486c8bf4f7ea4876c4ade5d8082b2be0dca2ebc8f2f3fb1"
+    },
+    {
+      "path": "components/features/FilterBar.tsx",
+      "sha256": "b003cd8c9585b9ed4b0a034add7efd0c16c569d9ba8ba0c20b8ad637c80042b3"
+    },
+    {
+      "path": "components/features/MobileFilterSheet.tsx",
+      "sha256": "c575c5b61b658aed7787762f1f6109b978bd485d1b9f72b531d7ec0599dbf3e1"
+    },
+    {
+      "path": "components/features/SearchBar.tsx",
+      "sha256": "46783144c283b99a58abde6f3aeab381d2b8ea993334a94200272062127d14eb"
+    },
+    {
+      "path": "stores/useSearchStore.ts",
+      "sha256": "186899077ae293fa5b0850e39d82e8ef28a1f40f9855120d311d6d673bb865e3"
+    },
+    {
+      "path": "content/legal.ts",
+      "sha256": "02c62c5864d66c527c8f04192814787297329f6b1c75f200d30c2d2c73e660b3"
+    },
+    {
+      "path": "lib/platforms-data.ts",
+      "sha256": "ff92548f3ef96be78ffdbc48da061bb824d47b6ffd921a5bdcbf6b1193442a40"
+    },
+    {
+      "path": "public/ads.txt",
+      "sha256": "b3fc276e23ca17d5fa43063d9183bc2474eac4e71bc73196280ab63e41b45064"
+    },
+    {
+      "path": "next.config.mjs",
+      "sha256": "d9f27ac2edfe6efcf0d4b3f12e5ae322092b537ff757a08349ecc12315afb5db"
+    },
+    {
+      "path": "wrangler.toml.example",
+      "sha256": "d29e8ca469af9b253a24d704da18b7c83910a376dd29c4f384cdad9cfa4c09ed"
+    },
+    {
+      "path": "locales/en.json",
+      "sha256": "55ae5e7dfea6193d3eca756d42326733caf99cc4aba3e86a6b20b1d99ae1b29d"
+    },
+    {
+      "path": "locales/zh.json",
+      "sha256": "ccc1ae7f2c01a4fe7b6a3af01edf8ecca476ab5d7765fe76893e21d0765a492c"
+    },
+    {
+      "path": "locales/es.json",
+      "sha256": "a0b065c93e40e20875506e0ec61143ebb487e65f8858423927a05a9433064c1e"
+    },
+    {
+      "path": "locales/ja.json",
+      "sha256": "06a5471bf5a6152d8b7bad0f99beb5e6f774d568715be12d9d5b1fc0689c089b"
+    },
+    {
+      "path": "locales/fr.json",
+      "sha256": "6e5c2eb1569f2eb593bec149431660f7616f79f6a88eebd8d5fe537a25e5d3fb"
+    },
+    {
+      "path": "locales/ko.json",
+      "sha256": "beca856e5e0ffaf5e82c987b43f43a4ccf78daab783dd06377b748670688450a"
+    },
+    {
+      "path": "locales/de.json",
+      "sha256": "071c179163b359f863f089cd604e7d2607f7b8c20e430bdc839e937f98cbf296"
+    },
+    {
+      "path": "locales/pt.json",
+      "sha256": "f6f4e7bc76bd460b407fc28f6f9aa333eff6a28c8762dd8162273c71247832a0"
+    },
+    {
+      "path": "locales/ru.json",
+      "sha256": "4ae7ef16b5012a7f4fb2adc26d732f5df4fa901f8e55279c2a9e079d1678753b"
+    },
+    {
+      "path": "content/route-copy.ts",
+      "sha256": "2b1502b707b8ab4c79ff133e3e9f6d804ffe56ede7f3f8f1b49cc6605d26cf8c"
+    },
+    {
+      "path": "lib/blog-data.ts",
+      "sha256": "844998eaaf79a186aabf9c39228369456d804053b7084469ab5d4789e9f83770"
+    },
+    {
+      "path": "components/layout/Footer.tsx",
+      "sha256": "1221f39ae1fb799f512f0a5ae13dc91beba63027bc2cf22a425ff7d5d9250d4e"
+    },
+    {
+      "path": "components/pages/ResultsPanel.tsx",
+      "sha256": "52584bcb53585f405baf64b13edd8f0391c8b2f6facd799ff4a33b0fc8f2d3b3"
+    },
+    {
+      "path": "components/seo/StructuredData.tsx",
+      "sha256": "08857facd2893003c743c52b6a90c1a93f793fcd51cc03ca7d407e3f35430cdb"
+    },
+    {
+      "path": "scripts/convert-html.js",
+      "sha256": "79a2f50b09a191d4c05fc20601958ec7fe980daf1029eb8d72d4bdb5e09528c3"
+    },
+    {
+      "path": "content/education/de.html",
+      "sha256": "a051d2a9951c5a05b079b2493301a4ed858b1f6d0660a0e6d470df686d1765e0"
+    },
+    {
+      "path": "content/education/de.ts",
+      "sha256": "1de904c4c938fc0303ff097913a1c50d4e2e085d151f15c76eadc4cbadd9afce"
+    },
+    {
+      "path": "content/education/en.html",
+      "sha256": "101060b68031704b0aa07e89a453df50741d3f5c72ef3c9913ae1dd9de4169a3"
+    },
+    {
+      "path": "content/education/en.ts",
+      "sha256": "478e321613ccb075ae7c55deb95da06605a9367d3ce919ce575cb045122b634e"
+    },
+    {
+      "path": "content/education/es.html",
+      "sha256": "bd8d8751c6369273ed8a446080f22d783b1ac31c2f09fdf6b42b09dd2e86f565"
+    },
+    {
+      "path": "content/education/es.ts",
+      "sha256": "6c9cf3e4973bf0826b3be3e2d5a16f328409ff6c48d1e76d30129bc2ef29e993"
+    },
+    {
+      "path": "content/education/fr.html",
+      "sha256": "86c39d6e792f1f863711785fc47d5659b1c84a5c101ce1640ffad2e152965e71"
+    },
+    {
+      "path": "content/education/fr.ts",
+      "sha256": "8c925219c11e6f08df2e53fc722e10aeae2aa1c451c6eb242776eb89b3bf97cf"
+    },
+    {
+      "path": "content/education/index.ts",
+      "sha256": "dfbcc00239f7f77e5b03d28d0c7a4017f8a75e4ab5eb278200cc106ed56d5ac8"
+    },
+    {
+      "path": "content/education/ja.html",
+      "sha256": "a3db8af86ec83fda97e12bb1a232c3d89587832a3429973cb714c9addae2bdb6"
+    },
+    {
+      "path": "content/education/ja.ts",
+      "sha256": "c2882999b46b63fbca68e4d901731d80688835f7c19042ff989296da021cf668"
+    },
+    {
+      "path": "content/education/ko.html",
+      "sha256": "fdcc07342afcbd9c5fcced8d13d3319fd9797c1a14ac99305531aec2eb5b1003"
+    },
+    {
+      "path": "content/education/ko.ts",
+      "sha256": "72774a4d7620307499238831f7609b39509a3252af30f5aa42f15e24602eb807"
+    },
+    {
+      "path": "content/education/pt.html",
+      "sha256": "02555b667c9ba4a0c13a881522cd3f125ddaad5496317ec291269670217e30b8"
+    },
+    {
+      "path": "content/education/pt.ts",
+      "sha256": "1dc190533b05e2687acd3107c4fc0e2deb05cd45e0227059f214136956cbdba6"
+    },
+    {
+      "path": "content/education/ru.html",
+      "sha256": "a5a7e708d03e07bc56beaed583e137ad4a772be5d8ba20970bdb26a65e13127a"
+    },
+    {
+      "path": "content/education/ru.ts",
+      "sha256": "90eeef34f5b800b9b8d771063901ab3b8565e0e694576793bfdb5c5ad297d0e6"
+    },
+    {
+      "path": "content/education/zh.html",
+      "sha256": "0ddec023818705b3ad0a1f829891eb596df86ed0f37d9c86c86d6cbafc96c176"
+    },
+    {
+      "path": "content/education/zh.ts",
+      "sha256": "57cac88cb5c0aa1240b9fa9eebbbc793d7224ffcdbd250724b66a73a75790b1e"
+    }
+  ],
+  "excluded_pending_changes": [
+    "app/api/ai/analyze/route.ts",
+    "app/api/health/route.ts",
+    "lib/env.ts",
+    "lib/openrouter.ts"
+  ]
+}

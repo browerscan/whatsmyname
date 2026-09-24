@@ -1,0 +1,46 @@
+{
+  "release": "ads-20260922-markdown",
+  "observed_at": "2026-09-22T14:28:05.789158+00:00",
+  "status": "passed",
+  "production_url": "https://whatismyname.org/",
+  "worker_version": "c2826d68-7003-4a0e-9981-8dee48c5e123",
+  "deploy_receipt": "ops/deploy-receipts/20260922T142520Z-workers-dev-deploy.json",
+  "scope": "AI assistant Markdown rendering only; production baseline backend, runtime model configuration, routes, ads.txt preserved",
+  "checks": {
+    "typecheck": "passed",
+    "lint": "passed",
+    "component_tests": {
+      "passed": 14
+    },
+    "build": "passed",
+    "preview_browser": {
+      "passed": 6,
+      "skipped": 2
+    },
+    "public_browser": {
+      "passed": 7,
+      "skipped": 1
+    },
+    "real_ai": {
+      "http_status": 200,
+      "response_rendered_as_elements": true,
+      "duration_seconds": 53.6
+    },
+    "public_build_id_matches": true,
+    "public_ads_matches": true
+  },
+  "evidence": [
+    "preview-browser.json",
+    "public-browser.json",
+    "public-http.json",
+    "production-status.json",
+    "public-real-ai.png",
+    "public-mobile.png"
+  ],
+  "notes": [
+    "Deterministic desktop/mobile rendering and error tests intercept search and AI API responses in the browser.",
+    "Real production AI check uses the live AI API with fixture search context; cross-platform provider search was not retested.",
+    "One mobile real-AI test intentionally skipped to avoid a duplicate inference request.",
+    "Existing unrelated working-tree changes excluded; no Git push or production secret/config change."
+  ]
+}

@@ -1,0 +1,8 @@
+CLOUDFLARE_BUILD_PASS
+ADS_TXT_SHA256_MATCH
+SOURCE_COMMIT_3a9ba18
+Source commit: 3a9ba185f492b9e96615fc927e65a68a67613a26
+ads.txt SHA256: 27bc741846d2b3cb8def3a2af5f469425c5bf0c62b4f22f0c2de600a70695982
+Build receipt: /Users/openclaw/artifacts/whatsismyname-adplus/exec/20260907T072310Z
+Bundle receipt: /Users/openclaw/artifacts/whatsismyname-adplus/exec/20260907T074005Z
+Scope: committed ads.txt only; pending advertising UI changes excluded.

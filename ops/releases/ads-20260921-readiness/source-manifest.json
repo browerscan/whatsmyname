@@ -1,0 +1,108 @@
+{
+  "base_commit": "3a9ba185f492b9e96615fc927e65a68a67613a26",
+  "worker_version": "558112c8-9f46-48b2-a41f-4e941f343a6b",
+  "source_files": [
+    {
+      "path": "app/layout.tsx",
+      "sha256": "769d925ffb31a51e128fee51d5fe649827798910744c1833b18b2b00b50e9f49"
+    },
+    {
+      "path": "app/robots.ts",
+      "sha256": "2e0d291367ae001902d54c385354dc063398b31ec1e87b6a5d9afb912c2db8b6"
+    },
+    {
+      "path": "app/sitemap.ts",
+      "sha256": "856f4198cbb13cefd7723d31e4ec18d2a09229f9e2d33e5d0316c9d78cd7442a"
+    },
+    {
+      "path": "app/[locale]/tools/page.tsx",
+      "sha256": "ca7318e4d9c0c4c107c2f19a80bfdfbd7bfaa8be4b4461e5deb9b6285c3f7d69"
+    },
+    {
+      "path": "app/[locale]/blog/[slug]/page.tsx",
+      "sha256": "edbf252524321b6669ef71615a946b3f8c6e07138af083617fac47f5ceb98ec5"
+    },
+    {
+      "path": "components/features/CopyLinkButton.tsx",
+      "sha256": "ed53fb135ef932ac0486c8bf4f7ea4876c4ade5d8082b2be0dca2ebc8f2f3fb1"
+    },
+    {
+      "path": "components/features/FilterBar.tsx",
+      "sha256": "b003cd8c9585b9ed4b0a034add7efd0c16c569d9ba8ba0c20b8ad637c80042b3"
+    },
+    {
+      "path": "components/features/MobileFilterSheet.tsx",
+      "sha256": "c575c5b61b658aed7787762f1f6109b978bd485d1b9f72b531d7ec0599dbf3e1"
+    },
+    {
+      "path": "components/features/SearchBar.tsx",
+      "sha256": "46783144c283b99a58abde6f3aeab381d2b8ea993334a94200272062127d14eb"
+    },
+    {
+      "path": "stores/useSearchStore.ts",
+      "sha256": "186899077ae293fa5b0850e39d82e8ef28a1f40f9855120d311d6d673bb865e3"
+    },
+    {
+      "path": "content/legal.ts",
+      "sha256": "02c62c5864d66c527c8f04192814787297329f6b1c75f200d30c2d2c73e660b3"
+    },
+    {
+      "path": "lib/platforms-data.ts",
+      "sha256": "ff92548f3ef96be78ffdbc48da061bb824d47b6ffd921a5bdcbf6b1193442a40"
+    },
+    {
+      "path": "public/ads.txt",
+      "sha256": "b3fc276e23ca17d5fa43063d9183bc2474eac4e71bc73196280ab63e41b45064"
+    },
+    {
+      "path": "next.config.mjs",
+      "sha256": "8f30745a928dfad34a62409238da97389f067ab819f0d6933d5dfddc0863b26e"
+    },
+    {
+      "path": "wrangler.toml.example",
+      "sha256": "d29e8ca469af9b253a24d704da18b7c83910a376dd29c4f384cdad9cfa4c09ed"
+    },
+    {
+      "path": "locales/en.json",
+      "sha256": "06e40d03322eeba22030c71e218b4ee3979390176b86fe30f9bca27ae9be690f"
+    },
+    {
+      "path": "locales/zh.json",
+      "sha256": "fbc680f58d86a974e245538669604df6a9849113d847a5014aca2792fb8b5b5e"
+    },
+    {
+      "path": "locales/es.json",
+      "sha256": "08f52947115e07d97b319401c1a1f836bf3c4620ba4c161e103bf4840e4271e9"
+    },
+    {
+      "path": "locales/ja.json",
+      "sha256": "82b53f79bd17d0a3b53d9d0e3631308233b75cc222224c06f69662452f52b146"
+    },
+    {
+      "path": "locales/fr.json",
+      "sha256": "22b02260bd3e5f1145c1cc5f6a839e826ea23c38d63b4853eddfe053364d7d4a"
+    },
+    {
+      "path": "locales/ko.json",
+      "sha256": "ff7b3445320dd32bfeded9cc1cd1e7303340e8f574ec31ced4ecaa16716e4f32"
+    },
+    {
+      "path": "locales/de.json",
+      "sha256": "71ff0fc4a32bd89de05bb858dc2b19aa885998142505b7b97cd9353d43812bfe"
+    },
+    {
+      "path": "locales/pt.json",
+      "sha256": "2dd8988c504287b79e130b67cf849ccb4cde55d2218649f7fc863fc1fbaf625a"
+    },
+    {
+      "path": "locales/ru.json",
+      "sha256": "e6c51ec245d4dfe35d81c1d601a864bf7bfa95388423ce5225e80fd0c03b03ec"
+    }
+  ],
+  "excluded_working_changes": [
+    "app/api/ai/analyze/route.ts",
+    "app/api/health/route.ts",
+    "lib/env.ts",
+    "lib/openrouter.ts"
+  ]
+}
