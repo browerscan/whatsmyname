@@ -48,7 +48,7 @@
 ### 3. Cloudflare Pages 项目 ✅
 
 - **项目名称**: whatsmyname
-- **Account ID**: 9cb8d6ec0f6094cf4f0cd6b3ee5a17a3
+- **Account ID**: (redacted; see the Cloudflare dashboard)
 - **生产分支**: main
 - **构建输出**: .next/ (Next.js 标准构建)
 

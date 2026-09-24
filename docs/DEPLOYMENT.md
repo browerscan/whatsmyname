@@ -5,7 +5,7 @@ This guide covers deploying the whatismyname application to Cloudflare Pages wit
 ## Prerequisites
 
 - GitHub account with repository access
-- Cloudflare account (Account ID: `9cb8d6ec0f6094cf4f0cd6b3ee5a17a3`)
+- Cloudflare account
 - Required API keys (WhatsMyName, Google Custom Search, OpenRouter)
 
 ## Step 1: Configure GitHub Secrets
@@ -19,7 +19,7 @@ Add the following repository secrets:
 | Secret Name                     | Description                          | Example                            |
 | ------------------------------- | ------------------------------------ | ---------------------------------- |
 | `CLOUDFLARE_API_TOKEN`          | Cloudflare API token for deployments | `your_cloudflare_api_token`        |
-| `CLOUDFLARE_ACCOUNT_ID`         | Your Cloudflare account ID           | `9cb8d6ec0f6094cf4f0cd6b3ee5a17a3` |
+| `CLOUDFLARE_ACCOUNT_ID`         | Your Cloudflare account ID           | `your_cloudflare_account_id`       |
 | `WHATSMYNAME_API_KEY`           | WhatsMyName API key                  | `your_whatsmyname_key`             |
 | `GOOGLE_CUSTOM_SEARCH_API_KEYS` | Google API keys (comma-separated)    | `key1,key2,key3`                   |
 | `GOOGLE_CUSTOM_SEARCH_CX`       | Google Custom Search engine ID       | `your_cx_id`                       |
