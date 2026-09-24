@@ -1,0 +1,861 @@
+{
+  "config": {
+    "configFile": "/Users/openclaw/test-workspace/whatismyname-adclip-rel-20260924/playwright.agent.config.ts",
+    "rootDir": "/Users/openclaw/test-workspace/whatismyname-adclip-rel-20260924/__tests__/e2e",
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "output/agent-browser.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "quiet": false,
+    "projects": [
+      {
+        "outputDir": "/Users/openclaw/test-workspace/whatismyname-adclip-rel-20260924/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "desktop",
+        "name": "desktop",
+        "testDir": "/Users/openclaw/test-workspace/whatismyname-adclip-rel-20260924/__tests__/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "agent-ready.spec.ts"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/openclaw/test-workspace/whatismyname-adclip-rel-20260924/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "mobile",
+        "name": "mobile",
+        "testDir": "/Users/openclaw/test-workspace/whatismyname-adclip-rel-20260924/__tests__/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "agent-ready.spec.ts"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "shard": null,
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.56.1",
+    "workers": 1,
+    "webServer": {
+      "command": "node node_modules/wrangler/bin/wrangler.js dev --config output/adsense-release/wrangler.json --local --ip 127.0.0.1 --port 4389 --inspector-port 0",
+      "url": "http://127.0.0.1:4389",
+      "reuseExistingServer": false,
+      "timeout": 60000
+    }
+  },
+  "suites": [
+    {
+      "title": "agent-ready.spec.ts",
+      "file": "agent-ready.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "home page shows the FAQ and publishes the same questions as FAQPage JSON-LD",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 647,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-24T08:58:57.755Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "532e6ed6bed99edf2405-b90bfed55ef2a522c88a",
+          "file": "agent-ready.spec.ts",
+          "line": 129,
+          "column": 5
+        },
+        {
+          "title": "home page registers the WebMCP search tool and runs the page's own search",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1937,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-24T08:58:59.122Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "532e6ed6bed99edf2405-013480ba3987b1d38cb8",
+          "file": "agent-ready.spec.ts",
+          "line": 148,
+          "column": 5
+        },
+        {
+          "title": "home page shows the FAQ and publishes the same questions as FAQPage JSON-LD",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 550,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-24T08:59:01.669Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "532e6ed6bed99edf2405-a5974c7c75de4b098011",
+          "file": "agent-ready.spec.ts",
+          "line": 129,
+          "column": 5
+        },
+        {
+          "title": "home page registers the WebMCP search tool and runs the page's own search",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1127,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-24T08:59:02.397Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "532e6ed6bed99edf2405-85d188bcea2aef6cb585",
+          "file": "agent-ready.spec.ts",
+          "line": 148,
+          "column": 5
+        }
+      ],
+      "suites": [
+        {
+          "title": "agent discovery over HTTP",
+          "file": "agent-ready.spec.ts",
+          "line": 7,
+          "column": 6,
+          "specs": [
+            {
+              "title": "robots.txt welcomes answer engines and declares Content-Signal",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop",
+                  "projectName": "desktop",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 27,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-09-24T08:58:57.533Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "532e6ed6bed99edf2405-e99ce8ad5a0db96955ba",
+              "file": "agent-ready.spec.ts",
+              "line": 10,
+              "column": 7
+            },
+            {
+              "title": "llms.txt and llms-full.txt are served as text",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop",
+                  "projectName": "desktop",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 16,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-09-24T08:58:57.568Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "532e6ed6bed99edf2405-c4eb30386810b7a55e1d",
+              "file": "agent-ready.spec.ts",
+              "line": 22,
+              "column": 7
+            },
+            {
+              "title": "/llm.txt serves the llms.txt file with a canonical link",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop",
+                  "projectName": "desktop",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 12,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-09-24T08:58:57.588Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "532e6ed6bed99edf2405-6e1e7d349805102330de",
+              "file": "agent-ready.spec.ts",
+              "line": 32,
+              "column": 7
+            },
+            {
+              "title": "pages have .md twins and static .md files stay static",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop",
+                  "projectName": "desktop",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 43,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-09-24T08:58:57.604Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "532e6ed6bed99edf2405-6830fac08aaea1a1381d",
+              "file": "agent-ready.spec.ts",
+              "line": 40,
+              "column": 7
+            },
+            {
+              "title": "well-known discovery documents resolve with CORS",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop",
+                  "projectName": "desktop",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 21,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-09-24T08:58:57.651Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "532e6ed6bed99edf2405-18ddb5861f5daead9a97",
+              "file": "agent-ready.spec.ts",
+              "line": 61,
+              "column": 7
+            },
+            {
+              "title": "MCP endpoint speaks stateless Streamable HTTP",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop",
+                  "projectName": "desktop",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 20,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-09-24T08:58:57.675Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "532e6ed6bed99edf2405-d063229221b88e4c02d2",
+              "file": "agent-ready.spec.ts",
+              "line": 85,
+              "column": 7
+            },
+            {
+              "title": "pages negotiate Markdown for agents and stay HTML for browsers",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop",
+                  "projectName": "desktop",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 51,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-09-24T08:58:57.699Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "532e6ed6bed99edf2405-292d4f3606fe736f8c55",
+              "file": "agent-ready.spec.ts",
+              "line": 109,
+              "column": 7
+            },
+            {
+              "title": "robots.txt welcomes answer engines and declares Content-Signal",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "HTTP contract is device-independent",
+                      "location": {
+                        "file": "/Users/openclaw/test-workspace/whatismyname-adclip-rel-20260924/__tests__/e2e/agent-ready.spec.ts",
+                        "line": 8,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
+                  "projectId": "mobile",
+                  "projectName": "mobile",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "skipped",
+                      "duration": 1,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-09-24T08:59:01.628Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "HTTP contract is device-independent",
+                          "location": {
+                            "file": "/Users/openclaw/test-workspace/whatismyname-adclip-rel-20260924/__tests__/e2e/agent-ready.spec.ts",
+                            "line": 8,
+                            "column": 8
+                          }
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "532e6ed6bed99edf2405-99a73c1901ee0b07da3a",
+              "file": "agent-ready.spec.ts",
+              "line": 10,
+              "column": 7
+            },
+            {
+              "title": "llms.txt and llms-full.txt are served as text",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "HTTP contract is device-independent",
+                      "location": {
+                        "file": "/Users/openclaw/test-workspace/whatismyname-adclip-rel-20260924/__tests__/e2e/agent-ready.spec.ts",
+                        "line": 8,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
+                  "projectId": "mobile",
+                  "projectName": "mobile",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-09-24T08:59:01.639Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "HTTP contract is device-independent",
+                          "location": {
+                            "file": "/Users/openclaw/test-workspace/whatismyname-adclip-rel-20260924/__tests__/e2e/agent-ready.spec.ts",
+                            "line": 8,
+                            "column": 8
+                          }
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "532e6ed6bed99edf2405-99eba65db26a2fdf9873",
+              "file": "agent-ready.spec.ts",
+              "line": 22,
+              "column": 7
+            },
+            {
+              "title": "/llm.txt serves the llms.txt file with a canonical link",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "HTTP contract is device-independent",
+                      "location": {
+                        "file": "/Users/openclaw/test-workspace/whatismyname-adclip-rel-20260924/__tests__/e2e/agent-ready.spec.ts",
+                        "line": 8,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
+                  "projectId": "mobile",
+                  "projectName": "mobile",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-09-24T08:59:01.645Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "HTTP contract is device-independent",
+                          "location": {
+                            "file": "/Users/openclaw/test-workspace/whatismyname-adclip-rel-20260924/__tests__/e2e/agent-ready.spec.ts",
+                            "line": 8,
+                            "column": 8
+                          }
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "532e6ed6bed99edf2405-26fddf1443ff646e6b95",
+              "file": "agent-ready.spec.ts",
+              "line": 32,
+              "column": 7
+            },
+            {
+              "title": "pages have .md twins and static .md files stay static",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "HTTP contract is device-independent",
+                      "location": {
+                        "file": "/Users/openclaw/test-workspace/whatismyname-adclip-rel-20260924/__tests__/e2e/agent-ready.spec.ts",
+                        "line": 8,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
+                  "projectId": "mobile",
+                  "projectName": "mobile",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-09-24T08:59:01.650Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "HTTP contract is device-independent",
+                          "location": {
+                            "file": "/Users/openclaw/test-workspace/whatismyname-adclip-rel-20260924/__tests__/e2e/agent-ready.spec.ts",
+                            "line": 8,
+                            "column": 8
+                          }
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "532e6ed6bed99edf2405-95972ebe55b7f42f14b8",
+              "file": "agent-ready.spec.ts",
+              "line": 40,
+              "column": 7
+            },
+            {
+              "title": "well-known discovery documents resolve with CORS",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "HTTP contract is device-independent",
+                      "location": {
+                        "file": "/Users/openclaw/test-workspace/whatismyname-adclip-rel-20260924/__tests__/e2e/agent-ready.spec.ts",
+                        "line": 8,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
+                  "projectId": "mobile",
+                  "projectName": "mobile",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-09-24T08:59:01.653Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "HTTP contract is device-independent",
+                          "location": {
+                            "file": "/Users/openclaw/test-workspace/whatismyname-adclip-rel-20260924/__tests__/e2e/agent-ready.spec.ts",
+                            "line": 8,
+                            "column": 8
+                          }
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "532e6ed6bed99edf2405-dd0b69da48d000eef1b1",
+              "file": "agent-ready.spec.ts",
+              "line": 61,
+              "column": 7
+            },
+            {
+              "title": "MCP endpoint speaks stateless Streamable HTTP",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "HTTP contract is device-independent",
+                      "location": {
+                        "file": "/Users/openclaw/test-workspace/whatismyname-adclip-rel-20260924/__tests__/e2e/agent-ready.spec.ts",
+                        "line": 8,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
+                  "projectId": "mobile",
+                  "projectName": "mobile",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-09-24T08:59:01.661Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "HTTP contract is device-independent",
+                          "location": {
+                            "file": "/Users/openclaw/test-workspace/whatismyname-adclip-rel-20260924/__tests__/e2e/agent-ready.spec.ts",
+                            "line": 8,
+                            "column": 8
+                          }
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "532e6ed6bed99edf2405-582df7894f3725826454",
+              "file": "agent-ready.spec.ts",
+              "line": 85,
+              "column": 7
+            },
+            {
+              "title": "pages negotiate Markdown for agents and stay HTML for browsers",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "HTTP contract is device-independent",
+                      "location": {
+                        "file": "/Users/openclaw/test-workspace/whatismyname-adclip-rel-20260924/__tests__/e2e/agent-ready.spec.ts",
+                        "line": 8,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
+                  "projectId": "mobile",
+                  "projectName": "mobile",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-09-24T08:59:01.665Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "HTTP contract is device-independent",
+                          "location": {
+                            "file": "/Users/openclaw/test-workspace/whatismyname-adclip-rel-20260924/__tests__/e2e/agent-ready.spec.ts",
+                            "line": 8,
+                            "column": 8
+                          }
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "532e6ed6bed99edf2405-bddae00e13af04bf6563",
+              "file": "agent-ready.spec.ts",
+              "line": 109,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-09-24T08:58:54.285Z",
+    "duration": 9423.732,
+    "expected": 11,
+    "skipped": 7,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

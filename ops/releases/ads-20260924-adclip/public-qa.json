@@ -1,0 +1,82 @@
+{
+  "release": "ads-20260924-adclip",
+  "observed_at": "2026-09-24T09:20:00+00:00",
+  "status": "passed",
+  "production_url": "https://whatismyname.org/",
+  "worker_version": "c2570aa7-3dd5-49d3-b6b5-e2e11eb63926",
+  "previous_worker_version": "acd3fda1-e7ce-4c3b-b115-28d191859356",
+  "deploy_receipt": "ops/deploy-receipts/20260924T091301Z-production-domain-deploy.json",
+  "scope": "app/globals.css: .google-auto-placed { overflow-x: clip } so a loading Auto ads slot cannot widen the page.",
+  "checks": {
+    "typecheck": "passed",
+    "lint": "passed",
+    "unit_tests": {
+      "files": 26,
+      "passed": 462
+    },
+    "build": "passed",
+    "preview_browser": {
+      "agent_ready": {
+        "passed": 11,
+        "skipped": 7
+      },
+      "ai_markdown_regression": {
+        "passed": 6,
+        "skipped": 2
+      },
+      "ui_csp": {
+        "passed": 102,
+        "failed": 0
+      }
+    },
+    "public_browser": {
+      "agent_ready": {
+        "passed": 11,
+        "skipped": 7
+      },
+      "ui_csp": {
+        "passed": 101,
+        "failed": 0
+      },
+      "scroll_probe": {
+        "before": {
+          "desktop_overflow_samples": "4/84",
+          "max_overflow_px": 517
+        },
+        "after": {
+          "desktop_overflow_samples": "0/84",
+          "mobile_overflow_samples": "0/108",
+          "max_overflow_px": 0
+        },
+        "ad_slots_resolved": {
+          "before": {
+            "desktop": 5,
+            "mobile": 5
+          },
+          "after": {
+            "desktop": 5,
+            "mobile": 5,
+            "mobile_filled": 1
+          }
+        }
+      }
+    },
+    "public_ads_matches": true
+  },
+  "evidence": [
+    "validation.txt",
+    "source-manifest.json",
+    "clip-repro.log",
+    "baseline-slot-dom-probe.json",
+    "slot-dom-probe.json",
+    "agent-browser.json",
+    "markdown-browser.json",
+    "preview-ui-qa.json",
+    "preview-ui-qa-run1-check-bug.json",
+    "preview-shots/",
+    "public-ui-qa.json"
+  ],
+  "notes": [
+    "Clipping is horizontal only and on the Auto ads wrapper, which spans its column; the loading iframe keeps 683 px (desktop) / 195 px (mobile) in view, so lazy loading still fires, and filled ads sized to the column are never clipped. overflow:clip (both axes) would zero the iframe's visible height; clip on main, the layout root or body does not remove the overflow (clip-repro.log)."
+  ]
+}

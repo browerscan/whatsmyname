@@ -1,0 +1,15 @@
+{
+ "baseline_release": "ads-20260924-geo",
+ "baseline_version": "acd3fda1-e7ce-4c3b-b115-28d191859356",
+ "source_commit": "3a9ba185f492b9e96615fc927e65a68a67613a26",
+ "baseline_source": "/tmp/whatismyname-geo-20260924",
+ "source": "/tmp/whatismyname-adclip-20260924",
+ "changed_files": {
+  "app/globals.css": "16449bbcf57b36be64d6909ce1e9ec3f3835284b1676f067d3d295206ebfc7e7"
+ },
+ "baseline_files": {
+  "app/globals.css": "15911775f9dd4b08826e5ebbe2b89e9655c3fccd93e8181bf78343128a0684f4"
+ },
+ "deleted_files": [],
+ "note": "Production source of ads-20260924-geo plus one CSS rule: .google-auto-placed { overflow-x: clip } so a loading Auto ads slot (zero-width ins with a 1200px iframe) cannot widen the page; nothing else changed."
+}

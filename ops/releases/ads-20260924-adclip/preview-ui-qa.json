@@ -1,0 +1,551 @@
+{
+  "at": "2026-09-24T09:11:20.571Z",
+  "base": "http://127.0.0.1:4390",
+  "mode": "preview-packaged-worker",
+  "results": [
+    {
+      "name": "preview fixture: full production stream captured",
+      "ok": true,
+      "detail": "lines=1489 s=205"
+    },
+    {
+      "name": "CSP allows *.adtrafficquality.google in script/connect/frame-src",
+      "ok": true,
+      "detail": "script-src,connect-src,frame-src"
+    },
+    {
+      "name": "CSP allows AdSense Google Sans (style-src fonts.googleapis.com, font-src fonts.gstatic.com)",
+      "ok": true,
+      "detail": "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com | font-src 'self' data: https://fonts.gstatic.com"
+    },
+    {
+      "name": "desktop-light: no horizontal overflow",
+      "ok": true,
+      "detail": "overflow=0"
+    },
+    {
+      "name": "desktop-light: brand name not truncated",
+      "ok": true,
+      "detail": "clipped=0"
+    },
+    {
+      "name": "desktop-light: header single row",
+      "ok": true,
+      "detail": "h=65 lines=1"
+    },
+    {
+      "name": "desktop-light: search icon sits left inside input",
+      "ok": true,
+      "detail": "iconLeft=16 pl=44"
+    },
+    {
+      "name": "desktop-light: icon and kbd hint do not overlap",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "desktop-light: input is usable width",
+      "ok": true,
+      "detail": "w=518.984375"
+    },
+    {
+      "name": "desktop-light: primary button text contrast >= 4.5",
+      "ok": true,
+      "detail": "ratio=5.17"
+    },
+    {
+      "name": "desktop-light: hero card surface renders (background + border)",
+      "ok": true,
+      "detail": "bg=rgba(255, 255, 255, 0.85) border=1px"
+    },
+    {
+      "name": "desktop-light: unfilled AdSense slot hidden, no overflow",
+      "ok": true,
+      "detail": "{\"unfilledDisplay\":\"none\",\"optimizedDisplay\":\"block\",\"overflow\":0}"
+    },
+    {
+      "name": "desktop-light: unfill-optimized AdSense slot stays visible",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "desktop-light: loading AdSense slot does not widen the page",
+      "ok": true,
+      "detail": "{\"overflow\":0,\"visibleWidths\":[683,624]}"
+    },
+    {
+      "name": "desktop-light: loading AdSense iframe stays partly in view (lazy load can fire)",
+      "ok": true,
+      "detail": "{\"overflow\":0,\"visibleWidths\":[683,624]}"
+    },
+    {
+      "name": "desktop-light: FAQ shows 7 questions matching FAQPage JSON-LD",
+      "ok": true,
+      "detail": "{\"questions\":7,\"ldQuestions\":7,\"answerContrast\":7.34,\"overflow\":0}"
+    },
+    {
+      "name": "desktop-light: FAQ answers readable (contrast >= 4.5) and no overflow",
+      "ok": true,
+      "detail": "{\"questions\":7,\"ldQuestions\":7,\"answerContrast\":7.34,\"overflow\":0,\"adSlotsSettledAfterMs\":0}"
+    },
+    {
+      "name": "desktop-light: tabs fit",
+      "ok": true,
+      "detail": "overflow=0 measuredWhileSearching=true"
+    },
+    {
+      "name": "desktop-light: results panels are white cards",
+      "ok": true,
+      "detail": "[\"rgb(255, 255, 255)\",\"rgb(255, 255, 255)\",\"rgb(255, 255, 255)\"]"
+    },
+    {
+      "name": "desktop-light: results no horizontal overflow",
+      "ok": true,
+      "detail": "overflow=0"
+    },
+    {
+      "name": "desktop-light: status chip toggles aria-pressed",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "desktop-light: clear appears with active filter",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "desktop-light: no CSP violations",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "desktop-light: no uncaught page errors",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "desktop-dark: no horizontal overflow",
+      "ok": true,
+      "detail": "overflow=0"
+    },
+    {
+      "name": "desktop-dark: brand name not truncated",
+      "ok": true,
+      "detail": "clipped=0"
+    },
+    {
+      "name": "desktop-dark: header single row",
+      "ok": true,
+      "detail": "h=65 lines=1"
+    },
+    {
+      "name": "desktop-dark: search icon sits left inside input",
+      "ok": true,
+      "detail": "iconLeft=16 pl=44"
+    },
+    {
+      "name": "desktop-dark: icon and kbd hint do not overlap",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "desktop-dark: input is usable width",
+      "ok": true,
+      "detail": "w=518.984375"
+    },
+    {
+      "name": "desktop-dark: primary button text contrast >= 4.5",
+      "ok": true,
+      "detail": "ratio=5.88"
+    },
+    {
+      "name": "desktop-dark: hero card surface renders (background + border)",
+      "ok": true,
+      "detail": "bg=rgba(15, 23, 41, 0.85) border=1px"
+    },
+    {
+      "name": "desktop-dark: unfilled AdSense slot hidden, no overflow",
+      "ok": true,
+      "detail": "{\"unfilledDisplay\":\"none\",\"optimizedDisplay\":\"block\",\"overflow\":0}"
+    },
+    {
+      "name": "desktop-dark: unfill-optimized AdSense slot stays visible",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "desktop-dark: loading AdSense slot does not widen the page",
+      "ok": true,
+      "detail": "{\"overflow\":0,\"visibleWidths\":[683,624]}"
+    },
+    {
+      "name": "desktop-dark: loading AdSense iframe stays partly in view (lazy load can fire)",
+      "ok": true,
+      "detail": "{\"overflow\":0,\"visibleWidths\":[683,624]}"
+    },
+    {
+      "name": "desktop-dark: FAQ shows 7 questions matching FAQPage JSON-LD",
+      "ok": true,
+      "detail": "{\"questions\":7,\"ldQuestions\":7,\"answerContrast\":6.06,\"overflow\":0}"
+    },
+    {
+      "name": "desktop-dark: FAQ answers readable (contrast >= 4.5) and no overflow",
+      "ok": true,
+      "detail": "{\"questions\":7,\"ldQuestions\":7,\"answerContrast\":6.06,\"overflow\":0,\"adSlotsSettledAfterMs\":0}"
+    },
+    {
+      "name": "desktop-dark: tabs fit",
+      "ok": true,
+      "detail": "overflow=0 measuredWhileSearching=true"
+    },
+    {
+      "name": "desktop-dark: results panels are translucent cards",
+      "ok": true,
+      "detail": "[\"rgba(0, 0, 0, 0)\",\"rgba(0, 0, 0, 0)\",\"rgba(0, 0, 0, 0)\"]"
+    },
+    {
+      "name": "desktop-dark: results no horizontal overflow",
+      "ok": true,
+      "detail": "overflow=0"
+    },
+    {
+      "name": "desktop-dark: status chip toggles aria-pressed",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "desktop-dark: clear appears with active filter",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "desktop-dark: no CSP violations",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "desktop-dark: no uncaught page errors",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "mobile-light: no horizontal overflow",
+      "ok": true,
+      "detail": "overflow=0"
+    },
+    {
+      "name": "mobile-light: brand name not truncated",
+      "ok": true,
+      "detail": "clipped=0"
+    },
+    {
+      "name": "mobile-light: header single row",
+      "ok": true,
+      "detail": "h=65 lines=1"
+    },
+    {
+      "name": "mobile-light: search icon sits left inside input",
+      "ok": true,
+      "detail": "iconLeft=16 pl=44"
+    },
+    {
+      "name": "mobile-light: icon and kbd hint do not overlap",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "mobile-light: input is usable width",
+      "ok": true,
+      "detail": "w=316"
+    },
+    {
+      "name": "mobile-light: primary button text contrast >= 4.5",
+      "ok": true,
+      "detail": "ratio=5.17"
+    },
+    {
+      "name": "mobile-light: hero card surface renders (background + border)",
+      "ok": true,
+      "detail": "bg=rgba(255, 255, 255, 0.85) border=1px"
+    },
+    {
+      "name": "mobile-light: unfilled AdSense slot hidden, no overflow",
+      "ok": true,
+      "detail": "{\"unfilledDisplay\":\"none\",\"optimizedDisplay\":\"block\",\"overflow\":0}"
+    },
+    {
+      "name": "mobile-light: unfill-optimized AdSense slot stays visible",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "mobile-light: loading AdSense slot does not widen the page",
+      "ok": true,
+      "detail": "{\"overflow\":0,\"visibleWidths\":[195,179]}"
+    },
+    {
+      "name": "mobile-light: loading AdSense iframe stays partly in view (lazy load can fire)",
+      "ok": true,
+      "detail": "{\"overflow\":0,\"visibleWidths\":[195,179]}"
+    },
+    {
+      "name": "mobile-light: FAQ shows 7 questions matching FAQPage JSON-LD",
+      "ok": true,
+      "detail": "{\"questions\":7,\"ldQuestions\":7,\"answerContrast\":7.34,\"overflow\":0}"
+    },
+    {
+      "name": "mobile-light: FAQ answers readable (contrast >= 4.5) and no overflow",
+      "ok": true,
+      "detail": "{\"questions\":7,\"ldQuestions\":7,\"answerContrast\":7.34,\"overflow\":0,\"adSlotsSettledAfterMs\":0}"
+    },
+    {
+      "name": "mobile-light: tabs fit",
+      "ok": true,
+      "detail": "overflow=0 measuredWhileSearching=true"
+    },
+    {
+      "name": "mobile-light: results panels are white cards",
+      "ok": true,
+      "detail": "[\"rgb(255, 255, 255)\",\"rgb(255, 255, 255)\",\"rgb(255, 255, 255)\"]"
+    },
+    {
+      "name": "mobile-light: results no horizontal overflow",
+      "ok": true,
+      "detail": "overflow=0"
+    },
+    {
+      "name": "mobile-light: status chip toggles aria-pressed",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "mobile-light: clear appears with active filter",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "mobile-light: no CSP violations",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "mobile-light: no uncaught page errors",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "mobile-dark: no horizontal overflow",
+      "ok": true,
+      "detail": "overflow=0"
+    },
+    {
+      "name": "mobile-dark: brand name not truncated",
+      "ok": true,
+      "detail": "clipped=0"
+    },
+    {
+      "name": "mobile-dark: header single row",
+      "ok": true,
+      "detail": "h=65 lines=1"
+    },
+    {
+      "name": "mobile-dark: search icon sits left inside input",
+      "ok": true,
+      "detail": "iconLeft=16 pl=44"
+    },
+    {
+      "name": "mobile-dark: icon and kbd hint do not overlap",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "mobile-dark: input is usable width",
+      "ok": true,
+      "detail": "w=316"
+    },
+    {
+      "name": "mobile-dark: primary button text contrast >= 4.5",
+      "ok": true,
+      "detail": "ratio=5.88"
+    },
+    {
+      "name": "mobile-dark: hero card surface renders (background + border)",
+      "ok": true,
+      "detail": "bg=rgba(15, 23, 41, 0.85) border=1px"
+    },
+    {
+      "name": "mobile-dark: unfilled AdSense slot hidden, no overflow",
+      "ok": true,
+      "detail": "{\"unfilledDisplay\":\"none\",\"optimizedDisplay\":\"block\",\"overflow\":0}"
+    },
+    {
+      "name": "mobile-dark: unfill-optimized AdSense slot stays visible",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "mobile-dark: loading AdSense slot does not widen the page",
+      "ok": true,
+      "detail": "{\"overflow\":0,\"visibleWidths\":[195,179]}"
+    },
+    {
+      "name": "mobile-dark: loading AdSense iframe stays partly in view (lazy load can fire)",
+      "ok": true,
+      "detail": "{\"overflow\":0,\"visibleWidths\":[195,179]}"
+    },
+    {
+      "name": "mobile-dark: FAQ shows 7 questions matching FAQPage JSON-LD",
+      "ok": true,
+      "detail": "{\"questions\":7,\"ldQuestions\":7,\"answerContrast\":6.06,\"overflow\":0}"
+    },
+    {
+      "name": "mobile-dark: FAQ answers readable (contrast >= 4.5) and no overflow",
+      "ok": true,
+      "detail": "{\"questions\":7,\"ldQuestions\":7,\"answerContrast\":6.06,\"overflow\":0,\"adSlotsSettledAfterMs\":0}"
+    },
+    {
+      "name": "mobile-dark: tabs fit",
+      "ok": true,
+      "detail": "overflow=0 measuredWhileSearching=true"
+    },
+    {
+      "name": "mobile-dark: results panels are translucent cards",
+      "ok": true,
+      "detail": "[\"rgba(0, 0, 0, 0)\",\"rgba(0, 0, 0, 0)\",\"rgba(0, 0, 0, 0)\"]"
+    },
+    {
+      "name": "mobile-dark: results no horizontal overflow",
+      "ok": true,
+      "detail": "overflow=0"
+    },
+    {
+      "name": "mobile-dark: status chip toggles aria-pressed",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "mobile-dark: clear appears with active filter",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "mobile-dark: no CSP violations",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "mobile-dark: no uncaught page errors",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "mobile-pt: no horizontal overflow",
+      "ok": true,
+      "detail": "overflow=0"
+    },
+    {
+      "name": "mobile-pt: brand name not truncated",
+      "ok": true,
+      "detail": "clipped=0"
+    },
+    {
+      "name": "mobile-pt: header single row",
+      "ok": true,
+      "detail": "h=65 lines=1"
+    },
+    {
+      "name": "mobile-pt: search icon sits left inside input",
+      "ok": true,
+      "detail": "iconLeft=16 pl=44"
+    },
+    {
+      "name": "mobile-pt: icon and kbd hint do not overlap",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "mobile-pt: input is usable width",
+      "ok": true,
+      "detail": "w=316"
+    },
+    {
+      "name": "mobile-pt: primary button text contrast >= 4.5",
+      "ok": true,
+      "detail": "ratio=5.17"
+    },
+    {
+      "name": "mobile-pt: hero card surface renders (background + border)",
+      "ok": true,
+      "detail": "bg=rgba(255, 255, 255, 0.85) border=1px"
+    },
+    {
+      "name": "mobile-pt: FAQ shows 7 questions matching FAQPage JSON-LD",
+      "ok": true,
+      "detail": "{\"questions\":7,\"ldQuestions\":7,\"answerContrast\":7.34,\"overflow\":0}"
+    },
+    {
+      "name": "mobile-pt: FAQ answers readable (contrast >= 4.5) and no overflow",
+      "ok": true,
+      "detail": "{\"questions\":7,\"ldQuestions\":7,\"answerContrast\":7.34,\"overflow\":0,\"adSlotsSettledAfterMs\":0}"
+    },
+    {
+      "name": "mobile-pt: tabs fit",
+      "ok": true,
+      "detail": "overflow=0 measuredWhileSearching=true"
+    },
+    {
+      "name": "mobile-pt: results panels are white cards",
+      "ok": true,
+      "detail": "[\"rgb(255, 255, 255)\",\"rgb(255, 255, 255)\",\"rgb(255, 255, 255)\"]"
+    },
+    {
+      "name": "mobile-pt: results no horizontal overflow",
+      "ok": true,
+      "detail": "overflow=0"
+    },
+    {
+      "name": "mobile-pt: no CSP violations",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "mobile-pt: no uncaught page errors",
+      "ok": true,
+      "detail": ""
+    }
+  ],
+  "console": [
+    {
+      "variant": "desktop-light",
+      "console_errors": [
+        "Failed to load resource: the server responded with a status of 404 ()",
+        "Failed to load resource: the server responded with a status of 404 ()"
+      ]
+    },
+    {
+      "variant": "desktop-dark",
+      "console_errors": [
+        "Failed to load resource: the server responded with a status of 404 ()",
+        "Failed to load resource: the server responded with a status of 404 ()"
+      ]
+    },
+    {
+      "variant": "mobile-light",
+      "console_errors": [
+        "Failed to load resource: the server responded with a status of 404 ()"
+      ]
+    },
+    {
+      "variant": "mobile-dark",
+      "console_errors": [
+        "Failed to load resource: the server responded with a status of 404 ()"
+      ]
+    },
+    {
+      "variant": "mobile-pt",
+      "console_errors": [
+        "Failed to load resource: the server responded with a status of 404 ()"
+      ]
+    }
+  ]
+}

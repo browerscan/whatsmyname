@@ -1,0 +1,65 @@
+{
+  "release": "ads-20260924-geo",
+  "observed_at": "2026-09-24T05:47:00+00:00",
+  "status": "passed",
+  "production_url": "https://whatismyname.org/",
+  "worker_version": "acd3fda1-e7ce-4c3b-b115-28d191859356",
+  "previous_worker_version": "c699b90e-ad15-4ca5-b1a6-9998cf581612",
+  "deploy_receipt": "ops/deploy-receipts/20260924T053727Z-production-domain-deploy.json",
+  "scope": "GEO: /llm.txt alias of /llms.txt; .md page twins with text/markdown alternate Link; 9-locale home FAQ with matching FAQPage JSON-LD (also in Markdown home and llms-full.txt); IndexNow key.",
+  "checks": {
+    "typecheck": "passed",
+    "lint": "passed",
+    "unit_tests": {
+      "files": 26,
+      "passed": 462
+    },
+    "build": "passed",
+    "preview_browser": {
+      "agent_ready": {
+        "passed": 11,
+        "skipped": 7
+      },
+      "ai_markdown_regression": {
+        "passed": 6,
+        "skipped": 2
+      },
+      "ui_csp": {
+        "passed": 94,
+        "failed": 0
+      }
+    },
+    "public_browser": {
+      "agent_ready": {
+        "passed": 11,
+        "skipped": 7
+      },
+      "ui_csp": {
+        "passed": 93,
+        "failed": 0
+      }
+    },
+    "public_ads_matches": true,
+    "indexnow_key_live": true,
+    "indexnow_submission": {
+      "status": 202,
+      "urls": 9,
+      "scope": "home page in all nine locales"
+    }
+  },
+  "evidence": [
+    "validation.txt",
+    "source-manifest.json",
+    "agent-browser.json",
+    "markdown-browser.json",
+    "preview-ui-qa.json",
+    "preview-shots/",
+    "public-ui-qa.json",
+    "public-ui-qa-run1-failed.json",
+    "overflow-probe.json"
+  ],
+  "notes": [
+    "First production UI run (exec 20260924T053759Z) failed 3 checks: desktop-light/dark 'unfilled AdSense slot hidden, no overflow' measured overflow=517, and a 30 s networkidle page.goto timeout while ads loaded. overflow-probe.json (exec 20260924T054059Z) shows the 517 px comes from a real Auto ads slot while it is still loading (ins.adsbygoogle without data-ad-status, 0 px wide, 1,200 px iframe) for about 1 s after scrolling, whichever section is scrolled to; it then becomes unfilled (hidden) or unfill-optimized and overflow returns to 0. The new QA step scrolled to the FAQ right before the legacy slot check, so that check caught the transient. The QA now runs the legacy checks in their previous order and measures the FAQ once no slot is loading; rerun (exec 20260924T054356Z) passed 93/93.",
+    "Open, not part of this release: the loading-state ad slot briefly widens the desktop page by 517 px. The globals.css rule only covers data-ad-status=unfilled."
+  ]
+}

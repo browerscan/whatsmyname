@@ -1,0 +1,17 @@
+Release: ads-20260924-geo
+UTC: 2026-09-24T05:40:00+00:00
+Scope: GEO. /llm.txt serves the /llms.txt file (200, Link rel=canonical to /llms.txt). Every page has a Markdown twin at its URL + .md (/index.html.md for the home page, /de.md for a locale root; static public/*.md files untouched) and HTML pages advertise it with Link rel="alternate" type="text/markdown". Home page FAQ (7 questions, 9 locales) rendered as visible text plus FAQPage JSON-LD from one source (content/faq.ts), also in the Markdown home page and llms-full.txt. llms.txt and SKILL.md document the .md twins. IndexNow key file public/4e07bd1ed7bdfc1a44bbc34248dc43e7.txt plus scripts/indexnow-submit.mjs. Everything else identical to ads-20260923-panels.
+Baseline: production c699b90e-ad15-4ca5-b1a6-9998cf581612 (ads-20260923-panels), source /tmp/whatismyname-panels-20260923.
+Source: /tmp/whatismyname-geo-20260924. Exact 13-file delta in source-manifest.json.
+SOURCE_COMMIT_3a9ba18
+OpenClaw workspace: /Users/openclaw/test-workspace/whatismyname-geo-rel-20260924 (dependencies cloned from the byte-identical lockfile of whatismyname-panels-rel-20260923).
+Checks: TypeScript passed; ESLint passed; Vitest 26 files / 462 tests passed (first run caught two test bugs: a Latin length threshold on CJK answers and a next-intl/server mock missing getRequestConfig; both fixed in the tests, no product change).
+Next production build + OpenNext Cloudflare + Wrangler dry-run bundle + packaging passed. Middleware 91.6 kB (was 89.9 kB).
+CLOUDFLARE_BUILD_PASS
+ADS_TXT_SHA256_MATCH
+Worker SHA256: 6da29fe358529c4ca85f66bf6a010e2839765c8ec84f693c645d6ba57e4ed3e3
+ads.txt SHA256: bd958ae2b7bba074f3cf17b84c6dd399fd7e0828fa0c91a9aff62ba74a3aa1a1
+OpenClaw build receipt: /Users/openclaw/artifacts/whatismyname-geo-rel-20260924/exec/20260924T052836Z
+Collected bundle: ~/.codex/tmp/openclaw-collect/whatismyname-org-ads-20260924-geo
+Preview browser (packaged Worker, served locally on OpenClaw): agent-ready 11 passed / 7 skipped (new: /llm.txt, .md twins incl. static README untouched, text/markdown alternate Link, FAQ visible = FAQPage JSON-LD on /de desktop+mobile); ai-markdown 6 passed / 2 production-only skipped; UI/CSP QA 94/94 incl. FAQ checks on 5 variants (7 questions = 7 JSON-LD entries, answer contrast 7.34 light / 6.06 dark, no overflow). Receipt: /Users/openclaw/artifacts/whatismyname-geo-rel-20260924/exec/20260924T052927Z. Screenshots: preview-shots/.
+Deployment approval: user asked on 2026-09-24 to add /llm.txt and carry out the remaining GEO work.

@@ -1,0 +1,32 @@
+{
+ "baseline_release": "ads-20260923-panels",
+ "baseline_version": "c699b90e-ad15-4ca5-b1a6-9998cf581612",
+ "source_commit": "3a9ba185f492b9e96615fc927e65a68a67613a26",
+ "baseline_source": "/tmp/whatismyname-panels-20260923",
+ "source": "/tmp/whatismyname-geo-20260924",
+ "changed_files": {
+  "middleware.ts": "111f7b45e446b613ee2d3ceeed61914465edbde3439497bf92540901ce8787e2",
+  "app/[locale]/page.tsx": "47d1bc1cd83ca2043d22f4bf6cefcf5ccbdca0e980c6d0138e3d65b1f3cedd91",
+  "lib/agent/markdown.ts": "834d9f1aceb06a4ddc0d51ea9ac7b5561ea483b112aa0ecee34d9213cabca3d4",
+  "lib/agent/documents.ts": "70c05205f27ab775ffd6a3d87574268e35c929a23038974bb01d0ba84c5c1771",
+  "__tests__/unit/lib/agent.test.ts": "67e70d5830b507c20059ed02ce3006dac46a7ae2736ca16b49081447fc3e040f",
+  "__tests__/e2e/agent-ready.spec.ts": "9695d2e37471c938c901b58c1033547c4a2a698b99d749914e2e963eb179eff1",
+  "__tests__/integration/components/HomeFaq.test.tsx": "b68d80a07c8274f7ce6d1f3825411f90c8c203892b94de7c55fe92c6261bc897",
+  "app/llm.txt/route.ts": "e188dd6e5f32150861b23f6a5e6a9c3a0d85e044d801ac34fc07e52aa91886b9",
+  "components/features/HomeFaq.tsx": "cafbbc84a7087fcb0cceb0a2cdb0e9037b22a715680619e020f2d9e36b51722d",
+  "content/faq.ts": "efa37de43aadd131544d9079a1cc011461bba41c0894f589ea812006b2f847ce",
+  "lib/agent/markdown-path.ts": "80e22c17e3db2c3ae771c038cfe78593f68f8e89b2f4422716db0f5157119b2b",
+  "public/4e07bd1ed7bdfc1a44bbc34248dc43e7.txt": "48c7a2896f0f35473a51d8abac2205fbdc07305e9d4edfcd0288ea26eb48e6e1",
+  "scripts/indexnow-submit.mjs": "7c24e847a5751ce0820ced9925bf048e4c8ab4722f54494f7427b8aa75bd2335"
+ },
+ "baseline_files": {
+  "middleware.ts": "fb3fed5d5977fe891754ab3696f703671bea83060273ef9bd7572417b14f8235",
+  "app/[locale]/page.tsx": "34df44ba9464ed31ebe9d5a03df8d364a99863783b65aa4cf48dcc77d991f016",
+  "lib/agent/markdown.ts": "682ae50c9662f7e68c18295375ffe6be609c337f3b9700c8af58a4630aedc08d",
+  "lib/agent/documents.ts": "138e68f793ed71577505f76e8091cc96ac9df3fb4d0e6e010b0eed15811b7549",
+  "__tests__/unit/lib/agent.test.ts": "5d19a564f2d618ec0bcbb81bebdc9fa479f0c8a037a5fef9081c5913c7e04f50",
+  "__tests__/e2e/agent-ready.spec.ts": "0b85112e4ae2ca7367cf5361b33cfb15a49b5fee25d05c21bffd75453e265f91"
+ },
+ "deleted_files": [],
+ "note": "Production source of ads-20260923-panels plus GEO: /llm.txt alias of /llms.txt, .md page twins (llms.txt convention) with a text/markdown alternate Link on HTML pages, a 9-locale home FAQ with matching FAQPage JSON-LD (also in the Markdown home and llms-full.txt), and an IndexNow key file; nothing else changed."
+}

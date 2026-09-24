@@ -1,0 +1,18 @@
+Release: ads-20260924-adclip
+UTC: 2026-09-24T09:15:00+00:00
+Scope: app/globals.css only. `.google-auto-placed { overflow-x: clip; }` so a lazy Auto ads slot that is still loading (ins.adsbygoogle without data-ad-status, 0 px wide, holding a 1,200 px iframe) cannot widen the page. Production before this release: desktop overflow 517 px in 4 of 84 samples while scrolling the home page (baseline-slot-dom-probe.json). Everything else identical to ads-20260924-geo.
+Baseline: production acd3fda1-e7ce-4c3b-b115-28d191859356 (ads-20260924-geo), source /tmp/whatismyname-geo-20260924.
+Source: /tmp/whatismyname-adclip-20260924. Exact 1-file delta in source-manifest.json.
+SOURCE_COMMIT_3a9ba18
+OpenClaw workspace: /Users/openclaw/test-workspace/whatismyname-adclip-rel-20260924 (dependencies cloned from the byte-identical lockfile of whatismyname-geo-rel-20260924).
+Placement: Auto ads inserts div.google-auto-placed inside the content container, inside main, in the layout root and directly under body, so the rule sits on the wrapper. Isolated Chromium repro (clip-repro.log): wrapper overflow-x:clip gives overflow 0 with the loading iframe still intersecting the viewport (683x280 desktop, 195x280 mobile); overflow:clip would zero its height; clip on main, the layout root or body leaves 517 px.
+Checks: TypeScript passed; ESLint passed; Vitest 26 files / 462 tests passed.
+Next production build + OpenNext Cloudflare + Wrangler dry-run bundle + packaging passed. Compiled CSS contains .google-auto-placed{overflow-x:clip}.
+CLOUDFLARE_BUILD_PASS
+ADS_TXT_SHA256_MATCH
+Worker SHA256: aa95480d0d5c9e6d21b391380eb11f2bb725a929640a8f5db1683a2bd955719e
+ads.txt SHA256: bd958ae2b7bba074f3cf17b84c6dd399fd7e0828fa0c91a9aff62ba74a3aa1a1
+OpenClaw build receipt: /Users/openclaw/artifacts/whatismyname-adclip-rel-20260924/exec/20260924T085743Z
+Collected bundle: ~/.codex/tmp/openclaw-collect/whatismyname-org-ads-20260924-adclip
+Preview browser (packaged Worker, served locally on OpenClaw): agent-ready 11 passed / 7 skipped; ai-markdown 6 passed / 2 skipped (exec 20260924T085850Z); UI/CSP 102/102 (exec 20260924T090608Z) incl. new loading-slot checks on 4 variants: overflow 0, iframe visible width 683/624 desktop, 195/179 mobile. The first UI run (preview-ui-qa-run1-check-bug.json) reported visible width 0 because html has scroll-behavior: smooth and the check observed before scrollIntoView landed; the check now scrolls instantly and waits two frames. No product change between the runs.
+Deployment approval: user asked on 2026-09-24 to fix the ad overflow and commit with [skip ci].
