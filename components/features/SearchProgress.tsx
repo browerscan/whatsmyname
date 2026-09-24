@@ -24,7 +24,7 @@ export function SearchProgress({
   }
 
   return (
-    <div className="mb-6 rounded-2xl bg-gradient-subtle border border-border/30 p-6 shadow-custom-sm">
+    <div className="mb-6 rounded-2xl bg-card border border-border/80 dark:bg-transparent dark:bg-gradient-subtle dark:border-border/30 p-5 shadow-custom-sm sm:p-6">
       <div className="flex items-center justify-between mb-3">
         <div className="flex items-center gap-3">
           {isSearching && (
@@ -37,15 +37,15 @@ export function SearchProgress({
             {isSearching ? tStatus("searching") : tStatus("complete")}
           </h3>
         </div>
-        <div className="text-sm font-medium text-muted-foreground">
+        <div className="text-sm font-medium tabular-nums text-muted-foreground">
           {formatNumber(completed)} / {formatNumber(total)} ({percentage}%)
         </div>
       </div>
 
       {/* Progress Bar */}
-      <div className="relative w-full h-2 bg-muted/30 rounded-full overflow-hidden">
+      <div className="relative w-full h-2 bg-muted rounded-full overflow-hidden">
         <div
-          className="absolute top-0 left-0 h-full bg-gradient-to-r from-primary via-primary/80 to-primary transition-all duration-300 ease-out"
+          className="absolute top-0 left-0 h-full rounded-full bg-gradient-primary transition-all duration-300 ease-out"
           style={{ width: `${percentage}%` }}
           role="progressbar"
           aria-valuenow={percentage}

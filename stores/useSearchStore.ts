@@ -53,12 +53,18 @@ export const useSearchStore = create<SearchState>((set) => ({
 
   addWhatsMyNameResult: (result: SearchResult) =>
     set((state) => ({
-      whatsMyNameResults: [...state.whatsMyNameResults, result],
+      whatsMyNameResults: result.isNSFW
+        ? state.whatsMyNameResults
+        : [...state.whatsMyNameResults, result],
     })),
 
   addWhatsMyNameResults: (results: SearchResult[]) =>
     set((state) => ({
-      whatsMyNameResults: state.whatsMyNameResults.concat(results),
+      // Covers both streaming batches and previously cached results before
+      // they reach the UI, exports, or AI context. Progress counts all checks.
+      whatsMyNameResults: state.whatsMyNameResults.concat(
+        results.filter((result) => !result.isNSFW),
+      ),
     })),
 
   setGoogleResponse: (response: GoogleSearchResponse) =>

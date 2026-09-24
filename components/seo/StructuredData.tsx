@@ -31,7 +31,6 @@ export async function StructuredData() {
       "OSINT capabilities",
     ],
     browserRequirements: "Requires JavaScript. Requires HTML5.",
-    softwareVersion: "1.0",
     author: {
       "@type": "Organization",
       name: "What is my Name Team",
@@ -48,19 +47,6 @@ export async function StructuredData() {
     url: baseUrl,
     description: t("description"),
     inLanguage: [...locales],
-    potentialAction: {
-      "@type": "SearchAction",
-      target: {
-        "@type": "EntryPoint",
-        urlTemplate: `${baseUrl}/?username={search_term_string}`,
-      },
-      "query-input": {
-        "@type": "PropertyValueSpecification",
-        valueRequired: true,
-        valueName: "search_term_string",
-        description: "Username to search across platforms",
-      },
-    },
     publisher: {
       "@type": "Organization",
       name: "What is my Name",
@@ -87,11 +73,6 @@ export async function StructuredData() {
       height: 630,
     },
     description: t("description"),
-    foundingDate: "2024",
-    sameAs: [
-      "https://github.com/whatismyname",
-      "https://twitter.com/whatismyname",
-    ],
     contactPoint: {
       "@type": "ContactPoint",
       contactType: "Customer Support",
@@ -110,54 +91,6 @@ export async function StructuredData() {
         position: 1,
         name: "Home",
         item: baseUrl,
-      },
-    ],
-  };
-
-  // FAQPage Schema for educational content
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: [
-      {
-        "@type": "Question",
-        name: "What is username search and why is it important?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "Username search allows you to find accounts across multiple platforms using a single username. It's important for digital identity management, online security audits, OSINT investigations, and verifying your digital footprint across the internet.",
-        },
-      },
-      {
-        "@type": "Question",
-        name: "How many platforms does What is my Name search?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "What is my Name searches across 1,400+ platforms including social media networks, forums, gaming platforms, professional networks, and various online communities.",
-        },
-      },
-      {
-        "@type": "Question",
-        name: "Is What is my Name free to use?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "Yes, What is my Name is completely free to use. You can search for usernames across all supported platforms without any cost or registration required.",
-        },
-      },
-      {
-        "@type": "Question",
-        name: "What is OSINT and how does this tool help?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "OSINT (Open Source Intelligence) is the collection and analysis of publicly available information. What is my Name helps with OSINT by aggregating username presence across platforms, helping researchers, security professionals, and individuals understand their online presence.",
-        },
-      },
-      {
-        "@type": "Question",
-        name: "How can I protect my digital identity?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "To protect your digital identity: regularly audit your online presence using tools like What is my Name, use unique usernames for sensitive accounts, enable two-factor authentication, review privacy settings on all platforms, and remove accounts you no longer use.",
-        },
       },
     ],
   };
@@ -196,13 +129,6 @@ export async function StructuredData() {
         }}
       />
 
-      {/* FAQPage Schema */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(faqSchema),
-        }}
-      />
     </>
   );
 }

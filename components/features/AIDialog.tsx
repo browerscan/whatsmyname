@@ -18,6 +18,7 @@ import { useTranslations } from "next-intl";
 import { useAIStore, useSearchStore } from "@/stores";
 import { useAIStream } from "@/hooks/useAIStream";
 import { AIMessage, SearchResult } from "@/types";
+import { AIMessageContent } from "./AIMessageContent";
 
 const AI_TEMPLATE_ITEMS = [
   { id: "value_assessment", icon: Sparkles },
@@ -379,9 +380,13 @@ export function AIDialog() {
                         </span>
                       </div>
                     )}
-                    <div className="leading-relaxed whitespace-pre-wrap text-[15px]">
-                      {message.content}
-                    </div>
+                    {message.role === "assistant" ? (
+                      <AIMessageContent content={message.content} />
+                    ) : (
+                      <div className="leading-relaxed whitespace-pre-wrap break-words text-[15px]">
+                        {message.content}
+                      </div>
+                    )}
                   </div>
                 </div>
               ))}

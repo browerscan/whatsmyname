@@ -182,7 +182,7 @@ describe("FilterBar Component", () => {
     });
   });
 
-  it("should display NSFW toggle checkbox", () => {
+  it("does not offer an adult-content opt-in", () => {
     render(
       <FilterBar
         filters={defaultFilters}
@@ -191,28 +191,20 @@ describe("FilterBar Component", () => {
       />,
     );
 
-    const checkbox = screen.getByRole("checkbox");
-    expect(checkbox).toBeVisible();
-    expect(screen.getByText("Show NSFW")).toBeVisible();
+    expect(screen.queryByRole("checkbox")).not.toBeInTheDocument();
+    expect(screen.queryByText("Show NSFW")).not.toBeInTheDocument();
   });
 
-  it("should toggle NSFW filter when checkbox is clicked", async () => {
-    const user = userEvent.setup();
+  it("does not expose an opt-in for stale NSFW preferences", () => {
     render(
       <FilterBar
-        filters={defaultFilters}
+        filters={{ ...defaultFilters, showNSFW: true }}
         onFilterChange={mockOnFilterChange}
         categories={categories}
       />,
     );
 
-    const checkbox = screen.getByRole("checkbox");
-    await user.click(checkbox);
-
-    expect(mockOnFilterChange).toHaveBeenCalledWith({
-      ...defaultFilters,
-      showNSFW: true,
-    });
+    expect(screen.queryByText("Show NSFW")).not.toBeInTheDocument();
   });
 
   it("should show clear button when filters are active", () => {
@@ -329,7 +321,7 @@ describe("FilterBar Component", () => {
     expect(codingButton).toBeVisible();
   });
 
-  it("should have accessible checkbox label", () => {
+  it("keeps the obsolete adult-content control out of the accessible tree", () => {
     render(
       <FilterBar
         filters={defaultFilters}
@@ -338,10 +330,7 @@ describe("FilterBar Component", () => {
       />,
     );
 
-    const checkbox = screen.getByRole("checkbox");
-    const label = screen.getByText("Show NSFW").closest("label");
-
-    expect(label).toContainElement(checkbox);
+    expect(screen.queryByRole("checkbox")).not.toBeInTheDocument();
   });
 
   it("should have accessible search input", () => {

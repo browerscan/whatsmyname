@@ -16,7 +16,7 @@ describe("AI Analyze API", () => {
     testCounter++;
     process.env = { ...originalEnv };
     process.env.OPENROUTER_API_KEY = "test-openrouter-key";
-    process.env.OPENROUTER_MODEL = "deepseek/deepseek-chat-v3.1:free";
+    process.env.OPENROUTER_MODEL = "minimax/minimax-m3:free";
     process.env = { ...process.env, NODE_ENV: "test" };
 
     // Mock fetch globally
@@ -211,6 +211,91 @@ describe("AI Analyze API", () => {
         body: expect.stringContaining('"stream":true'),
       }),
     );
+  });
+
+  it("should fall through to the next model when one is delisted", async () => {
+    process.env.OPENROUTER_MODEL = "dead/model:free,live/model:free";
+
+    mockFetch.mockResolvedValueOnce({
+      ok: false,
+      status: 404,
+      statusText: "Not Found",
+      text: async () => "This model is unavailable for free.",
+    });
+    mockFetch.mockResolvedValueOnce({
+      ok: true,
+      status: 200,
+      body: new ReadableStream({
+        start(controller) {
+          controller.close();
+        },
+      }),
+    });
+
+    const request = new NextRequest("http://localhost:3000/api/ai/analyze", {
+      method: "POST",
+      headers: { "x-forwarded-for": `127.0.0.${testCounter}` },
+      body: JSON.stringify({
+        messages: [{ role: "user", content: "Hello" }],
+      }),
+    });
+
+    const response = await POST(request);
+
+    expect(response.status).toBe(200);
+    expect(mockFetch).toHaveBeenCalledTimes(2);
+    expect(mockFetch.mock.calls[0][1].body).toContain('"dead/model:free"');
+    expect(mockFetch.mock.calls[1][1].body).toContain('"live/model:free"');
+  });
+
+  it("should stop retrying on account-level failures", async () => {
+    process.env.OPENROUTER_MODEL = "first/model:free,second/model:free";
+
+    mockFetch.mockResolvedValueOnce({
+      ok: false,
+      status: 401,
+      statusText: "Unauthorized",
+      text: async () => "Unauthorized",
+    });
+
+    const request = new NextRequest("http://localhost:3000/api/ai/analyze", {
+      method: "POST",
+      headers: { "x-forwarded-for": `127.0.0.${testCounter}` },
+      body: JSON.stringify({
+        messages: [{ role: "user", content: "Hello" }],
+      }),
+    });
+
+    const response = await POST(request);
+
+    expect(response.status).toBe(401);
+    expect(mockFetch).toHaveBeenCalledTimes(1);
+  });
+
+  it("should surface the last failure when every model fails", async () => {
+    process.env.OPENROUTER_MODEL = "a/one:free,b/two:free";
+
+    mockFetch.mockResolvedValue({
+      ok: false,
+      status: 429,
+      statusText: "Too Many Requests",
+      text: async () => "rate limited",
+    });
+
+    const request = new NextRequest("http://localhost:3000/api/ai/analyze", {
+      method: "POST",
+      headers: { "x-forwarded-for": `127.0.0.${testCounter}` },
+      body: JSON.stringify({
+        messages: [{ role: "user", content: "Hello" }],
+      }),
+    });
+
+    const response = await POST(request);
+    const data = await response.json();
+
+    expect(response.status).toBe(429);
+    expect(data.error).toContain("OpenRouter API error");
+    expect(mockFetch).toHaveBeenCalledTimes(2);
   });
 
   it("should handle OpenRouter API errors", async () => {

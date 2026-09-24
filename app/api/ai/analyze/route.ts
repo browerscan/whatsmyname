@@ -16,6 +16,10 @@ import {
   upstreamApiErrorResponse,
 } from "@/lib/api-error-handler";
 import { getEnvVar } from "@/lib/cloudflare";
+import {
+  isAccountLevelOpenRouterError,
+  parseOpenRouterModels,
+} from "@/lib/openrouter";
 
 const OPENROUTER_API_URL = "https://openrouter.ai/api/v1/chat/completions";
 const AI_ANALYZE_CACHE_CONTROL = "private, no-store, no-transform";
@@ -78,8 +82,7 @@ export async function POST(request: NextRequest) {
 
     // Validate API credentials
     const apiKey = getEnvVar("OPENROUTER_API_KEY");
-    const model =
-      getEnvVar("OPENROUTER_MODEL") || "deepseek/deepseek-chat-v3.1:free";
+    const models = parseOpenRouterModels(getEnvVar("OPENROUTER_MODEL"));
 
     if (!apiKey) {
       return configurationErrorResponse(
@@ -94,33 +97,58 @@ export async function POST(request: NextRequest) {
       content: msg.content,
     }));
 
-    // Call OpenRouter API with streaming
-    const response = await fetch(OPENROUTER_API_URL, {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${apiKey}`,
-        "Content-Type": "application/json",
-        "HTTP-Referer":
-          request.headers.get("referer") || "https://whatismyname.org",
-        "X-Title": "whatismyname",
-      },
-      body: JSON.stringify({
-        model,
-        messages: openRouterMessages,
-        stream: true,
-        temperature: 0.7,
-        max_tokens: 2000,
-      }),
-      signal: AbortSignal.timeout(60000), // 60 seconds timeout
-    });
+    // Call OpenRouter API with streaming.
+    // Free models are delisted or rate-limited without notice, so walk the
+    // candidate list until one accepts the request.
+    let response: Response | undefined;
+    let lastFailure: { status: number; statusText: string } | undefined;
 
-    if (!response.ok) {
-      const errorText = await response.text();
-      console.error("OpenRouter API error:", errorText);
+    for (const model of models) {
+      const candidateResponse = await fetch(OPENROUTER_API_URL, {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${apiKey}`,
+          "Content-Type": "application/json",
+          "HTTP-Referer":
+            request.headers.get("referer") || "https://whatismyname.org",
+          "X-Title": "whatismyname",
+        },
+        body: JSON.stringify({
+          model,
+          messages: openRouterMessages,
+          stream: true,
+          temperature: 0.7,
+          max_tokens: 2000,
+        }),
+        signal: AbortSignal.timeout(60000), // 60 seconds timeout
+      });
+
+      if (candidateResponse.ok) {
+        response = candidateResponse;
+        break;
+      }
+
+      const errorText = await candidateResponse.text();
+      console.error(
+        `OpenRouter API error (model ${model}, status ${candidateResponse.status}):`,
+        errorText,
+      );
+      lastFailure = {
+        status: candidateResponse.status,
+        statusText: candidateResponse.statusText,
+      };
+
+      // Key, billing and permission failures are not model-specific.
+      if (isAccountLevelOpenRouterError(candidateResponse.status)) {
+        break;
+      }
+    }
+
+    if (!response) {
       return upstreamApiErrorResponse(
         "OpenRouter",
-        response.statusText,
-        response.status,
+        lastFailure?.statusText || "No model available",
+        lastFailure?.status || 502,
         createAiAnalyzeHeaders(),
       );
     }

@@ -115,21 +115,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ]);
 
-  // Add root URL (redirects to default locale)
-  const rootPage: MetadataRoute.Sitemap = [
-    {
-      url: baseUrl,
-      lastModified: currentDate,
-      changeFrequency: "weekly" as const,
-      priority: 1.0,
-      alternates: {
-        languages: getLocaleAlternates(baseUrl),
-      },
-    },
-  ];
-
-  return [
-    ...rootPage,
+  const pages: MetadataRoute.Sitemap = [
     ...localePages,
     ...categoriesPages,
     ...platformPages,
@@ -137,4 +123,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...blogPages,
     ...legalPages,
   ];
+  return Array.from(new Map(pages.map((page) => [page.url, page])).values());
 }

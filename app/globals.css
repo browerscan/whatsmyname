@@ -13,21 +13,21 @@
     /* Modern HSL-based color system for tech aesthetic */
     --color-background: 0 0% 100%;
     --color-foreground: 222 47% 11%;
-    --color-muted: 215 16% 47%;
-    --color-muted-foreground: 217 10% 35%;
-    --color-border: 214 32% 91%;
-    --color-input: 214 32% 91%;
+    --color-muted: 214 32% 93%;
+    --color-muted-foreground: 215 16% 35%;
+    --color-border: 214 32% 88%;
+    --color-input: 214 32% 86%;
     --color-card: 0 0% 100%;
     --color-card-foreground: 222 47% 11%;
 
     /* Primary electric blue palette - modern tech feel */
-    --color-primary: 217 91% 60%;
+    --color-primary: 221 83% 53%;
     --color-primary-foreground: 0 0% 100%;
-    --color-primary-light: 217 91% 70%;
-    --color-primary-dark: 217 91% 50%;
+    --color-primary-light: 217 91% 60%;
+    --color-primary-dark: 224 76% 48%;
 
     /* Accent cyan for tech vibes */
-    --color-accent: 189 94% 43%;
+    --color-accent: 199 89% 40%;
     --color-accent-foreground: 0 0% 100%;
     --color-secondary: 210 40% 96%;
     --color-secondary-foreground: 222 47% 11%;
@@ -39,14 +39,14 @@
     --color-warning: 38 92% 50%;
 
     /* Ring for focus states */
-    --color-ring: 217 91% 60%;
+    --color-ring: 221 83% 53%;
 
     /* Modern gradient backgrounds */
     --gradient-hero: linear-gradient(
       135deg,
-      hsl(217, 91%, 97%) 0%,
-      hsl(189, 94%, 98%) 50%,
-      hsl(0, 0%, 100%) 100%
+      hsl(214, 45%, 96%) 0%,
+      hsl(210, 40%, 97%) 50%,
+      hsl(220, 30%, 98%) 100%
     );
     --gradient-card: linear-gradient(
       135deg,
@@ -55,27 +55,27 @@
     );
     --gradient-primary: linear-gradient(
       135deg,
-      hsl(217, 91%, 60%) 0%,
-      hsl(189, 94%, 50%) 100%
+      hsl(221, 83%, 53%) 0%,
+      hsl(199, 89%, 42%) 100%
     );
     --gradient-subtle: linear-gradient(
       135deg,
-      hsla(217, 91%, 60%, 0.08) 0%,
-      hsla(189, 94%, 43%, 0.03) 100%
+      hsla(221, 83%, 53%, 0.06) 0%,
+      hsla(199, 89%, 42%, 0.02) 100%
     );
     --gradient-glow: radial-gradient(
       ellipse 80% 50% at 50% -20%,
-      hsla(217, 91%, 60%, 0.15),
+      hsla(221, 83%, 53%, 0.1),
       transparent
     );
 
     /* Enhanced shadows with colored glow for tech feel */
-    --shadow-sm: 0 2px 8px hsla(217, 91%, 60%, 0.08);
-    --shadow-md: 0 8px 24px hsla(217, 91%, 60%, 0.12);
-    --shadow-lg: 0 20px 50px hsla(217, 91%, 60%, 0.15);
-    --shadow-xl: 0 30px 80px hsla(217, 91%, 60%, 0.2);
-    --shadow-glow: 0 0 40px hsla(217, 91%, 60%, 0.3);
-    --shadow-glow-cyan: 0 0 40px hsla(189, 94%, 43%, 0.3);
+    --shadow-sm: 0 1px 2px hsla(222, 47%, 11%, 0.04), 0 2px 8px hsla(221, 50%, 40%, 0.06);
+    --shadow-md: 0 2px 4px hsla(222, 47%, 11%, 0.04), 0 8px 24px hsla(221, 50%, 40%, 0.08);
+    --shadow-lg: 0 4px 8px hsla(222, 47%, 11%, 0.04), 0 20px 50px hsla(221, 50%, 40%, 0.1);
+    --shadow-xl: 0 30px 80px hsla(221, 50%, 40%, 0.14);
+    --shadow-glow: 0 0 32px hsla(221, 83%, 53%, 0.25);
+    --shadow-glow-cyan: 0 0 32px hsla(199, 89%, 42%, 0.25);
 
     /* Border radius */
     --radius: 0.75rem;
@@ -316,26 +316,26 @@
 
   /* Glassmorphism effect */
   .glass {
-    background: hsla(var(--color-background), 0.7);
+    background: hsl(var(--color-background) / 0.7);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    border: 1px solid hsla(var(--color-border), 0.5);
+    border: 1px solid hsl(var(--color-border) / 0.5);
   }
 
   .glass-strong {
-    background: hsla(var(--color-background), 0.85);
+    background: hsl(var(--color-background) / 0.85);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    border: 1px solid hsla(var(--color-border), 0.6);
+    border: 1px solid hsl(var(--color-border) / 0.6);
   }
 
   /* Tech grid pattern */
   .tech-grid {
     background-image:
-      linear-gradient(hsla(var(--color-border), 0.3) 1px, transparent 1px),
+      linear-gradient(hsl(var(--color-border) / 0.3) 1px, transparent 1px),
       linear-gradient(
         90deg,
-        hsla(var(--color-border), 0.3) 1px,
+        hsl(var(--color-border) / 0.3) 1px,
         transparent 1px
       );
     background-size: 40px 40px;
@@ -469,4 +469,11 @@
   .delay-500 {
     animation-delay: 500ms;
   }
+}
+
+/* AdSense collapses an unfilled Auto ads slot to zero width but keeps its
+   1200px iframe, which widens the page. Google's documented fix; slots marked
+   "unfill-optimized" carry AdSense's own replacement content and stay visible. */
+ins.adsbygoogle[data-ad-status="unfilled"] {
+  display: none !important;
 }

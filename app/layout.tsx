@@ -1,6 +1,5 @@
 import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
-import Script from "next/script";
 import { getLocale, getTranslations } from "next-intl/server";
 import "./globals.css";
 import { getLocaleAlternates, getLocalizedUrl } from "@/i18n/request";
@@ -126,8 +125,6 @@ export async function generateMetadata(): Promise<Metadata> {
       title: t("title"),
       description: t("description"),
       images: [`${baseUrl}/images/og-image.svg`],
-      creator: "@whatismyname",
-      site: "@whatismyname",
     },
 
     // Language alternates
@@ -167,12 +164,10 @@ export default async function RootLayout({
   return (
     <html lang={locale} suppressHydrationWarning>
       <head>
-        <Script
-          id="adsense-script"
+        <script
           async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7152359349184850"
           crossOrigin="anonymous"
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8231175075553786"
-          strategy="beforeInteractive"
         />
         {/* Resource hints for Core Web Vitals */}
         <link rel="preconnect" href="https://api.whatsmynameapp.org" />

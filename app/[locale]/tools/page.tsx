@@ -37,7 +37,7 @@ export async function generateMetadata({
   return {
     title: tSeo("title"),
     description: tSeo("description"),
-    keywords: ["username tools", "username generator", "username ideas"],
+    keywords: ["username search", "username availability", "public profiles"],
     authors: [{ name: "What is my Name Team" }],
     creator: "What is my Name",
     publisher: "What is my Name",
@@ -74,7 +74,7 @@ export default async function ToolsPage({ params }: ToolsPageProps) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "pages.tools" });
   const copy = getToolsPageCopy(locale);
-  const tools = getToolsCatalog(locale);
+  const tools = getToolsCatalog(locale).filter((tool) => !tool.comingSoon && tool.href);
   const baseUrl =
     process.env.NEXT_PUBLIC_BASE_URL || "https://whatismyname.org";
   const canonicalUrl = getLocalizedUrl(baseUrl, locale, "/tools");
@@ -137,11 +137,6 @@ export default async function ToolsPage({ params }: ToolsPageProps) {
                         <h2 className="text-xl font-semibold group-hover:text-primary transition-colors">
                           {tool.name}
                         </h2>
-                        {tool.comingSoon && (
-                          <span className="px-2 py-0.5 rounded-full bg-primary/10 text-primary text-xs font-medium">
-                            {t("coming_soon")}
-                          </span>
-                        )}
                       </div>
                       <p className="text-sm text-muted-foreground line-clamp-2 mb-3">{tool.description}</p>
                       <div className="flex flex-wrap gap-1">
@@ -168,10 +163,6 @@ export default async function ToolsPage({ params }: ToolsPageProps) {
             <p className="text-muted-foreground leading-relaxed mb-4">{copy.intro}</p>
             <h3 className="text-xl font-semibold mt-6 mb-3 text-foreground">{t("checker_title")}</h3>
             <p className="text-muted-foreground leading-relaxed mb-4">{copy.checker}</p>
-            <h3 className="text-xl font-semibold mt-6 mb-3 text-foreground">{t("generator_title")}</h3>
-            <p className="text-muted-foreground leading-relaxed mb-4">{copy.generator}</p>
-            <h3 className="text-xl font-semibold mt-6 mb-3 text-foreground">{t("ideas_title")}</h3>
-            <p className="text-muted-foreground leading-relaxed mb-4">{copy.ideas}</p>
           </div>
         </article>
 

@@ -274,4 +274,122 @@ describe("WhatsMyName Search API", () => {
     );
     expect(mockFetch).not.toHaveBeenCalled();
   });
+
+  describe("upstream timeouts", () => {
+    const encoder = new TextEncoder();
+    const resultLine = (i: number) => encoder.encode(`{"source":"site${i}"}\n`);
+
+    beforeEach(() => {
+      vi.useFakeTimers({ toFake: ["setTimeout", "clearTimeout"] });
+      vi.spyOn(console, "error").mockImplementation(() => {});
+    });
+
+    afterEach(() => {
+      vi.useRealTimers();
+    });
+
+    // Like real fetch: aborting the request signal errors the response body.
+    function mockUpstream(
+      pull: (controller: ReadableStreamDefaultController<Uint8Array>) => Promise<void> | void,
+    ) {
+      let signal: AbortSignal | undefined;
+      mockFetch.mockImplementationOnce((_url: string, init: RequestInit) => {
+        signal = init.signal ?? undefined;
+        const body = new ReadableStream<Uint8Array>({
+          start(controller) {
+            signal?.addEventListener("abort", () => controller.error(signal?.reason));
+          },
+          pull,
+        });
+        return Promise.resolve({ ok: true, status: 200, body });
+      });
+      return () => signal;
+    }
+
+    function searchRequest(ip: string) {
+      return new NextRequest(
+        "http://localhost:3000/api/search/whatsmyname?username=test",
+        { headers: { "x-forwarded-for": ip } },
+      );
+    }
+
+    async function readLines(response: Response) {
+      const reader = response.body!.getReader();
+      const decoder = new TextDecoder();
+      let text = "";
+      let error: unknown = null;
+      try {
+        while (true) {
+          const { done, value } = await reader.read();
+          if (done) break;
+          text += decoder.decode(value, { stream: true });
+        }
+      } catch (caught) {
+        error = caught;
+      }
+      return { lines: text.split("\n").filter(Boolean), error };
+    }
+
+    it("keeps streaming past 60 seconds while the upstream keeps sending", async () => {
+      let sent = 0;
+      const upstreamSignal = mockUpstream(async (controller) => {
+        if (sent === 5) {
+          controller.close();
+          return;
+        }
+        await new Promise((resolve) => setTimeout(resolve, 20_000));
+        controller.enqueue(resultLine(sent++));
+      });
+
+      const response = await GET(searchRequest("127.0.0.210"));
+      const reading = readLines(response);
+      await vi.advanceTimersByTimeAsync(120_000);
+      const { lines, error } = await reading;
+
+      expect(error).toBeNull();
+      expect(lines).toHaveLength(5);
+      expect(upstreamSignal()?.aborted).toBe(false);
+    });
+
+    it("ends the stream when the upstream stalls for 30 seconds", async () => {
+      let sent = 0;
+      const upstreamSignal = mockUpstream((controller) => {
+        if (sent === 0) controller.enqueue(resultLine(sent++));
+        return new Promise(() => {});
+      });
+
+      const response = await GET(searchRequest("127.0.0.211"));
+      const reading = readLines(response);
+      await vi.advanceTimersByTimeAsync(31_000);
+      const { lines, error } = await reading;
+
+      expect(lines).toHaveLength(1);
+      expect(error).toBeTruthy();
+      expect(upstreamSignal()?.reason?.name).toBe("TimeoutError");
+    });
+
+    it("returns 504 when the upstream does not answer within 20 seconds", async () => {
+      mockFetch.mockImplementationOnce(
+        (_url: string, init: RequestInit) =>
+          new Promise((_resolve, reject) => {
+            init.signal?.addEventListener("abort", () => reject(init.signal?.reason));
+          }),
+      );
+
+      const pending = GET(searchRequest("127.0.0.212"));
+      await vi.advanceTimersByTimeAsync(20_000);
+      const response = await pending;
+
+      expect(response.status).toBe(504);
+    });
+
+    it("stops the upstream request when the visitor leaves", async () => {
+      const upstreamSignal = mockUpstream(() => new Promise(() => {}));
+
+      const response = await GET(searchRequest("127.0.0.213"));
+      await response.body!.cancel("visitor left");
+
+      expect(upstreamSignal()?.aborted).toBe(true);
+    });
+  });
 });

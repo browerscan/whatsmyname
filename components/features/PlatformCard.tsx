@@ -37,10 +37,10 @@ function PlatformCardComponent({ result }: PlatformCardProps) {
   return (
     <Card
       className={cn(
-        "rounded-2xl transition-all duration-200 hover:shadow-custom-md hover:scale-[1.01] border-2",
+        "rounded-2xl border border-l-4 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-custom-md",
         isExist
-          ? "border-l-4 border-l-green-500 hover:border-green-500/30"
-          : "border-l-4 border-l-border hover:border-border",
+          ? "border-l-green-500 hover:border-green-500/40 hover:border-l-green-500"
+          : "border-l-border hover:border-primary/20 hover:border-l-border",
       )}
     >
       <CardContent className="p-5">
@@ -51,7 +51,7 @@ function PlatformCardComponent({ result }: PlatformCardProps) {
               {isExist ? (
                 <CheckCircle2 className="h-4 w-4 text-green-500 flex-shrink-0" />
               ) : (
-                <XCircle className="h-4 w-4 text-muted flex-shrink-0" />
+                <XCircle className="h-4 w-4 text-muted-foreground/50 flex-shrink-0" />
               )}
               {domain && (
                 <img
@@ -102,11 +102,11 @@ function PlatformCardComponent({ result }: PlatformCardProps) {
                 className={cn(
                   "text-xs flex items-center gap-1 rounded-lg",
                   responseCategory === "fast" &&
-                    "border-green-500 text-green-500 bg-green-500/5",
+                    "border-green-500/40 text-green-700 bg-green-500/5 dark:text-green-400",
                   responseCategory === "medium" &&
-                    "border-amber-500 text-amber-500 bg-amber-500/5",
+                    "border-amber-500/40 text-amber-700 bg-amber-500/5 dark:text-amber-400",
                   responseCategory === "slow" &&
-                    "border-red-500 text-red-500 bg-red-500/5",
+                    "border-red-500/40 text-red-700 bg-red-500/5 dark:text-red-400",
                 )}
               >
                 <Clock className="h-3 w-3" />
@@ -116,13 +116,13 @@ function PlatformCardComponent({ result }: PlatformCardProps) {
           </div>
 
           {/* Status Badge */}
-          <div>
+          <div className="flex-shrink-0">
             {isExist ? (
-              <Badge className="bg-green-500 hover:bg-green-500/90 rounded-lg">
+              <Badge className="rounded-lg border-green-500/25 bg-green-500/15 text-green-700 shadow-none hover:bg-green-500/20 dark:text-green-400">
                 {t("badge_found")}
               </Badge>
             ) : (
-              <Badge variant="secondary" className="rounded-lg">
+              <Badge variant="secondary" className="rounded-lg text-muted-foreground">
                 {t("badge_not_found")}
               </Badge>
             )}

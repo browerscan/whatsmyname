@@ -10,6 +10,7 @@ import {
   PlatformGridSkeleton,
 } from "@/components/features";
 import { useUsernameSearch } from "@/hooks/useUsernameSearch";
+import { useWebMcpSearchTool } from "@/hooks/useWebMcpSearchTool";
 import { STORAGE_KEYS, DEFAULT_FILTER_OPTIONS, DEFAULT_SORT_OPTIONS } from "@/lib/constants";
 import { getUniqueCategories } from "@/lib/filters";
 import { useSearchStore } from "@/stores";
@@ -84,6 +85,8 @@ export function HomeClient() {
     onError: useCallback(() => {}, []),
   });
 
+  useWebMcpSearchTool(search);
+
   const categories = useMemo(
     () => getUniqueCategories(whatsMyNameResults),
     [whatsMyNameResults],
@@ -156,7 +159,7 @@ export function HomeClient() {
     googleResults.length === 0;
 
   return (
-    <div className="container mx-auto max-w-7xl space-y-16 px-4 py-16">
+    <div className="container mx-auto max-w-7xl space-y-10 px-4 py-8 sm:space-y-16 sm:py-16">
       <SearchHero isSearching={isSearching} onSearch={handleSearch} />
 
       {showResultsSection && (
@@ -182,10 +185,10 @@ export function HomeClient() {
       )}
 
       {showEmptyState && (
-        <section className="animate-fade-in rounded-3xl border border-border/30 py-24 text-center shadow-custom-md glass">
-          <div className="mb-6 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-muted/50 animate-float">
+        <section className="animate-fade-in rounded-3xl border border-border/30 px-6 py-14 text-center shadow-custom-md glass sm:py-20">
+          <div className="mb-6 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-primary/10 ring-1 ring-primary/15 animate-float">
             <svg
-              className="h-8 w-8 text-muted-foreground"
+              className="h-8 w-8 text-primary"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -198,11 +201,11 @@ export function HomeClient() {
               />
             </svg>
           </div>
-          <p className="mb-4 text-xs font-medium uppercase tracking-[0.3em] text-muted-foreground">
+          <p className="mb-3 text-xs font-medium uppercase tracking-[0.3em] text-muted-foreground">
             {tEmpty("kicker")}
           </p>
-          <h2 className="mb-4 text-2xl font-semibold">{tEmpty("title")}</h2>
-          <p className="text-muted-foreground">{tEmpty("description")}</p>
+          <h2 className="mb-3 text-balance text-xl font-semibold sm:text-2xl">{tEmpty("title")}</h2>
+          <p className="text-balance text-muted-foreground">{tEmpty("description")}</p>
         </section>
       )}
 

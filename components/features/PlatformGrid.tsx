@@ -77,8 +77,8 @@ export function PlatformGrid({
 
   if (processedResults.length === 0) {
     return (
-      <div className="text-center py-12 text-gray-500">
-        <p className="text-lg">{t("empty_platforms_title")}</p>
+      <div className="rounded-2xl border border-dashed border-border/60 py-12 text-center text-muted-foreground">
+        <p className="text-lg font-medium text-foreground">{t("empty_platforms_title")}</p>
         <p className="text-sm mt-2">{t("empty_platforms_description")}</p>
       </div>
     );
@@ -87,7 +87,7 @@ export function PlatformGrid({
   return (
     <ScrollArea
       ref={scrollAreaRef}
-      className="h-[600px] w-full rounded-md border p-4"
+      className="h-[600px] w-full rounded-2xl border border-border/40 bg-background/30 p-3 sm:p-4"
     >
       <div
         className="relative w-full"

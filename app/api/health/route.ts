@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { getEnvVar } from "@/lib/cloudflare";
+import { parseOpenRouterModels } from "@/lib/openrouter";
 
 const HEALTH_CACHE_CONTROL = "no-store";
 
@@ -68,12 +69,13 @@ function checkGoogleConfig() {
 
 function checkOpenrouterConfig() {
   const apiKey = getEnvVar("OPENROUTER_API_KEY");
-  const model = getEnvVar("OPENROUTER_MODEL");
+  const models = parseOpenRouterModels(getEnvVar("OPENROUTER_MODEL"));
 
   return {
     name: "OpenRouter AI",
     status: apiKey ? "available" : "unavailable",
     configured: !!apiKey,
-    model: model || "deepseek/deepseek-chat-v3.1:free",
+    model: models[0],
+    models,
   };
 }

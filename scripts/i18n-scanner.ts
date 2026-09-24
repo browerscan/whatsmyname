@@ -47,7 +47,11 @@ const CONFIG: ScannerConfig = {
     "app/[locale]/blog/**", // SEO blog pages
     "app/layout.tsx",
     "app/manifest.ts",
-    "app/robots.ts",
+    // Machine-readable agent endpoints (robots, llms.txt, MCP)
+    "app/robots.txt/**",
+    "app/llms.txt/**",
+    "app/llms-full.txt/**",
+    "app/mcp/**",
     "components/seo/StructuredData.tsx",
     "*.config.*",
     "proxy.ts",
@@ -151,7 +155,7 @@ function shouldSkipFile(filePath: string): boolean {
   if (
     normalized === "app/layout.tsx" ||
     normalized === "app/manifest.ts" ||
-    normalized === "app/robots.ts" ||
+    normalized === "app/robots.txt/route.ts" ||
     normalized === "components/seo/StructuredData.tsx"
   ) {
     return true;

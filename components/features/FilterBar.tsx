@@ -2,7 +2,7 @@
 
 import { useEffect, useState, useRef, useMemo } from "react";
 import { Input } from "@/components/ui/input";
-import { Badge } from "@/components/ui/badge";
+import { badgeVariants } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Search, X, ChevronDown, ChevronUp } from "lucide-react";
 import { FilterOptions, ResultStatus } from "@/types";
@@ -18,6 +18,15 @@ interface FilterBarProps {
 }
 
 const INITIAL_CATEGORY_DISPLAY = 10;
+
+function chipClassName(active: boolean) {
+  return cn(
+    badgeVariants({ variant: active ? "default" : "outline" }),
+    "cursor-pointer rounded-xl px-4 py-1.5 focus:ring-0 focus:ring-offset-0 focus-visible:ring-2 focus-visible:ring-offset-2",
+    !active &&
+      "border-border/70 bg-background/60 hover:border-primary/40 hover:text-primary",
+  );
+}
 
 export function FilterBar({
   filters,
@@ -72,10 +81,6 @@ export function FilterBar({
     setSearchText(value);
   };
 
-  const handleNSFWToggle = () => {
-    onFilterChange({ ...filters, showNSFW: !filters.showNSFW });
-  };
-
   const toggleShowAllCategories = () => {
     setShowAllCategories((prev) => !prev);
   };
@@ -117,7 +122,7 @@ export function FilterBar({
   }, [showAllCategories]);
 
   return (
-    <div className="space-y-5 mb-6 p-6 bg-gradient-subtle border border-border/30 rounded-2xl shadow-custom-sm">
+    <div className="space-y-5 mb-6 p-5 sm:p-6 bg-card border border-border/80 dark:bg-transparent dark:bg-gradient-subtle dark:border-border/30 rounded-2xl shadow-custom-sm">
       <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground font-medium">
         {t("title")}
       </p>
@@ -141,14 +146,15 @@ export function FilterBar({
         </label>
         <div className="flex gap-2 flex-wrap">
           {statusOptions.map((option) => (
-            <Badge
+            <button
               key={option.value}
-              variant={filters.status === option.value ? "default" : "outline"}
-              className="cursor-pointer hover:bg-primary/90 transition-colors rounded-xl px-4 py-1.5"
+              type="button"
+              aria-pressed={filters.status === option.value}
+              className={chipClassName(filters.status === option.value)}
               onClick={() => handleStatusChange(option.value)}
             >
               {option.label}
-            </Badge>
+            </button>
           ))}
         </div>
       </div>
@@ -189,19 +195,21 @@ export function FilterBar({
           )}
 
           <div className="flex gap-2 flex-wrap">
-            <Badge
-              variant={filters.category === null ? "default" : "outline"}
-              className="cursor-pointer hover:bg-primary/90 transition-colors rounded-xl px-4 py-1.5"
+            <button
+              type="button"
+              aria-pressed={filters.category === null}
+              className={chipClassName(filters.category === null)}
               onClick={() => handleCategoryChange(null)}
             >
               {t("all_categories")}
-            </Badge>
+            </button>
             {displayedCategories.map((category) => (
-              <Badge
+              <button
                 key={category}
-                variant={filters.category === category ? "default" : "outline"}
+                type="button"
+                aria-pressed={filters.category === category}
                 className={cn(
-                  "cursor-pointer hover:bg-primary/90 transition-colors rounded-xl px-4 py-1.5",
+                  chipClassName(filters.category === category),
                   categorySearch &&
                     category
                       .toLowerCase()
@@ -211,7 +219,7 @@ export function FilterBar({
                 onClick={() => handleCategoryChange(category)}
               >
                 {category}
-              </Badge>
+              </button>
             ))}
           </div>
 
@@ -250,19 +258,9 @@ export function FilterBar({
         </div>
       )}
 
-      {/* NSFW Toggle & Clear */}
-      <div className="flex items-center justify-between pt-2 border-t border-border/30">
-        <label className="flex items-center gap-2 cursor-pointer">
-          <input
-            type="checkbox"
-            checked={filters.showNSFW}
-            onChange={handleNSFWToggle}
-            className="w-4 h-4 rounded accent-primary"
-          />
-          <span className="text-sm font-medium">{t("show_nsfw")}</span>
-        </label>
-
-        {hasActiveFilters && (
+      {/* Clear active filters */}
+      {hasActiveFilters && (
+        <div className="flex items-center justify-between pt-2 border-t border-border/30">
           <Button
             variant="ghost"
             size="sm"
@@ -272,8 +270,8 @@ export function FilterBar({
             <X className="h-4 w-4 mr-1.5" />
             {t("clear")}
           </Button>
-        )}
-      </div>
+        </div>
+      )}
     </div>
   );
 }

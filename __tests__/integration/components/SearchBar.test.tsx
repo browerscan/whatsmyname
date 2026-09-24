@@ -25,6 +25,7 @@ vi.mock("next-intl", () => ({
         hint: "Enter a username to search across platforms",
       },
       shortcuts: {
+        keys: "Ctrl / ⌘ + K",
         to_focus: "to focus",
       },
     };

@@ -9,7 +9,7 @@ interface AIButtonProps {
 }
 
 export function AIButton({ disabled = false }: AIButtonProps) {
-  const { isOpen, openDialog } = useAIStore();
+  const openDialog = useAIStore((state) => state.openDialog);
   const t = useTranslations("ai");
 
   return (
@@ -19,7 +19,7 @@ export function AIButton({ disabled = false }: AIButtonProps) {
       }}
       disabled={disabled}
       aria-label={t("open_aria")}
-      className={`fixed bottom-6 right-6 z-[9999] flex h-14 w-14 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-2xl transition hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed ${isOpen ? "animate-none" : "animate-pulse"}`}
+      className="fixed bottom-6 right-6 z-[9999] flex h-14 w-14 items-center justify-center rounded-full bg-gradient-primary text-primary-foreground shadow-custom-lg ring-4 ring-primary/15 transition hover:scale-105 hover:shadow-glow active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
       style={{
         position: "fixed",
         bottom: "24px",

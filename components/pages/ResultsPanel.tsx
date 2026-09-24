@@ -69,21 +69,22 @@ export function ResultsPanel({
   whatsMyNameResults,
 }: ResultsPanelProps) {
   const tTabs = useTranslations("results.tabs");
+  const useWebFallback = Boolean(error && googleResults.length > 0 && whatsMyNameResults.length === 0);
 
   return (
     <section className="space-y-8 animate-fade-in">
       {error && (
         <Alert className="rounded-2xl glass" variant="destructive">
-          <AlertDescription>{error}</AlertDescription>
+          <AlertDescription>{tTabs("platform_unavailable")}</AlertDescription>
         </Alert>
       )}
 
-      <ResultsHeader
+      {(!error || whatsMyNameResults.length > 0) && <ResultsHeader
         foundResults={foundCount}
         isLoading={isSearching}
         totalResults={whatsMyNameResults.length}
         username={username}
-      />
+      />}
 
       <SearchProgress
         completed={progress.completed}
@@ -92,16 +93,16 @@ export function ResultsPanel({
         total={progress.total}
       />
 
-      <Tabs className="w-full" defaultValue="platforms">
-        <TabsList className="mb-8 rounded-2xl border border-border/40 bg-muted/30 p-1.5 backdrop-blur-sm">
+      <Tabs key={useWebFallback ? "web-fallback" : "normal"} className="w-full" defaultValue={useWebFallback ? "google" : "platforms"}>
+        <TabsList className="mb-6 flex h-auto w-full rounded-2xl border border-border/40 bg-muted/40 p-1.5 backdrop-blur-sm sm:mb-8 sm:inline-flex sm:w-auto">
           <TabsTrigger
-            className="rounded-xl data-[state=active]:bg-background data-[state=active]:shadow-lg"
+            className="min-w-0 flex-1 whitespace-normal rounded-xl px-2 py-1.5 text-center text-xs leading-snug data-[state=active]:bg-background data-[state=active]:shadow-custom-sm sm:flex-none sm:whitespace-nowrap sm:px-3 sm:text-sm"
             value="platforms"
           >
             <span className="flex items-center gap-2">
               {tTabs("platforms", { count: whatsMyNameResults.length })}
               {isSearching && progress.total > 0 && (
-                <span className="inline-flex items-center rounded-full bg-primary/20 px-2 py-0.5 text-xs font-bold text-primary">
+                <span className="hidden items-center rounded-full bg-primary/20 px-2 py-0.5 text-xs font-bold text-primary sm:inline-flex">
                   {progress.percentage}%
                 </span>
               )}
@@ -109,7 +110,7 @@ export function ResultsPanel({
           </TabsTrigger>
 
           <TabsTrigger
-            className="rounded-xl data-[state=active]:bg-background data-[state=active]:shadow-lg"
+            className="min-w-0 flex-1 whitespace-normal rounded-xl px-2 py-1.5 text-center text-xs leading-snug data-[state=active]:bg-background data-[state=active]:shadow-custom-sm sm:flex-none sm:whitespace-nowrap sm:px-3 sm:text-sm"
             value="google"
           >
             {tTabs("web", { count: googleResults.length })}

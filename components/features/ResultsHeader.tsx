@@ -22,12 +22,12 @@ export function ResultsHeader({
   const tStatus = useTranslations("results.status");
 
   return (
-    <div className="flex items-center justify-between mb-6 flex-wrap gap-6 rounded-2xl bg-gradient-subtle border border-border/30 p-6 shadow-custom-sm">
+    <div className="flex items-center justify-between mb-6 flex-wrap gap-5 rounded-2xl bg-card border border-border/80 dark:bg-transparent dark:bg-gradient-subtle dark:border-border/30 p-5 shadow-custom-sm sm:gap-6 sm:p-6">
       <div>
         <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground font-medium mb-2">
           {tHeader("kicker")}
         </p>
-        <h2 className="text-2xl font-semibold">
+        <h2 className="break-words text-xl font-semibold sm:text-2xl">
           {username ? tHeader("title", { username }) : tHeader("title_default")}
         </h2>
         {totalResults > 0 && (
@@ -52,7 +52,7 @@ export function ResultsHeader({
           : `${formatNumber(foundResults)} ${tStatus("found")}, ${formatNumber(notFoundResults)} ${tStatus("not_found")}`}
       </div>
 
-      <div className="flex gap-3">
+      <div className="flex flex-wrap gap-3">
         {/* Found Count */}
         <div className="flex items-center gap-3 bg-green-500/10 px-5 py-3 rounded-2xl border border-green-500/20 shadow-custom-sm">
           <CheckCircle2 className="h-4 w-4 text-green-500" aria-hidden="true" />
@@ -60,14 +60,14 @@ export function ResultsHeader({
             <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground font-medium">
               {tStatus("found")}
             </p>
-            <p className="text-lg font-semibold text-green-500">
+            <p className="text-lg font-semibold tabular-nums text-green-700 dark:text-green-400">
               {formatNumber(foundResults)}
             </p>
           </div>
         </div>
 
         {/* Not Found Count */}
-        <div className="flex items-center gap-3 bg-muted/30 px-5 py-3 rounded-2xl border border-border shadow-custom-sm">
+        <div className="flex items-center gap-3 bg-muted/40 px-5 py-3 rounded-2xl border border-border/60 shadow-custom-sm">
           <XCircle
             className="h-4 w-4 text-muted-foreground"
             aria-hidden="true"
@@ -76,7 +76,7 @@ export function ResultsHeader({
             <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground font-medium">
               {tStatus("not_found")}
             </p>
-            <p className="text-lg font-semibold text-muted-foreground">
+            <p className="text-lg font-semibold tabular-nums text-muted-foreground">
               {formatNumber(notFoundResults)}
             </p>
           </div>

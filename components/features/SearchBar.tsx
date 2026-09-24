@@ -15,12 +15,6 @@ interface SearchBarProps {
   disabled?: boolean;
 }
 
-const KEYBOARD_SHORTCUT = isMac() ? "Cmd+K" : "Ctrl+K";
-
-function isMac(): boolean {
-  if (typeof window === "undefined") return false;
-  return window.navigator.platform.toUpperCase().indexOf("MAC") >= 0;
-}
 
 export function SearchBar({
   onSearch,
@@ -72,6 +66,11 @@ export function SearchBar({
     }
   };
 
+  // autoFocus fires before hydration, so onFocus never sees it
+  useEffect(() => {
+    setIsFocused(document.activeElement === inputRef.current);
+  }, []);
+
   // Focus the input when keyboard shortcut is pressed
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -89,12 +88,7 @@ export function SearchBar({
   return (
     <div className="w-full max-w-2xl mx-auto">
       <form onSubmit={handleSubmit} className="space-y-4">
-        <div
-          className={cn(
-            "flex gap-3 transition-all duration-300",
-            isFocused && "scale-[1.02]",
-          )}
-        >
+        <div className="flex flex-col gap-3 sm:flex-row">
           <div className="relative flex-1 group">
             {/* Glow effect on focus */}
             <div
@@ -114,7 +108,7 @@ export function SearchBar({
               onBlur={() => setIsFocused(false)}
               disabled={isLoading || disabled}
               className={cn(
-                "relative h-14 text-base rounded-2xl border-2 transition-all duration-200",
+                "relative h-14 pl-11 pr-4 sm:pr-16 text-base rounded-2xl border-2 transition-all duration-200",
                 "bg-background/70 backdrop-blur-md",
                 error
                   ? "border-destructive focus-visible:ring-destructive/50"
@@ -129,25 +123,23 @@ export function SearchBar({
               autoFocus
             />
 
-            {/* Search icon with subtle animation */}
-            <div className="absolute right-12 top-1/2 -translate-y-1/2">
-              <Search
-                className={cn(
-                  "h-4 w-4 text-muted-foreground transition-colors",
-                  isFocused && "text-primary",
-                )}
-              />
-            </div>
+            <Search
+              aria-hidden="true"
+              className={cn(
+                "pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground transition-colors",
+                isFocused && "text-primary",
+              )}
+            />
 
             {/* Keyboard shortcut hint */}
             <kbd
               className={cn(
                 "pointer-events-none absolute right-3 top-1/2 -translate-y-1/2",
-                "hidden h-7 select-none items-center gap-1.5",
+                "hidden h-7 select-none items-center gap-1.5 sm:flex",
                 "rounded-lg border border-border/50 bg-muted/80 backdrop-blur-sm",
                 "px-2 font-mono text-[10px] font-medium text-muted-foreground",
                 "transition-opacity duration-200",
-                username || isFocused ? "opacity-0 sm:flex" : "sm:flex",
+                (username || isFocused) && "opacity-0",
               )}
             >
               <Keyboard className="h-3 w-3" />
@@ -158,7 +150,7 @@ export function SearchBar({
           <Button
             type="submit"
             disabled={isLoading || disabled || !username.trim()}
-            className="h-14 px-8 rounded-2xl text-base shadow-lg hover:shadow-glow transition-all duration-200"
+            className="h-12 w-full px-8 rounded-2xl text-base shadow-lg hover:shadow-glow transition-all duration-200 sm:h-14 sm:w-auto"
             aria-label={tButton("aria_label")}
           >
             {isLoading ? (
@@ -192,12 +184,12 @@ export function SearchBar({
           </div>
         )}
 
-        <p className="text-sm text-muted-foreground/80 text-center">
+        <p className="text-balance text-center text-sm text-muted-foreground/80">
           {tSearch("hint")}
-          <span className="ml-2">
+          <span className="mt-1.5 hidden sm:block">
             {tShortcut("hint_prefix")}{" "}
             <kbd className="mx-1 px-2 py-0.5 rounded-lg bg-muted/60 border border-border/50 font-mono text-xs">
-              {KEYBOARD_SHORTCUT}
+              {tShortcut("keys")}
             </kbd>{" "}
             {tShortcut("hint_suffix")}
           </span>

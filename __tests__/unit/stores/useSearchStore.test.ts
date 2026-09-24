@@ -33,6 +33,27 @@ describe("useSearchStore", () => {
     expect(result.current.error).toBeNull();
   });
 
+  it("excludes flagged results from single, batch and cached-result ingestion without losing progress", () => {
+    const safe: SearchResult = {
+      source: "GitHub", username: "example", url: "https://github.com/example",
+      isNSFW: false, category: "coding", tags: [],
+      checkResult: { status: 200, checkType: "status_code", isExist: true, responseTime: 10 },
+    };
+    const restricted = { ...safe, source: "Restricted", isNSFW: true };
+    const store = useSearchStore.getState();
+    store.addWhatsMyNameResult(restricted);
+    expect(useSearchStore.getState().whatsMyNameResults).toEqual([]);
+    store.addWhatsMyNameResults([safe, restricted]);
+    expect(useSearchStore.getState().whatsMyNameResults).toEqual([safe]);
+    store.setProgressTotal(2);
+    store.incrementProgressCompletedBy(2);
+    expect(useSearchStore.getState().progress.percentage).toBe(100);
+    store.startSearch();
+    // Cached batches use the same ingestion action.
+    store.addWhatsMyNameResults([restricted, safe]);
+    expect(useSearchStore.getState().whatsMyNameResults).toEqual([safe]);
+  });
+
   it("should set username", () => {
     const { result } = renderHook(() => useSearchStore());
 

@@ -1,51 +1,48 @@
 import Link from "next/link";
 import { User } from "lucide-react";
-import { getLocale, getTranslations } from "next-intl/server";
-import { defaultLocale, locales } from "@/i18n/request";
+import { defaultLocale } from "@/i18n/request";
 import { HeaderAIControls } from "./HeaderAIControls";
 import { HeaderLocaleSwitcher } from "./HeaderLocaleSwitcher";
 import { HeaderThemeToggle } from "./HeaderThemeToggle";
 
-export async function Header() {
-  const [locale, tAi, tApp, tTheme, tLanguage] = await Promise.all([
-    getLocale(),
-    getTranslations("ai"),
-    getTranslations("common.app"),
-    getTranslations("common.theme"),
-    getTranslations("common.language"),
-  ]);
+interface HeaderProps {
+  locale: string;
+  appName: string;
+  aiAssistantLabel: string;
+  themeLabel: string;
+  languageLabel: string;
+  localeOptions: Array<{ value: string; label: string }>;
+}
 
+export function Header({ locale, appName, aiAssistantLabel, themeLabel, languageLabel, localeOptions }: HeaderProps) {
   const homeHref = locale === defaultLocale ? "/" : `/${locale}`;
-  const localeOptions = locales.map((localeOption) => ({
-    value: localeOption,
-    label: tLanguage(localeOption),
-  }));
-  const aiAssistantLabel = tAi("assistant_label");
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/80 backdrop-blur-lg supports-[backdrop-filter]:bg-background/60">
-      <div className="container mx-auto flex h-16 max-w-7xl items-center justify-between px-4">
+      <div className="container mx-auto flex h-16 max-w-7xl items-center justify-between gap-2 px-4 sm:gap-3">
         <Link
-          className="flex items-center gap-2 transition-opacity hover:opacity-80"
+          className="flex min-w-0 items-center gap-2 transition-opacity hover:opacity-80 sm:gap-2.5"
           href={homeHref}
         >
-          <User className="h-6 w-6 text-primary" strokeWidth={3} />
-          <span className="text-lg font-bold">{tApp("name")}</span>
+          <span className="flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-lg bg-primary/10 ring-1 ring-primary/20 sm:h-8 sm:w-8 sm:rounded-xl">
+            <User className="h-4 w-4 text-primary sm:h-[18px] sm:w-[18px]" strokeWidth={2.5} />
+          </span>
+          <span className="truncate text-[15px] font-bold tracking-tight sm:text-lg">{appName}</span>
         </Link>
 
         <div className="absolute left-1/2 hidden -translate-x-1/2 md:flex">
           <HeaderAIControls label={aiAssistantLabel} />
         </div>
 
-        <nav className="flex items-center gap-2">
+        <nav className="flex flex-shrink-0 items-center gap-0.5 sm:gap-2">
           <HeaderLocaleSwitcher
-            ariaLabel={tLanguage("label")}
+            ariaLabel={languageLabel}
             currentLocale={locale}
             defaultLocale={defaultLocale}
             options={localeOptions}
             supportedLocales={localeOptions.map((option) => option.value)}
           />
-          <HeaderThemeToggle ariaLabel={tTheme("toggle_aria")} />
+          <HeaderThemeToggle ariaLabel={themeLabel} />
           <HeaderAIControls className="md:hidden" iconOnly label={aiAssistantLabel} />
         </nav>
       </div>

@@ -7,29 +7,38 @@ const withBundleAnalyzer = bundleAnalyzer({
 });
 
 const isProduction = process.env.NODE_ENV === "production";
-const adsenseScriptSources = [
-  "https://pagead2.googlesyndication.com",
+// Allowlist ceiling: Google only supports a nonce-based strict CSP for AdSense
+// and changes its hosts over time. Move to nonces if new AdSense hosts get blocked.
+// *.adtrafficquality.google is the ad traffic quality (sodar) check; Auto ads
+// inject Google Sans from fonts.googleapis.com / fonts.gstatic.com.
+const advertisingScriptSources = [
   "https://*.googlesyndication.com",
   "https://*.doubleclick.net",
+  "https://*.googletagservices.com",
+  "https://*.gstatic.com",
   "https://*.google.com",
+  "https://*.adtrafficquality.google",
 ].join(" ");
-const adsenseConnectionSources = [
+const advertisingConnectionSources = [
   "https://*.googlesyndication.com",
   "https://*.doubleclick.net",
+  "https://*.googletagservices.com",
+  "https://*.gstatic.com",
   "https://*.google.com",
+  "https://*.adtrafficquality.google",
 ].join(" ");
 const contentSecurityPolicy = [
   "default-src 'self'",
   isProduction
-    ? `script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com ${adsenseScriptSources}`
-    : `script-src 'self' 'unsafe-eval' 'unsafe-inline' https://static.cloudflareinsights.com ${adsenseScriptSources}`,
-  "style-src 'self' 'unsafe-inline'",
+    ? `script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com ${advertisingScriptSources}`
+    : `script-src 'self' 'unsafe-eval' 'unsafe-inline' https://static.cloudflareinsights.com ${advertisingScriptSources}`,
+  "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
   "img-src 'self' data: https: blob:",
-  "font-src 'self' data:",
+  "font-src 'self' data: https://fonts.gstatic.com",
   isProduction
-    ? `connect-src 'self' ${adsenseConnectionSources}`
-    : `connect-src 'self' https://api.whatsmynameapp.org https://www.googleapis.com https://*.googleapis.com https://google.com https://*.google.com https://openrouter.ai https://*.openrouter.ai ${adsenseConnectionSources}`,
-  `frame-src 'self' ${adsenseConnectionSources}`,
+    ? `connect-src 'self' ${advertisingConnectionSources}`
+    : `connect-src 'self' https://api.whatsmynameapp.org https://www.googleapis.com https://*.googleapis.com https://google.com https://*.google.com https://openrouter.ai https://*.openrouter.ai ${advertisingConnectionSources}`,
+  `frame-src 'self' ${advertisingConnectionSources}`,
   "frame-ancestors 'none'",
   "base-uri 'self'",
   "form-action 'self'",
@@ -39,6 +48,9 @@ const contentSecurityPolicy = [
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // Metadata is computed from local translations. Publish it in the initial
+  // head for every visitor instead of moving streamed metadata during hydration.
+  htmlLimitedBots: /.*/,
   // Memory optimization for development
   onDemandEntries: {
     maxInactiveAge: 15 * 1000,

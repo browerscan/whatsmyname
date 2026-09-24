@@ -250,29 +250,6 @@ export function MobileFilterSheet({
               </div>
             )}
 
-            {/* NSFW Toggle */}
-            <div className="flex items-center justify-between py-2">
-              <span className="text-sm font-medium">{t("show_nsfw")}</span>
-              <button
-                type="button"
-                onClick={() =>
-                  onFilterChange({ ...filters, showNSFW: !filters.showNSFW })
-                }
-                className={cn(
-                  "relative w-14 h-7 rounded-full transition-colors duration-200",
-                  filters.showNSFW ? "bg-primary" : "bg-muted",
-                )}
-                role="switch"
-                aria-checked={filters.showNSFW}
-              >
-                <span
-                  className={cn(
-                    "absolute top-1 w-5 h-5 bg-white rounded-full shadow-md transition-transform duration-200",
-                    filters.showNSFW ? "translate-x-8" : "translate-x-1",
-                  )}
-                />
-              </button>
-            </div>
           </div>
 
           {/* Footer Actions */}

@@ -583,24 +583,6 @@ export const POPULAR_PLATFORMS: PlatformMetadata[] = [
     founded: "2003",
     type: "gaming",
   },
-  {
-    slug: "discord",
-    name: "Discord",
-    category: "gaming",
-    url: "https://discord.com",
-    description:
-      "Discord is a communication platform for communities. Offers voice, video, and text chat channels organized by servers.",
-    keywords: [
-      "discord username search",
-      "discord server lookup",
-      "find discord account",
-      "discord user check",
-      "community platform username",
-    ],
-    popularity: 90,
-    founded: "2015",
-    type: "gaming",
-  },
 ];
 
 

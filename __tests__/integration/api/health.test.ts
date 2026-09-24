@@ -1,5 +1,6 @@
 import { describe, it, expect, beforeEach, afterEach, vi } from "vitest";
 import { GET } from "@/app/api/health/route";
+import { DEFAULT_OPENROUTER_MODELS } from "@/lib/openrouter";
 
 /**
  * Integration Tests for Health Check API
@@ -110,8 +111,9 @@ describe("Health API", () => {
     const response = await GET();
     const data = await response.json();
 
-    expect(data.services.openrouter.model).toBe(
-      "deepseek/deepseek-chat-v3.1:free",
-    );
+    expect(data.services.openrouter.model).toBe(DEFAULT_OPENROUTER_MODELS[0]);
+    expect(data.services.openrouter.models).toEqual([
+      ...DEFAULT_OPENROUTER_MODELS,
+    ]);
   });
 });

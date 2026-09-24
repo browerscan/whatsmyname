@@ -50,7 +50,7 @@ export function HeaderLocaleSwitcher({
     <select
       data-testid="language-selector"
       aria-label={ariaLabel}
-      className="h-9 rounded-xl border border-border bg-background/80 px-3 text-sm text-foreground shadow-sm backdrop-blur focus:outline-none focus:ring-2 focus:ring-primary/30"
+      className="h-9 rounded-xl border border-border bg-background/80 px-2 text-sm sm:px-3 text-foreground shadow-sm backdrop-blur focus:outline-none focus:ring-2 focus:ring-primary/30"
       onChange={(event) => {
         router.push(
           buildLocalePath(

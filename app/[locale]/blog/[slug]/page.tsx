@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Calendar, Clock, User, Tag, ArrowLeft, Share2 } from "lucide-react";
 import { getTranslations } from "next-intl/server";
 import { BreadcrumbJsonLd, ArticleJsonLd } from "@/components/seo/schema-org";
+import { CopyLinkButton } from "@/components/features/CopyLinkButton";
 import {
   getLocaleAlternates,
   getLocalePath,
@@ -349,12 +350,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             >
               Facebook
             </a>
-            <button
-              onClick={() => navigator.clipboard.writeText(canonicalUrl)}
-              className="px-4 py-2 rounded-lg bg-muted border border-border/30 hover:bg-muted/70 transition-colors text-sm font-medium"
-            >
-              {t("copy_link")}
-            </button>
+            <CopyLinkButton url={canonicalUrl} />
           </div>
         </section>
 

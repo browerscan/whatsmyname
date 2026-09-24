@@ -18,6 +18,10 @@ import {
 
 const WHATSMYNAME_API_URL = "https://api.whatsmynameapp.org/api/v1/search";
 const WHATSMYNAME_CACHE_CONTROL = "private, no-store, no-transform";
+// A full check of ~1,500 platforms streams for about two minutes, so there is
+// no total deadline: give up only when the upstream is slow to answer or stalls.
+const UPSTREAM_RESPONSE_TIMEOUT_MS = 20_000;
+const UPSTREAM_IDLE_TIMEOUT_MS = 30_000;
 
 function createWhatsMyNameHeaders(headers?: HeadersInit): Headers {
   const responseHeaders = new Headers(headers);
@@ -84,8 +88,20 @@ export async function GET(request: NextRequest) {
     );
   }
 
+  // Aborting the upstream request also errors its body, so one watchdog covers
+  // both waiting for the response and each read of the stream.
+  const upstream = new AbortController();
+  let watchdog: ReturnType<typeof setTimeout> | undefined;
+  const armWatchdog = (ms: number) => {
+    clearTimeout(watchdog);
+    watchdog = setTimeout(
+      () => upstream.abort(new DOMException("WhatsMyName upstream timed out", "TimeoutError")),
+      ms,
+    );
+  };
+
   try {
-    // Call WhatsMyName API
+    armWatchdog(UPSTREAM_RESPONSE_TIMEOUT_MS);
     const response = await fetch(
       `${WHATSMYNAME_API_URL}?username=${encodeURIComponent(validatedUsername)}`,
       {
@@ -93,13 +109,13 @@ export async function GET(request: NextRequest) {
           "x-api-key": apiKey,
           Accept: "application/x-ndjson",
         },
-        // Set a timeout
-        signal: AbortSignal.timeout(60000), // 60 seconds for streaming
+        signal: upstream.signal,
       },
     );
 
     if (!response.ok) {
       const errorText = await response.text();
+      clearTimeout(watchdog);
       console.error("WhatsMyName API error:", errorText);
       return upstreamApiErrorResponse(
         "WhatsMyName",
@@ -115,6 +131,7 @@ export async function GET(request: NextRequest) {
       async start(controller) {
         const reader = response.body?.getReader();
         if (!reader) {
+          clearTimeout(watchdog);
           controller.error(new Error("Response body is not readable"));
           return;
         }
@@ -124,6 +141,7 @@ export async function GET(request: NextRequest) {
 
         try {
           while (true) {
+            armWatchdog(UPSTREAM_IDLE_TIMEOUT_MS);
             const { done, value } = await reader.read();
 
             if (done) {
@@ -153,8 +171,14 @@ export async function GET(request: NextRequest) {
           console.error("Streaming error:", error);
           controller.error(error);
         } finally {
+          clearTimeout(watchdog);
           reader.releaseLock();
         }
+      },
+      cancel(reason) {
+        // The visitor left: stop the upstream check instead of reading it to the end.
+        clearTimeout(watchdog);
+        upstream.abort(reason);
       },
     });
 
@@ -170,6 +194,7 @@ export async function GET(request: NextRequest) {
       },
     });
   } catch (error: unknown) {
+    clearTimeout(watchdog);
     return handleApiError(error, {
       context: "WhatsMyName API",
       headers: createWhatsMyNameHeaders(),

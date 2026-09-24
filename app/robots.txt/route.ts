@@ -1,0 +1,11 @@
+import { buildRobotsTxt } from "@/lib/agent/documents";
+import { getBaseUrl } from "@/lib/agent/site";
+
+export function GET() {
+  return new Response(buildRobotsTxt(getBaseUrl()), {
+    headers: {
+      "Content-Type": "text/plain; charset=utf-8",
+      "Cache-Control": "public, max-age=3600",
+    },
+  });
+}

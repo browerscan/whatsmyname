@@ -84,7 +84,7 @@ What seems clever today may be embarrassing in a few years. Choose a username th
 
 ### 5. Check Availability First
 
-Before falling in love with a username, check if it is available on the platforms you care about. Our tool can check over 1,400 platforms instantly.
+Before choosing a username, look for existing public profiles on the platforms you care about. Our tool helps gather leads; confirm registration availability directly on each platform.
 
 ## Common Username Mistakes to Avoid
 
@@ -100,7 +100,7 @@ If your first choice is taken, don't worry. Try:
 - Adding a relevant prefix or suffix
 - Using underscores instead of periods
 - Combining words creatively
-- Using our username generator tool (coming soon)
+- Writing down a few memorable alternatives and checking each on the platforms you actually use
 
 ## Conclusion
 
@@ -353,15 +353,15 @@ If your first choice is taken, try variations:
 
 ### Comprehensive Platform Coverage
 
-The best checkers search thousands of platforms, not just the most popular ones. Our tool checks over 1,400 platforms across all categories.
+Useful coverage depends on the platforms you actually use. The services checked and their response times depend on the lookup provider and platform restrictions. Confirm important results on the original site.
 
 ### Real-Time Results
 
-Instant availability checking saves time and helps you make decisions quickly.
+Live checks help organize your research, but a failed request or missing result does not establish that a username is available.
 
 ### Direct Links
 
-Good checkers provide direct links to platforms so you can claim your username immediately.
+Direct links let you inspect the original platform. Registration eligibility and reserved usernames are determined by that platform.
 
 ### Regular Updates
 
@@ -383,7 +383,7 @@ Gamers often want the same handle across gaming platforms and streaming services
 
 ### For Domain Names
 
-Username availability checkers can also help when choosing domain names for websites.
+You may compare the spelling of a planned domain with usernames, but this tool does not check domain availability. Use a registrar for that separate check.
 
 ## Conclusion
 
@@ -411,7 +411,7 @@ Checking username availability is a simple step that can save you significant he
     content: `
 # The Most Popular Username Patterns and What They Teach Us
 
-After analyzing millions of usernames across platforms, clear patterns emerge. Understanding these patterns can help you create a username that stands out while still feeling natural.
+The examples below illustrate common naming styles. They are suggestions, not a ranked dataset or the results of a measured popularity study.
 
 ## Common Username Patterns
 
