@@ -90,7 +90,8 @@
     },
     "tabs": {
       "platforms": "What is my Name Ergebnisse ({count})",
-      "web": "Webergebnisse ({count})"
+      "web": "Webergebnisse ({count})",
+      "platform_unavailable": "Die Plattformprüfung ist vorübergehend nicht verfügbar. Das bedeutet nicht, dass der Benutzername nicht existiert. Verfügbare Webergebnisse werden separat angezeigt."
     },
     "empty_web": "Keine Webergebnisse gefunden",
     "empty_platforms_title": "Keine Ergebnisse gefunden",
@@ -202,13 +203,14 @@
     "linkedin": "LinkedIn"
   },
   "shortcuts": {
+    "keys": "Ctrl / ⌘ + K",
     "to_focus": "zum Fokussieren der Suche",
     "hint_prefix": "Drücke",
     "hint_suffix": "zum Fokussieren der Suche"
   },
   "footer": {
     "about_title": "Über",
-    "about_description": "Entdecke deinen Benutzernamen sofort auf über 1.400 Plattformen. Ein leistungsstarkes Tool für Sicherheitsforschung und die Analyse deines digitalen Fußabdrucks.",
+    "about_description": "Dieser unabhängige Dienst hilft bei der Prüfung eigener öffentlicher Profile und bei der Wahl eines Markennamens. Ein gleicher Benutzername beweist keine gemeinsame Identität.",
     "features_title": "Funktionen",
     "features": {
       "username_search": "Benutzernamensuche",
@@ -246,8 +248,8 @@
       "description": "Suche und prüfe die Verfügbarkeit von Benutzernamen auf {category}-Plattformen. Finde heraus, wo dein Benutzername verfügbar ist."
     },
     "tools": {
-      "title": "Benutzernamen-Tools - Generator, Verfügbarkeitsprüfung und mehr",
-      "description": "Kostenlose Benutzernamen-Tools wie Verfügbarkeitsprüfung, Benutzernamengenerator und Ideen. Prüfe und erstelle perfekte Benutzernamen für alle Plattformen."
+      "title": "Benutzernamen suchen",
+      "description": "Dieser unabhängige Dienst hilft bei der Prüfung eigener öffentlicher Profile und bei der Wahl eines Markennamens. Ein gleicher Benutzername beweist keine gemeinsame Identität."
     },
     "blog": {
       "title": "Blog - Tipps, Anleitungen und digitale Identität rund um Benutzernamen",
@@ -324,23 +326,23 @@
     "tools": {
       "home": "Startseite",
       "breadcrumb": "Tools",
-      "collection_name": "Benutzernamen-Tools",
-      "collection_description": "Kostenlose Tools für Benutzernamen, darunter Verfügbarkeitsprüfung, Generator und Ideen.",
-      "title": "Benutzernamen-Tools",
-      "description": "Kostenlose Tools, die dir helfen, den perfekten Benutzernamen auf allen Plattformen zu finden, zu prüfen und zu erstellen",
+      "collection_name": "Benutzernamen suchen",
+      "collection_description": "Dieser unabhängige Dienst hilft bei der Prüfung eigener öffentlicher Profile und bei der Wahl eines Markennamens. Ein gleicher Benutzername beweist keine gemeinsame Identität.",
+      "title": "Benutzernamen suchen",
+      "description": "Dieser unabhängige Dienst hilft bei der Prüfung eigener öffentlicher Profile und bei der Wahl eines Markennamens. Ein gleicher Benutzername beweist keine gemeinsame Identität.",
       "coming_soon": "Demnächst",
       "cta_title": "Prüfe deinen Benutzernamen jetzt",
-      "cta_description": "Mit unserem Verfügbarkeits-Checker siehst du, wo dein Benutzername bereits vergeben ist und wo du ihn noch sichern kannst. Kostenlos, sofort und ohne Konto.",
+      "cta_description": "Gib den Benutzernamen statt einer vollständigen Profiladresse ein. Prüfe zuerst die ursprüngliche Schreibweise und dann tatsächlich verwendete Varianten. Suche nach eigenen Konten oder mit Erlaubnis und einem rechtmäßigen Zweck.",
       "cta_button": "Prüfung starten",
-      "content_title": "Kostenlose Benutzernamen-Tools",
+      "content_title": "Benutzernamen suchen",
       "checker_title": "Benutzernamen-Verfügbarkeitsprüfung",
       "generator_title": "Benutzernamen-Generator",
       "ideas_title": "Benutzernamen-Ideen & Inspiration",
       "features_title": "Warum unsere Benutzernamen-Tools nutzen?",
       "feature_search_title": "Über 1.400 Plattformen durchsuchen",
-      "feature_search_description": "Prüfe die Verfügbarkeit auf mehr Plattformen als bei jedem anderen Dienst",
+      "feature_search_description": "Abdeckung und Geschwindigkeit hängen von Anbieter und Plattform ab. Geänderte URLs und automatische Zugriffssperren können Prüfungen verhindern. Bestätige wichtige Treffer auf der Originalseite. Das Verzeichnis garantiert keine vollständige Abdeckung.",
       "feature_results_title": "Sofortige Ergebnisse",
-      "feature_results_description": "Echtzeit-Prüfungen ohne Wartezeit oder Konto",
+      "feature_results_description": "Ein Treffer ist ein Hinweis auf ein öffentliches Profil, kein Eigentumsnachweis. Prüfe die Angaben auf der Originalplattform. Kein Treffer garantiert keine freie Registrierung: reservierte Namen, Anmeldepflicht, Zugriffslimits und Netzwerkfehler können das Ergebnis beeinflussen.",
       "feature_free_title": "100 % kostenlos",
       "feature_free_description": "Alle Tools sind komplett kostenlos – ohne versteckte Kosten oder Premium-Stufen"
     },

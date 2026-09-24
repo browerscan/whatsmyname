@@ -90,7 +90,8 @@
     },
     "tabs": {
       "platforms": "What is my Name Results ({count})",
-      "web": "Web Results ({count})"
+      "web": "Web Results ({count})",
+      "platform_unavailable": "Platform checks are temporarily unavailable. This is not a finding that the username is absent. Available web results are shown separately."
     },
     "empty_web": "No web results found",
     "empty_platforms_title": "No results found",
@@ -202,13 +203,14 @@
     "linkedin": "LinkedIn"
   },
   "shortcuts": {
+    "keys": "Ctrl / ⌘ + K",
     "to_focus": "to focus search",
     "hint_prefix": "Press",
     "hint_suffix": "to focus search"
   },
   "footer": {
     "about_title": "About",
-    "about_description": "Discover your username across 1400+ platforms instantly. A powerful username search tool for security research and digital footprint analysis.",
+    "about_description": "This site helps you review your own public usernames, compare handles for a brand, and follow up on possible matches. It is an independent service; a matching username alone does not identify a person.",
     "features_title": "Features",
     "features": {
       "username_search": "Username Search",
@@ -246,8 +248,8 @@
       "description": "Search and check username availability across {category} platforms. Find where your username is available."
     },
     "tools": {
-      "title": "Username Tools - Generator, Availability Checker & More",
-      "description": "Free username tools including availability checker, username generator, and username ideas. Check and create perfect usernames for all platforms."
+      "title": "Username Search Tools",
+      "description": "This site helps you review your own public usernames, compare handles for a brand, and follow up on possible matches. It is an independent service; a matching username alone does not identify a person."
     },
     "blog": {
       "title": "Blog - Username Tips, Guides & Digital Identity",
@@ -324,23 +326,23 @@
     "tools": {
       "home": "Home",
       "breadcrumb": "Tools",
-      "collection_name": "Username Tools",
-      "collection_description": "Free username tools including availability checker, username generator, and username ideas.",
-      "title": "Username Tools",
-      "description": "Free tools to help you find, check, and create the perfect username across all platforms",
+      "collection_name": "Username Search Tools",
+      "collection_description": "This site helps you review your own public usernames, compare handles for a brand, and follow up on possible matches. It is an independent service; a matching username alone does not identify a person.",
+      "title": "Username Search Tools",
+      "description": "This site helps you review your own public usernames, compare handles for a brand, and follow up on possible matches. It is an independent service; a matching username alone does not identify a person.",
       "coming_soon": "Coming Soon",
       "cta_title": "Check Your Username Now",
-      "cta_description": "Use our availability checker to see where your username is taken and where you can still claim it. Free, instant, and no account required.",
+      "cta_description": "Enter the username without a profile URL. Use the same spelling first, then check variants you have actually used. A nickname shared by several people can produce unrelated matches. Search your own accounts or use the service with permission and a lawful purpose.",
       "cta_button": "Start Checking Now",
-      "content_title": "Free Username Tools",
+      "content_title": "Username Search Tools",
       "checker_title": "Username Availability Checker",
       "generator_title": "Username Generator",
       "ideas_title": "Username Ideas & Inspiration",
       "features_title": "Why Use Our Username Tools?",
       "feature_search_title": "Search 1,400+ Platforms",
-      "feature_search_description": "Check username availability across more platforms than any other service",
+      "feature_search_description": "Coverage and response time depend on the data provider and each platform. Some services change their URLs or block automated requests. Check important results directly on the platform. The directory explains selected platforms; it is not a promise that every service can be checked successfully on every search.",
       "feature_results_title": "Instant Results",
-      "feature_results_description": "Get real-time availability checks with no waiting or account required",
+      "feature_results_description": "A found result is a lead to a public profile, not proof of ownership. Open the original platform and compare public details before drawing conclusions. A not-found result does not guarantee that a name is available to register: reserved names, login requirements, rate limits and network errors can affect checks.",
       "feature_free_title": "100% Free",
       "feature_free_description": "All tools are completely free with no hidden costs or premium tiers"
     },

@@ -90,7 +90,8 @@
     },
     "tabs": {
       "platforms": "What is my Name 결과 ({count})",
-      "web": "웹 결과 ({count})"
+      "web": "웹 결과 ({count})",
+      "platform_unavailable": "플랫폼 확인 서비스를 일시적으로 사용할 수 없습니다. 사용자 이름이 없다는 뜻은 아닙니다. 사용 가능한 웹 검색 결과는 별도로 표시됩니다."
     },
     "empty_web": "웹 결과가 없습니다",
     "empty_platforms_title": "결과가 없습니다",
@@ -202,13 +203,14 @@
     "linkedin": "LinkedIn"
   },
   "shortcuts": {
+    "keys": "Ctrl / ⌘ + K",
     "to_focus": "검색에 포커스",
     "hint_prefix": "검색에 포커스하려면",
     "hint_suffix": "를 누르세요"
   },
   "footer": {
     "about_title": "소개",
-    "about_description": "1,400+ 플랫폼에서 즉시 사용자명을 확인하세요. 보안 리서치와 디지털 발자국 분석을 위한 강력한 사용자명 검색 도구입니다.",
+    "about_description": "자신의 공개 계정을 확인하고 브랜드용 이름을 비교하는 독립 서비스입니다. 같은 사용자 이름만으로 동일 인물임을 판단할 수 없습니다.",
     "features_title": "기능",
     "features": {
       "username_search": "사용자명 검색",
@@ -246,8 +248,8 @@
       "description": "{category} 플랫폼 전반에서 사용자명 사용 가능 여부를 검색하고 확인하세요. 어떤 곳에서 사용자명을 사용할 수 있는지 알아보세요."
     },
     "tools": {
-      "title": "사용자명 도구 - 생성기, 사용 가능 여부 확인기 등",
-      "description": "사용 가능 여부 확인기, 사용자명 생성기, 아이디어를 포함한 무료 사용자명 도구입니다. 모든 플랫폼에 맞는 완벽한 사용자명을 확인하고 만들어 보세요."
+      "title": "사용자 이름 검색 도구",
+      "description": "자신의 공개 계정을 확인하고 브랜드용 이름을 비교하는 독립 서비스입니다. 같은 사용자 이름만으로 동일 인물임을 판단할 수 없습니다."
     },
     "blog": {
       "title": "블로그 - 사용자명 팁, 가이드, 디지털 아이덴티티",
@@ -324,23 +326,23 @@
     "tools": {
       "home": "홈",
       "breadcrumb": "도구",
-      "collection_name": "사용자 이름 도구",
-      "collection_description": "사용 가능 여부 확인기, 사용자 이름 생성기, 아이디어 모음 등 무료 도구.",
-      "title": "사용자 이름 도구",
-      "description": "모든 플랫폼에서 완벽한 사용자 이름을 찾고, 확인하고, 만드는 데 도움이 되는 무료 도구",
+      "collection_name": "사용자 이름 검색 도구",
+      "collection_description": "자신의 공개 계정을 확인하고 브랜드용 이름을 비교하는 독립 서비스입니다. 같은 사용자 이름만으로 동일 인물임을 판단할 수 없습니다.",
+      "title": "사용자 이름 검색 도구",
+      "description": "자신의 공개 계정을 확인하고 브랜드용 이름을 비교하는 독립 서비스입니다. 같은 사용자 이름만으로 동일 인물임을 판단할 수 없습니다.",
       "coming_soon": "곧 출시",
       "cta_title": "지금 사용자 이름 확인",
-      "cta_description": "사용 가능 여부 확인기로 내 사용자 이름이 어디에서 이미 사용 중인지, 어디에서 아직 확보할 수 있는지 확인하세요. 무료, 즉시, 계정 불필요.",
+      "cta_description": "전체 프로필 주소 대신 사용자 이름을 입력하세요. 원래 철자를 확인한 뒤 실제 사용했던 변형을 검색하세요. 본인 계정이나 허가받은 합법적인 목적으로 이용하세요.",
       "cta_button": "확인 시작",
-      "content_title": "무료 사용자 이름 도구",
+      "content_title": "사용자 이름 검색 도구",
       "checker_title": "사용자 이름 사용 가능 여부 확인기",
       "generator_title": "사용자 이름 생성기",
       "ideas_title": "사용자 이름 아이디어와 영감",
       "features_title": "왜 우리의 사용자 이름 도구를 사용해야 할까요?",
       "feature_search_title": "1,400개 이상의 플랫폼 검색",
-      "feature_search_description": "어떤 서비스보다 더 많은 플랫폼에서 사용자 이름 사용 가능 여부를 확인하세요",
+      "feature_search_description": "검색 범위와 속도는 제공자와 각 플랫폼에 따라 달라집니다. 주소 변경이나 자동 요청 제한으로 확인이 불가능할 수 있습니다. 중요한 결과는 원래 사이트에서 다시 확인하세요.",
       "feature_results_title": "즉시 결과",
-      "feature_results_description": "대기나 계정 없이 실시간으로 확인 결과를 받으세요",
+      "feature_results_description": "검색된 프로필은 단서일 뿐 소유자 확인 자료가 아닙니다. 원래 플랫폼에서 공개 정보를 비교하세요. 검색되지 않아도 가입 가능한 이름이라고 보장하지 않습니다. 예약된 이름, 로그인 요구, 요청 제한과 네트워크 오류가 영향을 줄 수 있습니다.",
       "feature_free_title": "100% 무료",
       "feature_free_description": "모든 도구는 완전히 무료이며 숨겨진 비용이나 프리미엄 요금제가 없습니다"
     },

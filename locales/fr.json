@@ -90,7 +90,8 @@
     },
     "tabs": {
       "platforms": "Résultats What is my Name ({count})",
-      "web": "Résultats web ({count})"
+      "web": "Résultats web ({count})",
+      "platform_unavailable": "La vérification des plateformes est temporairement indisponible. Cela ne signifie pas que le pseudonyme est absent. Les résultats web disponibles sont affichés séparément."
     },
     "empty_web": "Aucun résultat web",
     "empty_platforms_title": "Aucun résultat",
@@ -202,13 +203,14 @@
     "linkedin": "LinkedIn"
   },
   "shortcuts": {
+    "keys": "Ctrl / ⌘ + K",
     "to_focus": "pour activer la recherche",
     "hint_prefix": "Appuyez sur",
     "hint_suffix": "pour activer la recherche"
   },
   "footer": {
     "about_title": "À propos",
-    "about_description": "Découvrez instantanément votre nom d’utilisateur sur 1 400+ plateformes. Un outil puissant pour la recherche sécurité et l’analyse d’empreinte numérique.",
+    "about_description": "Ce service indépendant aide à retrouver vos profils publics et à comparer des identifiants pour une marque. Un pseudonyme identique ne prouve pas une identité commune.",
     "features_title": "Fonctionnalités",
     "features": {
       "username_search": "Recherche de nom d’utilisateur",
@@ -246,8 +248,8 @@
       "description": "Recherchez et vérifiez la disponibilité d’un nom d’utilisateur sur les plateformes {category}. Découvrez où votre nom d’utilisateur est disponible."
     },
     "tools": {
-      "title": "Outils de nom d’utilisateur - Générateur, vérificateur de disponibilité et plus",
-      "description": "Outils gratuits pour les noms d’utilisateur, dont un vérificateur de disponibilité, un générateur et des idées de noms. Vérifiez et créez des noms parfaits pour toutes les plateformes."
+      "title": "Outils de recherche de pseudonymes",
+      "description": "Ce service indépendant aide à retrouver vos profils publics et à comparer des identifiants pour une marque. Un pseudonyme identique ne prouve pas une identité commune."
     },
     "blog": {
       "title": "Blog - Conseils, guides et identité numérique autour des noms d’utilisateur",
@@ -324,23 +326,23 @@
     "tools": {
       "home": "Accueil",
       "breadcrumb": "Outils",
-      "collection_name": "Outils de noms d’utilisateur",
-      "collection_description": "Outils gratuits de noms d’utilisateur, dont vérificateur de disponibilité, générateur et idées.",
-      "title": "Outils de noms d’utilisateur",
-      "description": "Des outils gratuits pour vous aider à trouver, vérifier et créer le nom d’utilisateur idéal sur toutes les plateformes",
+      "collection_name": "Outils de recherche de pseudonymes",
+      "collection_description": "Ce service indépendant aide à retrouver vos profils publics et à comparer des identifiants pour une marque. Un pseudonyme identique ne prouve pas une identité commune.",
+      "title": "Outils de recherche de pseudonymes",
+      "description": "Ce service indépendant aide à retrouver vos profils publics et à comparer des identifiants pour une marque. Un pseudonyme identique ne prouve pas une identité commune.",
       "coming_soon": "Bientôt disponible",
       "cta_title": "Vérifiez votre nom d’utilisateur maintenant",
-      "cta_description": "Utilisez notre vérificateur pour voir où votre nom d’utilisateur est déjà pris et où vous pouvez encore le réserver. Gratuit, instantané et sans compte.",
+      "cta_description": "Saisissez le pseudonyme, sans URL de profil. Vérifiez son orthographe initiale puis les variantes réellement utilisées. Recherchez vos propres comptes ou agissez avec autorisation et dans un but légitime.",
       "cta_button": "Commencer la vérification",
-      "content_title": "Outils gratuits de noms d’utilisateur",
+      "content_title": "Outils de recherche de pseudonymes",
       "checker_title": "Vérificateur de disponibilité de nom d’utilisateur",
       "generator_title": "Générateur de noms d’utilisateur",
       "ideas_title": "Idées et inspiration de noms d’utilisateur",
       "features_title": "Pourquoi utiliser nos outils ?",
       "feature_search_title": "Rechercher sur plus de 1 400 plateformes",
-      "feature_search_description": "Vérifiez la disponibilité sur plus de plateformes que n’importe quel autre service",
+      "feature_search_description": "La couverture et les délais dépendent des fournisseurs et des plateformes. Des liens modifiés ou des restrictions peuvent empêcher une vérification. Confirmez les résultats importants sur le site d'origine. Le répertoire ne garantit pas une couverture exhaustive.",
       "feature_results_title": "Résultats instantanés",
-      "feature_results_description": "Obtenez des vérifications en temps réel sans attente ni compte",
+      "feature_results_description": "Un profil trouvé est une piste, pas une preuve de propriété. Vérifiez les informations publiques sur la plateforme d'origine. Une absence de résultat ne garantit pas la disponibilité : noms réservés, connexion obligatoire, limitations et erreurs réseau peuvent intervenir.",
       "feature_free_title": "100 % gratuit",
       "feature_free_description": "Tous les outils sont entièrement gratuits, sans frais cachés ni formule premium"
     },

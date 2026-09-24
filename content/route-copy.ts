@@ -4,105 +4,43 @@ function resolveLocale(locale: string): AppLocale {
   return isSupportedLocale(locale) ? locale : defaultLocale;
 }
 
-const toolsCopy: Record<
-  AppLocale,
-  {
-    intro: string;
-    checker: string;
-    generator: string;
-    ideas: string;
+const toolsCopy: Record<AppLocale, { intro: string; checker: string }> = {
+  "en": {
+    "intro": "This site helps you review your own public usernames, compare handles for a brand, and follow up on possible matches. It is an independent service; a matching username alone does not identify a person.",
+    "checker": "A found result is a lead to a public profile, not proof of ownership. Open the original platform and compare public details before drawing conclusions. A not-found result does not guarantee that a name is available to register: reserved names, login requirements, rate limits and network errors can affect checks."
+  },
+  "zh": {
+    "intro": "本站帮助你检查自己的公开用户名、比较品牌账号名称，并逐一核实可能的匹配。本站是独立服务；相同用户名不代表同一个人。",
+    "checker": "“找到”只是一个公开资料线索，不是账号归属证明。请打开原平台并比较公开信息后再下结论。“未找到”也不保证可以注册：保留名称、登录限制、限流和网络错误都可能影响查询。"
+  },
+  "es": {
+    "intro": "Este servicio independiente permite revisar tus perfiles públicos y comparar nombres para una marca. Compartir un nombre de usuario no demuestra que dos perfiles pertenezcan a la misma persona.",
+    "checker": "Un resultado encontrado es una pista, no una prueba de titularidad. Abre la plataforma y revisa sus datos públicos. Un resultado no encontrado no garantiza disponibilidad: los nombres reservados, el inicio de sesión, los límites y los errores pueden afectar la consulta."
+  },
+  "ja": {
+    "intro": "自分の公開アカウントの確認や、ブランド用ユーザー名の比較に役立つ独立したサービスです。同じユーザー名だけで同一人物とは判断できません。",
+    "checker": "見つかった結果は公開プロフィールへの手掛かりであり、所有者の証明ではありません。元のサイトで公開情報を確認してください。未検出でも登録可能とは限りません。予約済みの名前、ログイン制限、アクセス制限や通信障害が影響します。"
+  },
+  "fr": {
+    "intro": "Ce service indépendant aide à retrouver vos profils publics et à comparer des identifiants pour une marque. Un pseudonyme identique ne prouve pas une identité commune.",
+    "checker": "Un profil trouvé est une piste, pas une preuve de propriété. Vérifiez les informations publiques sur la plateforme d'origine. Une absence de résultat ne garantit pas la disponibilité : noms réservés, connexion obligatoire, limitations et erreurs réseau peuvent intervenir."
+  },
+  "ko": {
+    "intro": "자신의 공개 계정을 확인하고 브랜드용 이름을 비교하는 독립 서비스입니다. 같은 사용자 이름만으로 동일 인물임을 판단할 수 없습니다.",
+    "checker": "검색된 프로필은 단서일 뿐 소유자 확인 자료가 아닙니다. 원래 플랫폼에서 공개 정보를 비교하세요. 검색되지 않아도 가입 가능한 이름이라고 보장하지 않습니다. 예약된 이름, 로그인 요구, 요청 제한과 네트워크 오류가 영향을 줄 수 있습니다."
+  },
+  "de": {
+    "intro": "Dieser unabhängige Dienst hilft bei der Prüfung eigener öffentlicher Profile und bei der Wahl eines Markennamens. Ein gleicher Benutzername beweist keine gemeinsame Identität.",
+    "checker": "Ein Treffer ist ein Hinweis auf ein öffentliches Profil, kein Eigentumsnachweis. Prüfe die Angaben auf der Originalplattform. Kein Treffer garantiert keine freie Registrierung: reservierte Namen, Anmeldepflicht, Zugriffslimits und Netzwerkfehler können das Ergebnis beeinflussen."
+  },
+  "pt": {
+    "intro": "Este serviço independente ajuda a revisar seus perfis públicos e comparar nomes para uma marca. Um nome de usuário igual não comprova que os perfis pertencem à mesma pessoa.",
+    "checker": "Um perfil encontrado é uma pista, não uma prova de titularidade. Compare as informações públicas na plataforma original. Nenhum resultado não garante disponibilidade para registro: nomes reservados, login obrigatório, limites e falhas de rede podem interferir."
+  },
+  "ru": {
+    "intro": "Независимый сервис помогает проверять собственные публичные профили и сравнивать названия для бренда. Совпадение имени пользователя не доказывает, что аккаунты принадлежат одному человеку.",
+    "checker": "Найденный профиль — подсказка, а не доказательство принадлежности. Сравните публичные сведения на исходной платформе. Отсутствие результата не гарантирует возможность регистрации: зарезервированные имена, требования входа, ограничения запросов и сетевые ошибки влияют на проверку."
   }
-> = {
-  en: {
-    intro:
-      "Our free username tools help you find, verify, and create the right username for any platform. Whether you are building a personal brand, launching a business, or simply want one consistent handle across your favorite sites, these tools make the process much easier.",
-    checker:
-      "Our most popular tool checks whether your preferred username is available across 1,400+ platforms in seconds. Enter a username once to see where it is taken, where it is available, and where you can claim it immediately.",
-    generator:
-      "Coming soon: our username generator will suggest unique ideas based on your name, interests, and keywords. It is ideal when your first choice is already taken on the platforms that matter most.",
-    ideas:
-      "Coming soon: browse curated username ideas by style, category, and platform. Use these inspiration lists to discover memorable usernames that still fit your identity or brand.",
-  },
-  zh: {
-    intro:
-      "我们的免费用户名工具可以帮助你在任何平台上查找、验证并创建合适的用户名。无论你是在打造个人品牌、启动新业务，还是只是想在常用网站上保持统一昵称，这些工具都能让流程更轻松。",
-    checker:
-      "我们最受欢迎的工具可以在几秒内检查你心仪的用户名是否可在 1400+ 平台使用。输入一次用户名，就能看到哪些平台已被占用、哪些仍可注册，以及可以立即前往认领的位置。",
-    generator:
-      "即将推出：用户名生成器会根据你的姓名、兴趣和关键词提供有创意的候选方案。当你的首选用户名在重要平台上都已被占用时，它尤其有帮助。",
-    ideas:
-      "即将推出：按风格、类别和平台浏览精选用户名灵感。你可以通过这些灵感列表找到既好记又符合个人身份或品牌定位的用户名。",
-  },
-  es: {
-    intro:
-      "Nuestras herramientas gratuitas de nombres de usuario te ayudan a encontrar, verificar y crear el nombre adecuado para cualquier plataforma. Ya sea que estés construyendo una marca personal, lanzando un negocio o simplemente buscando un identificador coherente en tus sitios favoritos, estas herramientas simplifican todo el proceso.",
-    checker:
-      "Nuestra herramienta más popular comprueba en segundos si tu nombre de usuario preferido está disponible en más de 1.400 plataformas. Introduce un nombre una sola vez y verás dónde está ocupado, dónde sigue libre y dónde puedes reclamarlo de inmediato.",
-    generator:
-      "Próximamente: nuestro generador de nombres de usuario te sugerirá ideas únicas basadas en tu nombre, tus intereses y tus palabras clave. Es ideal cuando tu primera opción ya está ocupada en las plataformas más importantes para ti.",
-    ideas:
-      "Próximamente: explora ideas de nombres de usuario organizadas por estilo, categoría y plataforma. Estas listas te ayudarán a encontrar nombres memorables que encajen con tu identidad o marca.",
-  },
-  ja: {
-    intro:
-      "無料のユーザー名ツールを使えば、あらゆるプラットフォーム向けに最適なユーザー名を見つけ、確認し、作成できます。個人ブランドの構築、新しいビジネスの立ち上げ、あるいは複数サイトで同じハンドル名を使いたい場合でも、作業をずっと簡単に進められます。",
-    checker:
-      "最も人気のあるツールでは、希望するユーザー名が 1,400 以上のプラットフォームで使えるかを数秒で確認できます。1 回入力するだけで、使用済みの場所、利用可能な場所、すぐ取得できる場所が分かります。",
-    generator:
-      "近日公開：ユーザー名ジェネレーターは、名前・興味・キーワードをもとに個性的な候補を提案します。第一候補が主要プラットフォームですでに使われている場合に特に便利です。",
-    ideas:
-      "近日公開：スタイル・カテゴリ・プラットフォーム別に整理されたユーザー名アイデアを閲覧できます。自分やブランドに合う、覚えやすい候補を探すのに役立ちます。",
-  },
-  fr: {
-    intro:
-      "Nos outils gratuits de nom d’utilisateur vous aident à trouver, vérifier et créer le bon identifiant pour n’importe quelle plateforme. Que vous développiez une marque personnelle, lanciez une activité ou cherchiez simplement un pseudo cohérent sur vos sites préférés, ils rendent tout le processus beaucoup plus simple.",
-    checker:
-      "Notre outil le plus populaire vérifie en quelques secondes si le nom d’utilisateur souhaité est disponible sur plus de 1 400 plateformes. Saisissez-le une seule fois pour voir où il est pris, où il reste disponible et où vous pouvez le réserver immédiatement.",
-    generator:
-      "Bientôt disponible : notre générateur de noms d’utilisateur proposera des idées originales à partir de votre nom, de vos centres d’intérêt et de vos mots-clés. C’est particulièrement utile lorsque votre premier choix est déjà pris partout.",
-    ideas:
-      "Bientôt disponible : parcourez des idées de noms d’utilisateur classées par style, catégorie et plateforme. Ces listes d’inspiration vous aideront à trouver un nom mémorable adapté à votre identité ou à votre marque.",
-  },
-  ko: {
-    intro:
-      "무료 사용자 이름 도구를 사용하면 어떤 플랫폼에서든 적합한 사용자 이름을 찾고, 확인하고, 만들 수 있습니다. 개인 브랜드를 구축하든, 새 비즈니스를 시작하든, 즐겨 쓰는 사이트에서 일관된 핸들을 원하든 이 도구들이 과정을 훨씬 쉽게 만들어 줍니다.",
-    checker:
-      "가장 인기 있는 도구는 원하는 사용자 이름이 1,400개 이상의 플랫폼에서 사용 가능한지 몇 초 안에 확인해 줍니다. 한 번만 입력하면 어디서 이미 사용 중인지, 어디서 아직 가능한지, 어디서 바로 선점할 수 있는지 확인할 수 있습니다.",
-    generator:
-      "곧 제공 예정: 사용자 이름 생성기는 이름, 관심사, 키워드를 바탕으로 독창적인 후보를 추천합니다. 특히 가장 원하는 이름이 주요 플랫폼에서 이미 사용 중일 때 유용합니다.",
-    ideas:
-      "곧 제공 예정: 스타일, 카테고리, 플랫폼별로 정리된 사용자 이름 아이디어를 살펴볼 수 있습니다. 기억하기 쉽고 자신의 정체성이나 브랜드에 맞는 이름을 찾는 데 도움이 됩니다.",
-  },
-  de: {
-    intro:
-      "Unsere kostenlosen Username-Tools helfen dir dabei, den passenden Benutzernamen für jede Plattform zu finden, zu prüfen und zu entwickeln. Egal ob du eine persönliche Marke aufbaust, ein neues Unternehmen startest oder einfach denselben Handle auf deinen Lieblingsseiten nutzen möchtest – diese Tools machen den Prozess deutlich einfacher.",
-    checker:
-      "Unser beliebtestes Tool prüft in wenigen Sekunden, ob dein gewünschter Benutzername auf mehr als 1.400 Plattformen verfügbar ist. Gib ihn einmal ein und sieh sofort, wo er vergeben ist, wo er frei ist und wo du ihn direkt sichern kannst.",
-    generator:
-      "Demnächst verfügbar: Unser Username-Generator schlägt dir kreative Ideen auf Basis deines Namens, deiner Interessen und deiner Keywords vor. Das ist besonders nützlich, wenn deine erste Wahl auf wichtigen Plattformen bereits vergeben ist.",
-    ideas:
-      "Demnächst verfügbar: Durchstöbere kuratierte Username-Ideen nach Stil, Kategorie und Plattform. So findest du leichter einen einprägsamen Namen, der zu deiner Identität oder Marke passt.",
-  },
-  pt: {
-    intro:
-      "Nossas ferramentas gratuitas de nome de usuário ajudam você a encontrar, verificar e criar o nome ideal para qualquer plataforma. Seja para construir uma marca pessoal, lançar um negócio ou apenas manter o mesmo identificador nos seus sites favoritos, elas tornam todo o processo muito mais simples.",
-    checker:
-      "Nossa ferramenta mais popular verifica em segundos se o nome de usuário desejado está disponível em mais de 1.400 plataformas. Digite uma vez e veja onde ele já está em uso, onde ainda está livre e onde você pode registrá-lo imediatamente.",
-    generator:
-      "Em breve: nosso gerador de nomes de usuário vai sugerir ideias criativas com base no seu nome, nos seus interesses e nas suas palavras-chave. É ideal quando a sua primeira opção já foi ocupada nas plataformas mais importantes.",
-    ideas:
-      "Em breve: explore ideias de nomes de usuário organizadas por estilo, categoria e plataforma. Essas listas de inspiração ajudam você a encontrar um nome memorável e alinhado à sua identidade ou marca.",
-  },
-  ru: {
-    intro:
-      "Наши бесплатные инструменты для проверки имени пользователя помогают подобрать, проверить и придумать подходящий ник для любой платформы. Они полезны и для личного бренда, и для нового бизнеса, и для тех, кто просто хочет использовать один и тот же ник на любимых сайтах.",
-    checker:
-      "Самый популярный инструмент за секунды показывает, доступно ли нужное имя пользователя более чем на 1400 платформах. Введите ник один раз и сразу увидите, где он занят, где свободен и где его можно зарегистрировать прямо сейчас.",
-    generator:
-      "Скоро: генератор имён пользователя будет предлагать креативные варианты на основе вашего имени, интересов и ключевых слов. Это особенно полезно, если ваш первый вариант уже занят на важных для вас платформах.",
-    ideas:
-      "Скоро: вы сможете просматривать подборки идей для имён пользователя по стилю, категории и платформе. Такие списки помогают найти запоминающийся ник, который подходит вашему образу или бренду.",
-  },
 };
 
 const categoriesIndexCopy: Record<
@@ -588,7 +526,10 @@ const toolsCatalog: Record<
 };
 
 export function getToolsCatalog(locale: string) {
-  return toolsCatalog[resolveLocale(locale)];
+  const resolved = resolveLocale(locale);
+  return toolsCatalog[resolved]
+    .filter((tool) => !tool.comingSoon && tool.href)
+    .map((tool) => ({ ...tool, description: toolsCopy[resolved].checker }));
 }
 
 export function getCategoryHeaderCopy(

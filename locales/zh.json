@@ -90,7 +90,8 @@
     },
     "tabs": {
       "platforms": "What is my Name 结果（{count}）",
-      "web": "网页结果（{count}）"
+      "web": "网页结果（{count}）",
+      "platform_unavailable": "跨平台检测服务暂时不可用，这不代表用户名不存在。可用的网页搜索结果会单独显示。"
     },
     "empty_web": "未找到网页结果",
     "empty_platforms_title": "没有结果",
@@ -202,13 +203,14 @@
     "linkedin": "LinkedIn"
   },
   "shortcuts": {
+    "keys": "Ctrl / ⌘ + K",
     "to_focus": "聚焦搜索",
     "hint_prefix": "按下",
     "hint_suffix": "即可聚焦搜索"
   },
   "footer": {
     "about_title": "关于",
-    "about_description": "一键搜索你的用户名在 1400+ 平台的存在情况。面向安全研究与数字足迹分析的强大用户名搜索工具。",
+    "about_description": "本站帮助你检查自己的公开用户名、比较品牌账号名称，并逐一核实可能的匹配。本站是独立服务；相同用户名不代表同一个人。",
     "features_title": "功能",
     "features": {
       "username_search": "用户名搜索",
@@ -246,8 +248,8 @@
       "description": "在 {category} 平台中搜索并检查用户名可用性。查看你的用户名在哪些平台可用。"
     },
     "tools": {
-      "title": "用户名工具 - 生成器、可用性检查等",
-      "description": "免费的用户名工具，包括可用性检查器、用户名生成器和用户名灵感。为所有平台检查并创建理想用户名。"
+      "title": "用户名查询工具",
+      "description": "本站帮助你检查自己的公开用户名、比较品牌账号名称，并逐一核实可能的匹配。本站是独立服务；相同用户名不代表同一个人。"
     },
     "blog": {
       "title": "博客 - 用户名技巧、指南与数字身份",
@@ -324,23 +326,23 @@
     "tools": {
       "home": "首页",
       "breadcrumb": "工具",
-      "collection_name": "用户名工具",
-      "collection_description": "免费的用户名工具，包括可用性检查、用户名生成器和用户名创意。",
-      "title": "用户名工具",
-      "description": "帮助你在所有平台上查找、检查并创建理想用户名的免费工具",
+      "collection_name": "用户名查询工具",
+      "collection_description": "本站帮助你检查自己的公开用户名、比较品牌账号名称，并逐一核实可能的匹配。本站是独立服务；相同用户名不代表同一个人。",
+      "title": "用户名查询工具",
+      "description": "本站帮助你检查自己的公开用户名、比较品牌账号名称，并逐一核实可能的匹配。本站是独立服务；相同用户名不代表同一个人。",
       "coming_soon": "即将推出",
       "cta_title": "立即检查你的用户名",
-      "cta_description": "使用我们的可用性检查器查看你的用户名在哪些地方已被占用，哪些地方仍可注册。免费、即时且无需账户。",
+      "cta_description": "输入用户名，不要粘贴完整个人资料链接。先检查原有拼写，再检查你确实使用过的变体。多人共用的昵称可能产生无关结果。请仅检查自己的账号，或在获得授权且目的合法的情况下使用。",
       "cta_button": "开始检查",
-      "content_title": "免费用户名工具",
+      "content_title": "用户名查询工具",
       "checker_title": "用户名可用性检查器",
       "generator_title": "用户名生成器",
       "ideas_title": "用户名灵感与创意",
       "features_title": "为什么使用我们的用户名工具？",
       "feature_search_title": "搜索 1,400+ 平台",
-      "feature_search_description": "比其他服务覆盖更多平台，检查用户名可用性",
+      "feature_search_description": "实际覆盖范围和响应速度取决于数据提供方及各平台。平台可能更换链接结构或限制自动请求，重要结果必须回到原站核实。平台目录介绍部分服务，不承诺每次都能成功查询所有平台。",
       "feature_results_title": "即时结果",
-      "feature_results_description": "实时返回可用性结果，无需等待或注册账号",
+      "feature_results_description": "“找到”只是一个公开资料线索，不是账号归属证明。请打开原平台并比较公开信息后再下结论。“未找到”也不保证可以注册：保留名称、登录限制、限流和网络错误都可能影响查询。",
       "feature_free_title": "100% 免费",
       "feature_free_description": "所有工具完全免费，没有隐藏费用或高级门槛"
     },

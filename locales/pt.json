@@ -90,7 +90,8 @@
     },
     "tabs": {
       "platforms": "Resultados do What is my Name ({count})",
-      "web": "Resultados da web ({count})"
+      "web": "Resultados da web ({count})",
+      "platform_unavailable": "A verificação de plataformas está temporariamente indisponível. Isso não significa que o usuário não exista. Os resultados da web disponíveis são exibidos separadamente."
     },
     "empty_web": "Nenhum resultado da web encontrado",
     "empty_platforms_title": "Nenhum resultado encontrado",
@@ -202,13 +203,14 @@
     "linkedin": "LinkedIn"
   },
   "shortcuts": {
+    "keys": "Ctrl / ⌘ + K",
     "to_focus": "para focar a pesquisa",
     "hint_prefix": "Pressione",
     "hint_suffix": "para focar a pesquisa"
   },
   "footer": {
     "about_title": "Sobre",
-    "about_description": "Descubra seu nome de usuário em mais de 1.400 plataformas instantaneamente. Uma ferramenta poderosa de pesquisa de nomes de usuário para pesquisa de segurança e análise de pegada digital.",
+    "about_description": "Este serviço independente ajuda a revisar seus perfis públicos e comparar nomes para uma marca. Um nome de usuário igual não comprova que os perfis pertencem à mesma pessoa.",
     "features_title": "Recursos",
     "features": {
       "username_search": "Pesquisa de nome de usuário",
@@ -246,8 +248,8 @@
       "description": "Pesquise e verifique a disponibilidade de nome de usuário em plataformas de {category}. Descubra onde seu nome de usuário está disponível."
     },
     "tools": {
-      "title": "Ferramentas de nome de usuário - Gerador, verificador de disponibilidade e mais",
-      "description": "Ferramentas gratuitas de nome de usuário, incluindo verificador de disponibilidade, gerador e ideias. Verifique e crie nomes de usuário perfeitos para todas as plataformas."
+      "title": "Ferramentas de pesquisa de usuários",
+      "description": "Este serviço independente ajuda a revisar seus perfis públicos e comparar nomes para uma marca. Um nome de usuário igual não comprova que os perfis pertencem à mesma pessoa."
     },
     "blog": {
       "title": "Blog - Dicas, guias e identidade digital sobre nomes de usuário",
@@ -324,23 +326,23 @@
     "tools": {
       "home": "Início",
       "breadcrumb": "Ferramentas",
-      "collection_name": "Ferramentas de nome de usuário",
-      "collection_description": "Ferramentas gratuitas de nome de usuário, incluindo verificador de disponibilidade, gerador e ideias.",
-      "title": "Ferramentas de nome de usuário",
-      "description": "Ferramentas gratuitas para ajudar você a encontrar, verificar e criar o nome de usuário perfeito em todas as plataformas",
+      "collection_name": "Ferramentas de pesquisa de usuários",
+      "collection_description": "Este serviço independente ajuda a revisar seus perfis públicos e comparar nomes para uma marca. Um nome de usuário igual não comprova que os perfis pertencem à mesma pessoa.",
+      "title": "Ferramentas de pesquisa de usuários",
+      "description": "Este serviço independente ajuda a revisar seus perfis públicos e comparar nomes para uma marca. Um nome de usuário igual não comprova que os perfis pertencem à mesma pessoa.",
       "coming_soon": "Em breve",
       "cta_title": "Verifique seu nome de usuário agora",
-      "cta_description": "Use nosso verificador para ver onde seu nome de usuário já está em uso e onde você ainda pode registrá-lo. Grátis, instantâneo e sem conta.",
+      "cta_description": "Digite o nome de usuário, não a URL completa. Confira primeiro a grafia original e depois variações que realmente usou. Pesquise suas próprias contas ou use o serviço com autorização e finalidade legítima.",
       "cta_button": "Começar verificação",
-      "content_title": "Ferramentas gratuitas de nome de usuário",
+      "content_title": "Ferramentas de pesquisa de usuários",
       "checker_title": "Verificador de disponibilidade de nome de usuário",
       "generator_title": "Gerador de nomes de usuário",
       "ideas_title": "Ideias e inspiração para nomes de usuário",
       "features_title": "Por que usar nossas ferramentas?",
       "feature_search_title": "Pesquisar em mais de 1.400 plataformas",
-      "feature_search_description": "Verifique a disponibilidade em mais plataformas do que qualquer outro serviço",
+      "feature_search_description": "A cobertura e o tempo de resposta dependem dos fornecedores e das plataformas. Mudanças de endereço e bloqueios de consultas automáticas podem impedir verificações. Confirme resultados importantes no site original; o diretório não garante cobertura completa.",
       "feature_results_title": "Resultados instantâneos",
-      "feature_results_description": "Obtenha verificações em tempo real sem espera nem conta",
+      "feature_results_description": "Um perfil encontrado é uma pista, não uma prova de titularidade. Compare as informações públicas na plataforma original. Nenhum resultado não garante disponibilidade para registro: nomes reservados, login obrigatório, limites e falhas de rede podem interferir.",
       "feature_free_title": "100% grátis",
       "feature_free_description": "Todas as ferramentas são totalmente gratuitas, sem custos ocultos nem planos premium"
     },

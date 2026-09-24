@@ -2109,15 +2109,15 @@ const TERMS_DOCS: Record<AppLocale, LegalDocument> = {
 };
 
 const PRIVACY_LAST_UPDATED_LABELS: Record<AppLocale, string> = {
-  en: "Last updated: July 28, 2026",
-  zh: "最后更新：2026 年 7 月 28 日",
-  es: "Última actualización: 28 de julio de 2026",
-  ja: "最終更新日：2026年7月28日",
-  fr: "Dernière mise à jour : 28 juillet 2026",
-  ko: "최종 업데이트: 2026년 7월 28일",
-  de: "Zuletzt aktualisiert: 28. Juli 2026",
-  pt: "Última atualização: 28 de julho de 2026",
-  ru: "Последнее обновление: 28 июля 2026 г.",
+  en: "Last updated: September 21, 2026",
+  zh: "最后更新：2026 年 9 月 21 日",
+  es: "Última actualización: 21 de septiembre de 2026",
+  ja: "最終更新日：2026年9月21日",
+  fr: "Dernière mise à jour : 21 septembre 2026",
+  ko: "최종 업데이트: 2026년 9월 21일",
+  de: "Zuletzt aktualisiert: 21. September 2026",
+  pt: "Última atualização: 21 de setembro de 2026",
+  ru: "Последнее обновление: 21 сентября 2026 г.",
 };
 
 const ADVERTISING_PRIVACY_SECTIONS: Record<AppLocale, LegalSection> = {
