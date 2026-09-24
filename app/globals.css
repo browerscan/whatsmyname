@@ -477,3 +477,11 @@
 ins.adsbygoogle[data-ad-status="unfilled"] {
   display: none !important;
 }
+
+/* While a lazy Auto ads slot is still loading (no data-ad-status yet) the same
+   zero-width slot holds the 1200px iframe for about a second. Clip horizontally
+   at the wrapper, which spans its column: the iframe stays partly in view so
+   lazy loading still fires, and clip creates no scroll container. */
+.google-auto-placed {
+  overflow-x: clip;
+}
