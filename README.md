@@ -67,7 +67,7 @@ Once running, you should see:
 | Real-Time Streaming   | See results as they arrive               |
 | Google Integration    | Complementary Google search results      |
 | AI Analysis           | Get intelligent insights about usernames |
-| Advanced Filtering    | Filter by status, category, NSFW content |
+| Advanced Filtering    | Filter by status and category; provider-flagged adult results excluded |
 | Export Results        | Save as CSV or JSON                      |
 | Multi-Language        | Support for 9 languages                  |
 
@@ -192,7 +192,7 @@ GOOGLE_CUSTOM_SEARCH_CX=your_search_engine_id
 
 # Required: OpenRouter AI
 OPENROUTER_API_KEY=your_openrouter_key
-OPENROUTER_MODEL=deepseek/deepseek-chat-v3.1:free
+OPENROUTER_MODEL=nvidia/nemotron-3-super-120b-a12b:free,google/gemma-4-31b-it:free,nvidia/nemotron-3.5-lightning:free,minimax/minimax-m2.7:free,openrouter/free
 
 # Optional
 NEXT_PUBLIC_BASE_URL=http://localhost:3000

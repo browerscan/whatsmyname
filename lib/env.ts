@@ -7,6 +7,8 @@
 
 import { z } from "zod";
 
+import { DEFAULT_OPENROUTER_MODELS } from "./openrouter";
+
 /**
  * Environment variable schema with validation
  *
@@ -56,7 +58,7 @@ const envSchema = z
       .min(1, "OPENROUTER_API_KEY is required")
       .min(20, "OPENROUTER_API_KEY appears invalid (too short)")
       .optional(),
-    OPENROUTER_MODEL: z.string().default("deepseek/deepseek-chat-v3.1:free"),
+    OPENROUTER_MODEL: z.string().default(DEFAULT_OPENROUTER_MODELS.join(",")),
   })
   .refine(
     (data) => {
@@ -151,7 +153,7 @@ export function getEnv(): Env {
         NEXT_PUBLIC_BASE_URL: "https://whatismyname.org",
         WHATSMYNAME_API_KEY: "",
         GOOGLE_CUSTOM_SEARCH_CX: "",
-        OPENROUTER_MODEL: "deepseek/deepseek-chat-v3.1:free",
+        OPENROUTER_MODEL: DEFAULT_OPENROUTER_MODELS.join(","),
         googleApiKeys: [],
       };
     }
