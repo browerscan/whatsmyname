@@ -1,0 +1,1628 @@
+{
+  "at": "2026-09-24T16:48:30.147Z",
+  "base": "http://127.0.0.1:4391",
+  "rows": [
+    {
+      "width": 1024,
+      "locale": "en",
+      "titleLines": 1,
+      "descLines": 1,
+      "h1Lines": 2,
+      "spanDisplay": "block",
+      "spanFits": true,
+      "formWidth": 672,
+      "overflow": 0
+    },
+    {
+      "width": 1024,
+      "locale": "de",
+      "titleLines": 2,
+      "descLines": 1,
+      "h1Lines": 3,
+      "spanDisplay": "block",
+      "spanFits": true,
+      "formWidth": 672,
+      "overflow": 0
+    },
+    {
+      "width": 1024,
+      "locale": "es",
+      "titleLines": 1,
+      "descLines": 1,
+      "h1Lines": 2,
+      "spanDisplay": "block",
+      "spanFits": true,
+      "formWidth": 672,
+      "overflow": 0
+    },
+    {
+      "width": 1024,
+      "locale": "fr",
+      "titleLines": 2,
+      "descLines": 2,
+      "h1Lines": 3,
+      "spanDisplay": "block",
+      "spanFits": true,
+      "formWidth": 672,
+      "overflow": 0
+    },
+    {
+      "width": 1024,
+      "locale": "ja",
+      "titleLines": 2,
+      "descLines": 1,
+      "h1Lines": 3,
+      "spanDisplay": "block",
+      "spanFits": true,
+      "formWidth": 672,
+      "overflow": 0
+    },
+    {
+      "width": 1024,
+      "locale": "ko",
+      "titleLines": 1,
+      "descLines": 1,
+      "h1Lines": 2,
+      "spanDisplay": "block",
+      "spanFits": true,
+      "formWidth": 672,
+      "overflow": 0
+    },
+    {
+      "width": 1024,
+      "locale": "pt",
+      "titleLines": 1,
+      "descLines": 2,
+      "h1Lines": 2,
+      "spanDisplay": "block",
+      "spanFits": true,
+      "formWidth": 672,
+      "overflow": 0
+    },
+    {
+      "width": 1024,
+      "locale": "ru",
+      "titleLines": 1,
+      "descLines": 2,
+      "h1Lines": 2,
+      "spanDisplay": "block",
+      "spanFits": true,
+      "formWidth": 672,
+      "overflow": 0
+    },
+    {
+      "width": 1024,
+      "locale": "zh",
+      "titleLines": 1,
+      "descLines": 1,
+      "h1Lines": 2,
+      "spanDisplay": "block",
+      "spanFits": true,
+      "formWidth": 672,
+      "overflow": 0
+    },
+    {
+      "width": 1280,
+      "locale": "en",
+      "titleLines": 1,
+      "descLines": 1,
+      "h1Lines": 2,
+      "spanDisplay": "block",
+      "spanFits": true,
+      "formWidth": 672,
+      "overflow": 0
+    },
+    {
+      "width": 1280,
+      "locale": "de",
+      "titleLines": 1,
+      "descLines": 1,
+      "h1Lines": 2,
+      "spanDisplay": "block",
+      "spanFits": true,
+      "formWidth": 672,
+      "overflow": 0
+    },
+    {
+      "width": 1280,
+      "locale": "es",
+      "titleLines": 1,
+      "descLines": 1,
+      "h1Lines": 2,
+      "spanDisplay": "block",
+      "spanFits": true,
+      "formWidth": 672,
+      "overflow": 0
+    },
+    {
+      "width": 1280,
+      "locale": "fr",
+      "titleLines": 1,
+      "descLines": 1,
+      "h1Lines": 2,
+      "spanDisplay": "block",
+      "spanFits": true,
+      "formWidth": 672,
+      "overflow": 0
+    },
+    {
+      "width": 1280,
+      "locale": "ja",
+      "titleLines": 1,
+      "descLines": 1,
+      "h1Lines": 2,
+      "spanDisplay": "block",
+      "spanFits": true,
+      "formWidth": 672,
+      "overflow": 0
+    },
+    {
+      "width": 1280,
+      "locale": "ko",
+      "titleLines": 1,
+      "descLines": 1,
+      "h1Lines": 2,
+      "spanDisplay": "block",
+      "spanFits": true,
+      "formWidth": 672,
+      "overflow": 0
+    },
+    {
+      "width": 1280,
+      "locale": "pt",
+      "titleLines": 1,
+      "descLines": 1,
+      "h1Lines": 2,
+      "spanDisplay": "block",
+      "spanFits": true,
+      "formWidth": 672,
+      "overflow": 0
+    },
+    {
+      "width": 1280,
+      "locale": "ru",
+      "titleLines": 1,
+      "descLines": 1,
+      "h1Lines": 2,
+      "spanDisplay": "block",
+      "spanFits": true,
+      "formWidth": 672,
+      "overflow": 0
+    },
+    {
+      "width": 1280,
+      "locale": "zh",
+      "titleLines": 1,
+      "descLines": 1,
+      "h1Lines": 2,
+      "spanDisplay": "block",
+      "spanFits": true,
+      "formWidth": 672,
+      "overflow": 0
+    },
+    {
+      "width": 1440,
+      "locale": "en",
+      "titleLines": 1,
+      "descLines": 1,
+      "h1Lines": 2,
+      "spanDisplay": "block",
+      "spanFits": true,
+      "formWidth": 672,
+      "overflow": 0
+    },
+    {
+      "width": 1440,
+      "locale": "de",
+      "titleLines": 1,
+      "descLines": 1,
+      "h1Lines": 2,
+      "spanDisplay": "block",
+      "spanFits": true,
+      "formWidth": 672,
+      "overflow": 0
+    },
+    {
+      "width": 1440,
+      "locale": "es",
+      "titleLines": 1,
+      "descLines": 1,
+      "h1Lines": 2,
+      "spanDisplay": "block",
+      "spanFits": true,
+      "formWidth": 672,
+      "overflow": 0
+    },
+    {
+      "width": 1440,
+      "locale": "fr",
+      "titleLines": 1,
+      "descLines": 1,
+      "h1Lines": 2,
+      "spanDisplay": "block",
+      "spanFits": true,
+      "formWidth": 672,
+      "overflow": 0
+    },
+    {
+      "width": 1440,
+      "locale": "ja",
+      "titleLines": 1,
+      "descLines": 1,
+      "h1Lines": 2,
+      "spanDisplay": "block",
+      "spanFits": true,
+      "formWidth": 672,
+      "overflow": 0
+    },
+    {
+      "width": 1440,
+      "locale": "ko",
+      "titleLines": 1,
+      "descLines": 1,
+      "h1Lines": 2,
+      "spanDisplay": "block",
+      "spanFits": true,
+      "formWidth": 672,
+      "overflow": 0
+    },
+    {
+      "width": 1440,
+      "locale": "pt",
+      "titleLines": 1,
+      "descLines": 1,
+      "h1Lines": 2,
+      "spanDisplay": "block",
+      "spanFits": true,
+      "formWidth": 672,
+      "overflow": 0
+    },
+    {
+      "width": 1440,
+      "locale": "ru",
+      "titleLines": 1,
+      "descLines": 1,
+      "h1Lines": 2,
+      "spanDisplay": "block",
+      "spanFits": true,
+      "formWidth": 672,
+      "overflow": 0
+    },
+    {
+      "width": 1440,
+      "locale": "zh",
+      "titleLines": 1,
+      "descLines": 1,
+      "h1Lines": 2,
+      "spanDisplay": "block",
+      "spanFits": true,
+      "formWidth": 672,
+      "overflow": 0
+    },
+    {
+      "width": 1920,
+      "locale": "en",
+      "titleLines": 1,
+      "descLines": 1,
+      "h1Lines": 2,
+      "spanDisplay": "block",
+      "spanFits": true,
+      "formWidth": 672,
+      "overflow": 0
+    },
+    {
+      "width": 1920,
+      "locale": "de",
+      "titleLines": 1,
+      "descLines": 1,
+      "h1Lines": 2,
+      "spanDisplay": "block",
+      "spanFits": true,
+      "formWidth": 672,
+      "overflow": 0
+    },
+    {
+      "width": 1920,
+      "locale": "es",
+      "titleLines": 1,
+      "descLines": 1,
+      "h1Lines": 2,
+      "spanDisplay": "block",
+      "spanFits": true,
+      "formWidth": 672,
+      "overflow": 0
+    },
+    {
+      "width": 1920,
+      "locale": "fr",
+      "titleLines": 1,
+      "descLines": 1,
+      "h1Lines": 2,
+      "spanDisplay": "block",
+      "spanFits": true,
+      "formWidth": 672,
+      "overflow": 0
+    },
+    {
+      "width": 1920,
+      "locale": "ja",
+      "titleLines": 1,
+      "descLines": 1,
+      "h1Lines": 2,
+      "spanDisplay": "block",
+      "spanFits": true,
+      "formWidth": 672,
+      "overflow": 0
+    },
+    {
+      "width": 1920,
+      "locale": "ko",
+      "titleLines": 1,
+      "descLines": 1,
+      "h1Lines": 2,
+      "spanDisplay": "block",
+      "spanFits": true,
+      "formWidth": 672,
+      "overflow": 0
+    },
+    {
+      "width": 1920,
+      "locale": "pt",
+      "titleLines": 1,
+      "descLines": 1,
+      "h1Lines": 2,
+      "spanDisplay": "block",
+      "spanFits": true,
+      "formWidth": 672,
+      "overflow": 0
+    },
+    {
+      "width": 1920,
+      "locale": "ru",
+      "titleLines": 1,
+      "descLines": 1,
+      "h1Lines": 2,
+      "spanDisplay": "block",
+      "spanFits": true,
+      "formWidth": 672,
+      "overflow": 0
+    },
+    {
+      "width": 1920,
+      "locale": "zh",
+      "titleLines": 1,
+      "descLines": 1,
+      "h1Lines": 2,
+      "spanDisplay": "block",
+      "spanFits": true,
+      "formWidth": 672,
+      "overflow": 0
+    },
+    {
+      "width": 390,
+      "locale": "en",
+      "titleLines": 2,
+      "descLines": 3,
+      "h1Lines": 3,
+      "spanDisplay": "inline-block",
+      "spanFits": true,
+      "formWidth": 316,
+      "overflow": 0
+    },
+    {
+      "width": 390,
+      "locale": "de",
+      "titleLines": 3,
+      "descLines": 3,
+      "h1Lines": 4,
+      "spanDisplay": "inline-block",
+      "spanFits": true,
+      "formWidth": 316,
+      "overflow": 0
+    },
+    {
+      "width": 390,
+      "locale": "es",
+      "titleLines": 2,
+      "descLines": 3,
+      "h1Lines": 3,
+      "spanDisplay": "inline-block",
+      "spanFits": true,
+      "formWidth": 316,
+      "overflow": 0
+    },
+    {
+      "width": 390,
+      "locale": "fr",
+      "titleLines": 3,
+      "descLines": 3,
+      "h1Lines": 4,
+      "spanDisplay": "inline-block",
+      "spanFits": true,
+      "formWidth": 316,
+      "overflow": 0
+    },
+    {
+      "width": 390,
+      "locale": "ja",
+      "titleLines": 2,
+      "descLines": 2,
+      "h1Lines": 3,
+      "spanDisplay": "inline-block",
+      "spanFits": true,
+      "formWidth": 316,
+      "overflow": 0
+    },
+    {
+      "width": 390,
+      "locale": "ko",
+      "titleLines": 1,
+      "descLines": 2,
+      "h1Lines": 2,
+      "spanDisplay": "inline-block",
+      "spanFits": true,
+      "formWidth": 316,
+      "overflow": 0
+    },
+    {
+      "width": 390,
+      "locale": "pt",
+      "titleLines": 2,
+      "descLines": 3,
+      "h1Lines": 3,
+      "spanDisplay": "inline-block",
+      "spanFits": true,
+      "formWidth": 316,
+      "overflow": 0
+    },
+    {
+      "width": 390,
+      "locale": "ru",
+      "titleLines": 2,
+      "descLines": 3,
+      "h1Lines": 3,
+      "spanDisplay": "inline-block",
+      "spanFits": true,
+      "formWidth": 316,
+      "overflow": 0
+    },
+    {
+      "width": 390,
+      "locale": "zh",
+      "titleLines": 1,
+      "descLines": 2,
+      "h1Lines": 2,
+      "spanDisplay": "inline-block",
+      "spanFits": true,
+      "formWidth": 316,
+      "overflow": 0
+    }
+  ],
+  "results": [
+    {
+      "name": "1024px en: no horizontal page overflow",
+      "ok": true,
+      "detail": "overflow=0"
+    },
+    {
+      "name": "1024px en: title stays inside the heading",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024px en: title prefix and highlight on separate lines",
+      "ok": true,
+      "detail": "display=block h1Lines=2"
+    },
+    {
+      "name": "1024px en: search form keeps its 672px cap",
+      "ok": true,
+      "detail": "w=672"
+    },
+    {
+      "name": "1024px de: no horizontal page overflow",
+      "ok": true,
+      "detail": "overflow=0"
+    },
+    {
+      "name": "1024px de: title stays inside the heading",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024px de: title prefix and highlight on separate lines",
+      "ok": true,
+      "detail": "display=block h1Lines=3"
+    },
+    {
+      "name": "1024px de: search form keeps its 672px cap",
+      "ok": true,
+      "detail": "w=672"
+    },
+    {
+      "name": "1024px es: no horizontal page overflow",
+      "ok": true,
+      "detail": "overflow=0"
+    },
+    {
+      "name": "1024px es: title stays inside the heading",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024px es: title prefix and highlight on separate lines",
+      "ok": true,
+      "detail": "display=block h1Lines=2"
+    },
+    {
+      "name": "1024px es: search form keeps its 672px cap",
+      "ok": true,
+      "detail": "w=672"
+    },
+    {
+      "name": "1024px fr: no horizontal page overflow",
+      "ok": true,
+      "detail": "overflow=0"
+    },
+    {
+      "name": "1024px fr: title stays inside the heading",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024px fr: title prefix and highlight on separate lines",
+      "ok": true,
+      "detail": "display=block h1Lines=3"
+    },
+    {
+      "name": "1024px fr: search form keeps its 672px cap",
+      "ok": true,
+      "detail": "w=672"
+    },
+    {
+      "name": "1024px ja: no horizontal page overflow",
+      "ok": true,
+      "detail": "overflow=0"
+    },
+    {
+      "name": "1024px ja: title stays inside the heading",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024px ja: title prefix and highlight on separate lines",
+      "ok": true,
+      "detail": "display=block h1Lines=3"
+    },
+    {
+      "name": "1024px ja: search form keeps its 672px cap",
+      "ok": true,
+      "detail": "w=672"
+    },
+    {
+      "name": "1024px ko: no horizontal page overflow",
+      "ok": true,
+      "detail": "overflow=0"
+    },
+    {
+      "name": "1024px ko: title stays inside the heading",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024px ko: title prefix and highlight on separate lines",
+      "ok": true,
+      "detail": "display=block h1Lines=2"
+    },
+    {
+      "name": "1024px ko: search form keeps its 672px cap",
+      "ok": true,
+      "detail": "w=672"
+    },
+    {
+      "name": "1024px pt: no horizontal page overflow",
+      "ok": true,
+      "detail": "overflow=0"
+    },
+    {
+      "name": "1024px pt: title stays inside the heading",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024px pt: title prefix and highlight on separate lines",
+      "ok": true,
+      "detail": "display=block h1Lines=2"
+    },
+    {
+      "name": "1024px pt: search form keeps its 672px cap",
+      "ok": true,
+      "detail": "w=672"
+    },
+    {
+      "name": "1024px ru: no horizontal page overflow",
+      "ok": true,
+      "detail": "overflow=0"
+    },
+    {
+      "name": "1024px ru: title stays inside the heading",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024px ru: title prefix and highlight on separate lines",
+      "ok": true,
+      "detail": "display=block h1Lines=2"
+    },
+    {
+      "name": "1024px ru: search form keeps its 672px cap",
+      "ok": true,
+      "detail": "w=672"
+    },
+    {
+      "name": "1024px zh: no horizontal page overflow",
+      "ok": true,
+      "detail": "overflow=0"
+    },
+    {
+      "name": "1024px zh: title stays inside the heading",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024px zh: title prefix and highlight on separate lines",
+      "ok": true,
+      "detail": "display=block h1Lines=2"
+    },
+    {
+      "name": "1024px zh: search form keeps its 672px cap",
+      "ok": true,
+      "detail": "w=672"
+    },
+    {
+      "name": "1280px en: no horizontal page overflow",
+      "ok": true,
+      "detail": "overflow=0"
+    },
+    {
+      "name": "1280px en: title stays inside the heading",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1280px en: highlighted title on one line",
+      "ok": true,
+      "detail": "lines=1"
+    },
+    {
+      "name": "1280px en: description on one line",
+      "ok": true,
+      "detail": "lines=1"
+    },
+    {
+      "name": "1280px en: title prefix and highlight on separate lines",
+      "ok": true,
+      "detail": "display=block h1Lines=2"
+    },
+    {
+      "name": "1280px en: search form keeps its 672px cap",
+      "ok": true,
+      "detail": "w=672"
+    },
+    {
+      "name": "1280px de: no horizontal page overflow",
+      "ok": true,
+      "detail": "overflow=0"
+    },
+    {
+      "name": "1280px de: title stays inside the heading",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1280px de: highlighted title on one line",
+      "ok": true,
+      "detail": "lines=1"
+    },
+    {
+      "name": "1280px de: description on one line",
+      "ok": true,
+      "detail": "lines=1"
+    },
+    {
+      "name": "1280px de: title prefix and highlight on separate lines",
+      "ok": true,
+      "detail": "display=block h1Lines=2"
+    },
+    {
+      "name": "1280px de: search form keeps its 672px cap",
+      "ok": true,
+      "detail": "w=672"
+    },
+    {
+      "name": "1280px es: no horizontal page overflow",
+      "ok": true,
+      "detail": "overflow=0"
+    },
+    {
+      "name": "1280px es: title stays inside the heading",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1280px es: highlighted title on one line",
+      "ok": true,
+      "detail": "lines=1"
+    },
+    {
+      "name": "1280px es: description on one line",
+      "ok": true,
+      "detail": "lines=1"
+    },
+    {
+      "name": "1280px es: title prefix and highlight on separate lines",
+      "ok": true,
+      "detail": "display=block h1Lines=2"
+    },
+    {
+      "name": "1280px es: search form keeps its 672px cap",
+      "ok": true,
+      "detail": "w=672"
+    },
+    {
+      "name": "1280px fr: no horizontal page overflow",
+      "ok": true,
+      "detail": "overflow=0"
+    },
+    {
+      "name": "1280px fr: title stays inside the heading",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1280px fr: highlighted title on one line",
+      "ok": true,
+      "detail": "lines=1"
+    },
+    {
+      "name": "1280px fr: description on one line",
+      "ok": true,
+      "detail": "lines=1"
+    },
+    {
+      "name": "1280px fr: title prefix and highlight on separate lines",
+      "ok": true,
+      "detail": "display=block h1Lines=2"
+    },
+    {
+      "name": "1280px fr: search form keeps its 672px cap",
+      "ok": true,
+      "detail": "w=672"
+    },
+    {
+      "name": "1280px ja: no horizontal page overflow",
+      "ok": true,
+      "detail": "overflow=0"
+    },
+    {
+      "name": "1280px ja: title stays inside the heading",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1280px ja: highlighted title on one line",
+      "ok": true,
+      "detail": "lines=1"
+    },
+    {
+      "name": "1280px ja: description on one line",
+      "ok": true,
+      "detail": "lines=1"
+    },
+    {
+      "name": "1280px ja: title prefix and highlight on separate lines",
+      "ok": true,
+      "detail": "display=block h1Lines=2"
+    },
+    {
+      "name": "1280px ja: search form keeps its 672px cap",
+      "ok": true,
+      "detail": "w=672"
+    },
+    {
+      "name": "1280px ko: no horizontal page overflow",
+      "ok": true,
+      "detail": "overflow=0"
+    },
+    {
+      "name": "1280px ko: title stays inside the heading",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1280px ko: highlighted title on one line",
+      "ok": true,
+      "detail": "lines=1"
+    },
+    {
+      "name": "1280px ko: description on one line",
+      "ok": true,
+      "detail": "lines=1"
+    },
+    {
+      "name": "1280px ko: title prefix and highlight on separate lines",
+      "ok": true,
+      "detail": "display=block h1Lines=2"
+    },
+    {
+      "name": "1280px ko: search form keeps its 672px cap",
+      "ok": true,
+      "detail": "w=672"
+    },
+    {
+      "name": "1280px pt: no horizontal page overflow",
+      "ok": true,
+      "detail": "overflow=0"
+    },
+    {
+      "name": "1280px pt: title stays inside the heading",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1280px pt: highlighted title on one line",
+      "ok": true,
+      "detail": "lines=1"
+    },
+    {
+      "name": "1280px pt: description on one line",
+      "ok": true,
+      "detail": "lines=1"
+    },
+    {
+      "name": "1280px pt: title prefix and highlight on separate lines",
+      "ok": true,
+      "detail": "display=block h1Lines=2"
+    },
+    {
+      "name": "1280px pt: search form keeps its 672px cap",
+      "ok": true,
+      "detail": "w=672"
+    },
+    {
+      "name": "1280px ru: no horizontal page overflow",
+      "ok": true,
+      "detail": "overflow=0"
+    },
+    {
+      "name": "1280px ru: title stays inside the heading",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1280px ru: highlighted title on one line",
+      "ok": true,
+      "detail": "lines=1"
+    },
+    {
+      "name": "1280px ru: description on one line",
+      "ok": true,
+      "detail": "lines=1"
+    },
+    {
+      "name": "1280px ru: title prefix and highlight on separate lines",
+      "ok": true,
+      "detail": "display=block h1Lines=2"
+    },
+    {
+      "name": "1280px ru: search form keeps its 672px cap",
+      "ok": true,
+      "detail": "w=672"
+    },
+    {
+      "name": "1280px zh: no horizontal page overflow",
+      "ok": true,
+      "detail": "overflow=0"
+    },
+    {
+      "name": "1280px zh: title stays inside the heading",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1280px zh: highlighted title on one line",
+      "ok": true,
+      "detail": "lines=1"
+    },
+    {
+      "name": "1280px zh: description on one line",
+      "ok": true,
+      "detail": "lines=1"
+    },
+    {
+      "name": "1280px zh: title prefix and highlight on separate lines",
+      "ok": true,
+      "detail": "display=block h1Lines=2"
+    },
+    {
+      "name": "1280px zh: search form keeps its 672px cap",
+      "ok": true,
+      "detail": "w=672"
+    },
+    {
+      "name": "1440px en: no horizontal page overflow",
+      "ok": true,
+      "detail": "overflow=0"
+    },
+    {
+      "name": "1440px en: title stays inside the heading",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440px en: highlighted title on one line",
+      "ok": true,
+      "detail": "lines=1"
+    },
+    {
+      "name": "1440px en: description on one line",
+      "ok": true,
+      "detail": "lines=1"
+    },
+    {
+      "name": "1440px en: title prefix and highlight on separate lines",
+      "ok": true,
+      "detail": "display=block h1Lines=2"
+    },
+    {
+      "name": "1440px en: search form keeps its 672px cap",
+      "ok": true,
+      "detail": "w=672"
+    },
+    {
+      "name": "1440px de: no horizontal page overflow",
+      "ok": true,
+      "detail": "overflow=0"
+    },
+    {
+      "name": "1440px de: title stays inside the heading",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440px de: highlighted title on one line",
+      "ok": true,
+      "detail": "lines=1"
+    },
+    {
+      "name": "1440px de: description on one line",
+      "ok": true,
+      "detail": "lines=1"
+    },
+    {
+      "name": "1440px de: title prefix and highlight on separate lines",
+      "ok": true,
+      "detail": "display=block h1Lines=2"
+    },
+    {
+      "name": "1440px de: search form keeps its 672px cap",
+      "ok": true,
+      "detail": "w=672"
+    },
+    {
+      "name": "1440px es: no horizontal page overflow",
+      "ok": true,
+      "detail": "overflow=0"
+    },
+    {
+      "name": "1440px es: title stays inside the heading",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440px es: highlighted title on one line",
+      "ok": true,
+      "detail": "lines=1"
+    },
+    {
+      "name": "1440px es: description on one line",
+      "ok": true,
+      "detail": "lines=1"
+    },
+    {
+      "name": "1440px es: title prefix and highlight on separate lines",
+      "ok": true,
+      "detail": "display=block h1Lines=2"
+    },
+    {
+      "name": "1440px es: search form keeps its 672px cap",
+      "ok": true,
+      "detail": "w=672"
+    },
+    {
+      "name": "1440px fr: no horizontal page overflow",
+      "ok": true,
+      "detail": "overflow=0"
+    },
+    {
+      "name": "1440px fr: title stays inside the heading",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440px fr: highlighted title on one line",
+      "ok": true,
+      "detail": "lines=1"
+    },
+    {
+      "name": "1440px fr: description on one line",
+      "ok": true,
+      "detail": "lines=1"
+    },
+    {
+      "name": "1440px fr: title prefix and highlight on separate lines",
+      "ok": true,
+      "detail": "display=block h1Lines=2"
+    },
+    {
+      "name": "1440px fr: search form keeps its 672px cap",
+      "ok": true,
+      "detail": "w=672"
+    },
+    {
+      "name": "1440px ja: no horizontal page overflow",
+      "ok": true,
+      "detail": "overflow=0"
+    },
+    {
+      "name": "1440px ja: title stays inside the heading",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440px ja: highlighted title on one line",
+      "ok": true,
+      "detail": "lines=1"
+    },
+    {
+      "name": "1440px ja: description on one line",
+      "ok": true,
+      "detail": "lines=1"
+    },
+    {
+      "name": "1440px ja: title prefix and highlight on separate lines",
+      "ok": true,
+      "detail": "display=block h1Lines=2"
+    },
+    {
+      "name": "1440px ja: search form keeps its 672px cap",
+      "ok": true,
+      "detail": "w=672"
+    },
+    {
+      "name": "1440px ko: no horizontal page overflow",
+      "ok": true,
+      "detail": "overflow=0"
+    },
+    {
+      "name": "1440px ko: title stays inside the heading",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440px ko: highlighted title on one line",
+      "ok": true,
+      "detail": "lines=1"
+    },
+    {
+      "name": "1440px ko: description on one line",
+      "ok": true,
+      "detail": "lines=1"
+    },
+    {
+      "name": "1440px ko: title prefix and highlight on separate lines",
+      "ok": true,
+      "detail": "display=block h1Lines=2"
+    },
+    {
+      "name": "1440px ko: search form keeps its 672px cap",
+      "ok": true,
+      "detail": "w=672"
+    },
+    {
+      "name": "1440px pt: no horizontal page overflow",
+      "ok": true,
+      "detail": "overflow=0"
+    },
+    {
+      "name": "1440px pt: title stays inside the heading",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440px pt: highlighted title on one line",
+      "ok": true,
+      "detail": "lines=1"
+    },
+    {
+      "name": "1440px pt: description on one line",
+      "ok": true,
+      "detail": "lines=1"
+    },
+    {
+      "name": "1440px pt: title prefix and highlight on separate lines",
+      "ok": true,
+      "detail": "display=block h1Lines=2"
+    },
+    {
+      "name": "1440px pt: search form keeps its 672px cap",
+      "ok": true,
+      "detail": "w=672"
+    },
+    {
+      "name": "1440px ru: no horizontal page overflow",
+      "ok": true,
+      "detail": "overflow=0"
+    },
+    {
+      "name": "1440px ru: title stays inside the heading",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440px ru: highlighted title on one line",
+      "ok": true,
+      "detail": "lines=1"
+    },
+    {
+      "name": "1440px ru: description on one line",
+      "ok": true,
+      "detail": "lines=1"
+    },
+    {
+      "name": "1440px ru: title prefix and highlight on separate lines",
+      "ok": true,
+      "detail": "display=block h1Lines=2"
+    },
+    {
+      "name": "1440px ru: search form keeps its 672px cap",
+      "ok": true,
+      "detail": "w=672"
+    },
+    {
+      "name": "1440px zh: no horizontal page overflow",
+      "ok": true,
+      "detail": "overflow=0"
+    },
+    {
+      "name": "1440px zh: title stays inside the heading",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440px zh: highlighted title on one line",
+      "ok": true,
+      "detail": "lines=1"
+    },
+    {
+      "name": "1440px zh: description on one line",
+      "ok": true,
+      "detail": "lines=1"
+    },
+    {
+      "name": "1440px zh: title prefix and highlight on separate lines",
+      "ok": true,
+      "detail": "display=block h1Lines=2"
+    },
+    {
+      "name": "1440px zh: search form keeps its 672px cap",
+      "ok": true,
+      "detail": "w=672"
+    },
+    {
+      "name": "1920px en: no horizontal page overflow",
+      "ok": true,
+      "detail": "overflow=0"
+    },
+    {
+      "name": "1920px en: title stays inside the heading",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920px en: highlighted title on one line",
+      "ok": true,
+      "detail": "lines=1"
+    },
+    {
+      "name": "1920px en: description on one line",
+      "ok": true,
+      "detail": "lines=1"
+    },
+    {
+      "name": "1920px en: title prefix and highlight on separate lines",
+      "ok": true,
+      "detail": "display=block h1Lines=2"
+    },
+    {
+      "name": "1920px en: search form keeps its 672px cap",
+      "ok": true,
+      "detail": "w=672"
+    },
+    {
+      "name": "1920px de: no horizontal page overflow",
+      "ok": true,
+      "detail": "overflow=0"
+    },
+    {
+      "name": "1920px de: title stays inside the heading",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920px de: highlighted title on one line",
+      "ok": true,
+      "detail": "lines=1"
+    },
+    {
+      "name": "1920px de: description on one line",
+      "ok": true,
+      "detail": "lines=1"
+    },
+    {
+      "name": "1920px de: title prefix and highlight on separate lines",
+      "ok": true,
+      "detail": "display=block h1Lines=2"
+    },
+    {
+      "name": "1920px de: search form keeps its 672px cap",
+      "ok": true,
+      "detail": "w=672"
+    },
+    {
+      "name": "1920px es: no horizontal page overflow",
+      "ok": true,
+      "detail": "overflow=0"
+    },
+    {
+      "name": "1920px es: title stays inside the heading",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920px es: highlighted title on one line",
+      "ok": true,
+      "detail": "lines=1"
+    },
+    {
+      "name": "1920px es: description on one line",
+      "ok": true,
+      "detail": "lines=1"
+    },
+    {
+      "name": "1920px es: title prefix and highlight on separate lines",
+      "ok": true,
+      "detail": "display=block h1Lines=2"
+    },
+    {
+      "name": "1920px es: search form keeps its 672px cap",
+      "ok": true,
+      "detail": "w=672"
+    },
+    {
+      "name": "1920px fr: no horizontal page overflow",
+      "ok": true,
+      "detail": "overflow=0"
+    },
+    {
+      "name": "1920px fr: title stays inside the heading",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920px fr: highlighted title on one line",
+      "ok": true,
+      "detail": "lines=1"
+    },
+    {
+      "name": "1920px fr: description on one line",
+      "ok": true,
+      "detail": "lines=1"
+    },
+    {
+      "name": "1920px fr: title prefix and highlight on separate lines",
+      "ok": true,
+      "detail": "display=block h1Lines=2"
+    },
+    {
+      "name": "1920px fr: search form keeps its 672px cap",
+      "ok": true,
+      "detail": "w=672"
+    },
+    {
+      "name": "1920px ja: no horizontal page overflow",
+      "ok": true,
+      "detail": "overflow=0"
+    },
+    {
+      "name": "1920px ja: title stays inside the heading",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920px ja: highlighted title on one line",
+      "ok": true,
+      "detail": "lines=1"
+    },
+    {
+      "name": "1920px ja: description on one line",
+      "ok": true,
+      "detail": "lines=1"
+    },
+    {
+      "name": "1920px ja: title prefix and highlight on separate lines",
+      "ok": true,
+      "detail": "display=block h1Lines=2"
+    },
+    {
+      "name": "1920px ja: search form keeps its 672px cap",
+      "ok": true,
+      "detail": "w=672"
+    },
+    {
+      "name": "1920px ko: no horizontal page overflow",
+      "ok": true,
+      "detail": "overflow=0"
+    },
+    {
+      "name": "1920px ko: title stays inside the heading",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920px ko: highlighted title on one line",
+      "ok": true,
+      "detail": "lines=1"
+    },
+    {
+      "name": "1920px ko: description on one line",
+      "ok": true,
+      "detail": "lines=1"
+    },
+    {
+      "name": "1920px ko: title prefix and highlight on separate lines",
+      "ok": true,
+      "detail": "display=block h1Lines=2"
+    },
+    {
+      "name": "1920px ko: search form keeps its 672px cap",
+      "ok": true,
+      "detail": "w=672"
+    },
+    {
+      "name": "1920px pt: no horizontal page overflow",
+      "ok": true,
+      "detail": "overflow=0"
+    },
+    {
+      "name": "1920px pt: title stays inside the heading",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920px pt: highlighted title on one line",
+      "ok": true,
+      "detail": "lines=1"
+    },
+    {
+      "name": "1920px pt: description on one line",
+      "ok": true,
+      "detail": "lines=1"
+    },
+    {
+      "name": "1920px pt: title prefix and highlight on separate lines",
+      "ok": true,
+      "detail": "display=block h1Lines=2"
+    },
+    {
+      "name": "1920px pt: search form keeps its 672px cap",
+      "ok": true,
+      "detail": "w=672"
+    },
+    {
+      "name": "1920px ru: no horizontal page overflow",
+      "ok": true,
+      "detail": "overflow=0"
+    },
+    {
+      "name": "1920px ru: title stays inside the heading",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920px ru: highlighted title on one line",
+      "ok": true,
+      "detail": "lines=1"
+    },
+    {
+      "name": "1920px ru: description on one line",
+      "ok": true,
+      "detail": "lines=1"
+    },
+    {
+      "name": "1920px ru: title prefix and highlight on separate lines",
+      "ok": true,
+      "detail": "display=block h1Lines=2"
+    },
+    {
+      "name": "1920px ru: search form keeps its 672px cap",
+      "ok": true,
+      "detail": "w=672"
+    },
+    {
+      "name": "1920px zh: no horizontal page overflow",
+      "ok": true,
+      "detail": "overflow=0"
+    },
+    {
+      "name": "1920px zh: title stays inside the heading",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920px zh: highlighted title on one line",
+      "ok": true,
+      "detail": "lines=1"
+    },
+    {
+      "name": "1920px zh: description on one line",
+      "ok": true,
+      "detail": "lines=1"
+    },
+    {
+      "name": "1920px zh: title prefix and highlight on separate lines",
+      "ok": true,
+      "detail": "display=block h1Lines=2"
+    },
+    {
+      "name": "1920px zh: search form keeps its 672px cap",
+      "ok": true,
+      "detail": "w=672"
+    },
+    {
+      "name": "390px en: no horizontal page overflow",
+      "ok": true,
+      "detail": "overflow=0"
+    },
+    {
+      "name": "390px en: title stays inside the heading",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "390px en: highlight stays inline-block on mobile",
+      "ok": true,
+      "detail": "display=inline-block"
+    },
+    {
+      "name": "390px de: no horizontal page overflow",
+      "ok": true,
+      "detail": "overflow=0"
+    },
+    {
+      "name": "390px de: title stays inside the heading",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "390px de: highlight stays inline-block on mobile",
+      "ok": true,
+      "detail": "display=inline-block"
+    },
+    {
+      "name": "390px es: no horizontal page overflow",
+      "ok": true,
+      "detail": "overflow=0"
+    },
+    {
+      "name": "390px es: title stays inside the heading",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "390px es: highlight stays inline-block on mobile",
+      "ok": true,
+      "detail": "display=inline-block"
+    },
+    {
+      "name": "390px fr: no horizontal page overflow",
+      "ok": true,
+      "detail": "overflow=0"
+    },
+    {
+      "name": "390px fr: title stays inside the heading",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "390px fr: highlight stays inline-block on mobile",
+      "ok": true,
+      "detail": "display=inline-block"
+    },
+    {
+      "name": "390px ja: no horizontal page overflow",
+      "ok": true,
+      "detail": "overflow=0"
+    },
+    {
+      "name": "390px ja: title stays inside the heading",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "390px ja: highlight stays inline-block on mobile",
+      "ok": true,
+      "detail": "display=inline-block"
+    },
+    {
+      "name": "390px ko: no horizontal page overflow",
+      "ok": true,
+      "detail": "overflow=0"
+    },
+    {
+      "name": "390px ko: title stays inside the heading",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "390px ko: highlight stays inline-block on mobile",
+      "ok": true,
+      "detail": "display=inline-block"
+    },
+    {
+      "name": "390px pt: no horizontal page overflow",
+      "ok": true,
+      "detail": "overflow=0"
+    },
+    {
+      "name": "390px pt: title stays inside the heading",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "390px pt: highlight stays inline-block on mobile",
+      "ok": true,
+      "detail": "display=inline-block"
+    },
+    {
+      "name": "390px ru: no horizontal page overflow",
+      "ok": true,
+      "detail": "overflow=0"
+    },
+    {
+      "name": "390px ru: title stays inside the heading",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "390px ru: highlight stays inline-block on mobile",
+      "ok": true,
+      "detail": "display=inline-block"
+    },
+    {
+      "name": "390px zh: no horizontal page overflow",
+      "ok": true,
+      "detail": "overflow=0"
+    },
+    {
+      "name": "390px zh: title stays inside the heading",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "390px zh: highlight stays inline-block on mobile",
+      "ok": true,
+      "detail": "display=inline-block"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+Release: ads-20260924-hero
+UTC: 2026-09-24T16:50:00+00:00
+Scope: two user-requested changes. (1) Home hero: from lg up the text block uses the full card width and the highlighted title sits on its own line, so the highlighted title and the description each fit on one line on desktop (components/pages/SearchHero.tsx, three classes; mobile unchanged; search bar keeps its own 672 px cap). (2) Blog removed: app/[locale]/blog routes, lib/blog-data.ts, lib/blog-i18n.ts, CopyLinkButton, ArticleJsonLd/BlogJsonLd, footer link, sitemap entries, llms.txt/llms-full.txt article sections, .md twins for /blog, MCP list_articles/get_article tools, locale keys seo.blog/pages.blog_index/pages.blog_post in 9 locales. /blog URLs now return the site's 404 page. Tests updated to assert the removal.
+Baseline: production c2570aa7-3dd5-49d3-b6b5-e2e11eb63926 (ads-20260924-adclip), source /tmp/whatismyname-adclip-20260924.
+Source: /tmp/whatismyname-hero-20260924. Exact delta (22 changed, 5 deleted files) in source-manifest.json. Repo commit 3ed1090 (pending OpenRouter model defaults, not deployed) stays out.
+SOURCE_COMMIT_3a9ba18
+Before (baseline-hero-width-probe.json, production): at 1280/1440/1920 px the highlighted title wrapped in en, de, fr, ja and the description wrapped in 8 of 9 locales; the text block was capped at 768 px while the card offers 1118 px. Widest one-line widths: title 1000 px (de), description 1023 px (ru).
+OpenClaw workspace: /Users/openclaw/test-workspace/whatismyname-hero-rel-20260924 (dependencies cloned from the byte-identical lockfile of whatismyname-adclip-rel-20260924).
+Checks: TypeScript passed; ESLint passed; Vitest 26 files / 462 tests passed (exec 20260924T163755Z).
+Next production build + OpenNext Cloudflare + Wrangler dry-run bundle + packaging passed. No blog route in .next/server/app/[locale]; no article slug in worker.js; compiled CSS contains lg:max-w-none and lg:block.
+CLOUDFLARE_BUILD_PASS
+ADS_TXT_SHA256_MATCH
+Worker SHA256: 999a15d91f9b8f615d36383218e596033d2716e844862e58c0960692b9796ae4
+ads.txt SHA256: bd958ae2b7bba074f3cf17b84c6dd399fd7e0828fa0c91a9aff62ba74a3aa1a1 (bundle = repo = live)
+OpenClaw build receipt: /Users/openclaw/artifacts/whatismyname-hero-rel-20260924/exec/20260924T163755Z
+Collected bundle: ~/.codex/tmp/openclaw-collect/whatismyname-org-ads-20260924-hero (file-tree SHA-256 identical to the OpenClaw output)
+Preview browser (packaged Worker, served locally on OpenClaw, exec 20260924T163946Z): agent-ready 12 passed / 8 skipped (incl. new removed-blog 404 + sitemap check); ai-markdown 6 passed / 2 skipped; UI/CSP 102/102; hero lines 225/225 (1024/1280/1440/1920/390 px x 9 locales: title and description one line at >=1280 in every locale, no page overflow, search form 672 px, mobile highlight still inline-block). Details in preview-browser.json.
+Deployment approval: user asked on 2026-09-24 for the desktop hero on one line with a minimal deploy and to remove the whole blog; "go" given after preview QA.

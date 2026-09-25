@@ -1,0 +1,96 @@
+{
+ "release": "ads-20260924-hero",
+ "observed_at": "2026-09-24T17:05:00+00:00",
+ "status": "passed",
+ "production_url": "https://whatismyname.org/",
+ "worker_version": "f6b20dcd-ae3b-4c66-b039-d03d08dcef80",
+ "previous_worker_version": "c2570aa7-3dd5-49d3-b6b5-e2e11eb63926",
+ "deploy_receipt": "ops/deploy-receipts/20260924T165258Z-production-domain-deploy.json",
+ "scope": "Desktop home hero: highlighted title and description on one line (components/pages/SearchHero.tsx). Blog removed site-wide; /blog URLs return 404.",
+ "checks": {
+  "typecheck": "passed",
+  "lint": "passed",
+  "unit_tests": {
+   "files": 26,
+   "passed": 462
+  },
+  "build": "passed",
+  "preview_browser": {
+   "agent_ready": {
+    "passed": 12,
+    "skipped": 8
+   },
+   "ai_markdown_regression": {
+    "passed": 6,
+    "skipped": 2
+   },
+   "ui_csp": {
+    "passed": 102,
+    "failed": 0
+   },
+   "hero_lines": {
+    "passed": 225,
+    "failed": 0
+   }
+  },
+  "public_browser": {
+   "agent_ready": {
+    "passed": 12,
+    "skipped": 8,
+    "includes": "removed blog: /blog, /de/blog, /blog/<slug>, /zh/blog/<slug>.md -> 404; sitemap has no /blog"
+   },
+   "ui_csp": {
+    "passed": 101,
+    "failed": 0
+   },
+   "hero_lines": {
+    "passed": 225,
+    "failed": 0,
+    "before_desktop_wrapped_titles": [
+     "de",
+     "en",
+     "fr",
+     "ja"
+    ],
+    "before_desktop_wrapped_descriptions": [
+     "de",
+     "en",
+     "es",
+     "fr",
+     "ja",
+     "ko",
+     "pt",
+     "ru"
+    ],
+    "after_desktop_wrapped": []
+   },
+   "scroll_probe": {
+    "desktop_overflow_samples": "0/78",
+    "mobile_overflow_samples": "0/108",
+    "max_overflow_px": 0
+   }
+  },
+  "public_ads_matches": true,
+  "indexnow_key_live": true,
+  "indexnow_removed_urls": {
+   "submitted": 63,
+   "response": "200 OK"
+  }
+ },
+ "evidence": [
+  "validation.txt",
+  "source-manifest.json",
+  "baseline-hero-width-probe.json",
+  "preview-browser.json",
+  "preview-ui-qa.json",
+  "preview-hero-lines.json",
+  "preview-shots/",
+  "public-ui-qa.json",
+  "public-hero-lines.json",
+  "slot-dom-probe.json"
+ ],
+ "notes": [
+  "Sitemap 396 -> 333 URLs (9 locales x blog index + 6 articles). The 63 removed URLs were sent to IndexNow so Bing recrawls them and sees 404.",
+  "Removed URLs return 404, not 410 or a redirect; search engines drop both 404 and 410, and a blanket redirect to the home page would read as a soft 404."
+ ]
+}

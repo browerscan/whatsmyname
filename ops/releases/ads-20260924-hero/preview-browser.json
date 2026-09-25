@@ -1,0 +1,185 @@
+{
+ "release": "ads-20260924-hero",
+ "mode": "preview-packaged-worker",
+ "exec": "/Users/openclaw/artifacts/whatismyname-hero-rel-20260924/exec/20260924T163946Z",
+ "exit_codes": {
+  "AGENT_QA_EXIT": "0",
+  "MARKDOWN_QA_EXIT": "0",
+  "UI_QA_EXIT": "0",
+  "HERO_EXIT": "0"
+ },
+ "agent_and_markdown_specs": [
+  {
+   "status": "✓",
+   "project": "desktop",
+   "spec": "__tests__/e2e/agent-ready.spec.ts:10:7",
+   "title": "agent discovery over HTTP › robots.txt welcomes answer engines and declares Content-Signal"
+  },
+  {
+   "status": "✓",
+   "project": "desktop",
+   "spec": "__tests__/e2e/agent-ready.spec.ts:22:7",
+   "title": "agent discovery over HTTP › llms.txt and llms-full.txt are served as text"
+  },
+  {
+   "status": "✓",
+   "project": "desktop",
+   "spec": "__tests__/e2e/agent-ready.spec.ts:34:7",
+   "title": "agent discovery over HTTP › /llm.txt serves the llms.txt file with a canonical link"
+  },
+  {
+   "status": "✓",
+   "project": "desktop",
+   "spec": "__tests__/e2e/agent-ready.spec.ts:42:7",
+   "title": "agent discovery over HTTP › pages have .md twins and static .md files stay static"
+  },
+  {
+   "status": "✓",
+   "project": "desktop",
+   "spec": "__tests__/e2e/agent-ready.spec.ts:63:7",
+   "title": "agent discovery over HTTP › well-known discovery documents resolve with CORS"
+  },
+  {
+   "status": "✓",
+   "project": "desktop",
+   "spec": "__tests__/e2e/agent-ready.spec.ts:87:7",
+   "title": "agent discovery over HTTP › MCP endpoint speaks stateless Streamable HTTP"
+  },
+  {
+   "status": "✓",
+   "project": "desktop",
+   "spec": "__tests__/e2e/agent-ready.spec.ts:111:7",
+   "title": "agent discovery over HTTP › pages negotiate Markdown for agents and stay HTML for browsers"
+  },
+  {
+   "status": "✓",
+   "project": "desktop",
+   "spec": "__tests__/e2e/agent-ready.spec.ts:130:7",
+   "title": "agent discovery over HTTP › the removed blog is gone from pages, twins and the sitemap"
+  },
+  {
+   "status": "✓",
+   "project": "desktop",
+   "spec": "__tests__/e2e/agent-ready.spec.ts:139:5",
+   "title": "home page shows the FAQ and publishes the same questions as FAQPage JSON-LD"
+  },
+  {
+   "status": "✓",
+   "project": "desktop",
+   "spec": "__tests__/e2e/agent-ready.spec.ts:158:5",
+   "title": "home page registers the WebMCP search tool and runs the page's own search"
+  },
+  {
+   "status": "-",
+   "project": "mobile",
+   "spec": "__tests__/e2e/agent-ready.spec.ts:10:7",
+   "title": "agent discovery over HTTP › robots.txt welcomes answer engines and declares Content-Signal"
+  },
+  {
+   "status": "-",
+   "project": "mobile",
+   "spec": "__tests__/e2e/agent-ready.spec.ts:22:7",
+   "title": "agent discovery over HTTP › llms.txt and llms-full.txt are served as text"
+  },
+  {
+   "status": "-",
+   "project": "mobile",
+   "spec": "__tests__/e2e/agent-ready.spec.ts:34:7",
+   "title": "agent discovery over HTTP › /llm.txt serves the llms.txt file with a canonical link"
+  },
+  {
+   "status": "-",
+   "project": "mobile",
+   "spec": "__tests__/e2e/agent-ready.spec.ts:42:7",
+   "title": "agent discovery over HTTP › pages have .md twins and static .md files stay static"
+  },
+  {
+   "status": "-",
+   "project": "mobile",
+   "spec": "__tests__/e2e/agent-ready.spec.ts:63:7",
+   "title": "agent discovery over HTTP › well-known discovery documents resolve with CORS"
+  },
+  {
+   "status": "-",
+   "project": "mobile",
+   "spec": "__tests__/e2e/agent-ready.spec.ts:87:7",
+   "title": "agent discovery over HTTP › MCP endpoint speaks stateless Streamable HTTP"
+  },
+  {
+   "status": "-",
+   "project": "mobile",
+   "spec": "__tests__/e2e/agent-ready.spec.ts:111:7",
+   "title": "agent discovery over HTTP › pages negotiate Markdown for agents and stay HTML for browsers"
+  },
+  {
+   "status": "-",
+   "project": "mobile",
+   "spec": "__tests__/e2e/agent-ready.spec.ts:130:7",
+   "title": "agent discovery over HTTP › the removed blog is gone from pages, twins and the sitemap"
+  },
+  {
+   "status": "✓",
+   "project": "mobile",
+   "spec": "__tests__/e2e/agent-ready.spec.ts:139:5",
+   "title": "home page shows the FAQ and publishes the same questions as FAQPage JSON-LD"
+  },
+  {
+   "status": "✓",
+   "project": "mobile",
+   "spec": "__tests__/e2e/agent-ready.spec.ts:158:5",
+   "title": "home page registers the WebMCP search tool and runs the page's own search"
+  },
+  {
+   "status": "✓",
+   "project": "desktop",
+   "spec": "__tests__/e2e/ai-markdown.spec.ts:28:7",
+   "title": "renders Markdown safely in dark theme"
+  },
+  {
+   "status": "✓",
+   "project": "desktop",
+   "spec": "__tests__/e2e/ai-markdown.spec.ts:28:7",
+   "title": "renders Markdown safely in light theme"
+  },
+  {
+   "status": "✓",
+   "project": "desktop",
+   "spec": "__tests__/e2e/ai-markdown.spec.ts:56:5",
+   "title": "shows AI error and re-enables input"
+  },
+  {
+   "status": "-",
+   "project": "desktop",
+   "spec": "__tests__/e2e/ai-markdown.spec.ts:66:5",
+   "title": "real production AI response renders as elements"
+  },
+  {
+   "status": "✓",
+   "project": "mobile",
+   "spec": "__tests__/e2e/ai-markdown.spec.ts:28:7",
+   "title": "renders Markdown safely in dark theme"
+  },
+  {
+   "status": "✓",
+   "project": "mobile",
+   "spec": "__tests__/e2e/ai-markdown.spec.ts:28:7",
+   "title": "renders Markdown safely in light theme"
+  },
+  {
+   "status": "✓",
+   "project": "mobile",
+   "spec": "__tests__/e2e/ai-markdown.spec.ts:56:5",
+   "title": "shows AI error and re-enables input"
+  },
+  {
+   "status": "-",
+   "project": "mobile",
+   "spec": "__tests__/e2e/ai-markdown.spec.ts:66:5",
+   "title": "real production AI response renders as elements"
+  }
+ ],
+ "ui_summary": "SUMMARY passed=102 failed=0",
+ "hero_checks": "HERO_CHECKS 225/225",
+ "verdict": "PREVIEW_QA_PASS",
+ "note": "A first preview run (exec 20260924T162901Z) failed 2 agent-spec checks that were wrong, not the product: a llms-full.txt size ratio that only held with article bodies, and a 404 check that sent a NEXT_LOCALE=de cookie from an earlier request so an unprefixed path 307-redirected to /de/...; its UI run aborted because the production search stream took longer than the 330 s capture limit (raised to 600 s; this run captured in 296 s). Hero checks passed 225/225 in both runs."
+}
