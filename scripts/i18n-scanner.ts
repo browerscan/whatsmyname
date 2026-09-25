@@ -44,7 +44,6 @@ const CONFIG: ScannerConfig = {
     "app/[locale]/tools/**", // SEO content pages
     "app/[locale]/platforms/**", // SEO platform pages
     "app/[locale]/categories/**", // SEO category pages
-    "app/[locale]/blog/**", // SEO blog pages
     "app/layout.tsx",
     "app/manifest.ts",
     // Machine-readable agent endpoints (robots, llms.txt, MCP)
@@ -166,8 +165,7 @@ function shouldSkipFile(filePath: string): boolean {
     normalized.includes("app/[locale]/terms/") ||
     normalized.includes("app/[locale]/tools/") ||
     normalized.includes("app/[locale]/platforms/") ||
-    normalized.includes("app/[locale]/categories/") ||
-    normalized.includes("app/[locale]/blog/")
+    normalized.includes("app/[locale]/categories/")
   ) {
     return true;
   }

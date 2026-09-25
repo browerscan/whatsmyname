@@ -19,7 +19,6 @@ import { renderMarkdownPage } from "@/lib/agent/markdown";
 import { markdownTwinPath, markdownTwinToPagePath } from "@/lib/agent/markdown-path";
 import { handleMcpMessage } from "@/lib/agent/mcp";
 import { AGENT_LINK_HEADER, prefersMarkdown } from "@/lib/agent/site";
-import { getAllBlogSlugs } from "@/lib/blog-data";
 import { getAllPlatformSlugs } from "@/lib/platforms-data";
 import { getHomeFaq } from "@/content/faq";
 import { locales } from "@/i18n/request";
@@ -67,12 +66,11 @@ describe("Markdown negotiation", () => {
     expect(platform?.url).toBe("https://whatismyname.org/platforms/github");
     expect(platform?.body).toContain("https://github.com");
 
-    const post = await renderMarkdownPage(`/de/blog/${getAllBlogSlugs()[0]}`);
-    expect(post?.locale).toBe("de");
-    expect(post?.url).toBe(`https://whatismyname.org/de/blog/${getAllBlogSlugs()[0]}`);
-    expect(post?.body.startsWith("# ")).toBe(true);
+    const localized = await renderMarkdownPage("/de/platforms/github");
+    expect(localized?.locale).toBe("de");
+    expect(localized?.url).toBe("https://whatismyname.org/de/platforms/github");
 
-    for (const path of ["/tools", "/categories", "/categories/social", "/blog", "/privacy", "/terms", "/zh"]) {
+    for (const path of ["/tools", "/categories", "/categories/social", "/privacy", "/terms", "/zh"]) {
       const page = await renderMarkdownPage(path);
       expect(page, path).not.toBeNull();
       expect(page?.body.length, path).toBeGreaterThan(100);
@@ -85,7 +83,7 @@ describe("Markdown negotiation", () => {
     ["/de.md", "/de"],
     ["/de/index.html.md", "/de"],
     ["/platforms/github.md", "/platforms/github"],
-    ["/zh/blog/how-to-choose-the-perfect-username.md", "/zh/blog/how-to-choose-the-perfect-username"],
+    ["/zh/blog/how-to-choose-the-perfect-username.md", null],
     ["/categories.md", "/categories"],
     ["/ASSETS_README.md", null],
     ["/images/README.md", null],
@@ -96,10 +94,10 @@ describe("Markdown negotiation", () => {
   });
 
   it("advertises a .md twin that maps back to the same page", () => {
-    for (const path of ["/", "/de", "/platforms/github", "/zh/blog/how-to-choose-the-perfect-username", "/blog/"]) {
+    for (const path of ["/", "/de", "/platforms/github", "/zh/platforms/github", "/tools/"]) {
       const twin = markdownTwinPath(path);
       expect(twin.endsWith(".md"), path).toBe(true);
-      expect(markdownTwinToPagePath(twin), path).toBe(path === "/blog/" ? "/blog" : path);
+      expect(markdownTwinToPagePath(twin), path).toBe(path === "/tools/" ? "/tools" : path);
     }
     expect(markdownTwinPath("/")).toBe("/index.html.md");
   });
@@ -118,7 +116,8 @@ describe("Markdown negotiation", () => {
   it("returns null for unknown pages", async () => {
     expect(await renderMarkdownPage("/platforms/not-a-platform")).toBeNull();
     expect(await renderMarkdownPage("/categories/nope")).toBeNull();
-    expect(await renderMarkdownPage("/blog/a/b")).toBeNull();
+    expect(await renderMarkdownPage("/blog")).toBeNull();
+    expect(await renderMarkdownPage("/de/blog/how-to-choose-the-perfect-username")).toBeNull();
     expect(await renderMarkdownPage("/unknown")).toBeNull();
   });
 
@@ -165,15 +164,13 @@ describe("robots.txt", () => {
 });
 
 describe("llms.txt", () => {
-  it("follows the llms.txt shape and links every guide and article", () => {
+  it("follows the llms.txt shape and links every guide", () => {
     const llms = buildLlmsTxt();
     expect(llms).toMatch(/^# What is my Name\n\n> /);
     for (const slug of getAllPlatformSlugs()) {
       expect(llms).toContain(`https://whatismyname.org/platforms/${slug})`);
     }
-    for (const slug of getAllBlogSlugs()) {
-      expect(llms).toContain(`https://whatismyname.org/blog/${slug})`);
-    }
+    expect(llms).not.toContain("/blog");
     expect(llms).toContain("https://whatismyname.org/mcp");
     expect(llms).not.toContain("undefined");
   });
@@ -190,13 +187,15 @@ describe("llms.txt", () => {
     expect(buildLlmsTxt()).toContain("https://whatismyname.org/index.html.md");
   });
 
-  it("puts every article body in llms-full.txt", () => {
+  it("puts the guides and FAQ in llms-full.txt", () => {
     const full = buildLlmsFullTxt();
-    expect(full.length).toBeGreaterThan(buildLlmsTxt().length * 3);
+    expect(full.length).toBeGreaterThan(buildLlmsTxt().length * 2);
     expect(full).toContain("# Responsible use");
+    expect(full).toContain("# Platform guides\n\n### ");
     const faq = getHomeFaq("en");
     expect(full).toContain(`# ${faq.title}\n\n## ${faq.entries[0].question}`);
     expect(full).not.toMatch(/<\/?(p|h2|h3|section)\b/);
+    expect(full).not.toContain("/blog");
   });
 });
 
@@ -286,9 +285,6 @@ describe("MCP endpoint", () => {
     const list = await (await callMcp({ jsonrpc: "2.0", id: 4, method: "tools/call", params: { name: "list_platform_guides", arguments: { category: "coding" } } })).json();
     expect(list.result.structuredContent.count).toBeGreaterThan(0);
     expect(list.result.structuredContent.platforms.every((item: { category: string }) => item.category === "coding")).toBe(true);
-
-    const article = await (await callMcp({ jsonrpc: "2.0", id: 5, method: "tools/call", params: { name: "get_article", arguments: { slug: getAllBlogSlugs()[0] } } })).json();
-    expect(article.result.structuredContent.markdown).toMatch(/^# /);
 
     const valid = await (await callMcp({ jsonrpc: "2.0", id: 6, method: "tools/call", params: { name: "check_username_format", arguments: { username: "john_doe" } } })).json();
     expect(valid.result.structuredContent.valid).toBe(true);

@@ -251,47 +251,12 @@
       "title": "Outils de recherche de pseudonymes",
       "description": "Ce service indépendant aide à retrouver vos profils publics et à comparer des identifiants pour une marque. Un pseudonyme identique ne prouve pas une identité commune."
     },
-    "blog": {
-      "title": "Blog - Conseils, guides et identité numérique autour des noms d’utilisateur",
-      "description": "Découvrez les bonnes pratiques en matière de nom d’utilisateur, la protection de l’identité numérique, le personal branding et la sécurité en ligne. Des conseils et guides d’experts pour gérer votre présence sur internet."
-    },
     "categories": {
       "title": "Catégories de plateformes - Recherche de nom d’utilisateur par catégorie",
       "description": "Parcourez les catégories de plateformes et vérifiez la disponibilité d’un nom d’utilisateur sur les réseaux sociaux, le gaming, les affaires, le code et le divertissement. Découvrez où votre nom d’utilisateur est disponible."
     }
   },
   "pages": {
-    "blog_index": {
-      "home": "Accueil",
-      "breadcrumb": "Blog",
-      "collection_name": "Blog What is my Name",
-      "collection_description": "Découvrez les bonnes pratiques pour les noms d’utilisateur, la protection de l’identité numérique, le personal branding et la sécurité en ligne.",
-      "title": "Blog",
-      "description": "Conseils, guides et analyses sur les noms d’utilisateur, l’identité numérique et votre présence en ligne",
-      "featured": "À la une",
-      "minutes_read": "{count} min de lecture",
-      "minutes_short": "{count} min",
-      "latest_articles": "Derniers articles",
-      "browse_by_category": "Parcourir par catégorie",
-      "popular_topics": "Sujets populaires",
-      "newsletter_title": "Restez informé",
-      "newsletter_description": "Recevez les derniers conseils sur les noms d’utilisateur, l’identité numérique et la sécurité en ligne dans votre boîte mail.",
-      "newsletter_placeholder": "Entrez votre e-mail",
-      "newsletter_button": "S’abonner"
-    },
-    "blog_post": {
-      "not_found_title": "Article introuvable",
-      "home": "Accueil",
-      "blog": "Blog",
-      "back_to_blog": "Retour au blog",
-      "minutes_read": "{count} min de lecture",
-      "share_title": "Partager cet article",
-      "copy_link": "Copier le lien",
-      "related_articles": "Articles similaires",
-      "cta_button": "Commencer la recherche de nom d’utilisateur",
-      "cta_title": "Vérifiez votre nom d’utilisateur maintenant",
-      "cta_description": "Utilisez notre outil gratuit pour vérifier instantanément la disponibilité de votre nom d’utilisateur sur plus de 1 400 plateformes."
-    },
     "categories_index": {
       "home": "Accueil",
       "breadcrumb": "Catégories",

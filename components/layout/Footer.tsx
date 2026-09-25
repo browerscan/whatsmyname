@@ -6,7 +6,7 @@ interface FooterProps {
   locale: string;
   copy: {
     aboutTitle: string; aboutDescription: string; featuresTitle: string;
-    usernameSearch: string; categories: string; tools: string; blog: string;
+    usernameSearch: string; categories: string; tools: string;
     connectTitle: string; copyright: string; legalTitle: string;
     privacy: string; terms: string;
   };
@@ -48,11 +48,6 @@ export function Footer({ locale, copy }: FooterProps) {
               <li>
                 <Link className="transition-colors hover:text-primary" href={getLocalePath(locale, "/tools")}>
                   {copy.tools}
-                </Link>
-              </li>
-              <li>
-                <Link className="transition-colors hover:text-primary" href={getLocalePath(locale, "/blog")}>
-                  {copy.blog}
                 </Link>
               </li>
             </ul>

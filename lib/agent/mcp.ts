@@ -1,5 +1,4 @@
 import { getLocalizedUrl } from "@/i18n/request";
-import { getAllBlogSlugs, getBlogPostBySlug } from "@/lib/blog-data";
 import {
   CATEGORY_METADATA,
   POPULAR_PLATFORMS,
@@ -26,7 +25,7 @@ import {
 
 const SUPPORTED_PROTOCOL_VERSIONS = [MCP_PROTOCOL_VERSION, "2025-03-26", "2024-11-05"];
 
-export const MCP_INSTRUCTIONS = `Read-only facts from ${SITE_NAME} (whatismyname.org): which platforms the site has guides for, the site's articles, and whether a username is in the format the search accepts. Live username checks across 1,400+ sites run in the browser at https://whatismyname.org/. ${RESULT_CAVEAT}`;
+export const MCP_INSTRUCTIONS = `Read-only facts from ${SITE_NAME} (whatismyname.org): which platforms the site has guides for and whether a username is in the format the search accepts. Live username checks across 1,400+ sites run in the browser at https://whatismyname.org/. ${RESULT_CAVEAT}`;
 
 interface ToolDefinition {
   name: string;
@@ -136,62 +135,6 @@ const TOOLS: ToolDefinition[] = [
           founded: platform.founded ?? null,
           categoryName: CATEGORY_METADATA[platform.category]?.name ?? platform.category,
           searchUrl: pageUrl("/"),
-        },
-      };
-    },
-  },
-  {
-    name: "list_articles",
-    title: "List articles",
-    description:
-      "List whatismyname.org articles about choosing, protecting and changing usernames, newest first, with URLs to cite.",
-    inputSchema: { type: "object", properties: {}, additionalProperties: false },
-    annotations: READ_ONLY,
-    run: () => {
-      const articles = getAllBlogSlugs()
-        .map((slug) => getBlogPostBySlug(slug, "en"))
-        .filter((post) => post !== undefined)
-        .sort((a, b) => b.publishedAt.localeCompare(a.publishedAt))
-        .map((post) => ({
-          slug: post.slug,
-          title: post.title,
-          excerpt: post.excerpt,
-          publishedAt: post.publishedAt,
-          url: pageUrl(`/blog/${post.slug}`),
-        }));
-      return { data: { count: articles.length, articles } };
-    },
-  },
-  {
-    name: "get_article",
-    title: "Get article",
-    description: "Get the full Markdown text of one whatismyname.org article by slug.",
-    inputSchema: {
-      type: "object",
-      properties: {
-        slug: { type: "string", description: "Article slug from list_articles." },
-      },
-      required: ["slug"],
-      additionalProperties: false,
-    },
-    annotations: READ_ONLY,
-    run: (args) => {
-      const slug = typeof args.slug === "string" ? args.slug.trim() : "";
-      const post = getBlogPostBySlug(slug, "en");
-      if (!post) {
-        return {
-          isError: true,
-          data: { error: `No article "${slug}". Call list_articles for valid slugs.` },
-        };
-      }
-      return {
-        data: {
-          slug: post.slug,
-          title: post.title,
-          publishedAt: post.publishedAt,
-          updatedAt: post.updatedAt ?? null,
-          url: pageUrl(`/blog/${post.slug}`),
-          markdown: post.content.trim(),
         },
       };
     },

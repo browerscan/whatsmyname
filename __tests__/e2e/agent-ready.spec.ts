@@ -26,7 +26,9 @@ test.describe("agent discovery over HTTP", () => {
     expect(await llms.text()).toMatch(/^# What is my Name\n\n> /);
     const full = await request.get("/llms-full.txt");
     expect(full.status()).toBe(200);
-    expect((await full.text()).length).toBeGreaterThan((await llms.text()).length * 3);
+    const fullText = await full.text();
+    expect(fullText.length).toBeGreaterThan((await llms.text()).length * 2);
+    expect(fullText).toContain("# Platform guides\n\n### ");
   });
 
   test("/llm.txt serves the llms.txt file with a canonical link", async ({ request }) => {
@@ -41,7 +43,7 @@ test.describe("agent discovery over HTTP", () => {
     for (const [twin, canonical] of [
       ["/index.html.md", "https://whatismyname.org/"],
       ["/platforms/github.md", "https://whatismyname.org/platforms/github"],
-      ["/de/blog/how-to-choose-the-perfect-username.md", "https://whatismyname.org/de/blog/how-to-choose-the-perfect-username"],
+      ["/de/platforms/github.md", "https://whatismyname.org/de/platforms/github"],
       ["/zh.md", "https://whatismyname.org/zh"],
     ]) {
       const response = await request.get(twin, { maxRedirects: 0 });
@@ -107,7 +109,7 @@ test.describe("agent discovery over HTTP", () => {
   });
 
   test("pages negotiate Markdown for agents and stay HTML for browsers", async ({ request }) => {
-    for (const path of ["/", "/platforms/github", "/categories/social", "/de/blog/how-to-choose-the-perfect-username", "/zh/tools"]) {
+    for (const path of ["/", "/platforms/github", "/categories/social", "/de/platforms/github", "/zh/tools"]) {
       const markdown = await request.get(path, { headers: { accept: "text/markdown" }, maxRedirects: 0 });
       expect(markdown.status(), path).toBe(200);
       expect(markdown.headers()["content-type"], path).toBe("text/markdown; charset=utf-8");
@@ -123,6 +125,14 @@ test.describe("agent discovery over HTTP", () => {
     expect(link).toContain('</.well-known/api-catalog>; rel="api-catalog"');
     expect(link).toContain('</llms.txt>; rel="service-doc"');
     expect(link).toContain('</index.html.md>; rel="alternate"; type="text/markdown"');
+  });
+
+  test("the removed blog is gone from pages, twins and the sitemap", async ({ request }) => {
+    // Redirects are followed: a NEXT_LOCALE cookie sends unprefixed paths to the localized one.
+    for (const path of ["/blog", "/de/blog", "/blog/how-to-choose-the-perfect-username", "/zh/blog/how-to-choose-the-perfect-username.md"]) {
+      expect((await request.get(path)).status(), path).toBe(404);
+    }
+    expect(await (await request.get("/sitemap.xml")).text()).not.toContain("/blog");
   });
 });
 

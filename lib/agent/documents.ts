@@ -1,5 +1,4 @@
 import { getLocalizedUrl, locales } from "@/i18n/request";
-import { getAllBlogSlugs, getBlogPostBySlug } from "@/lib/blog-data";
 import { POPULAR_PLATFORMS, getAllCategories } from "@/lib/platforms-data";
 import { getLocalizedCategoryMetadata } from "@/lib/platforms-i18n";
 import { educationContent } from "@/content/education";
@@ -26,12 +25,6 @@ function firstSentence(text: string): string {
   return text.match(/^.+?[.!?](?=\s|$)/)?.[0] ?? text;
 }
 
-function articles() {
-  return getAllBlogSlugs()
-    .map((slug) => getBlogPostBySlug(slug, "en"))
-    .filter((post) => post !== undefined);
-}
-
 export function buildLlmsTxt(): string {
   const categories = getAllCategories().map((slug) => {
     const meta = getLocalizedCategoryMetadata(slug, "en");
@@ -39,9 +32,6 @@ export function buildLlmsTxt(): string {
   });
   const platforms = POPULAR_PLATFORMS.map(
     (platform) => `- [${platform.name}](${page(`/platforms/${platform.slug}`)}): ${firstSentence(platform.description)}`,
-  );
-  const posts = articles().map(
-    (post) => `- [${post.title}](${page(`/blog/${post.slug}`)}): ${post.excerpt}`,
   );
   const tools = getMcpToolSummaries().map((tool) => `  - \`${tool.name}\`: ${tool.description}`);
 
@@ -61,7 +51,6 @@ export function buildLlmsTxt(): string {
     `- [Username search](${page("/")}): Enter a username once and see where it exists across 1,400+ platforms, with Google web results and optional AI analysis.`,
     `- [Tools](${page("/tools")}): The available username tools and how to read their results.`,
     `- [Platform categories](${page("/categories")}): Platforms grouped by type.`,
-    `- [Blog](${page("/blog")}): Guides on choosing, protecting and changing usernames.`,
     `- [Privacy policy](${page("/privacy")}) and [Terms of service](${page("/terms")}).`,
     "",
     "## Platform categories",
@@ -71,10 +60,6 @@ export function buildLlmsTxt(): string {
     "## Platform guides",
     "",
     ...platforms,
-    "",
-    "## Articles",
-    "",
-    ...posts,
     "",
     "## For agents",
     "",
@@ -88,7 +73,7 @@ export function buildLlmsTxt(): string {
     "",
     "## Optional",
     "",
-    `- [Full text](${abs(AGENT_PATHS.llmsFull)}): this file plus every article, platform guide and the responsible-use guide.`,
+    `- [Full text](${abs(AGENT_PATHS.llmsFull)}): this file plus every platform guide and the responsible-use guide.`,
     "",
   ].join("\n");
 }
@@ -104,15 +89,6 @@ export function buildLlmsFullTxt(): string {
       `Category: ${getLocalizedCategoryMetadata(platform.category, "en").name}${platform.founded ? `. Founded: ${platform.founded}` : ""}. Official site: ${platform.url}. Guide: ${page(`/platforms/${platform.slug}`)}`,
     ].join("\n"),
   );
-  const posts = articles().map((post) =>
-    [
-      `---`,
-      "",
-      `Source: ${page(`/blog/${post.slug}`)} (published ${post.publishedAt})`,
-      "",
-      post.content.trim().replace(/^# /, "## "),
-    ].join("\n"),
-  );
 
   return [
     buildLlmsTxt().trim(),
@@ -126,9 +102,6 @@ export function buildLlmsFullTxt(): string {
     "# Platform guides",
     "",
     ...platformGuides.flatMap((entry) => [entry, ""]),
-    "# Articles",
-    "",
-    ...posts.flatMap((entry) => [entry, ""]),
   ].join("\n");
 }
 
@@ -136,7 +109,7 @@ export function buildAgentSkill(): string {
   return [
     "---",
     `name: ${AGENT_SKILL_NAME}`,
-    "description: Help someone check where a username exists across 1,400+ websites and apps with whatismyname.org, read the results responsibly, and cite the site's platform guides and articles.",
+    "description: Help someone check where a username exists across 1,400+ websites and apps with whatismyname.org, read the results responsibly, and cite the site's platform guides.",
     "---",
     "",
     `# Username search with ${SITE_NAME}`,
@@ -175,7 +148,7 @@ export function buildMcpServerCard() {
     protocolVersion: MCP_PROTOCOL_VERSION,
     serverInfo: { name: MCP_SERVER_NAME, title: SITE_NAME, version: MCP_SERVER_VERSION },
     description:
-      "Read-only facts from whatismyname.org: platform username guides, articles, and username format checks.",
+      "Read-only facts from whatismyname.org: platform username guides and username format checks.",
     documentationUrl: abs(AGENT_PATHS.llms),
     transport: { type: "streamable-http", endpoint: abs(AGENT_PATHS.mcp) },
     endpoint: abs(AGENT_PATHS.mcp),
@@ -194,7 +167,7 @@ export function buildApiCatalog() {
           {
             href: abs(AGENT_PATHS.mcpServerCard),
             type: "application/json",
-            title: "MCP server card: read-only tools for platform guides, articles and username format checks.",
+            title: "MCP server card: read-only tools for platform guides and username format checks.",
           },
         ],
         "service-doc": [
@@ -236,7 +209,6 @@ export function buildAiCatalog() {
         representativeQueries: [
           "which platforms does whatismyname.org have username guides for",
           "is this username in a valid format for a username search",
-          "how do I choose or protect a username",
         ],
       },
       {

@@ -10,7 +10,7 @@ test("serves authorized sellers without a locale redirect", async ({ request }) 
   expect(await response.text()).toBe(readFileSync("public/ads.txt", "utf8"));
 });
 
-for (const path of ["/", "/privacy", "/zh/privacy", "/tools", "/terms", "/categories", "/platforms/discord", "/blog/how-to-choose-the-perfect-username"]) {
+for (const path of ["/", "/privacy", "/zh/privacy", "/tools", "/terms", "/categories", "/platforms/discord"]) {
   test("AdSense is in the original head and unique on " + path, async ({ page }) => {
     await page.route("**/adsbygoogle.js*", (route) => route.fulfill({
       contentType: "application/javascript", body: "window.adsenseTestLoaded = true;",
@@ -98,25 +98,6 @@ for (const hasMatch of [true, false]) {
     await expect(page.getByRole("button", { name: /search for username/i })).toBeEnabled();
   });
 }
-
-test("blog copy link handles clipboard denial and success", async ({ page }) => {
-  await page.route("**/adsbygoogle.js*", (route) => route.abort());
-  const path = "/blog/how-to-choose-the-perfect-username";
-  await page.goto(path);
-  await page.evaluate(() => {
-    Object.defineProperty(navigator, "clipboard", {
-      configurable: true, value: { writeText: async () => { throw new Error("Permission denied"); } },
-    });
-  });
-  await page.getByRole("button", { name: "Copy link", exact: true }).click();
-  await expect(page.getByRole("textbox", { name: "Copy link", exact: true })).toHaveValue("https://whatismyname.org" + path);
-  await page.evaluate(() => {
-    Object.defineProperty(navigator, "clipboard", { configurable: true, value: { writeText: async () => {} } });
-  });
-  await page.getByRole("button", { name: "Copy link", exact: true }).click();
-  await expect(page.getByRole("button", { name: "Copied!", exact: true })).toBeVisible();
-  await expect(page.getByRole("textbox", { name: "Copy link", exact: true })).toHaveCount(0);
-});
 
 test("shows usable web results and an honest warning when platform checks fail", async ({ page }) => {
   await page.route("**/adsbygoogle.js*", (route) => route.abort());

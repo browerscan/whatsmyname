@@ -251,47 +251,12 @@
       "title": "用户名查询工具",
       "description": "本站帮助你检查自己的公开用户名、比较品牌账号名称，并逐一核实可能的匹配。本站是独立服务；相同用户名不代表同一个人。"
     },
-    "blog": {
-      "title": "博客 - 用户名技巧、指南与数字身份",
-      "description": "了解用户名最佳实践、数字身份保护、个人品牌和在线安全。帮助你管理线上存在的专家技巧与指南。"
-    },
     "categories": {
       "title": "平台分类 - 按分类搜索用户名",
       "description": "浏览平台分类，并在社交媒体、游戏、商业、编程和娱乐平台中检查用户名可用性。找到你的用户名可用的位置。"
     }
   },
   "pages": {
-    "blog_index": {
-      "home": "首页",
-      "breadcrumb": "博客",
-      "collection_name": "What is my Name 博客",
-      "collection_description": "了解用户名最佳实践、数字身份保护、个人品牌与在线安全。",
-      "title": "博客",
-      "description": "关于用户名、数字身份与在线形象建设的专业技巧、指南和见解",
-      "featured": "精选",
-      "minutes_read": "{count} 分钟阅读",
-      "minutes_short": "{count} 分钟",
-      "latest_articles": "最新文章",
-      "browse_by_category": "按分类浏览",
-      "popular_topics": "热门主题",
-      "newsletter_title": "保持更新",
-      "newsletter_description": "将关于用户名、数字身份和在线安全的最新技巧发送到你的邮箱。",
-      "newsletter_placeholder": "输入你的邮箱",
-      "newsletter_button": "订阅"
-    },
-    "blog_post": {
-      "not_found_title": "未找到文章",
-      "home": "首页",
-      "blog": "博客",
-      "back_to_blog": "返回博客",
-      "minutes_read": "{count} 分钟阅读",
-      "share_title": "分享这篇文章",
-      "copy_link": "复制链接",
-      "related_articles": "相关文章",
-      "cta_button": "开始搜索用户名",
-      "cta_title": "立即检查你的用户名",
-      "cta_description": "使用我们的免费工具，立即检查你的用户名在 1,400+ 平台上的可用性。"
-    },
     "categories_index": {
       "home": "首页",
       "breadcrumb": "分类",

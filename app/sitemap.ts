@@ -1,7 +1,6 @@
 import { MetadataRoute } from "next";
 import { getLocaleAlternates, getLocalizedUrl, locales } from "@/i18n/request";
 import { getAllPlatformSlugs, getAllCategories } from "@/lib/platforms-data";
-import { getAllBlogSlugs } from "@/lib/blog-data";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl =
@@ -72,33 +71,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   }));
 
-  // Add blog pages for all locales
-  const blogPages: MetadataRoute.Sitemap = locales.flatMap((locale) => {
-    const blogSlugs = getAllBlogSlugs();
-    return [
-      // Blog index
-      {
-        url: getLocalizedUrl(baseUrl, locale, "/blog"),
-        lastModified: currentDate,
-        changeFrequency: "daily" as const,
-        priority: 0.8,
-        alternates: {
-          languages: getLocaleAlternates(baseUrl, "/blog"),
-        },
-      },
-      // Individual blog posts
-      ...blogSlugs.map((slug) => ({
-        url: getLocalizedUrl(baseUrl, locale, `/blog/${slug}`),
-        lastModified: currentDate,
-        changeFrequency: "monthly" as const,
-        priority: 0.6,
-        alternates: {
-          languages: getLocaleAlternates(baseUrl, `/blog/${slug}`),
-        },
-      })),
-    ];
-  });
-
   // Add privacy and terms pages for all locales
   const legalPages: MetadataRoute.Sitemap = locales.flatMap((locale) => [
     {
@@ -120,7 +92,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...categoriesPages,
     ...platformPages,
     ...toolsPages,
-    ...blogPages,
     ...legalPages,
   ];
   return Array.from(new Map(pages.map((page) => [page.url, page])).values());

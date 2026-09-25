@@ -6,7 +6,6 @@ import {
   isSupportedLocale,
   type AppLocale,
 } from "@/i18n/request";
-import { getAllBlogSlugs, getBlogPostBySlug } from "@/lib/blog-data";
 import { getAllCategories } from "@/lib/platforms-data";
 import {
   getLocalizedCategoryMetadata,
@@ -146,7 +145,6 @@ export async function renderMarkdownPage(
         faqToMarkdown(getHomeFaq(locale)),
         "",
         `- [${t("seo.tools.title")}](${url("/tools")})`,
-        `- [${t("pages.blog_index.title")}](${url("/blog")})`,
         `- [${t("footer.privacy")}](${url("/privacy")})`,
         `- [${t("footer.terms")}](${url("/terms")})`,
         "",
@@ -256,45 +254,6 @@ export async function renderMarkdownPage(
         t("pages.platform_detail.cta_description", { platform: platform.name }),
         "",
         `[${t("pages.platform_detail.cta_button")}](${url("/")})`,
-      ].join("\n"),
-    };
-  }
-
-  if (section === "blog") {
-    if (!slug) {
-      const posts = getAllBlogSlugs()
-        .map((postSlug) => getBlogPostBySlug(postSlug, locale))
-        .filter((post) => post !== undefined);
-      return {
-        title: t("seo.blog.title"),
-        description: t("seo.blog.description"),
-        url: url("/blog"),
-        locale,
-        body: [
-          `# ${t("seo.blog.title")}`,
-          "",
-          t("pages.blog_index.description"),
-          "",
-          ...posts.map(
-            (post) =>
-              `- [${post.title}](${url(`/blog/${post.slug}`)}) (${post.publishedAt}): ${post.excerpt}`,
-          ),
-        ].join("\n"),
-      };
-    }
-
-    const post = getBlogPostBySlug(slug, locale);
-    if (!post) return null;
-    const content = post.content.trim();
-    return {
-      title: post.title,
-      description: post.excerpt,
-      url: url(`/blog/${slug}`),
-      locale,
-      body: [
-        content.startsWith("# ") ? content : `# ${post.title}\n\n${content}`,
-        "",
-        `Published ${post.publishedAt}${post.updatedAt ? `, updated ${post.updatedAt}` : ""} by ${post.author}.`,
       ].join("\n"),
     };
   }

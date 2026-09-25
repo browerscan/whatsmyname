@@ -251,47 +251,12 @@
       "title": "Benutzernamen suchen",
       "description": "Dieser unabhängige Dienst hilft bei der Prüfung eigener öffentlicher Profile und bei der Wahl eines Markennamens. Ein gleicher Benutzername beweist keine gemeinsame Identität."
     },
-    "blog": {
-      "title": "Blog - Tipps, Anleitungen und digitale Identität rund um Benutzernamen",
-      "description": "Lerne Best Practices für Benutzernamen, Schutz der digitalen Identität, Personal Branding und Online-Sicherheit. Expertentipps und Anleitungen für deine Online-Präsenz."
-    },
     "categories": {
       "title": "Plattformkategorien – Benutzernamensuche nach Kategorie",
       "description": "Durchsuche Plattformkategorien und prüfe die Verfügbarkeit von Benutzernamen auf Social Media, Gaming-, Business-, Coding- und Unterhaltungsplattformen. Finde heraus, wo dein Benutzername verfügbar ist."
     }
   },
   "pages": {
-    "blog_index": {
-      "home": "Startseite",
-      "breadcrumb": "Blog",
-      "collection_name": "What is my Name Blog",
-      "collection_description": "Lerne Best Practices für Benutzernamen, Schutz der digitalen Identität, Personal Branding und Online-Sicherheit.",
-      "title": "Blog",
-      "description": "Tipps, Leitfäden und Einblicke zu Benutzernamen, digitaler Identität und deiner Online-Präsenz",
-      "featured": "Empfohlen",
-      "minutes_read": "{count} Min. Lesezeit",
-      "minutes_short": "{count} Min.",
-      "latest_articles": "Neueste Artikel",
-      "browse_by_category": "Nach Kategorie durchsuchen",
-      "popular_topics": "Beliebte Themen",
-      "newsletter_title": "Auf dem Laufenden bleiben",
-      "newsletter_description": "Erhalte die neuesten Tipps zu Benutzernamen, digitaler Identität und Online-Sicherheit per E-Mail.",
-      "newsletter_placeholder": "E-Mail eingeben",
-      "newsletter_button": "Abonnieren"
-    },
-    "blog_post": {
-      "not_found_title": "Beitrag nicht gefunden",
-      "home": "Startseite",
-      "blog": "Blog",
-      "back_to_blog": "Zurück zum Blog",
-      "minutes_read": "{count} Min. Lesezeit",
-      "share_title": "Diesen Artikel teilen",
-      "copy_link": "Link kopieren",
-      "related_articles": "Ähnliche Artikel",
-      "cta_button": "Benutzernamensuche starten",
-      "cta_title": "Prüfe deinen Benutzernamen jetzt",
-      "cta_description": "Nutze unser kostenloses Tool, um die Verfügbarkeit deines Benutzernamens auf über 1.400 Plattformen sofort zu prüfen."
-    },
     "categories_index": {
       "home": "Startseite",
       "breadcrumb": "Kategorien",

@@ -251,47 +251,12 @@
       "title": "Username Search Tools",
       "description": "This site helps you review your own public usernames, compare handles for a brand, and follow up on possible matches. It is an independent service; a matching username alone does not identify a person."
     },
-    "blog": {
-      "title": "Blog - Username Tips, Guides & Digital Identity",
-      "description": "Learn about username best practices, digital identity protection, personal branding, and online security. Expert tips and guides for managing your online presence."
-    },
     "categories": {
       "title": "Platform Categories - Username Search by Category",
       "description": "Browse platform categories and check username availability across social media, gaming, business, coding, and entertainment platforms. Find where your username is available."
     }
   },
   "pages": {
-    "blog_index": {
-      "home": "Home",
-      "breadcrumb": "Blog",
-      "collection_name": "What is my Name Blog",
-      "collection_description": "Learn about username best practices, digital identity protection, personal branding, and online security.",
-      "title": "Blog",
-      "description": "Expert tips, guides, and insights on usernames, digital identity, and building your online presence",
-      "featured": "Featured",
-      "minutes_read": "{count} min read",
-      "minutes_short": "{count} min",
-      "latest_articles": "Latest Articles",
-      "browse_by_category": "Browse by Category",
-      "popular_topics": "Popular Topics",
-      "newsletter_title": "Stay Updated",
-      "newsletter_description": "Get the latest tips on usernames, digital identity, and online security delivered to your inbox.",
-      "newsletter_placeholder": "Enter your email",
-      "newsletter_button": "Subscribe"
-    },
-    "blog_post": {
-      "not_found_title": "Post Not Found",
-      "home": "Home",
-      "blog": "Blog",
-      "back_to_blog": "Back to Blog",
-      "minutes_read": "{count} min read",
-      "share_title": "Share this article",
-      "copy_link": "Copy Link",
-      "related_articles": "Related Articles",
-      "cta_button": "Start Username Search",
-      "cta_title": "Check Your Username Now",
-      "cta_description": "Use our free tool to check username availability across 1,400+ platforms instantly."
-    },
     "categories_index": {
       "home": "Home",
       "breadcrumb": "Categories",

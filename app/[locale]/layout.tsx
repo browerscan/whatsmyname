@@ -55,7 +55,7 @@ export default async function LocaleLayout({ children, params }: Props) {
         aboutTitle: tFooter("about_title"), aboutDescription: tFooter("about_description"),
         featuresTitle: tFooter("features_title"), usernameSearch: tFooter("features.username_search"),
         categories: tPages("categories_index.breadcrumb"), tools: tPages("tools.breadcrumb"),
-        blog: tPages("blog_index.breadcrumb"), connectTitle: tFooter("connect_title"),
+        connectTitle: tFooter("connect_title"),
         copyright: tFooter("copyright", { year: new Date().getFullYear() }),
         legalTitle: tFooter("legal_title"), privacy: tFooter("privacy"), terms: tFooter("terms"),
       }} />

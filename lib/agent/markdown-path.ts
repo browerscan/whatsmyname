@@ -1,11 +1,11 @@
 import { isSupportedLocale } from "@/i18n/request";
 
 // First path segment of every page family renderMarkdownPage knows.
-const PAGE_SECTIONS = new Set(["tools", "categories", "platforms", "blog", "privacy", "terms"]);
+const PAGE_SECTIONS = new Set(["tools", "categories", "platforms", "privacy", "terms"]);
 
 /**
  * Page path behind a `.md` twin URL, following the llms.txt convention:
- * `/blog/x.md` -> `/blog/x`, `/index.html.md` -> `/`, `/de.md` -> `/de`.
+ * `/platforms/x.md` -> `/platforms/x`, `/index.html.md` -> `/`, `/de.md` -> `/de`.
  * Returns null for other `.md` files (static READMEs), which stay untouched.
  */
 export function markdownTwinToPagePath(pathname: string): string | null {

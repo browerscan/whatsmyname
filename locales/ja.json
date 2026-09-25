@@ -251,47 +251,12 @@
       "title": "ユーザー名検索ツール",
       "description": "自分の公開アカウントの確認や、ブランド用ユーザー名の比較に役立つ独立したサービスです。同じユーザー名だけで同一人物とは判断できません。"
     },
-    "blog": {
-      "title": "ブログ - ユーザー名のコツ、ガイド、デジタルアイデンティティ",
-      "description": "ユーザー名のベストプラクティス、デジタルアイデンティティ保護、パーソナルブランディング、オンラインセキュリティについて学べます。オンラインでの存在感を管理するための専門的なヒントとガイドです。"
-    },
     "categories": {
       "title": "プラットフォームカテゴリ - カテゴリ別ユーザー名検索",
       "description": "プラットフォームのカテゴリを閲覧し、SNS、ゲーム、ビジネス、開発、エンタメ分野でユーザー名の利用可否を確認できます。あなたのユーザー名が使える場所を見つけましょう。"
     }
   },
   "pages": {
-    "blog_index": {
-      "home": "ホーム",
-      "breadcrumb": "ブログ",
-      "collection_name": "What is my Name ブログ",
-      "collection_description": "ユーザー名のベストプラクティス、デジタルアイデンティティ保護、パーソナルブランディング、オンラインセキュリティを学べます。",
-      "title": "ブログ",
-      "description": "ユーザー名、デジタルアイデンティティ、オンラインでの存在感づくりに関するヒント・ガイド・知見",
-      "featured": "注目",
-      "minutes_read": "{count}分で読めます",
-      "minutes_short": "{count}分",
-      "latest_articles": "最新記事",
-      "browse_by_category": "カテゴリ別に見る",
-      "popular_topics": "人気トピック",
-      "newsletter_title": "最新情報を受け取る",
-      "newsletter_description": "ユーザー名、デジタルアイデンティティ、オンラインセキュリティに関する最新情報をメールで受け取りましょう。",
-      "newsletter_placeholder": "メールアドレスを入力",
-      "newsletter_button": "登録する"
-    },
-    "blog_post": {
-      "not_found_title": "記事が見つかりません",
-      "home": "ホーム",
-      "blog": "ブログ",
-      "back_to_blog": "ブログに戻る",
-      "minutes_read": "{count}分で読めます",
-      "share_title": "この記事を共有",
-      "copy_link": "リンクをコピー",
-      "related_articles": "関連記事",
-      "cta_button": "ユーザー名検索を始める",
-      "cta_title": "今すぐユーザー名を確認",
-      "cta_description": "無料ツールを使って、1,400以上のプラットフォームでのユーザー名の利用可否を今すぐ確認しましょう。"
-    },
     "categories_index": {
       "home": "ホーム",
       "breadcrumb": "カテゴリ",

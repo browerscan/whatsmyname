@@ -251,47 +251,12 @@
       "title": "Ferramentas de pesquisa de usuários",
       "description": "Este serviço independente ajuda a revisar seus perfis públicos e comparar nomes para uma marca. Um nome de usuário igual não comprova que os perfis pertencem à mesma pessoa."
     },
-    "blog": {
-      "title": "Blog - Dicas, guias e identidade digital sobre nomes de usuário",
-      "description": "Aprenda boas práticas para nomes de usuário, proteção da identidade digital, marca pessoal e segurança online. Dicas e guias de especialistas para gerenciar sua presença online."
-    },
     "categories": {
       "title": "Categorias de plataformas - Busca de nome de usuário por categoria",
       "description": "Explore categorias de plataformas e verifique a disponibilidade de nomes de usuário em redes sociais, jogos, negócios, programação e entretenimento. Descubra onde seu nome de usuário está disponível."
     }
   },
   "pages": {
-    "blog_index": {
-      "home": "Início",
-      "breadcrumb": "Blog",
-      "collection_name": "Blog do What is my Name",
-      "collection_description": "Aprenda sobre boas práticas de nomes de usuário, proteção da identidade digital, marca pessoal e segurança online.",
-      "title": "Blog",
-      "description": "Dicas, guias e insights sobre nomes de usuário, identidade digital e como construir sua presença online",
-      "featured": "Destaque",
-      "minutes_read": "{count} min de leitura",
-      "minutes_short": "{count} min",
-      "latest_articles": "Artigos recentes",
-      "browse_by_category": "Navegar por categoria",
-      "popular_topics": "Tópicos populares",
-      "newsletter_title": "Fique por dentro",
-      "newsletter_description": "Receba no seu e-mail as últimas dicas sobre nomes de usuário, identidade digital e segurança online.",
-      "newsletter_placeholder": "Digite seu e-mail",
-      "newsletter_button": "Assinar"
-    },
-    "blog_post": {
-      "not_found_title": "Post não encontrado",
-      "home": "Início",
-      "blog": "Blog",
-      "back_to_blog": "Voltar ao blog",
-      "minutes_read": "{count} min de leitura",
-      "share_title": "Compartilhe este artigo",
-      "copy_link": "Copiar link",
-      "related_articles": "Artigos relacionados",
-      "cta_button": "Iniciar busca de nome de usuário",
-      "cta_title": "Verifique seu nome de usuário agora",
-      "cta_description": "Use nossa ferramenta gratuita para verificar instantaneamente a disponibilidade do seu nome de usuário em mais de 1.400 plataformas."
-    },
     "categories_index": {
       "home": "Início",
       "breadcrumb": "Categorias",
